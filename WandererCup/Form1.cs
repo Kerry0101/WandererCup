@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace WandererCup
@@ -15,6 +9,22 @@ namespace WandererCup
         public Form1()
         {
             InitializeComponent();
+            string connect = "server=127.0.0.1; user=root; database=wanderercup_backendpos; password=";
+            MySqlConnection conn = new MySqlConnection(connect);
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connected Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)

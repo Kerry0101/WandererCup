@@ -222,7 +222,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.Tan;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -267,9 +267,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.BackColor = System.Drawing.Color.Tan;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Lime;
+            this.textBox1.ForeColor = System.Drawing.Color.Black;
             this.textBox1.Location = new System.Drawing.Point(468, 342);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -290,6 +290,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(589, 483);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
