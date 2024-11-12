@@ -14,7 +14,7 @@ namespace WandererCup
             try
             {
                 conn.Open();
-                MessageBox.Show("Connected Successfully");
+                MessageBox.Show("Your Database has been Connected Successfully!");
             }
             catch (Exception ex)
             {
