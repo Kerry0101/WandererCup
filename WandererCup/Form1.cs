@@ -1,5 +1,4 @@
 ﻿using System;
-using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace WandererCup
@@ -9,145 +8,62 @@ namespace WandererCup
         public Form1()
         {
             InitializeComponent();
-            string connect = "server=127.0.0.1; user=root; database=wanderercup_backendpos; password=";
-            MySqlConnection conn = new MySqlConnection(connect);
-            try
-            {
-                conn.Open();
-                MessageBox.Show("Your Database has been Connected Successfully!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
+            InitializeComboBoxes();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void InitializeComboBoxes()
         {
+            comboBoxCoffeeDrinks.Items.AddRange(new object[]
+            {
+                new { Name = "Mocha Latte", Price = 150 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Cappuccino", Price = 165 }
+            });
 
+            comboBoxAddOns.Items.AddRange(new object[]
+            {
+                new { Name = "Sugar", Price = 8 },
+                new { Name = "Coffee Mate", Price = 10 },
+                new { Name = "Creamer", Price = 8 }
+            });
+
+            comboBoxCoffeeDrinks.DisplayMember = "Name";
+            comboBoxAddOns.DisplayMember = "Name";
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void UpdateTotal()
         {
+            dataGridView1.Rows.Clear();
 
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        string name;
-        int price;
-        int total;
-        int quantity;
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (checkBox1.Checked == true)
-            {
-                name = "Mocha Latte";
-                quantity = int.Parse(numericUpDown1.Value.ToString());
-                price = 150;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
-            if (checkBox2.Checked == true)
-            {
-                name = "Brewed Coffee";
-                quantity = int.Parse(numericUpDown2.Value.ToString());
-                price = 180;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
-            if (checkBox3.Checked == true)
-            {
-                name = "Cappuccino";
-                quantity = int.Parse(numericUpDown3.Value.ToString());
-                price = 165;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
-            if (checkBox4.Checked == true)
-            {
-                name = "Sugar";
-                quantity = int.Parse(numericUpDown4.Value.ToString());
-                price = 8;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
-            if (checkBox5.Checked == true)
-            {
-                name = "Coffee Mate";
-                quantity = int.Parse(numericUpDown5.Value.ToString());
-                price = 10;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
-            if (checkBox6.Checked == true)
-            {
-                name = "Creamer";
-                quantity = int.Parse(numericUpDown6.Value.ToString());
-                price = 8;
-                total = quantity * price;
-                this.dataGridView1.Rows.Add(name, price, quantity, total);
-            }
+            AddItem(comboBoxCoffeeDrinks, numericUpDownCoffeeDrinks);
+            AddItem(comboBoxAddOns, numericUpDownAddOns);
 
             int sum = 0;
-
             for (int row = 0; row < dataGridView1.Rows.Count; row++)
             {
-                sum = sum + Convert.ToInt32(dataGridView1.Rows[row].Cells[3].Value);
+                sum += Convert.ToInt32(dataGridView1.Rows[row].Cells[3].Value);
             }
 
             textBox1.Text = sum.ToString();
-
-
         }
 
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
+        private void AddItem(ComboBox comboBox, NumericUpDown numericUpDown)
         {
-
+            if (comboBox.SelectedItem != null)
+            {
+                dynamic selectedItem = comboBox.SelectedItem;
+                int quantity = (int)numericUpDown.Value;
+                if (quantity > 0)
+                {
+                    int total = quantity * selectedItem.Price;
+                    dataGridView1.Rows.Add(selectedItem.Name, selectedItem.Price, quantity, total);
+                }
+            }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged_1(object sender, EventArgs e)
-        {
-
+            UpdateTotal();
         }
     }
 }
