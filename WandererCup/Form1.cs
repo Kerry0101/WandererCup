@@ -33,11 +33,6 @@ namespace WandererCup
 
         private void UpdateTotal()
         {
-            dataGridView1.Rows.Clear();
-
-            AddItem(comboBoxCoffeeDrinks, numericUpDownCoffeeDrinks);
-            AddItem(comboBoxAddOns, numericUpDownAddOns);
-
             int sum = 0;
             for (int row = 0; row < dataGridView1.Rows.Count; row++)
             {
@@ -47,23 +42,69 @@ namespace WandererCup
             textBox1.Text = sum.ToString();
         }
 
-        private void AddItem(ComboBox comboBox, NumericUpDown numericUpDown)
+        private void AddItem(ComboBox comboBox, TextBox textBox)
         {
             if (comboBox.SelectedItem != null)
             {
                 dynamic selectedItem = comboBox.SelectedItem;
-                int quantity = (int)numericUpDown.Value;
-                if (quantity > 0)
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = "0";
+                }
+
+                if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
                 {
                     int total = quantity * selectedItem.Price;
                     dataGridView1.Rows.Add(selectedItem.Name, selectedItem.Price, quantity, total);
                 }
+                else if (quantity == 0)
+                {
+                    // Do not add the item to the DataGridView if quantity is 0
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid quantity.");
+                }
             }
+        }
+
+        private void ResetTextBox(TextBox textBox)
+        {
+            textBox.Text = "0";
+        }
+
+        private void comboBoxCoffeeDrinks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ResetTextBox(textBoxCoffeeDrinks);
+        }
+
+        private void comboBoxAddOns_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ResetTextBox(textBoxAddOns);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            AddItem(comboBoxCoffeeDrinks, textBoxCoffeeDrinks);
+            AddItem(comboBoxAddOns, textBoxAddOns);
             UpdateTotal();
+            ResetTextBox(textBoxCoffeeDrinks);
+            ResetTextBox(textBoxAddOns);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCoffeeDrinks_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

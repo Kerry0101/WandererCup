@@ -22,10 +22,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxCoffeeDrinks = new System.Windows.Forms.ComboBox();
-            this.numericUpDownCoffeeDrinks = new System.Windows.Forms.NumericUpDown();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBoxAddOns = new System.Windows.Forms.ComboBox();
-            this.numericUpDownAddOns = new System.Windows.Forms.NumericUpDown();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -34,12 +32,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAddOns = new System.Windows.Forms.TextBox();
+            this.textBoxCoffeeDrinks = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoffeeDrinks)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddOns)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,9 +75,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBoxCoffeeDrinks);
             this.groupBox1.Controls.Add(this.comboBoxCoffeeDrinks);
-            this.groupBox1.Controls.Add(this.numericUpDownCoffeeDrinks);
-            this.groupBox1.Location = new System.Drawing.Point(12, 81);
+            this.groupBox1.Location = new System.Drawing.Point(19, 81);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(264, 99);
             this.groupBox1.TabIndex = 1;
@@ -93,18 +94,12 @@
             this.comboBoxCoffeeDrinks.Size = new System.Drawing.Size(220, 21);
             this.comboBoxCoffeeDrinks.TabIndex = 0;
             // 
-            // numericUpDownCoffeeDrinks
-            // 
-            this.numericUpDownCoffeeDrinks.Location = new System.Drawing.Point(16, 62);
-            this.numericUpDownCoffeeDrinks.Name = "numericUpDownCoffeeDrinks";
-            this.numericUpDownCoffeeDrinks.Size = new System.Drawing.Size(220, 20);
-            this.numericUpDownCoffeeDrinks.TabIndex = 1;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBoxAddOns);
-            this.groupBox2.Controls.Add(this.numericUpDownAddOns);
-            this.groupBox2.Location = new System.Drawing.Point(295, 81);
+            this.groupBox2.Controls.Add(this.textBoxAddOns);
+            this.groupBox2.Location = new System.Drawing.Point(301, 81);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(264, 99);
             this.groupBox2.TabIndex = 5;
@@ -119,13 +114,6 @@
             this.comboBoxAddOns.Name = "comboBoxAddOns";
             this.comboBoxAddOns.Size = new System.Drawing.Size(220, 21);
             this.comboBoxAddOns.TabIndex = 0;
-            // 
-            // numericUpDownAddOns
-            // 
-            this.numericUpDownAddOns.Location = new System.Drawing.Point(16, 62);
-            this.numericUpDownAddOns.Name = "numericUpDownAddOns";
-            this.numericUpDownAddOns.Size = new System.Drawing.Size(220, 20);
-            this.numericUpDownAddOns.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -181,7 +169,7 @@
             this.textBox1.Location = new System.Drawing.Point(468, 342);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 64);
+            this.textBox1.Size = new System.Drawing.Size(91, 32);
             this.textBox1.TabIndex = 8;
             // 
             // label2
@@ -193,6 +181,45 @@
             this.label2.Size = new System.Drawing.Size(93, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Total Amount";
+            // 
+            // textBoxAddOns
+            // 
+            this.textBoxAddOns.Location = new System.Drawing.Point(85, 57);
+            this.textBoxAddOns.Name = "textBoxAddOns";
+            this.textBoxAddOns.Size = new System.Drawing.Size(45, 20);
+            this.textBoxAddOns.TabIndex = 1;
+            this.textBoxAddOns.Text = "0";
+            // 
+            // textBoxCoffeeDrinks
+            // 
+            this.textBoxCoffeeDrinks.Location = new System.Drawing.Point(81, 58);
+            this.textBoxCoffeeDrinks.Name = "textBoxCoffeeDrinks";
+            this.textBoxCoffeeDrinks.Size = new System.Drawing.Size(45, 20);
+            this.textBoxCoffeeDrinks.TabIndex = 2;
+            this.textBoxCoffeeDrinks.Text = "0";
+            this.textBoxCoffeeDrinks.TextChanged += new System.EventHandler(this.textBoxCoffeeDrinks_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Amount :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Amount :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
@@ -211,9 +238,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCoffeeDrinks)).EndInit();
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAddOns)).EndInit();
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -227,10 +254,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBoxCoffeeDrinks;
-        private System.Windows.Forms.NumericUpDown numericUpDownCoffeeDrinks;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBoxAddOns;
-        private System.Windows.Forms.NumericUpDown numericUpDownAddOns;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -239,5 +264,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxCoffeeDrinks;
+        private System.Windows.Forms.TextBox textBoxAddOns;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
