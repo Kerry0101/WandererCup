@@ -38,10 +38,12 @@
             this.panelSidebar = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonSidebar3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.pictureBox50 = new System.Windows.Forms.PictureBox();
@@ -50,7 +52,6 @@
             this.pictureBox49 = new System.Windows.Forms.PictureBox();
             this.pictureBox44 = new System.Windows.Forms.PictureBox();
             this.pictureBox47 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox39 = new System.Windows.Forms.PictureBox();
             this.pictureBox40 = new System.Windows.Forms.PictureBox();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
@@ -93,11 +94,13 @@
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
@@ -105,7 +108,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
@@ -176,6 +178,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxCoffeeDrinks);
             this.groupBox1.Controls.Add(this.comboBoxCoffeeDrinks);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(230, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(300, 120);
@@ -198,7 +201,7 @@
             // 
             this.textBoxCoffeeDrinks.Location = new System.Drawing.Point(71, 58);
             this.textBoxCoffeeDrinks.Name = "textBoxCoffeeDrinks";
-            this.textBoxCoffeeDrinks.Size = new System.Drawing.Size(45, 20);
+            this.textBoxCoffeeDrinks.Size = new System.Drawing.Size(45, 22);
             this.textBoxCoffeeDrinks.TabIndex = 2;
             this.textBoxCoffeeDrinks.Text = "0";
             this.textBoxCoffeeDrinks.TextChanged += new System.EventHandler(this.textBoxCoffeeDrinks_TextChanged);
@@ -210,7 +213,7 @@
             this.comboBoxCoffeeDrinks.FormattingEnabled = true;
             this.comboBoxCoffeeDrinks.Location = new System.Drawing.Point(16, 31);
             this.comboBoxCoffeeDrinks.Name = "comboBoxCoffeeDrinks";
-            this.comboBoxCoffeeDrinks.Size = new System.Drawing.Size(220, 21);
+            this.comboBoxCoffeeDrinks.Size = new System.Drawing.Size(220, 24);
             this.comboBoxCoffeeDrinks.TabIndex = 0;
             // 
             // groupBox2
@@ -219,6 +222,7 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.comboBoxAddOns);
             this.groupBox2.Controls.Add(this.textBoxAddOns);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(574, 123);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(300, 120);
@@ -243,14 +247,14 @@
             this.comboBoxAddOns.FormattingEnabled = true;
             this.comboBoxAddOns.Location = new System.Drawing.Point(16, 31);
             this.comboBoxAddOns.Name = "comboBoxAddOns";
-            this.comboBoxAddOns.Size = new System.Drawing.Size(220, 21);
+            this.comboBoxAddOns.Size = new System.Drawing.Size(220, 24);
             this.comboBoxAddOns.TabIndex = 0;
             // 
             // textBoxAddOns
             // 
             this.textBoxAddOns.Location = new System.Drawing.Point(71, 59);
             this.textBoxAddOns.Name = "textBoxAddOns";
-            this.textBoxAddOns.Size = new System.Drawing.Size(45, 20);
+            this.textBoxAddOns.Size = new System.Drawing.Size(45, 22);
             this.textBoxAddOns.TabIndex = 1;
             this.textBoxAddOns.Text = "0";
             // 
@@ -380,6 +384,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
             this.guna2Panel1.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
@@ -414,6 +429,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -421,6 +438,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1043, 25);
             this.panel2.TabIndex = 11;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(985, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 24);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "🗖";
+            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label6
             // 
@@ -509,17 +539,6 @@
             this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox47.TabIndex = 88;
             this.pictureBox47.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox39
             // 
@@ -986,6 +1005,17 @@
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(958, -4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 24);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "🗕";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1051,7 +1081,7 @@
             this.Controls.Add(this.pictureBox46);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -1062,6 +1092,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
@@ -1070,7 +1101,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
@@ -1198,5 +1228,7 @@
         private System.Windows.Forms.PictureBox pictureBox51;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }

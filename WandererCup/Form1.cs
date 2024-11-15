@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WandererCup
 {
     public partial class Form1 : Form
     {
+        public Point mouseLocation;
         public Form1()
         {
             InitializeComponent();
@@ -183,6 +185,38 @@ namespace WandererCup
             Form1 mainForm = new Form1();
             mainForm.ShowDialog();
             this.Close();
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Form1.ActiveForm.WindowState = FormWindowState.Minimized;
+        }
+
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLocation = new Point(-e.X, -e.Y); 
+        }
+
+        private void MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePose = Control.MousePosition;
+                mousePose.Offset(mouseLocation.X, mouseLocation.Y);
+                Location = mousePose;
+            }
         }
     }
 }
