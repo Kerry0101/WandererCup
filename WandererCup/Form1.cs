@@ -186,6 +186,11 @@ namespace WandererCup
             mainForm.ShowDialog();
             this.Close();
         }
+        private void InventoryButton_Click(object sender, EventArgs e)
+        {
+            // Add your event handling code here
+        }
+
 
         private void label5_Click_1(object sender, EventArgs e)
         {
@@ -218,5 +223,6 @@ namespace WandererCup
                 Location = mousePose;
             }
         }
+
     }
 }

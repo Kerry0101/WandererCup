@@ -43,6 +43,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.buttonSidebar3 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
@@ -94,7 +95,6 @@
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -337,6 +337,7 @@
             this.InventoryButton.TabIndex = 1;
             this.InventoryButton.Text = "Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // PosButton
             // 
@@ -429,7 +430,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.Label7);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.CloseButton);
@@ -440,6 +441,17 @@
             this.panel2.TabIndex = 11;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseMove);
+            // 
+            // Label7
+            // 
+            this.Label7.AutoSize = true;
+            this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label7.Location = new System.Drawing.Point(958, -4);
+            this.Label7.Name = "Label7";
+            this.Label7.Size = new System.Drawing.Size(25, 24);
+            this.Label7.TabIndex = 3;
+            this.Label7.Text = "🗕";
+            this.Label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -1005,17 +1017,6 @@
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(958, -4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 24);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "🗕";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1229,6 +1230,6 @@
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label Label7;
     }
 }
