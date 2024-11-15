@@ -106,5 +106,75 @@ namespace WandererCup
         {
 
         }
+
+        private void panelSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSidebar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox39_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
