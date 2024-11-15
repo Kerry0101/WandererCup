@@ -33,121 +33,121 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonSidebar2 = new System.Windows.Forms.Button();
-            this.buttonSidebar1 = new System.Windows.Forms.Button();
+            this.InventoryButton = new System.Windows.Forms.Button();
+            this.PosButton = new System.Windows.Forms.Button();
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.buttonSidebar3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSidebar3 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Label();
+            this.pictureBox50 = new System.Windows.Forms.PictureBox();
+            this.pictureBox51 = new System.Windows.Forms.PictureBox();
+            this.pictureBox48 = new System.Windows.Forms.PictureBox();
+            this.pictureBox49 = new System.Windows.Forms.PictureBox();
+            this.pictureBox44 = new System.Windows.Forms.PictureBox();
+            this.pictureBox47 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox39 = new System.Windows.Forms.PictureBox();
+            this.pictureBox40 = new System.Windows.Forms.PictureBox();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
             this.pictureBox32 = new System.Windows.Forms.PictureBox();
             this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox38 = new System.Windows.Forms.PictureBox();
             this.pictureBox35 = new System.Windows.Forms.PictureBox();
             this.pictureBox37 = new System.Windows.Forms.PictureBox();
-            this.pictureBox38 = new System.Windows.Forms.PictureBox();
-            this.pictureBox39 = new System.Windows.Forms.PictureBox();
-            this.pictureBox40 = new System.Windows.Forms.PictureBox();
             this.pictureBox42 = new System.Windows.Forms.PictureBox();
             this.pictureBox41 = new System.Windows.Forms.PictureBox();
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
-            this.pictureBox44 = new System.Windows.Forms.PictureBox();
-            this.pictureBox47 = new System.Windows.Forms.PictureBox();
-            this.pictureBox48 = new System.Windows.Forms.PictureBox();
-            this.pictureBox49 = new System.Windows.Forms.PictureBox();
-            this.pictureBox50 = new System.Windows.Forms.PictureBox();
-            this.pictureBox51 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelSidebar.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -324,25 +324,26 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Total Amount :";
             // 
-            // buttonSidebar2
+            // InventoryButton
             // 
-            this.buttonSidebar2.BackColor = System.Drawing.Color.White;
-            this.buttonSidebar2.Location = new System.Drawing.Point(12, 196);
-            this.buttonSidebar2.Name = "buttonSidebar2";
-            this.buttonSidebar2.Size = new System.Drawing.Size(175, 34);
-            this.buttonSidebar2.TabIndex = 1;
-            this.buttonSidebar2.Text = "Sidebar Button 2";
-            this.buttonSidebar2.UseVisualStyleBackColor = false;
+            this.InventoryButton.BackColor = System.Drawing.Color.White;
+            this.InventoryButton.Location = new System.Drawing.Point(11, 218);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(175, 42);
+            this.InventoryButton.TabIndex = 1;
+            this.InventoryButton.Text = "Inventory";
+            this.InventoryButton.UseVisualStyleBackColor = false;
             // 
-            // buttonSidebar1
+            // PosButton
             // 
-            this.buttonSidebar1.BackColor = System.Drawing.Color.White;
-            this.buttonSidebar1.Location = new System.Drawing.Point(12, 162);
-            this.buttonSidebar1.Name = "buttonSidebar1";
-            this.buttonSidebar1.Size = new System.Drawing.Size(175, 34);
-            this.buttonSidebar1.TabIndex = 0;
-            this.buttonSidebar1.Text = "Sidebar Button 1";
-            this.buttonSidebar1.UseVisualStyleBackColor = false;
+            this.PosButton.BackColor = System.Drawing.Color.White;
+            this.PosButton.Location = new System.Drawing.Point(12, 175);
+            this.PosButton.Name = "PosButton";
+            this.PosButton.Size = new System.Drawing.Size(175, 42);
+            this.PosButton.TabIndex = 0;
+            this.PosButton.Text = "POS";
+            this.PosButton.UseVisualStyleBackColor = false;
+            this.PosButton.Click += new System.EventHandler(this.buttonSidebar1_Click);
             // 
             // panelSidebar
             // 
@@ -353,65 +354,23 @@
             this.panelSidebar.Controls.Add(this.button4);
             this.panelSidebar.Controls.Add(this.button3);
             this.panelSidebar.Controls.Add(this.buttonSidebar3);
-            this.panelSidebar.Controls.Add(this.buttonSidebar1);
-            this.panelSidebar.Controls.Add(this.buttonSidebar2);
+            this.panelSidebar.Controls.Add(this.PosButton);
+            this.panelSidebar.Controls.Add(this.InventoryButton);
             this.panelSidebar.Location = new System.Drawing.Point(0, 25);
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(200, 579);
             this.panelSidebar.TabIndex = 10;
-            // 
-            // buttonSidebar3
-            // 
-            this.buttonSidebar3.BackColor = System.Drawing.Color.White;
-            this.buttonSidebar3.Location = new System.Drawing.Point(12, 230);
-            this.buttonSidebar3.Name = "buttonSidebar3";
-            this.buttonSidebar3.Size = new System.Drawing.Size(175, 34);
-            this.buttonSidebar3.TabIndex = 2;
-            this.buttonSidebar3.Text = "Sidebar Button 3";
-            this.buttonSidebar3.UseVisualStyleBackColor = false;
-            this.buttonSidebar3.Click += new System.EventHandler(this.buttonSidebar3_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(12, 471);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 34);
+            this.button2.Size = new System.Drawing.Size(175, 42);
             this.button2.TabIndex = 11;
             this.button2.Text = "Log Out";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 264);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 34);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Sidebar Button 4";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(12, 298);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 34);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Sidebar Button 5";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1043, 25);
-            this.panel2.TabIndex = 11;
             // 
             // guna2Panel1
             // 
@@ -420,6 +379,378 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
             this.guna2Panel1.TabIndex = 12;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(11, 347);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(175, 42);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Sidebar Button 5";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(11, 304);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(175, 42);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Sidebar Button 4";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // buttonSidebar3
+            // 
+            this.buttonSidebar3.BackColor = System.Drawing.Color.White;
+            this.buttonSidebar3.Location = new System.Drawing.Point(11, 261);
+            this.buttonSidebar3.Name = "buttonSidebar3";
+            this.buttonSidebar3.Size = new System.Drawing.Size(175, 42);
+            this.buttonSidebar3.TabIndex = 2;
+            this.buttonSidebar3.Text = "Sidebar Button 3";
+            this.buttonSidebar3.UseVisualStyleBackColor = false;
+            this.buttonSidebar3.Click += new System.EventHandler(this.buttonSidebar3_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.CloseButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1043, 25);
+            this.panel2.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(181, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Order Management System";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.AutoSize = true;
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(1017, 5);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(16, 16);
+            this.CloseButton.TabIndex = 0;
+            this.CloseButton.Text = "X";
+            this.CloseButton.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // pictureBox50
+            // 
+            this.pictureBox50.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox50.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox50.Location = new System.Drawing.Point(966, 535);
+            this.pictureBox50.Name = "pictureBox50";
+            this.pictureBox50.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox50.TabIndex = 93;
+            this.pictureBox50.TabStop = false;
+            // 
+            // pictureBox51
+            // 
+            this.pictureBox51.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox51.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox51.Location = new System.Drawing.Point(1032, 450);
+            this.pictureBox51.Name = "pictureBox51";
+            this.pictureBox51.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox51.TabIndex = 92;
+            this.pictureBox51.TabStop = false;
+            // 
+            // pictureBox48
+            // 
+            this.pictureBox48.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox48.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox48.Location = new System.Drawing.Point(966, 366);
+            this.pictureBox48.Name = "pictureBox48";
+            this.pictureBox48.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox48.TabIndex = 91;
+            this.pictureBox48.TabStop = false;
+            // 
+            // pictureBox49
+            // 
+            this.pictureBox49.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox49.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox49.Location = new System.Drawing.Point(1032, 281);
+            this.pictureBox49.Name = "pictureBox49";
+            this.pictureBox49.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox49.TabIndex = 90;
+            this.pictureBox49.TabStop = false;
+            // 
+            // pictureBox44
+            // 
+            this.pictureBox44.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox44.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox44.Location = new System.Drawing.Point(805, 534);
+            this.pictureBox44.Name = "pictureBox44";
+            this.pictureBox44.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox44.TabIndex = 89;
+            this.pictureBox44.TabStop = false;
+            // 
+            // pictureBox47
+            // 
+            this.pictureBox47.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox47.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox47.Location = new System.Drawing.Point(871, 449);
+            this.pictureBox47.Name = "pictureBox47";
+            this.pictureBox47.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox47.TabIndex = 88;
+            this.pictureBox47.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox39
+            // 
+            this.pictureBox39.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox39.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox39.Location = new System.Drawing.Point(228, 281);
+            this.pictureBox39.Name = "pictureBox39";
+            this.pictureBox39.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox39.TabIndex = 82;
+            this.pictureBox39.TabStop = false;
+            // 
+            // pictureBox40
+            // 
+            this.pictureBox40.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox40.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox40.Location = new System.Drawing.Point(294, 196);
+            this.pictureBox40.Name = "pictureBox40";
+            this.pictureBox40.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox40.TabIndex = 81;
+            this.pictureBox40.TabStop = false;
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox29.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox29.Location = new System.Drawing.Point(389, 281);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox29.TabIndex = 74;
+            this.pictureBox29.TabStop = false;
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox31.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox31.Location = new System.Drawing.Point(455, 196);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox31.TabIndex = 73;
+            this.pictureBox31.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox27.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox27.Location = new System.Drawing.Point(228, 450);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox27.TabIndex = 72;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox28.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox28.Location = new System.Drawing.Point(294, 365);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox28.TabIndex = 71;
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox25.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox25.Location = new System.Drawing.Point(228, 619);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox25.TabIndex = 70;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox26.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox26.Location = new System.Drawing.Point(294, 534);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox26.TabIndex = 69;
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox21.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox21.Location = new System.Drawing.Point(549, 281);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox21.TabIndex = 66;
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox18.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox18.Location = new System.Drawing.Point(389, 450);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox18.TabIndex = 64;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox19.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox19.Location = new System.Drawing.Point(455, 365);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox19.TabIndex = 63;
+            this.pictureBox19.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox15.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox15.Location = new System.Drawing.Point(389, 619);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 62;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox17.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox17.Location = new System.Drawing.Point(455, 534);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox17.TabIndex = 61;
+            this.pictureBox17.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox12.Location = new System.Drawing.Point(549, 450);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox12.TabIndex = 60;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox14.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox14.Location = new System.Drawing.Point(615, 365);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox14.TabIndex = 59;
+            this.pictureBox14.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox16.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox16.Location = new System.Drawing.Point(776, 196);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 57;
+            this.pictureBox16.TabStop = false;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox20.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox20.Location = new System.Drawing.Point(710, 620);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox20.TabIndex = 38;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox6.Location = new System.Drawing.Point(554, 617);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 26;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox9.Location = new System.Drawing.Point(615, 534);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 25;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(871, 281);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox5.Location = new System.Drawing.Point(937, 196);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 21;
+            this.pictureBox5.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -444,39 +775,6 @@
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 125);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(871, 281);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox5.Location = new System.Drawing.Point(937, 196);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 21;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -499,28 +797,6 @@
             this.pictureBox8.TabIndex = 23;
             this.pictureBox8.TabStop = false;
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox6.Location = new System.Drawing.Point(554, 617);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 26;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox9.Location = new System.Drawing.Point(615, 534);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 25;
-            this.pictureBox9.TabStop = false;
-            // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
@@ -542,17 +818,6 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 27;
             this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox20
-            // 
-            this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox20.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox20.Location = new System.Drawing.Point(710, 620);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox20.TabIndex = 38;
-            this.pictureBox20.TabStop = false;
             // 
             // pictureBox30
             // 
@@ -587,94 +852,6 @@
             this.pictureBox36.TabIndex = 56;
             this.pictureBox36.TabStop = false;
             // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox16.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox16.Location = new System.Drawing.Point(776, 196);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 57;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox12.Location = new System.Drawing.Point(549, 450);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox12.TabIndex = 60;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox14.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox14.Location = new System.Drawing.Point(615, 365);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox14.TabIndex = 59;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox15.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox15.Location = new System.Drawing.Point(389, 619);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 62;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox17.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox17.Location = new System.Drawing.Point(455, 534);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox17.TabIndex = 61;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox18
-            // 
-            this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox18.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox18.Location = new System.Drawing.Point(389, 450);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox18.TabIndex = 64;
-            this.pictureBox18.TabStop = false;
-            // 
-            // pictureBox19
-            // 
-            this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox19.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox19.Location = new System.Drawing.Point(455, 365);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox19.TabIndex = 63;
-            this.pictureBox19.TabStop = false;
-            // 
-            // pictureBox21
-            // 
-            this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox21.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox21.Location = new System.Drawing.Point(549, 281);
-            this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox21.TabIndex = 66;
-            this.pictureBox21.TabStop = false;
-            // 
             // pictureBox23
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
@@ -696,72 +873,6 @@
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 67;
             this.pictureBox24.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox25.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox25.Location = new System.Drawing.Point(228, 619);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox25.TabIndex = 70;
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox26.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox26.Location = new System.Drawing.Point(294, 534);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox26.TabIndex = 69;
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox27.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox27.Location = new System.Drawing.Point(228, 450);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox27.TabIndex = 72;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox28.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox28.Location = new System.Drawing.Point(294, 365);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox28.TabIndex = 71;
-            this.pictureBox28.TabStop = false;
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox29.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox29.Location = new System.Drawing.Point(389, 281);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox29.TabIndex = 74;
-            this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox31.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox31.Location = new System.Drawing.Point(455, 196);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox31.TabIndex = 73;
-            this.pictureBox31.TabStop = false;
             // 
             // pictureBox32
             // 
@@ -785,6 +896,17 @@
             this.pictureBox33.TabIndex = 75;
             this.pictureBox33.TabStop = false;
             // 
+            // pictureBox38
+            // 
+            this.pictureBox38.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox38.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
+            this.pictureBox38.Location = new System.Drawing.Point(133, 366);
+            this.pictureBox38.Name = "pictureBox38";
+            this.pictureBox38.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox38.TabIndex = 80;
+            this.pictureBox38.TabStop = false;
+            // 
             // pictureBox35
             // 
             this.pictureBox35.BackColor = System.Drawing.Color.Transparent;
@@ -806,39 +928,6 @@
             this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox37.TabIndex = 77;
             this.pictureBox37.TabStop = false;
-            // 
-            // pictureBox38
-            // 
-            this.pictureBox38.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox38.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox38.Location = new System.Drawing.Point(133, 366);
-            this.pictureBox38.Name = "pictureBox38";
-            this.pictureBox38.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox38.TabIndex = 80;
-            this.pictureBox38.TabStop = false;
-            // 
-            // pictureBox39
-            // 
-            this.pictureBox39.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox39.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox39.Location = new System.Drawing.Point(228, 281);
-            this.pictureBox39.Name = "pictureBox39";
-            this.pictureBox39.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox39.TabIndex = 82;
-            this.pictureBox39.TabStop = false;
-            // 
-            // pictureBox40
-            // 
-            this.pictureBox40.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox40.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox40.Location = new System.Drawing.Point(294, 196);
-            this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox40.TabIndex = 81;
-            this.pictureBox40.TabStop = false;
             // 
             // pictureBox42
             // 
@@ -896,94 +985,6 @@
             this.pictureBox46.TabIndex = 87;
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
-            // 
-            // pictureBox44
-            // 
-            this.pictureBox44.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox44.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox44.Location = new System.Drawing.Point(805, 534);
-            this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox44.TabIndex = 89;
-            this.pictureBox44.TabStop = false;
-            // 
-            // pictureBox47
-            // 
-            this.pictureBox47.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox47.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox47.Location = new System.Drawing.Point(871, 449);
-            this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox47.TabIndex = 88;
-            this.pictureBox47.TabStop = false;
-            // 
-            // pictureBox48
-            // 
-            this.pictureBox48.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox48.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox48.Location = new System.Drawing.Point(966, 366);
-            this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox48.TabIndex = 91;
-            this.pictureBox48.TabStop = false;
-            // 
-            // pictureBox49
-            // 
-            this.pictureBox49.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox49.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox49.Location = new System.Drawing.Point(1032, 281);
-            this.pictureBox49.Name = "pictureBox49";
-            this.pictureBox49.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox49.TabIndex = 90;
-            this.pictureBox49.TabStop = false;
-            // 
-            // pictureBox50
-            // 
-            this.pictureBox50.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox50.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox50.Location = new System.Drawing.Point(966, 535);
-            this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(66, 84);
-            this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox50.TabIndex = 93;
-            this.pictureBox50.TabStop = false;
-            // 
-            // pictureBox51
-            // 
-            this.pictureBox51.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox51.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox51.Location = new System.Drawing.Point(1032, 450);
-            this.pictureBox51.Name = "pictureBox51";
-            this.pictureBox51.Size = new System.Drawing.Size(95, 169);
-            this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox51.TabIndex = 92;
-            this.pictureBox51.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1017, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "X";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(194, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Order Management System";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // Form1
             // 
@@ -1063,55 +1064,55 @@
             this.panelSidebar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox39)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox42)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox50)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox51)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1133,8 +1134,8 @@
         private System.Windows.Forms.TextBox textBoxAddOns;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonSidebar2;
-        private System.Windows.Forms.Button buttonSidebar1;
+        private System.Windows.Forms.Button InventoryButton;
+        private System.Windows.Forms.Button PosButton;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Button buttonSidebar3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -1195,7 +1196,7 @@
         private System.Windows.Forms.PictureBox pictureBox49;
         private System.Windows.Forms.PictureBox pictureBox50;
         private System.Windows.Forms.PictureBox pictureBox51;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label6;
     }
 }

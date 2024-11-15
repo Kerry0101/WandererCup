@@ -169,12 +169,20 @@ namespace WandererCup
 
         private void label5_Click(object sender, EventArgs e)
         {
-
+            this.Close();   
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSidebar1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 mainForm = new Form1();
+            mainForm.ShowDialog();
+            this.Close();
         }
     }
 }
