@@ -1,6 +1,6 @@
 ﻿namespace WandererCup
 {
-    partial class Form1
+    partial class Index_form
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -95,6 +95,7 @@
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -150,10 +151,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(202, 25);
@@ -229,6 +233,7 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add-Ons";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label4
             // 
@@ -302,7 +307,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 31);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Compute";
+            this.button1.Text = "Place Order";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -330,10 +335,14 @@
             // 
             // InventoryButton
             // 
-            this.InventoryButton.BackColor = System.Drawing.Color.White;
-            this.InventoryButton.Location = new System.Drawing.Point(11, 218);
+            this.InventoryButton.BackColor = System.Drawing.Color.Tan;
+            this.InventoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.InventoryButton.Location = new System.Drawing.Point(0, 203);
             this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(175, 42);
+            this.InventoryButton.Size = new System.Drawing.Size(199, 42);
             this.InventoryButton.TabIndex = 1;
             this.InventoryButton.Text = "Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
@@ -341,17 +350,23 @@
             // 
             // PosButton
             // 
-            this.PosButton.BackColor = System.Drawing.Color.White;
-            this.PosButton.Location = new System.Drawing.Point(12, 175);
+            this.PosButton.BackColor = System.Drawing.Color.Tan;
+            this.PosButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PosButton.FlatAppearance.BorderSize = 0;
+            this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PosButton.Location = new System.Drawing.Point(0, 165);
             this.PosButton.Name = "PosButton";
-            this.PosButton.Size = new System.Drawing.Size(175, 42);
+            this.PosButton.Size = new System.Drawing.Size(199, 42);
             this.PosButton.TabIndex = 0;
-            this.PosButton.Text = "POS";
+            this.PosButton.Text = "Point of Sales";
             this.PosButton.UseVisualStyleBackColor = false;
             this.PosButton.Click += new System.EventHandler(this.buttonSidebar1_Click);
             // 
             // panelSidebar
             // 
+            this.panelSidebar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panelSidebar.BackColor = System.Drawing.Color.Tan;
             this.panelSidebar.Controls.Add(this.button2);
             this.panelSidebar.Controls.Add(this.guna2Panel1);
@@ -368,10 +383,14 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 471);
+            this.button2.BackColor = System.Drawing.Color.BurlyWood;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(12, 478);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 42);
+            this.button2.Size = new System.Drawing.Size(175, 35);
             this.button2.TabIndex = 11;
             this.button2.Text = "Log Out";
             this.button2.UseVisualStyleBackColor = false;
@@ -379,6 +398,8 @@
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
             this.guna2Panel1.Location = new System.Drawing.Point(198, -14);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -398,30 +419,42 @@
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(11, 347);
+            this.button4.BackColor = System.Drawing.Color.Tan;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button4.Location = new System.Drawing.Point(0, 321);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(175, 42);
+            this.button4.Size = new System.Drawing.Size(199, 42);
             this.button4.TabIndex = 11;
             this.button4.Text = "Sidebar Button 5";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(11, 304);
+            this.button3.BackColor = System.Drawing.Color.Tan;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(0, 281);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(175, 42);
+            this.button3.Size = new System.Drawing.Size(199, 42);
             this.button3.TabIndex = 11;
             this.button3.Text = "Sidebar Button 4";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // buttonSidebar3
             // 
-            this.buttonSidebar3.BackColor = System.Drawing.Color.White;
-            this.buttonSidebar3.Location = new System.Drawing.Point(11, 261);
+            this.buttonSidebar3.BackColor = System.Drawing.Color.Tan;
+            this.buttonSidebar3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonSidebar3.FlatAppearance.BorderSize = 0;
+            this.buttonSidebar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSidebar3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonSidebar3.Location = new System.Drawing.Point(0, 242);
             this.buttonSidebar3.Name = "buttonSidebar3";
-            this.buttonSidebar3.Size = new System.Drawing.Size(175, 42);
+            this.buttonSidebar3.Size = new System.Drawing.Size(199, 42);
             this.buttonSidebar3.TabIndex = 2;
             this.buttonSidebar3.Text = "Sidebar Button 3";
             this.buttonSidebar3.UseVisualStyleBackColor = false;
@@ -444,6 +477,7 @@
             // 
             // Label7
             // 
+            this.Label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(958, -4);
@@ -455,6 +489,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(985, 0);
@@ -477,6 +512,7 @@
             // 
             // CloseButton
             // 
+            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CloseButton.AutoSize = true;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseButton.Location = new System.Drawing.Point(1017, 5);
@@ -1017,7 +1053,18 @@
             this.pictureBox46.TabStop = false;
             this.pictureBox46.Click += new System.EventHandler(this.pictureBox46_Click);
             // 
-            // Form1
+            // pictureBox13
+            // 
+            this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox13.Image = global::WandererCup.Properties.Resources.coffee;
+            this.pictureBox13.Location = new System.Drawing.Point(615, 196);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 140;
+            this.pictureBox13.TabStop = false;
+            // 
+            // Index_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1080,9 +1127,10 @@
             this.Controls.Add(this.pictureBox43);
             this.Controls.Add(this.pictureBox45);
             this.Controls.Add(this.pictureBox46);
+            this.Controls.Add(this.pictureBox13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Name = "Index_form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -1144,6 +1192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1231,5 +1280,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Label7;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }

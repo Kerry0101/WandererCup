@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace WandererCup
 {
-    public partial class Form1 : Form
+    public partial class Index_form : Form
     {
         public Point mouseLocation;
-        public Form1()
+        public Index_form()
         {
             InitializeComponent();
             InitializeComboBoxes();
@@ -182,13 +182,14 @@ namespace WandererCup
         private void buttonSidebar1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 mainForm = new Form1();
+            Index_form mainForm = new Index_form();
             mainForm.ShowDialog();
             this.Close();
         }
         private void InventoryButton_Click(object sender, EventArgs e)
         {
-            // Add your event handling code here
+            var inventory = new Inventory();
+            inventory.Show();
         }
 
 
@@ -206,15 +207,15 @@ namespace WandererCup
 
         private void label7_Click(object sender, EventArgs e)
         {
-            Form1.ActiveForm.WindowState = FormWindowState.Minimized;
+            Index_form.ActiveForm.WindowState = FormWindowState.Minimized;
         }
 
-        private void MouseDown(object sender, MouseEventArgs e)
+        private new void MouseDown(object sender, MouseEventArgs e)
         {
-            mouseLocation = new Point(-e.X, -e.Y); 
+            mouseLocation = new Point(-e.X, -e.Y);
         }
 
-        private void MouseMove(object sender, MouseEventArgs e)
+        private new void MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -224,5 +225,9 @@ namespace WandererCup
             }
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

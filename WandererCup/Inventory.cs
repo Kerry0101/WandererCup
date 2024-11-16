@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace WandererCup
 {
-    public partial class UserControl1 : UserControl
+    public partial class Inventory : Form
     {
-        public UserControl1()
+        public Inventory()
         {
             InitializeComponent();
         }
 
-        private void InventoryButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PosButton_Click(object sender, EventArgs e)
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
