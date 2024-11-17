@@ -21,5 +21,32 @@ namespace WandererCup
         {
 
         }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void Label7_Click(object sender, EventArgs e)
+        {
+            Index_form.ActiveForm.WindowState = FormWindowState.Minimized;
+        }
     }
 }

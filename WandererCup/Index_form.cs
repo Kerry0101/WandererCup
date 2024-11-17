@@ -13,6 +13,21 @@ namespace WandererCup
             InitializeComboBoxes();
         }
 
+        public void loadform(object form)
+        {
+            if (this.mainPanel.Controls.Count > 0)
+            {
+                this.mainPanel.Controls.RemoveAt(0);
+                Form form1 = form as Form;
+                form1.TopLevel = false;
+                form1.Dock = DockStyle.Fill;
+                this.mainPanel.Controls.Add(form1);
+                this.mainPanel.Tag = form1;
+                form1.Show();
+            }
+
+        }
+
         private void InitializeComboBoxes()
         {
             comboBoxCoffeeDrinks.Items.AddRange(new object[]
@@ -181,14 +196,16 @@ namespace WandererCup
 
         private void buttonSidebar1_Click(object sender, EventArgs e)
         {
+            var posForm = new Index_form();
+            posForm.FormClosed += (s, args) => Application.Exit();
             this.Hide();
-            Index_form mainForm = new Index_form();
-            mainForm.ShowDialog();
-            this.Close();
+            posForm.Show();
         }
         private void InventoryButton_Click(object sender, EventArgs e)
         {
             var inventory = new Inventory();
+            inventory.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
             inventory.Show();
         }
 
@@ -226,6 +243,131 @@ namespace WandererCup
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox41_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox46_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox40_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox31_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox48_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox47_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox44_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
 
         }
