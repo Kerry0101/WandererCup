@@ -20,7 +20,8 @@
             this.InventoryButton = new System.Windows.Forms.Button();
             this.PosButton = new System.Windows.Forms.Button();
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SalesReportButton = new System.Windows.Forms.Button();
+            this.LogoutButton = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HistoryButton = new System.Windows.Forms.Button();
@@ -98,7 +99,6 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.SalesReportButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -217,7 +217,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelSidebar.BackColor = System.Drawing.Color.Tan;
             this.panelSidebar.Controls.Add(this.SalesReportButton);
-            this.panelSidebar.Controls.Add(this.button2);
+            this.panelSidebar.Controls.Add(this.LogoutButton);
             this.panelSidebar.Controls.Add(this.guna2Panel1);
             this.panelSidebar.Controls.Add(this.pictureBox1);
             this.panelSidebar.Controls.Add(this.HistoryButton);
@@ -230,20 +230,34 @@
             this.panelSidebar.Size = new System.Drawing.Size(200, 579);
             this.panelSidebar.TabIndex = 10;
             // 
-            // button2
+            // SalesReportButton
             // 
-            this.button2.BackColor = System.Drawing.Color.BurlyWood;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(12, 478);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 35);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Log Out";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
+            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SalesReportButton.FlatAppearance.BorderSize = 0;
+            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
+            this.SalesReportButton.Name = "SalesReportButton";
+            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
+            this.SalesReportButton.TabIndex = 13;
+            this.SalesReportButton.Text = "Sales Report";
+            this.SalesReportButton.UseVisualStyleBackColor = false;
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.BackColor = System.Drawing.Color.BurlyWood;
+            this.LogoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LogoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LogoutButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LogoutButton.Location = new System.Drawing.Point(12, 478);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(175, 35);
+            this.LogoutButton.TabIndex = 11;
+            this.LogoutButton.Text = "Log Out";
+            this.LogoutButton.UseVisualStyleBackColor = false;
+            this.LogoutButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // guna2Panel1
             // 
@@ -482,6 +496,7 @@
             this.button1.TabIndex = 144;
             this.button1.Text = "Place Order";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -1107,20 +1122,6 @@
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
-            // SalesReportButton
-            // 
-            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
-            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SalesReportButton.FlatAppearance.BorderSize = 0;
-            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
-            this.SalesReportButton.Name = "SalesReportButton";
-            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
-            this.SalesReportButton.TabIndex = 13;
-            this.SalesReportButton.Text = "Sales Report";
-            this.SalesReportButton.UseVisualStyleBackColor = false;
-            // 
             // Index_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1265,7 +1266,7 @@
         private System.Windows.Forms.Button PosButton;
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Button AddProductsButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button LogoutButton;
         private System.Windows.Forms.Button StatusButton;
         private System.Windows.Forms.Button HistoryButton;
         private System.Windows.Forms.Panel panel2;
