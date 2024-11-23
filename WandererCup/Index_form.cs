@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace WandererCup
@@ -11,6 +12,131 @@ namespace WandererCup
         {
             InitializeComponent();
             InitializeComboBoxes();
+            AddRemoveButtonColumn();
+            SetDataGridViewColumnsReadOnly();
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+            dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            dataGridView1.GridColor = Color.Black;
+            dataGridView1.RowTemplate.Height = 30;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+
+            // Hide row headers
+            dataGridView1.RowHeadersVisible = false;
+
+            // Set all columns to read-only except 'Quantity' column
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.ReadOnly = true;
+            }
+            dataGridView1.Columns["Column3"].ReadOnly = false;
+
+
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
+
+                // Adjust the cell bounds to create a small space
+                Rectangle adjustedBounds = new Rectangle(e.CellBounds.Left, e.CellBounds.Top, e.CellBounds.Width - 1, e.CellBounds.Height);
+
+                using (Brush brush = new SolidBrush(ColorTranslator.FromHtml("#E6B325")))
+                {
+                    e.Graphics.FillRectangle(brush, adjustedBounds);
+                }
+
+                using (Brush textBrush = new SolidBrush(Color.Black))
+                {
+                    var text = "Remove";
+                    var textSize = e.Graphics.MeasureString(text, e.CellStyle.Font);
+                    var textLocation = new PointF(
+                        adjustedBounds.Left + (adjustedBounds.Width - textSize.Width) / 2,
+                        adjustedBounds.Top + (adjustedBounds.Height - textSize.Height) / 2
+                    );
+                    e.Graphics.DrawString(text, e.CellStyle.Font, textBrush, textLocation);
+                }
+
+                using (Pen pen = new Pen(Color.Black))
+                {
+                    e.Graphics.DrawRectangle(pen, adjustedBounds);
+                }
+
+                e.Handled = true;
+            }
+        }
+
+
+
+        private void SetDataGridViewColumnsReadOnly()
+        {
+            // Set all columns to read-only
+            foreach (DataGridViewColumn column in this.dataGridView1.Columns)
+            {
+                column.ReadOnly = true;
+            }
+
+            // Set 'Quantity' column to editable
+            this.dataGridView1.Columns["Column3"].ReadOnly = false; // Assuming 'Quantity' is Column3
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+           
+            if (e.ColumnIndex == 3)
+            {
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                int quantity;
+                decimal price;
+
+               
+                if (int.TryParse(row.Cells[3].Value.ToString(), out quantity) &&
+                    decimal.TryParse(row.Cells[2].Value.ToString(), out price))
+                {
+                    
+                    row.Cells[4].Value = quantity * price;
+                    UpdateTotal();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid quantity.");
+                }
+            }
+        }
+
+        private void AddRemoveButtonColumn()
+        {
+            DataGridViewButtonColumn removeButtonColumn = new DataGridViewButtonColumn();
+            removeButtonColumn.Name = "Remove";
+            removeButtonColumn.HeaderText = "";
+            removeButtonColumn.Text = "Remove";
+            removeButtonColumn.UseColumnTextForButtonValue = true;
+            removeButtonColumn.Width = 50;
+            dataGridView1.Columns.Insert(0, removeButtonColumn);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex >= 0) // Assuming the remove button column is at index 0
+            {
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+                UpdateTotal();
+            }
         }
 
         public void loadform(object form)
@@ -50,14 +176,20 @@ namespace WandererCup
 
         private void UpdateTotal()
         {
-            int sum = 0;
-            for (int row = 0; row < dataGridView1.Rows.Count; row++)
+            decimal sum = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                sum += Convert.ToInt32(dataGridView1.Rows[row].Cells[3].Value);
+                if (row.Cells[4].Value != null)
+                {
+                    sum += Convert.ToDecimal(row.Cells[4].Value);
+                }
             }
 
-            textBox1.Text = sum.ToString();
+            CultureInfo philippinesCulture = new CultureInfo("en-PH");
+            textBox1.Text = sum.ToString("C", philippinesCulture);
         }
+
+
 
         private void AddItem(ComboBox comboBox, TextBox textBox)
         {
@@ -72,7 +204,7 @@ namespace WandererCup
                 if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
                 {
                     int total = quantity * selectedItem.Price;
-                    dataGridView1.Rows.Add(selectedItem.Name, selectedItem.Price, quantity, total);
+                    dataGridView1.Rows.Add(null, selectedItem.Name, selectedItem.Price, quantity, total);
                 }
                 else if (quantity == 0)
                 {
@@ -84,6 +216,7 @@ namespace WandererCup
                 }
             }
         }
+
 
         private void ResetTextBox(TextBox textBox)
         {
@@ -378,6 +511,16 @@ namespace WandererCup
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ICEDCOFFEEtextbox_TextChanged(object sender, EventArgs e)
         {
 
         }
