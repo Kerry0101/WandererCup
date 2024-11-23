@@ -30,22 +30,22 @@ namespace WandererCup
 
         private void InitializeComboBoxes()
         {
-            comboBoxCoffeeDrinks.Items.AddRange(new object[]
+            ICEDCOFFEEdropdown.Items.AddRange(new object[]
             {
                 new { Name = "Mocha Latte", Price = 150 },
                 new { Name = "Brewed Coffee", Price = 180 },
                 new { Name = "Cappuccino", Price = 165 }
             });
 
-            comboBoxAddOns.Items.AddRange(new object[]
+            MILKdropdown.Items.AddRange(new object[]
             {
                 new { Name = "Sugar", Price = 8 },
                 new { Name = "Coffee Mate", Price = 10 },
                 new { Name = "Creamer", Price = 8 }
             });
 
-            comboBoxCoffeeDrinks.DisplayMember = "Name";
-            comboBoxAddOns.DisplayMember = "Name";
+            ICEDCOFFEEdropdown.DisplayMember = "Name";
+            MILKdropdown.DisplayMember = "Name";
         }
 
         private void UpdateTotal()
@@ -92,21 +92,21 @@ namespace WandererCup
 
         private void comboBoxCoffeeDrinks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ResetTextBox(textBoxCoffeeDrinks);
+            ResetTextBox(ICEDCOFFEEtextbox);
         }
 
         private void comboBoxAddOns_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ResetTextBox(textBoxAddOns);
+            ResetTextBox(MILKtextbox);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddItem(comboBoxCoffeeDrinks, textBoxCoffeeDrinks);
-            AddItem(comboBoxAddOns, textBoxAddOns);
+            AddItem(ICEDCOFFEEdropdown, ICEDCOFFEEtextbox);
+            AddItem(MILKdropdown, MILKtextbox);
             UpdateTotal();
-            ResetTextBox(textBoxCoffeeDrinks);
-            ResetTextBox(textBoxAddOns);
+            ResetTextBox(ICEDCOFFEEtextbox);
+            ResetTextBox(MILKtextbox);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -372,5 +372,14 @@ namespace WandererCup
 
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -29,7 +29,6 @@
             this.AddProductsButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
@@ -37,19 +36,21 @@
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
             this.pictureBox38 = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.pictureBox52 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxCoffeeDrinks = new System.Windows.Forms.TextBox();
-            this.comboBoxCoffeeDrinks = new System.Windows.Forms.ComboBox();
+            this.ICEDCOFFEEtextbox = new System.Windows.Forms.TextBox();
+            this.ICEDCOFFEEdropdown = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxAddOns = new System.Windows.Forms.ComboBox();
-            this.textBoxAddOns = new System.Windows.Forms.TextBox();
+            this.MILKdropdown = new System.Windows.Forms.ComboBox();
+            this.MILKtextbox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +100,14 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SODAdropdown = new System.Windows.Forms.ComboBox();
+            this.SODAtextbox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,8 +117,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).BeginInit();
             this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -157,6 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -328,7 +340,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.Label7);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -344,24 +355,12 @@
             this.Label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(958, -4);
+            this.Label7.Location = new System.Drawing.Point(991, -4);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(25, 24);
             this.Label7.TabIndex = 3;
             this.Label7.Text = "🗕";
             this.Label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(985, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 24);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "🗖";
-            this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // label6
             // 
@@ -432,6 +431,7 @@
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.pictureBox52);
             this.mainPanel.Controls.Add(this.pictureBox22);
             this.mainPanel.Controls.Add(this.pictureBox43);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -440,6 +440,17 @@
             this.mainPanel.Size = new System.Drawing.Size(1043, 604);
             this.mainPanel.TabIndex = 81;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // pictureBox52
+            // 
+            this.pictureBox52.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox52.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox52.Location = new System.Drawing.Point(754, 301);
+            this.pictureBox52.Name = "pictureBox52";
+            this.pictureBox52.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox52.TabIndex = 192;
+            this.pictureBox52.TabStop = false;
             // 
             // pictureBox22
             // 
@@ -464,12 +475,26 @@
             this.pictureBox43.TabStop = false;
             this.pictureBox43.Click += new System.EventHandler(this.pictureBox43_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.Location = new System.Drawing.Point(274, 226);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(300, 97);
+            this.groupBox3.TabIndex = 192;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "MATCHA SERIES";
+            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Black;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(725, 359);
+            this.textBox1.Location = new System.Drawing.Point(725, 541);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(97, 22);
@@ -480,7 +505,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(722, 340);
+            this.label2.Location = new System.Drawing.Point(722, 522);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 146;
@@ -490,7 +515,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(722, 302);
+            this.button1.Location = new System.Drawing.Point(722, 484);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 31);
             this.button1.TabIndex = 144;
@@ -500,17 +525,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Tan;
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBoxCoffeeDrinks);
-            this.groupBox1.Controls.Add(this.comboBoxCoffeeDrinks);
+            this.groupBox1.Controls.Add(this.ICEDCOFFEEtextbox);
+            this.groupBox1.Controls.Add(this.ICEDCOFFEEdropdown);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(274, 143);
+            this.groupBox1.Location = new System.Drawing.Point(274, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(300, 120);
+            this.groupBox1.Size = new System.Drawing.Size(300, 97);
             this.groupBox1.TabIndex = 141;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Coffee Drinks";
+            this.groupBox1.Text = "ICED COFFEE";
             // 
             // label3
             // 
@@ -522,37 +547,37 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Amount :";
             // 
-            // textBoxCoffeeDrinks
+            // ICEDCOFFEEtextbox
             // 
-            this.textBoxCoffeeDrinks.Location = new System.Drawing.Point(71, 58);
-            this.textBoxCoffeeDrinks.Name = "textBoxCoffeeDrinks";
-            this.textBoxCoffeeDrinks.Size = new System.Drawing.Size(45, 22);
-            this.textBoxCoffeeDrinks.TabIndex = 2;
-            this.textBoxCoffeeDrinks.Text = "0";
+            this.ICEDCOFFEEtextbox.Location = new System.Drawing.Point(71, 58);
+            this.ICEDCOFFEEtextbox.Name = "ICEDCOFFEEtextbox";
+            this.ICEDCOFFEEtextbox.Size = new System.Drawing.Size(45, 22);
+            this.ICEDCOFFEEtextbox.TabIndex = 2;
+            this.ICEDCOFFEEtextbox.Text = "0";
             // 
-            // comboBoxCoffeeDrinks
+            // ICEDCOFFEEdropdown
             // 
-            this.comboBoxCoffeeDrinks.BackColor = System.Drawing.SystemColors.Window;
-            this.comboBoxCoffeeDrinks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCoffeeDrinks.FormattingEnabled = true;
-            this.comboBoxCoffeeDrinks.Location = new System.Drawing.Point(16, 31);
-            this.comboBoxCoffeeDrinks.Name = "comboBoxCoffeeDrinks";
-            this.comboBoxCoffeeDrinks.Size = new System.Drawing.Size(220, 24);
-            this.comboBoxCoffeeDrinks.TabIndex = 0;
+            this.ICEDCOFFEEdropdown.BackColor = System.Drawing.SystemColors.Window;
+            this.ICEDCOFFEEdropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ICEDCOFFEEdropdown.FormattingEnabled = true;
+            this.ICEDCOFFEEdropdown.Location = new System.Drawing.Point(16, 28);
+            this.ICEDCOFFEEdropdown.Name = "ICEDCOFFEEdropdown";
+            this.ICEDCOFFEEdropdown.Size = new System.Drawing.Size(220, 24);
+            this.ICEDCOFFEEdropdown.TabIndex = 0;
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Tan;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.comboBoxAddOns);
-            this.groupBox2.Controls.Add(this.textBoxAddOns);
+            this.groupBox2.Controls.Add(this.MILKdropdown);
+            this.groupBox2.Controls.Add(this.MILKtextbox);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(618, 143);
+            this.groupBox2.Location = new System.Drawing.Point(587, 120);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(300, 120);
+            this.groupBox2.Size = new System.Drawing.Size(300, 97);
             this.groupBox2.TabIndex = 142;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Add-Ons";
+            this.groupBox2.Text = "MILK SERIES";
             // 
             // label4
             // 
@@ -564,37 +589,38 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Amount :";
             // 
-            // comboBoxAddOns
+            // MILKdropdown
             // 
-            this.comboBoxAddOns.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAddOns.FormattingEnabled = true;
-            this.comboBoxAddOns.Location = new System.Drawing.Point(16, 31);
-            this.comboBoxAddOns.Name = "comboBoxAddOns";
-            this.comboBoxAddOns.Size = new System.Drawing.Size(220, 24);
-            this.comboBoxAddOns.TabIndex = 0;
+            this.MILKdropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MILKdropdown.FormattingEnabled = true;
+            this.MILKdropdown.Location = new System.Drawing.Point(16, 28);
+            this.MILKdropdown.Name = "MILKdropdown";
+            this.MILKdropdown.Size = new System.Drawing.Size(220, 24);
+            this.MILKdropdown.TabIndex = 0;
             // 
-            // textBoxAddOns
+            // MILKtextbox
             // 
-            this.textBoxAddOns.Location = new System.Drawing.Point(71, 59);
-            this.textBoxAddOns.Name = "textBoxAddOns";
-            this.textBoxAddOns.Size = new System.Drawing.Size(45, 22);
-            this.textBoxAddOns.TabIndex = 1;
-            this.textBoxAddOns.Text = "0";
+            this.MILKtextbox.Location = new System.Drawing.Point(71, 59);
+            this.MILKtextbox.Name = "MILKtextbox";
+            this.MILKtextbox.Size = new System.Drawing.Size(45, 22);
+            this.MILKtextbox.TabIndex = 1;
+            this.MILKtextbox.Text = "0";
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Tan;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(274, 302);
+            this.dataGridView1.Location = new System.Drawing.Point(274, 381);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(442, 200);
             this.dataGridView1.TabIndex = 143;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Column1
             // 
@@ -1122,16 +1148,94 @@
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.White;
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.SODAtextbox);
+            this.groupBox4.Controls.Add(this.SODAdropdown);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.groupBox4.Location = new System.Drawing.Point(587, 226);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(300, 97);
+            this.groupBox4.TabIndex = 193;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "SODA";
+            // 
+            // SODAdropdown
+            // 
+            this.SODAdropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SODAdropdown.FormattingEnabled = true;
+            this.SODAdropdown.Location = new System.Drawing.Point(16, 28);
+            this.SODAdropdown.Name = "SODAdropdown";
+            this.SODAdropdown.Size = new System.Drawing.Size(220, 24);
+            this.SODAdropdown.TabIndex = 0;
+            // 
+            // SODAtextbox
+            // 
+            this.SODAtextbox.Location = new System.Drawing.Point(71, 59);
+            this.SODAtextbox.Name = "SODAtextbox";
+            this.SODAtextbox.Size = new System.Drawing.Size(45, 22);
+            this.SODAtextbox.TabIndex = 1;
+            this.SODAtextbox.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 61);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 16);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Amount :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 16);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Amount :";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(71, 59);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(45, 22);
+            this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "0";
+            // 
+            // mySqlCommand1
+            // 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(16, 28);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(220, 24);
+            this.comboBox1.TabIndex = 13;
+            // 
             // Index_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(1043, 604);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.pictureBox30);
             this.Controls.Add(this.pictureBox34);
             this.Controls.Add(this.pictureBox36);
@@ -1169,7 +1273,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox10);
@@ -1202,8 +1305,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox38)).EndInit();
             this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -1253,6 +1359,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1278,7 +1386,6 @@
         private System.Windows.Forms.PictureBox pictureBox38;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Label7;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.TextBox textBox1;
@@ -1286,12 +1393,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCoffeeDrinks;
-        private System.Windows.Forms.ComboBox comboBoxCoffeeDrinks;
+        private System.Windows.Forms.TextBox ICEDCOFFEEtextbox;
+        private System.Windows.Forms.ComboBox ICEDCOFFEEdropdown;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBoxAddOns;
-        private System.Windows.Forms.TextBox textBoxAddOns;
+        private System.Windows.Forms.ComboBox MILKdropdown;
+        private System.Windows.Forms.TextBox MILKtextbox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -1344,5 +1451,15 @@
         private System.Windows.Forms.PictureBox pictureBox43;
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.Button SalesReportButton;
+        private System.Windows.Forms.PictureBox pictureBox52;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox SODAdropdown;
+        private System.Windows.Forms.TextBox SODAtextbox;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

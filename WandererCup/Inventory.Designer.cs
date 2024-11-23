@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.Label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -130,7 +129,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.Label7);
-            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -144,23 +142,12 @@
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(958, -4);
+            this.Label7.Location = new System.Drawing.Point(991, -4);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(25, 24);
             this.Label7.TabIndex = 3;
             this.Label7.Text = "🗕";
             this.Label7.Click += new System.EventHandler(this.Label7_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(985, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 24);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "🗖";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -842,7 +829,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Label7;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Panel panel1;
