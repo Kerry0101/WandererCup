@@ -12,9 +12,32 @@ namespace WandererCup
 {
     public partial class Inventory : Form
     {
+
+        private Point mouseLocation;
+
         public Inventory()
         {
             InitializeComponent();
+            panel2.MouseDown += new MouseEventHandler(Panel2_MouseDown);
+            panel2.MouseMove += new MouseEventHandler(Panel2_MouseMove);
+        }
+
+        private void Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseLocation = new Point(-e.X, -e.Y);
+            }
+        }
+
+        private void Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(mouseLocation.X, mouseLocation.Y);
+                this.Location = mousePos;
+            }
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -47,6 +70,86 @@ namespace WandererCup
         private void Label7_Click(object sender, EventArgs e)
         {
             Index_form.ActiveForm.WindowState = FormWindowState.Minimized;
+        }
+
+        private void buttonSidebar3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox41_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox45_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox40_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InventoryMainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

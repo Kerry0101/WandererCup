@@ -44,7 +44,22 @@ namespace WandererCup
             }
             dataGridView1.Columns["Column3"].ReadOnly = false;
 
+            panelCategories.BackColor = ColorTranslator.FromHtml("#C5A880");
 
+        }
+
+        AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+
+        private void AddNewProductButton_Click(object sender, EventArgs e)
+        {
+            
+            var addProductsForm = new AddProducts();
+
+            
+            addProductsForm.Show();
+
+            
+            this.Hide();
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -160,6 +175,17 @@ namespace WandererCup
             {
                 new { Name = "Mocha Latte", Price = 150 },
                 new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
+                new { Name = "Brewed Coffee", Price = 180 },
                 new { Name = "Cappuccino", Price = 165 }
             });
 
@@ -172,6 +198,59 @@ namespace WandererCup
 
             ICEDCOFFEEdropdown.DisplayMember = "Name";
             MILKdropdown.DisplayMember = "Name";
+
+            // Set MaxDropDownItems to a reasonable number
+            ICEDCOFFEEdropdown.MaxDropDownItems = 10;
+            MILKdropdown.MaxDropDownItems = 10;
+
+            // Handle the DropDown event to adjust the size
+            ICEDCOFFEEdropdown.DropDown += ComboBox_DropDown;
+            MILKdropdown.DropDown += ComboBox_DropDown;
+
+            // Apply auto-complete settings to all ComboBoxes
+            ApplyAutoCompleteSettings(this);
+        }
+        private void ApplyAutoCompleteSettings(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is ComboBox comboBox)
+                {
+                    comboBox.DropDownStyle = ComboBoxStyle.DropDown;
+                    comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                }
+                else if (control.HasChildren)
+                {
+                    ApplyAutoCompleteSettings(control);
+                }
+            }
+        }
+
+        private AutoCompleteStringCollection GetAutoCompleteCollection(ComboBox comboBox)
+        {
+            AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
+            foreach (var item in comboBox.Items)
+            {
+                collection.Add(((dynamic)item).Name);
+            }
+            return collection;
+        }
+
+        private void ComboBox_DropDown(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            int itemCount = comboBox.Items.Count;
+            int maxDropDownItems = comboBox.MaxDropDownItems;
+
+            if (itemCount > maxDropDownItems)
+            {
+                comboBox.DropDownHeight = comboBox.ItemHeight * maxDropDownItems;
+            }
+            else
+            {
+                comboBox.DropDownHeight = comboBox.ItemHeight * itemCount;
+            }
         }
 
         private void UpdateTotal()
@@ -521,6 +600,16 @@ namespace WandererCup
         }
 
         private void ICEDCOFFEEtextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ICEDCOFFEEdropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
