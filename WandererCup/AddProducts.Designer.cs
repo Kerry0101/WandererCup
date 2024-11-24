@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.Label();
+            this.panelSidebar = new System.Windows.Forms.Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.SalesReportButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HistoryButton = new System.Windows.Forms.Button();
             this.StatusButton = new System.Windows.Forms.Button();
             this.AddProductsButton = new System.Windows.Forms.Button();
             this.PosButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
-            this.panelSidebar = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
@@ -83,9 +83,9 @@
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -173,6 +173,143 @@
             this.panel1.Size = new System.Drawing.Size(1043, 604);
             this.panel1.TabIndex = 0;
             // 
+            // panelSidebar
+            // 
+            this.panelSidebar.BackColor = System.Drawing.Color.Tan;
+            this.panelSidebar.Controls.Add(this.guna2Panel1);
+            this.panelSidebar.Controls.Add(this.SalesReportButton);
+            this.panelSidebar.Controls.Add(this.LogoutButton);
+            this.panelSidebar.Controls.Add(this.pictureBox1);
+            this.panelSidebar.Controls.Add(this.HistoryButton);
+            this.panelSidebar.Controls.Add(this.StatusButton);
+            this.panelSidebar.Controls.Add(this.AddProductsButton);
+            this.panelSidebar.Controls.Add(this.PosButton);
+            this.panelSidebar.Controls.Add(this.InventoryButton);
+            this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSidebar.Location = new System.Drawing.Point(0, 25);
+            this.panelSidebar.Name = "panelSidebar";
+            this.panelSidebar.Size = new System.Drawing.Size(200, 579);
+            this.panelSidebar.TabIndex = 13;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Panel1.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel1.Location = new System.Drawing.Point(198, -14);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
+            this.guna2Panel1.TabIndex = 12;
+            // 
+            // SalesReportButton
+            // 
+            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
+            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SalesReportButton.FlatAppearance.BorderSize = 0;
+            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
+            this.SalesReportButton.Name = "SalesReportButton";
+            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
+            this.SalesReportButton.TabIndex = 13;
+            this.SalesReportButton.Text = "Sales Report";
+            this.SalesReportButton.UseVisualStyleBackColor = false;
+            // 
+            // LogoutButton
+            // 
+            this.LogoutButton.BackColor = System.Drawing.Color.BurlyWood;
+            this.LogoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LogoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.LogoutButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.LogoutButton.Location = new System.Drawing.Point(12, 478);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.Size = new System.Drawing.Size(175, 35);
+            this.LogoutButton.TabIndex = 11;
+            this.LogoutButton.Text = "Log Out";
+            this.LogoutButton.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // HistoryButton
+            // 
+            this.HistoryButton.BackColor = System.Drawing.Color.Tan;
+            this.HistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.HistoryButton.FlatAppearance.BorderSize = 0;
+            this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HistoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.HistoryButton.Location = new System.Drawing.Point(0, 321);
+            this.HistoryButton.Name = "HistoryButton";
+            this.HistoryButton.Size = new System.Drawing.Size(199, 42);
+            this.HistoryButton.TabIndex = 11;
+            this.HistoryButton.Text = "Order History";
+            this.HistoryButton.UseVisualStyleBackColor = false;
+            // 
+            // StatusButton
+            // 
+            this.StatusButton.BackColor = System.Drawing.Color.Tan;
+            this.StatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.StatusButton.FlatAppearance.BorderSize = 0;
+            this.StatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StatusButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.StatusButton.Location = new System.Drawing.Point(0, 281);
+            this.StatusButton.Name = "StatusButton";
+            this.StatusButton.Size = new System.Drawing.Size(199, 42);
+            this.StatusButton.TabIndex = 11;
+            this.StatusButton.Text = "Order Status";
+            this.StatusButton.UseVisualStyleBackColor = false;
+            // 
+            // AddProductsButton
+            // 
+            this.AddProductsButton.BackColor = System.Drawing.Color.Tan;
+            this.AddProductsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.AddProductsButton.FlatAppearance.BorderSize = 0;
+            this.AddProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddProductsButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.AddProductsButton.Location = new System.Drawing.Point(0, 242);
+            this.AddProductsButton.Name = "AddProductsButton";
+            this.AddProductsButton.Size = new System.Drawing.Size(199, 42);
+            this.AddProductsButton.TabIndex = 2;
+            this.AddProductsButton.Text = "Manage Products";
+            this.AddProductsButton.UseVisualStyleBackColor = false;
+            // 
+            // PosButton
+            // 
+            this.PosButton.BackColor = System.Drawing.Color.Tan;
+            this.PosButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PosButton.FlatAppearance.BorderSize = 0;
+            this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PosButton.Location = new System.Drawing.Point(0, 165);
+            this.PosButton.Name = "PosButton";
+            this.PosButton.Size = new System.Drawing.Size(199, 42);
+            this.PosButton.TabIndex = 0;
+            this.PosButton.Text = "Point of Sales";
+            this.PosButton.UseVisualStyleBackColor = false;
+            // 
+            // InventoryButton
+            // 
+            this.InventoryButton.BackColor = System.Drawing.Color.Tan;
+            this.InventoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.InventoryButton.Location = new System.Drawing.Point(0, 203);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(199, 42);
+            this.InventoryButton.TabIndex = 1;
+            this.InventoryButton.Text = "Manage Inventory";
+            this.InventoryButton.UseVisualStyleBackColor = false;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -219,143 +356,6 @@
             this.CloseButton.Text = "X";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // SalesReportButton
-            // 
-            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
-            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SalesReportButton.FlatAppearance.BorderSize = 0;
-            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
-            this.SalesReportButton.Name = "SalesReportButton";
-            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
-            this.SalesReportButton.TabIndex = 13;
-            this.SalesReportButton.Text = "Sales Report";
-            this.SalesReportButton.UseVisualStyleBackColor = false;
-            // 
-            // LogoutButton
-            // 
-            this.LogoutButton.BackColor = System.Drawing.Color.BurlyWood;
-            this.LogoutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.LogoutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.LogoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.LogoutButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.LogoutButton.Location = new System.Drawing.Point(12, 478);
-            this.LogoutButton.Name = "LogoutButton";
-            this.LogoutButton.Size = new System.Drawing.Size(175, 35);
-            this.LogoutButton.TabIndex = 11;
-            this.LogoutButton.Text = "Log Out";
-            this.LogoutButton.UseVisualStyleBackColor = false;
-            // 
-            // HistoryButton
-            // 
-            this.HistoryButton.BackColor = System.Drawing.Color.Tan;
-            this.HistoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.HistoryButton.FlatAppearance.BorderSize = 0;
-            this.HistoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.HistoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.HistoryButton.Location = new System.Drawing.Point(0, 321);
-            this.HistoryButton.Name = "HistoryButton";
-            this.HistoryButton.Size = new System.Drawing.Size(199, 42);
-            this.HistoryButton.TabIndex = 11;
-            this.HistoryButton.Text = "Order History";
-            this.HistoryButton.UseVisualStyleBackColor = false;
-            // 
-            // StatusButton
-            // 
-            this.StatusButton.BackColor = System.Drawing.Color.Tan;
-            this.StatusButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.StatusButton.FlatAppearance.BorderSize = 0;
-            this.StatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StatusButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.StatusButton.Location = new System.Drawing.Point(0, 281);
-            this.StatusButton.Name = "StatusButton";
-            this.StatusButton.Size = new System.Drawing.Size(199, 42);
-            this.StatusButton.TabIndex = 11;
-            this.StatusButton.Text = "Order Status";
-            this.StatusButton.UseVisualStyleBackColor = false;
-            // 
-            // AddProductsButton
-            // 
-            this.AddProductsButton.BackColor = System.Drawing.Color.Tan;
-            this.AddProductsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.AddProductsButton.FlatAppearance.BorderSize = 0;
-            this.AddProductsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddProductsButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.AddProductsButton.Location = new System.Drawing.Point(0, 242);
-            this.AddProductsButton.Name = "AddProductsButton";
-            this.AddProductsButton.Size = new System.Drawing.Size(199, 42);
-            this.AddProductsButton.TabIndex = 2;
-            this.AddProductsButton.Text = "Add Products";
-            this.AddProductsButton.UseVisualStyleBackColor = false;
-            // 
-            // PosButton
-            // 
-            this.PosButton.BackColor = System.Drawing.Color.Tan;
-            this.PosButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PosButton.FlatAppearance.BorderSize = 0;
-            this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PosButton.Location = new System.Drawing.Point(0, 165);
-            this.PosButton.Name = "PosButton";
-            this.PosButton.Size = new System.Drawing.Size(199, 42);
-            this.PosButton.TabIndex = 0;
-            this.PosButton.Text = "Point of Sales";
-            this.PosButton.UseVisualStyleBackColor = false;
-            // 
-            // InventoryButton
-            // 
-            this.InventoryButton.BackColor = System.Drawing.Color.Tan;
-            this.InventoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.InventoryButton.FlatAppearance.BorderSize = 0;
-            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.InventoryButton.Location = new System.Drawing.Point(0, 203);
-            this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(199, 42);
-            this.InventoryButton.TabIndex = 1;
-            this.InventoryButton.Text = "Inventory";
-            this.InventoryButton.UseVisualStyleBackColor = false;
-            // 
-            // panelSidebar
-            // 
-            this.panelSidebar.BackColor = System.Drawing.Color.Tan;
-            this.panelSidebar.Controls.Add(this.guna2Panel1);
-            this.panelSidebar.Controls.Add(this.SalesReportButton);
-            this.panelSidebar.Controls.Add(this.LogoutButton);
-            this.panelSidebar.Controls.Add(this.pictureBox1);
-            this.panelSidebar.Controls.Add(this.HistoryButton);
-            this.panelSidebar.Controls.Add(this.StatusButton);
-            this.panelSidebar.Controls.Add(this.AddProductsButton);
-            this.panelSidebar.Controls.Add(this.PosButton);
-            this.panelSidebar.Controls.Add(this.InventoryButton);
-            this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSidebar.Location = new System.Drawing.Point(0, 25);
-            this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(200, 579);
-            this.panelSidebar.TabIndex = 13;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(198, -14);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
-            this.guna2Panel1.TabIndex = 12;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -371,11 +371,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("NSimSun", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 22);
+            this.label1.Location = new System.Drawing.Point(236, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(440, 33);
+            this.label1.Size = new System.Drawing.Size(372, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Wanderer Cup Add Products";
+            this.label1.Text = "Wanderer Cup Products";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox17
@@ -797,10 +797,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProducts";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();

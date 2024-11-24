@@ -81,6 +81,7 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.SalesReportButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
@@ -192,6 +193,7 @@
             // panelSidebar
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.Tan;
+            this.panelSidebar.Controls.Add(this.SalesReportButton);
             this.panelSidebar.Controls.Add(this.button2);
             this.panelSidebar.Controls.Add(this.guna2Panel1);
             this.panelSidebar.Controls.Add(this.pictureBox1);
@@ -252,7 +254,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(199, 42);
             this.button4.TabIndex = 11;
-            this.button4.Text = "Sidebar Button 5";
+            this.button4.Text = "Order History";
             this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -266,7 +268,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(199, 42);
             this.button3.TabIndex = 11;
-            this.button3.Text = "Sidebar Button 4";
+            this.button3.Text = "Order Status";
             this.button3.UseVisualStyleBackColor = false;
             // 
             // buttonSidebar3
@@ -280,7 +282,7 @@
             this.buttonSidebar3.Name = "buttonSidebar3";
             this.buttonSidebar3.Size = new System.Drawing.Size(199, 42);
             this.buttonSidebar3.TabIndex = 2;
-            this.buttonSidebar3.Text = "Sidebar Button 3";
+            this.buttonSidebar3.Text = "Manage Products";
             this.buttonSidebar3.UseVisualStyleBackColor = false;
             this.buttonSidebar3.Click += new System.EventHandler(this.buttonSidebar3_Click);
             // 
@@ -309,7 +311,7 @@
             this.InventoryButton.Name = "InventoryButton";
             this.InventoryButton.Size = new System.Drawing.Size(199, 42);
             this.InventoryButton.TabIndex = 1;
-            this.InventoryButton.Text = "Inventory";
+            this.InventoryButton.Text = "Manage Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
             // 
             // InventoryMainPanel
@@ -778,6 +780,20 @@
             this.pictureBox13.TabIndex = 223;
             this.pictureBox13.TabStop = false;
             // 
+            // SalesReportButton
+            // 
+            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
+            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SalesReportButton.FlatAppearance.BorderSize = 0;
+            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
+            this.SalesReportButton.Name = "SalesReportButton";
+            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
+            this.SalesReportButton.TabIndex = 14;
+            this.SalesReportButton.Text = "Sales Report";
+            this.SalesReportButton.UseVisualStyleBackColor = false;
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -896,5 +912,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button SalesReportButton;
     }
 }

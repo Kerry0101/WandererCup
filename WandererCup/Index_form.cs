@@ -46,19 +46,21 @@ namespace WandererCup
 
             panelCategories.BackColor = ColorTranslator.FromHtml("#C5A880");
 
+            
+
         }
 
         AutoCompleteStringCollection collection = new AutoCompleteStringCollection();
 
         private void AddNewProductButton_Click(object sender, EventArgs e)
         {
-            
+
             var addProductsForm = new AddProducts();
 
-            
+
             addProductsForm.Show();
 
-            
+
             this.Hide();
         }
 
@@ -112,18 +114,18 @@ namespace WandererCup
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
+
             if (e.ColumnIndex == 3)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 int quantity;
                 decimal price;
 
-               
+
                 if (int.TryParse(row.Cells[3].Value.ToString(), out quantity) &&
                     decimal.TryParse(row.Cells[2].Value.ToString(), out price))
                 {
-                    
+
                     row.Cells[4].Value = quantity * price;
                     UpdateTotal();
                 }
@@ -343,7 +345,15 @@ namespace WandererCup
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            foreach (Control control in panelSidebar.Controls)
+            {
+                if (control is Button button)
+                {
+                    button.BackColor = Color.Tan;
+                }
+            }
 
+            HighlightActiveButton(PosButton);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -363,8 +373,13 @@ namespace WandererCup
 
         private void buttonSidebar3_Click(object sender, EventArgs e)
         {
-
+            var addroducts = new AddProducts();
+            addroducts.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            addroducts.Show();
+            HighlightActiveButton((Button)sender);
         }
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -398,7 +413,7 @@ namespace WandererCup
 
         private void label5_Click(object sender, EventArgs e)
         {
-            this.Close();   
+            this.Close();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -406,12 +421,29 @@ namespace WandererCup
 
         }
 
+        private void HighlightActiveButton(Button activeButton)
+        {
+            // Reset all sidebar buttons to default color
+            foreach (Control control in panelSidebar.Controls)
+            {
+                if (control is Button button)
+                {
+                    button.BackColor = Color.Tan; // Default color
+                }
+            }
+
+            // Set the active button color to dark brown
+            activeButton.BackColor = ColorTranslator.FromHtml("#C19A6B");
+        }
+
+
         private void buttonSidebar1_Click(object sender, EventArgs e)
         {
             var posForm = new Index_form();
             posForm.FormClosed += (s, args) => Application.Exit();
             this.Hide();
             posForm.Show();
+            HighlightActiveButton((Button)sender); // Highlight the active button
         }
         private void InventoryButton_Click(object sender, EventArgs e)
         {
@@ -419,6 +451,7 @@ namespace WandererCup
             inventory.FormClosed += (s, args) => Application.Exit();
             this.Hide();
             inventory.Show();
+            HighlightActiveButton((Button)sender); // Highlight the active button
         }
 
 

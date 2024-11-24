@@ -12,7 +12,6 @@ namespace WandererCup
 {
     public partial class Inventory : Form
     {
-
         private Point mouseLocation;
 
         public Inventory()
@@ -47,7 +46,21 @@ namespace WandererCup
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            HighlightActiveButton(InventoryButton);
+        }
 
+        private void HighlightActiveButton(Button activeButton)
+        {
+            // Reset all sidebar buttons to default color
+            foreach (Control control in panelSidebar.Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.BackColor = Color.Tan; // Default color
+                }
+            }
+            // Implementation for highlighting the active button
+            activeButton.BackColor = ColorTranslator.FromHtml("#C19A6B");
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
