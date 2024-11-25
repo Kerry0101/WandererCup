@@ -44,6 +44,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Removeitemsbtn = new System.Windows.Forms.Button();
+            this.Updateitemsbtn = new System.Windows.Forms.Button();
+            this.Additemsbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
@@ -87,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -295,6 +300,7 @@
             this.PosButton.TabIndex = 0;
             this.PosButton.Text = "Point of Sales";
             this.PosButton.UseVisualStyleBackColor = false;
+            this.PosButton.Click += new System.EventHandler(this.PosButton_Click);
             // 
             // InventoryButton
             // 
@@ -361,17 +367,64 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Tan;
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(198, 25);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(845, 80);
             this.panel3.TabIndex = 14;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Removeitemsbtn);
+            this.panel4.Controls.Add(this.Updateitemsbtn);
+            this.panel4.Controls.Add(this.Additemsbtn);
+            this.panel4.Location = new System.Drawing.Point(2, 58);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(260, 24);
+            this.panel4.TabIndex = 1;
+            // 
+            // Removeitemsbtn
+            // 
+            this.Removeitemsbtn.BackColor = System.Drawing.Color.Tan;
+            this.Removeitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Removeitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
+            this.Removeitemsbtn.Location = new System.Drawing.Point(164, 0);
+            this.Removeitemsbtn.Name = "Removeitemsbtn";
+            this.Removeitemsbtn.Size = new System.Drawing.Size(94, 22);
+            this.Removeitemsbtn.TabIndex = 3;
+            this.Removeitemsbtn.Text = "Remove Items";
+            this.Removeitemsbtn.UseVisualStyleBackColor = false;
+            // 
+            // Updateitemsbtn
+            // 
+            this.Updateitemsbtn.BackColor = System.Drawing.Color.Tan;
+            this.Updateitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Updateitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
+            this.Updateitemsbtn.Location = new System.Drawing.Point(74, 0);
+            this.Updateitemsbtn.Name = "Updateitemsbtn";
+            this.Updateitemsbtn.Size = new System.Drawing.Size(91, 22);
+            this.Updateitemsbtn.TabIndex = 2;
+            this.Updateitemsbtn.Text = "Update Items";
+            this.Updateitemsbtn.UseVisualStyleBackColor = false;
+            // 
+            // Additemsbtn
+            // 
+            this.Additemsbtn.BackColor = System.Drawing.Color.Tan;
+            this.Additemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Additemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Additemsbtn.Location = new System.Drawing.Point(0, 0);
+            this.Additemsbtn.Name = "Additemsbtn";
+            this.Additemsbtn.Size = new System.Drawing.Size(75, 22);
+            this.Additemsbtn.TabIndex = 0;
+            this.Additemsbtn.Text = "Add Items";
+            this.Additemsbtn.UseVisualStyleBackColor = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("NSimSun", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(236, 22);
+            this.label1.Location = new System.Drawing.Point(236, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 33);
             this.label1.TabIndex = 0;
@@ -796,6 +849,7 @@
             this.Name = "AddProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddProducts";
+            this.Load += new System.EventHandler(this.AddProducts_Load);
             this.panel1.ResumeLayout(false);
             this.panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -803,6 +857,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -900,5 +955,9 @@
         private System.Windows.Forms.PictureBox pictureBox45;
         private System.Windows.Forms.PictureBox pictureBox46;
         private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button Additemsbtn;
+        private System.Windows.Forms.Button Updateitemsbtn;
+        private System.Windows.Forms.Button Removeitemsbtn;
     }
 }
