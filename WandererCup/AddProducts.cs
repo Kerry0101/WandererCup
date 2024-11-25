@@ -12,9 +12,29 @@ namespace WandererCup
 {
     public partial class AddProducts : Form
     {
+        private Point mouseLocation;
         public AddProducts()
         {
             InitializeComponent();
+            panel2.MouseDown += new MouseEventHandler(Panel2_MouseDown);
+            panel2.MouseMove += new MouseEventHandler(Panel2_MouseMove);
+        }
+        private void Panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseLocation = new Point(-e.X, -e.Y);
+            }
+        }
+
+        private void Panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(mouseLocation.X, mouseLocation.Y);
+                this.Location = mousePos;
+            }
         }
 
         private void Label7_Click(object sender, EventArgs e)
@@ -29,25 +49,49 @@ namespace WandererCup
 
         private void PosButton_Click(object sender, EventArgs e)
         {
-
+            var posForm = new Index_form();
+            posForm.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            posForm.Show();
+            HighlightActiveButton((Button)sender);
         }
 
         private void AddProducts_Load(object sender, EventArgs e)
         {
-            Color tanColor = Color.Tan;
-
+            HighlightActiveButton(AddProductsButton);
+            HighlightActiveButton(Additemsbtn);
+        }
+        private void HighlightActiveButton(Button activeButton)
+        {
+            // Reset all sidebar buttons to default color
             foreach (Control control in panel4.Controls)
             {
-                if (control is Button button)
+                if (control is Button btn)
                 {
-                    button.BackColor = ColorTranslator.FromHtml("#E6B325");
+                    btn.BackColor = Color.Tan; // Default color
                 }
             }
+            // Implementation for highlighting the active button
+            activeButton.BackColor = ColorTranslator.FromHtml("#C19A6B");
+        }
 
-            // Assuming the buttons are named AddItemsButton, UpdateItemsButton, and RemoveItemsButton
-            Additemsbtn.BackColor = tanColor;
-            Updateitemsbtn.BackColor = tanColor;
-            Removeitemsbtn.BackColor = tanColor;
+        private void AddProductsButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Additemsbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InventoryButton_Click(object sender, EventArgs e)
+        {
+            var inventory = new Inventory();
+            inventory.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            inventory.Show();
+            HighlightActiveButton((Button)sender); // Highlight the active button
         }
     }
 }

@@ -286,6 +286,7 @@
             this.AddProductsButton.TabIndex = 2;
             this.AddProductsButton.Text = "Manage Products";
             this.AddProductsButton.UseVisualStyleBackColor = false;
+            this.AddProductsButton.Click += new System.EventHandler(this.AddProductsButton_Click);
             // 
             // PosButton
             // 
@@ -315,6 +316,7 @@
             this.InventoryButton.TabIndex = 1;
             this.InventoryButton.Text = "Manage Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // panel2
             // 
@@ -391,7 +393,7 @@
             this.Removeitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.Removeitemsbtn.Location = new System.Drawing.Point(164, 0);
             this.Removeitemsbtn.Name = "Removeitemsbtn";
-            this.Removeitemsbtn.Size = new System.Drawing.Size(94, 22);
+            this.Removeitemsbtn.Size = new System.Drawing.Size(96, 22);
             this.Removeitemsbtn.TabIndex = 3;
             this.Removeitemsbtn.Text = "Remove Items";
             this.Removeitemsbtn.UseVisualStyleBackColor = false;
@@ -419,6 +421,7 @@
             this.Additemsbtn.TabIndex = 0;
             this.Additemsbtn.Text = "Add Items";
             this.Additemsbtn.UseVisualStyleBackColor = false;
+            this.Additemsbtn.Click += new System.EventHandler(this.Additemsbtn_Click);
             // 
             // label1
             // 

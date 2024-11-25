@@ -87,7 +87,11 @@ namespace WandererCup
 
         private void buttonSidebar3_Click(object sender, EventArgs e)
         {
-
+            var addroducts = new AddProducts();
+            addroducts.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            addroducts.Show();
+            HighlightActiveButton((Button)sender);
         }
 
         private void pictureBox46_Click(object sender, EventArgs e)
@@ -163,6 +167,20 @@ namespace WandererCup
         private void InventoryMainPanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void InventoryButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PosButton_Click(object sender, EventArgs e)
+        {
+            var posForm = new Index_form();
+            posForm.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            posForm.Show();
+            HighlightActiveButton((Button)sender);
         }
     }
 }

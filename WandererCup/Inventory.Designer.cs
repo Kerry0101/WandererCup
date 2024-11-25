@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSidebar = new System.Windows.Forms.Panel();
+            this.SalesReportButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -81,7 +82,6 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.SalesReportButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
@@ -208,6 +208,20 @@
             this.panelSidebar.Size = new System.Drawing.Size(200, 579);
             this.panelSidebar.TabIndex = 14;
             // 
+            // SalesReportButton
+            // 
+            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
+            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SalesReportButton.FlatAppearance.BorderSize = 0;
+            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
+            this.SalesReportButton.Name = "SalesReportButton";
+            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
+            this.SalesReportButton.TabIndex = 14;
+            this.SalesReportButton.Text = "Sales Report";
+            this.SalesReportButton.UseVisualStyleBackColor = false;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.BurlyWood;
@@ -299,6 +313,7 @@
             this.PosButton.TabIndex = 0;
             this.PosButton.Text = "Point of Sales";
             this.PosButton.UseVisualStyleBackColor = false;
+            this.PosButton.Click += new System.EventHandler(this.PosButton_Click);
             // 
             // InventoryButton
             // 
@@ -313,6 +328,7 @@
             this.InventoryButton.TabIndex = 1;
             this.InventoryButton.Text = "Manage Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // InventoryMainPanel
             // 
@@ -779,20 +795,6 @@
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 223;
             this.pictureBox13.TabStop = false;
-            // 
-            // SalesReportButton
-            // 
-            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
-            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SalesReportButton.FlatAppearance.BorderSize = 0;
-            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
-            this.SalesReportButton.Name = "SalesReportButton";
-            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
-            this.SalesReportButton.TabIndex = 14;
-            this.SalesReportButton.Text = "Sales Report";
-            this.SalesReportButton.UseVisualStyleBackColor = false;
             // 
             // Inventory
             // 

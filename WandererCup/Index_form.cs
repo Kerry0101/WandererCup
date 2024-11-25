@@ -56,12 +56,10 @@ namespace WandererCup
         {
 
             var addProductsForm = new AddProducts();
-
-
-            addProductsForm.Show();
-
-
+            addProductsForm.FormClosed += (s, args) => Application.Exit();
             this.Hide();
+            addProductsForm.Show();
+            HighlightActiveButton((Button)sender);
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -439,11 +437,7 @@ namespace WandererCup
 
         private void buttonSidebar1_Click(object sender, EventArgs e)
         {
-            var posForm = new Index_form();
-            posForm.FormClosed += (s, args) => Application.Exit();
-            this.Hide();
-            posForm.Show();
-            HighlightActiveButton((Button)sender); // Highlight the active button
+
         }
         private void InventoryButton_Click(object sender, EventArgs e)
         {
