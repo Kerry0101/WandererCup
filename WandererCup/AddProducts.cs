@@ -83,6 +83,11 @@ namespace WandererCup
         private void Additemsbtn_Click(object sender, EventArgs e)
         {
 
+            var addProductsForm = new AddProducts();
+            addProductsForm.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            addProductsForm.Show();
+            HighlightActiveButton((Button)sender);
         }
 
         private void InventoryButton_Click(object sender, EventArgs e)
@@ -92,6 +97,37 @@ namespace WandererCup
             this.Hide();
             inventory.Show();
             HighlightActiveButton((Button)sender); // Highlight the active button
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Updateitemsbtn_Click(object sender, EventArgs e)
+        {
+            // Check if UpdateItems form is already present in panel5
+            if (panel5.Controls.OfType<UpdateItems>().Any())
+            {
+                return; // Do nothing if UpdateItems form is already present
+            }
+            var updateItemsForm = new UpdateItems();
+            updateItemsForm.TopLevel = false;
+            updateItemsForm.Dock = DockStyle.Fill;
+            panel5.Controls.Clear(); // Clear any existing controls in panel5
+            panel5.Controls.Add(updateItemsForm);
+            updateItemsForm.Show();
+            HighlightActiveButton((Button)sender);
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
