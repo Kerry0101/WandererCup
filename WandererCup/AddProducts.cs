@@ -129,5 +129,21 @@ namespace WandererCup
         {
 
         }
+
+        private void Removeitemsbtn_Click(object sender, EventArgs e)
+        {
+            // Check if UpdateItems form is already present in panel5
+            if (panel5.Controls.OfType<RemoveItems>().Any())
+            {
+                return; // Do nothing if UpdateItems form is already present
+            }
+            var removeItemsForm = new RemoveItems();
+            removeItemsForm.TopLevel = false;
+            removeItemsForm.Dock = DockStyle.Fill;
+            panel5.Controls.Clear(); // Clear any existing controls in panel5
+            panel5.Controls.Add(removeItemsForm);
+            removeItemsForm.Show();
+            HighlightActiveButton((Button)sender);
+        }
     }
 }

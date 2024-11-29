@@ -49,7 +49,6 @@
             this.PosButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
@@ -71,14 +70,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -101,7 +105,7 @@
             this.panel4.Controls.Add(this.Additemsbtn);
             this.panel4.Location = new System.Drawing.Point(2, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 24);
+            this.panel4.Size = new System.Drawing.Size(328, 24);
             this.panel4.TabIndex = 1;
             // 
             // UserControlPanel
@@ -116,23 +120,24 @@
             this.Removeitemsbtn.BackColor = System.Drawing.Color.Tan;
             this.Removeitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Removeitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
-            this.Removeitemsbtn.Location = new System.Drawing.Point(164, 0);
+            this.Removeitemsbtn.Location = new System.Drawing.Point(205, 0);
             this.Removeitemsbtn.Name = "Removeitemsbtn";
-            this.Removeitemsbtn.Size = new System.Drawing.Size(96, 22);
+            this.Removeitemsbtn.Size = new System.Drawing.Size(120, 22);
             this.Removeitemsbtn.TabIndex = 3;
-            this.Removeitemsbtn.Text = "Remove Items";
+            this.Removeitemsbtn.Text = "Remove Products";
             this.Removeitemsbtn.UseVisualStyleBackColor = false;
+            this.Removeitemsbtn.Click += new System.EventHandler(this.Removeitemsbtn_Click);
             // 
             // Updateitemsbtn
             // 
             this.Updateitemsbtn.BackColor = System.Drawing.Color.Tan;
             this.Updateitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Updateitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
-            this.Updateitemsbtn.Location = new System.Drawing.Point(74, 0);
+            this.Updateitemsbtn.Location = new System.Drawing.Point(97, 0);
             this.Updateitemsbtn.Name = "Updateitemsbtn";
-            this.Updateitemsbtn.Size = new System.Drawing.Size(91, 22);
+            this.Updateitemsbtn.Size = new System.Drawing.Size(108, 22);
             this.Updateitemsbtn.TabIndex = 2;
-            this.Updateitemsbtn.Text = "Update Items";
+            this.Updateitemsbtn.Text = "Update Products";
             this.Updateitemsbtn.UseVisualStyleBackColor = false;
             this.Updateitemsbtn.Click += new System.EventHandler(this.Updateitemsbtn_Click);
             // 
@@ -143,9 +148,9 @@
             this.Additemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Additemsbtn.Location = new System.Drawing.Point(0, 0);
             this.Additemsbtn.Name = "Additemsbtn";
-            this.Additemsbtn.Size = new System.Drawing.Size(75, 22);
+            this.Additemsbtn.Size = new System.Drawing.Size(97, 22);
             this.Additemsbtn.TabIndex = 0;
-            this.Additemsbtn.Text = "Add Items";
+            this.Additemsbtn.Text = "Add Products";
             this.Additemsbtn.UseVisualStyleBackColor = false;
             this.Additemsbtn.Click += new System.EventHandler(this.Additemsbtn_Click);
             // 
@@ -347,19 +352,12 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.guna2Button2);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.comboBox2);
+            this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.guna2Panel2);
             this.panel5.Controls.Add(this.guna2Panel11);
             this.panel5.Controls.Add(this.guna2Panel9);
@@ -389,7 +387,7 @@
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel2.BackColor = System.Drawing.Color.BurlyWood;
-            this.guna2Panel2.Location = new System.Drawing.Point(6, 5);
+            this.guna2Panel2.Location = new System.Drawing.Point(4, 5);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(10, 488);
             this.guna2Panel2.TabIndex = 81;
@@ -399,7 +397,7 @@
             this.guna2Panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel11.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel11.Location = new System.Drawing.Point(4, 4);
+            this.guna2Panel11.Location = new System.Drawing.Point(2, 4);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(12, 491);
             this.guna2Panel11.TabIndex = 80;
@@ -409,7 +407,7 @@
             this.guna2Panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel9.BackColor = System.Drawing.Color.Tan;
-            this.guna2Panel9.Location = new System.Drawing.Point(-21, 495);
+            this.guna2Panel9.Location = new System.Drawing.Point(-23, 495);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(858, 10);
             this.guna2Panel9.TabIndex = 79;
@@ -419,7 +417,7 @@
             this.guna2Panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel10.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel10.Location = new System.Drawing.Point(6, 493);
+            this.guna2Panel10.Location = new System.Drawing.Point(4, 493);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(831, 10);
             this.guna2Panel10.TabIndex = 78;
@@ -431,7 +429,7 @@
             this.guna2Panel5.BackColor = System.Drawing.Color.Tan;
             this.guna2Panel5.Controls.Add(this.guna2Panel7);
             this.guna2Panel5.Controls.Add(this.guna2Panel8);
-            this.guna2Panel5.Location = new System.Drawing.Point(7, -6);
+            this.guna2Panel5.Location = new System.Drawing.Point(5, -6);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(831, 10);
             this.guna2Panel5.TabIndex = 77;
@@ -461,7 +459,7 @@
             this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel6.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel6.Location = new System.Drawing.Point(6, -5);
+            this.guna2Panel6.Location = new System.Drawing.Point(4, -5);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(831, 10);
             this.guna2Panel6.TabIndex = 76;
@@ -471,7 +469,7 @@
             this.guna2Panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel3.BackColor = System.Drawing.Color.BurlyWood;
-            this.guna2Panel3.Location = new System.Drawing.Point(827, 3);
+            this.guna2Panel3.Location = new System.Drawing.Point(825, 3);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(10, 491);
             this.guna2Panel3.TabIndex = 75;
@@ -481,7 +479,7 @@
             this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel4.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel4.Location = new System.Drawing.Point(829, 3);
+            this.guna2Panel4.Location = new System.Drawing.Point(827, 3);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(10, 491);
             this.guna2Panel4.TabIndex = 74;
@@ -528,11 +526,11 @@
             this.guna2Button1.FillColor = System.Drawing.Color.DarkGoldenrod;
             this.guna2Button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(351, 426);
+            this.guna2Button1.Location = new System.Drawing.Point(201, 420);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(123, 40);
             this.guna2Button1.TabIndex = 71;
-            this.guna2Button1.Text = "Add Item";
+            this.guna2Button1.Text = "Add Product";
             // 
             // PriceTextbox
             // 
@@ -633,6 +631,68 @@
             this.label8.TabIndex = 64;
             this.label8.Text = "Add New Product";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 21;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.guna2Button2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(470, 199);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(143, 40);
+            this.guna2Button2.TabIndex = 85;
+            this.guna2Button2.Text = "Add Category";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(428, 114);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 16);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "Category";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.comboBox2.ForeColor = System.Drawing.Color.Black;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "ICED COFFEE",
+            "MILK SERIES",
+            "MATCHA SERIES",
+            "SODA"});
+            this.comboBox2.Location = new System.Drawing.Point(446, 133);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(213, 24);
+            this.comboBox2.TabIndex = 83;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(481, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(136, 16);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "Add New Category";
+            // 
             // AddProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,10 +712,10 @@
             this.panel2.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -704,5 +764,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label10;
     }
 }

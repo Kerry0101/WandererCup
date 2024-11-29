@@ -1,6 +1,6 @@
 ﻿namespace WandererCup
 {
-    partial class UpdateItems
+    partial class RemoveItems
     {
         /// <summary>
         /// Required designer variable.
@@ -48,10 +48,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             this.StockQuantityTexbox.SelectedText = "";
             this.StockQuantityTexbox.Size = new System.Drawing.Size(213, 35);
             this.StockQuantityTexbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.StockQuantityTexbox.TabIndex = 58;
+            this.StockQuantityTexbox.TabIndex = 76;
             // 
             // label5
             // 
@@ -84,7 +84,7 @@
             this.label5.Location = new System.Drawing.Point(144, 333);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 16);
-            this.label5.TabIndex = 57;
+            this.label5.TabIndex = 75;
             this.label5.Text = "Stock Quantity";
             // 
             // guna2Panel9
@@ -95,7 +95,7 @@
             this.guna2Panel9.Location = new System.Drawing.Point(4, 495);
             this.guna2Panel9.Name = "guna2Panel9";
             this.guna2Panel9.Size = new System.Drawing.Size(831, 10);
-            this.guna2Panel9.TabIndex = 56;
+            this.guna2Panel9.TabIndex = 74;
             // 
             // guna2Panel10
             // 
@@ -105,7 +105,7 @@
             this.guna2Panel10.Location = new System.Drawing.Point(4, 493);
             this.guna2Panel10.Name = "guna2Panel10";
             this.guna2Panel10.Size = new System.Drawing.Size(831, 10);
-            this.guna2Panel10.TabIndex = 55;
+            this.guna2Panel10.TabIndex = 73;
             // 
             // guna2Panel5
             // 
@@ -117,7 +117,7 @@
             this.guna2Panel5.Location = new System.Drawing.Point(5, -6);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(831, 10);
-            this.guna2Panel5.TabIndex = 54;
+            this.guna2Panel5.TabIndex = 72;
             // 
             // guna2Panel7
             // 
@@ -147,7 +147,7 @@
             this.guna2Panel6.Location = new System.Drawing.Point(4, -5);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(831, 10);
-            this.guna2Panel6.TabIndex = 53;
+            this.guna2Panel6.TabIndex = 71;
             // 
             // guna2Panel3
             // 
@@ -157,7 +157,7 @@
             this.guna2Panel3.Location = new System.Drawing.Point(825, 3);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(10, 491);
-            this.guna2Panel3.TabIndex = 52;
+            this.guna2Panel3.TabIndex = 70;
             // 
             // guna2Panel4
             // 
@@ -167,27 +167,27 @@
             this.guna2Panel4.Location = new System.Drawing.Point(827, 3);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(10, 491);
-            this.guna2Panel4.TabIndex = 51;
+            this.guna2Panel4.TabIndex = 69;
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel2.BackColor = System.Drawing.Color.BurlyWood;
-            this.guna2Panel2.Location = new System.Drawing.Point(4, 3);
+            this.guna2Panel2.Location = new System.Drawing.Point(4, 2);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(10, 495);
-            this.guna2Panel2.TabIndex = 50;
+            this.guna2Panel2.TabIndex = 68;
             // 
             // guna2Panel11
             // 
             this.guna2Panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel11.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel11.Location = new System.Drawing.Point(2, 4);
+            this.guna2Panel11.Location = new System.Drawing.Point(2, 3);
             this.guna2Panel11.Name = "guna2Panel11";
             this.guna2Panel11.Size = new System.Drawing.Size(12, 491);
-            this.guna2Panel11.TabIndex = 49;
+            this.guna2Panel11.TabIndex = 67;
             // 
             // guna2Button1
             // 
@@ -202,8 +202,8 @@
             this.guna2Button1.Location = new System.Drawing.Point(201, 420);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(123, 40);
-            this.guna2Button1.TabIndex = 48;
-            this.guna2Button1.Text = "Update";
+            this.guna2Button1.TabIndex = 66;
+            this.guna2Button1.Text = "Remove";
             // 
             // PriceTextbox
             // 
@@ -225,7 +225,7 @@
             this.PriceTextbox.SelectedText = "";
             this.PriceTextbox.Size = new System.Drawing.Size(213, 35);
             this.PriceTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.PriceTextbox.TabIndex = 47;
+            this.PriceTextbox.TabIndex = 65;
             // 
             // ItemNameTextbox
             // 
@@ -247,7 +247,7 @@
             this.ItemNameTextbox.SelectedText = "";
             this.ItemNameTextbox.Size = new System.Drawing.Size(213, 35);
             this.ItemNameTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.ItemNameTextbox.TabIndex = 46;
+            this.ItemNameTextbox.TabIndex = 64;
             // 
             // CategoryCombobox
             // 
@@ -262,7 +262,7 @@
             this.CategoryCombobox.Location = new System.Drawing.Point(162, 133);
             this.CategoryCombobox.Name = "CategoryCombobox";
             this.CategoryCombobox.Size = new System.Drawing.Size(213, 24);
-            this.CategoryCombobox.TabIndex = 45;
+            this.CategoryCombobox.TabIndex = 63;
             // 
             // label4
             // 
@@ -271,7 +271,7 @@
             this.label4.Location = new System.Drawing.Point(144, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 16);
-            this.label4.TabIndex = 44;
+            this.label4.TabIndex = 62;
             this.label4.Text = "Price";
             // 
             // label3
@@ -281,7 +281,7 @@
             this.label3.Location = new System.Drawing.Point(144, 180);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 16);
-            this.label3.TabIndex = 43;
+            this.label3.TabIndex = 61;
             this.label3.Text = "Product Name";
             // 
             // label2
@@ -291,7 +291,7 @@
             this.label2.Location = new System.Drawing.Point(144, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 42;
+            this.label2.TabIndex = 60;
             this.label2.Text = "Category";
             // 
             // label8
@@ -300,36 +300,19 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.label8.Location = new System.Drawing.Point(254, 47);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 16);
-            this.label8.TabIndex = 41;
-            this.label8.Text = "Update Product";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+            this.label8.Size = new System.Drawing.Size(122, 16);
+            this.label8.TabIndex = 59;
+            this.label8.Text = "Remove Product";
             // 
-            // guna2Button2
+            // label1
             // 
-            this.guna2Button2.BorderRadius = 21;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.DarkGoldenrod;
-            this.guna2Button2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(470, 199);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(143, 40);
-            this.guna2Button2.TabIndex = 85;
-            this.guna2Button2.Text = "Update Category";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(428, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 16);
-            this.label6.TabIndex = 84;
-            this.label6.Text = "Category";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(481, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.TabIndex = 77;
+            this.label1.Text = "Remove Category";
             // 
             // comboBox2
             // 
@@ -344,19 +327,35 @@
             this.comboBox2.Location = new System.Drawing.Point(446, 133);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(213, 24);
-            this.comboBox2.TabIndex = 83;
+            this.comboBox2.TabIndex = 79;
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(481, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 16);
-            this.label1.TabIndex = 82;
-            this.label1.Text = "Update Category";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(428, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 16);
+            this.label6.TabIndex = 80;
+            this.label6.Text = "Category";
             // 
-            // UpdateItems
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 21;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.DarkGoldenrod;
+            this.guna2Button2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(470, 199);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(143, 40);
+            this.guna2Button2.TabIndex = 81;
+            this.guna2Button2.Text = "Remove Category";
+            // 
+            // RemoveItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -385,9 +384,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "UpdateItems";
-            this.Text = "UpdateItems";
-            this.Load += new System.EventHandler(this.UpdateItems_Load);
+            this.Name = "RemoveItems";
+            this.Text = "RemoveItems";
+            this.Load += new System.EventHandler(this.RemoveItems_Load);
             this.guna2Panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -416,9 +415,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
