@@ -70,11 +70,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,14 +103,14 @@
             this.panel4.Controls.Add(this.Removeitemsbtn);
             this.panel4.Controls.Add(this.Updateitemsbtn);
             this.panel4.Controls.Add(this.Additemsbtn);
-            this.panel4.Location = new System.Drawing.Point(2, 58);
+            this.panel4.Location = new System.Drawing.Point(2, 52);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(328, 24);
+            this.panel4.Size = new System.Drawing.Size(328, 30);
             this.panel4.TabIndex = 1;
             // 
             // UserControlPanel
             // 
-            this.UserControlPanel.Location = new System.Drawing.Point(0, 22);
+            this.UserControlPanel.Location = new System.Drawing.Point(0, 29);
             this.UserControlPanel.Name = "UserControlPanel";
             this.UserControlPanel.Size = new System.Drawing.Size(843, 499);
             this.UserControlPanel.TabIndex = 266;
@@ -122,7 +122,7 @@
             this.Removeitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.Removeitemsbtn.Location = new System.Drawing.Point(205, 0);
             this.Removeitemsbtn.Name = "Removeitemsbtn";
-            this.Removeitemsbtn.Size = new System.Drawing.Size(120, 22);
+            this.Removeitemsbtn.Size = new System.Drawing.Size(120, 28);
             this.Removeitemsbtn.TabIndex = 3;
             this.Removeitemsbtn.Text = "Remove Products";
             this.Removeitemsbtn.UseVisualStyleBackColor = false;
@@ -135,7 +135,7 @@
             this.Updateitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
             this.Updateitemsbtn.Location = new System.Drawing.Point(97, 0);
             this.Updateitemsbtn.Name = "Updateitemsbtn";
-            this.Updateitemsbtn.Size = new System.Drawing.Size(108, 22);
+            this.Updateitemsbtn.Size = new System.Drawing.Size(108, 28);
             this.Updateitemsbtn.TabIndex = 2;
             this.Updateitemsbtn.Text = "Update Products";
             this.Updateitemsbtn.UseVisualStyleBackColor = false;
@@ -148,7 +148,7 @@
             this.Additemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Additemsbtn.Location = new System.Drawing.Point(0, 0);
             this.Additemsbtn.Name = "Additemsbtn";
-            this.Additemsbtn.Size = new System.Drawing.Size(97, 22);
+            this.Additemsbtn.Size = new System.Drawing.Size(97, 28);
             this.Additemsbtn.TabIndex = 0;
             this.Additemsbtn.Text = "Add Products";
             this.Additemsbtn.UseVisualStyleBackColor = false;
@@ -631,17 +631,6 @@
             this.label8.TabIndex = 64;
             this.label8.Text = "Add New Product";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // guna2Button2
             // 
             this.guna2Button2.BorderRadius = 21;
@@ -692,6 +681,17 @@
             this.label10.Size = new System.Drawing.Size(136, 16);
             this.label10.TabIndex = 82;
             this.label10.Text = "Add New Category";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // AddProducts
             // 
