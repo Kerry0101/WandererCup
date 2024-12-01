@@ -19,9 +19,17 @@ namespace WandererCup
         {
             InitializeComponent();
             LoadItems();
+            CustomizeDataGridView();
             guna2TextBox1.TextChanged += Guna2TextBox1_TextChanged;
         }
 
+        private void CustomizeDataGridView()
+        {
+            guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView1.GridColor = Color.Black;
+            guna2DataGridView2.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView2.GridColor = Color.Black;
+        }
         private void LoadItems()
         {
             // Create a DataTable with the required columns

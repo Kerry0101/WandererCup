@@ -18,6 +18,7 @@ namespace WandererCup
             InitializeComponent();
             LoadItems();
             guna2TextBox1.TextChanged += Guna2TextBox1_TextChanged;
+            CustomizeDataGridView();
         }
 
         private void LoadItems()
@@ -37,6 +38,7 @@ namespace WandererCup
             itemsTable.Rows.Add("Berry", "Elderberry", "4.00", "75");
             itemsTable.Rows.Add("Fruit", "Fig", "2.50", "120");
             itemsTable.Rows.Add("Fruit", "Grape", "2.00", "180");
+            itemsTable.Rows.Add("Berries", "Blue Berry", "5.00", "200");
 
             // Bind the DataTable to the DataGridView
             guna2DataGridView1.DataSource = itemsTable;
@@ -50,7 +52,13 @@ namespace WandererCup
             guna2DataGridView1.DataSource = dv.ToTable();
         }
 
-
+        private void CustomizeDataGridView()
+        {
+            guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView1.GridColor = Color.Black;
+            guna2DataGridView2.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView2.GridColor = Color.Black;
+        }
 
         private void RemoveItems_Load(object sender, EventArgs e)
         {

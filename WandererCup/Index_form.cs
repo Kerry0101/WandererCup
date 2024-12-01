@@ -449,17 +449,7 @@ namespace WandererCup
         }
 
 
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -639,6 +629,15 @@ namespace WandererCup
         private void ICEDCOFFEEdropdown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void StatusButton_Click(object sender, EventArgs e)
+        {
+            var orderStatus = new OrderStatus();
+            orderStatus.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderStatus.Show();
+            HighlightActiveButton((Button)sender);
         }
     }
 }
