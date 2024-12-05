@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 namespace WandererCup
 {
     public partial class Index_form : Form
@@ -297,6 +299,125 @@ namespace WandererCup
         }
 
 
+
+        private string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+        }
+
+        private List<string> FetchCategoriesFromDatabase()
+        {
+            List<string> categories = new List<string>();
+            string connectionString = GetConnectionString();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = "SELECT CategoryName FROM Category"; // Adjust the query as per your database schema
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                categories.Add(reader.GetString("CategoryName"));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return categories;
+        }
+
+
+        private void AddDynamicCategoriesToPanel()
+        {
+            List<string> categories = FetchCategoriesFromDatabase();
+            int xOffset = 12; // Initial horizontal offset
+            int yOffset = 220; // Initial vertical offset
+            int columnCount = 0; // To keep track of the current column
+
+            foreach (string category in categories)
+            {
+                GroupBox groupBox = new GroupBox
+                {
+                    Text = category.ToUpper(),
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                    Size = new Size(300, 97),
+                    Location = new Point(xOffset, yOffset),
+                    BackColor = Color.White
+                };
+
+                ComboBox comboBox = new ComboBox
+                {
+                    DropDownStyle = ComboBoxStyle.DropDownList,
+                    Location = new Point(16, 28),
+                    Size = new Size(220, 24)
+                };
+
+                TextBox textBox = new TextBox
+                {
+                    Location = new Point(72, 59),
+                    Size = new Size(45, 22),
+                    Text = "0"
+                };
+
+                Label label = new Label
+                {
+                    Text = "Amount:",
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular),
+                    Location = new Point(13, 61)
+                };
+
+                groupBox.Controls.Add(comboBox);
+                groupBox.Controls.Add(textBox);
+                groupBox.Controls.Add(label);
+
+                panelCategories.Controls.Add(groupBox);
+
+                columnCount++;
+                if (columnCount % 2 == 0)
+                {
+                    // Move to the next row
+                    xOffset = 12;
+                    yOffset += 108; // Adjust the vertical offset for the next row
+                }
+                else
+                {
+                    // Move to the next column
+                    xOffset += 313; // Adjust the horizontal offset for the next column
+                }
+            }
+
+            // Calculate the new location for the AddNewProductButton
+            if (columnCount % 2 == 0)
+            {
+                // Even number of categories, place button in the next row
+                xOffset = 11;
+                yOffset += 0;
+            }
+            else
+            {
+                // Odd number of categories, place button in the next column
+                xOffset += 0;
+            }
+
+            // Adjust the location of the AddNewProductButton
+            AddNewProductButton.Location = new Point(xOffset, yOffset);
+            panelCategories.Controls.Add(AddNewProductButton); // Ensure the button is added to the panel
+        }
+
+
+
+
+
+
+
         private void ResetTextBox(TextBox textBox)
         {
             textBox.Text = "0";
@@ -352,6 +473,7 @@ namespace WandererCup
             }
 
             HighlightActiveButton(PosButton);
+            AddDynamicCategoriesToPanel();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
