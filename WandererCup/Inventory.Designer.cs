@@ -38,13 +38,13 @@
             this.SalesReportButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonSidebar3 = new System.Windows.Forms.Button();
             this.PosButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
             this.InventoryMainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -85,8 +85,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
-            this.InventoryMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.InventoryMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -246,6 +246,17 @@
             this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
             this.guna2Panel1.TabIndex = 12;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Tan;
@@ -273,6 +284,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Order Status";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // buttonSidebar3
             // 
@@ -363,17 +375,6 @@
             this.InventoryMainPanel.Size = new System.Drawing.Size(1043, 604);
             this.InventoryMainPanel.TabIndex = 15;
             this.InventoryMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InventoryMainPanel_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox17
             // 
@@ -816,8 +817,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
-            this.InventoryMainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.InventoryMainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

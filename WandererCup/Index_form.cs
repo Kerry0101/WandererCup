@@ -639,5 +639,15 @@ namespace WandererCup
             orderStatus.Show();
             HighlightActiveButton((Button)sender);
         }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

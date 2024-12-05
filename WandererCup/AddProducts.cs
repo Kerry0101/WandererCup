@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace WandererCup
 {
@@ -18,6 +20,25 @@ namespace WandererCup
             InitializeComponent();
             panel2.MouseDown += new MouseEventHandler(Panel2_MouseDown);
             panel2.MouseMove += new MouseEventHandler(Panel2_MouseMove);
+
+            // Ensure event handlers are attached only once
+            if (!IsEventHandlerAttached(guna2Button1, guna2Button1_Click))
+            {
+                guna2Button1.Click += new EventHandler(guna2Button1_Click);
+            }
+
+            if (!IsEventHandlerAttached(guna2Button2, guna2Button2_Click))
+            {
+                guna2Button2.Click += new EventHandler(guna2Button2_Click);
+            }
+        }
+        private bool IsEventHandlerAttached(Control control, EventHandler handler)
+        {
+            var fieldInfo = typeof(Control).GetField("EventClick", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
+            var eventHandlerList = (EventHandlerList)typeof(Control).GetProperty("Events", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(control, null);
+            var clickEvent = fieldInfo.GetValue(null);
+            var handlers = eventHandlerList[clickEvent];
+            return handlers != null && handlers.GetInvocationList().Contains(handler);
         }
         private void Panel2_MouseDown(object sender, MouseEventArgs e)
         {
@@ -55,11 +76,43 @@ namespace WandererCup
             posForm.Show();
             HighlightActiveButton((Button)sender);
         }
+        private List<string> GetCategories()
+        {
+            List<string> categories = new List<string>();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CategoryName FROM Category";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                categories.Add(reader.GetString("CategoryName"));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return categories;
+        }
 
         private void AddProducts_Load(object sender, EventArgs e)
         {
             HighlightActiveButton(AddProductsButton);
             HighlightActiveButton(Additemsbtn);
+
+            var categories = GetCategories();
+            CategoryCombobox.Items.Clear();
+            CategoryCombobox.Items.AddRange(categories.ToArray());
         }
         private void HighlightActiveButton(Button activeButton)
         {
@@ -147,6 +200,192 @@ namespace WandererCup
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void StatusButton_Click(object sender, EventArgs e)
+        {
+            var orderStatus = new OrderStatus();
+            orderStatus.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderStatus.Show();
+            HighlightActiveButton((Button)sender);
+        }
+
+        private void StockQuantityTexbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemNameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private int GetCategoryIdByName(string categoryName)
+        {
+            int categoryId = -1;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CategoryID FROM Category WHERE CategoryName = @CategoryName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                categoryId = reader.GetInt32("CategoryID");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return categoryId;
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string productName = ItemNameTextbox.Text;
+            decimal price;
+            string selectedCategory = CategoryCombobox.SelectedItem?.ToString();
+
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                MessageBox.Show("Product Name is required.");
+                return;
+            }
+
+            if (!decimal.TryParse(PriceTextbox.Text, out price))
+            {
+                MessageBox.Show("Please enter a valid price.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(selectedCategory))
+            {
+                MessageBox.Show("Please select a category.");
+                return;
+            }
+
+            int categoryId = GetCategoryIdByName(selectedCategory);
+            if (categoryId == -1)
+            {
+                MessageBox.Show("Selected category does not exist.");
+                return;
+            }
+
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Product (ProductName, Price, CategoryID) VALUES (@ProductName, @Price, @CategoryID)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        cmd.Parameters.AddWithValue("@Price", price);
+                        cmd.Parameters.AddWithValue("@CategoryID", categoryId);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Product saved successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool CategoryExists(string categoryName)
+        {
+            bool exists = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        exists = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return exists;
+        }
+
+        private void PopulateDynamicCategories()
+        {
+            var categories = GetCategories();
+            CategoryCombobox.Items.Clear();
+            CategoryCombobox.Items.AddRange(categories.ToArray());
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string categoryName = guna2TextBox1.Text;
+
+            if (string.IsNullOrWhiteSpace(categoryName))
+            {
+                MessageBox.Show("Category Name is required.");
+                return;
+            }
+
+            if (CategoryExists(categoryName))
+            {
+                MessageBox.Show("Category Name already exists. Please enter a different name.");
+                return;
+            }
+
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO Category (CategoryName) VALUES (@CategoryName)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        cmd.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Category saved successfully.");
+
+                    // Refresh the dynamic categories
+                    PopulateDynamicCategories();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void CategoryCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

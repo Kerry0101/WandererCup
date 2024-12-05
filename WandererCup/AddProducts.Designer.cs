@@ -43,7 +43,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.SalesReportButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HistoryButton = new System.Windows.Forms.Button();
             this.StatusButton = new System.Windows.Forms.Button();
             this.AddProductsButton = new System.Windows.Forms.Button();
@@ -65,8 +64,6 @@
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.StockQuantityTexbox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.PriceTextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ItemNameTextbox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -75,14 +72,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -268,17 +266,6 @@
             this.LogoutButton.Text = "Log Out";
             this.LogoutButton.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // HistoryButton
             // 
             this.HistoryButton.BackColor = System.Drawing.Color.Tan;
@@ -306,6 +293,7 @@
             this.StatusButton.TabIndex = 11;
             this.StatusButton.Text = "Order Status";
             this.StatusButton.UseVisualStyleBackColor = false;
+            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
             // 
             // AddProductsButton
             // 
@@ -378,8 +366,6 @@
             this.panel5.Controls.Add(this.guna2Panel6);
             this.panel5.Controls.Add(this.guna2Panel3);
             this.panel5.Controls.Add(this.guna2Panel4);
-            this.panel5.Controls.Add(this.StockQuantityTexbox);
-            this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.guna2Button1);
             this.panel5.Controls.Add(this.PriceTextbox);
             this.panel5.Controls.Add(this.ItemNameTextbox);
@@ -415,6 +401,7 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(213, 35);
             this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox1.TabIndex = 86;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2Button2
             // 
@@ -431,6 +418,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(143, 40);
             this.guna2Button2.TabIndex = 85;
             this.guna2Button2.Text = "Add Category";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // label9
             // 
@@ -554,38 +542,6 @@
             this.guna2Panel4.Size = new System.Drawing.Size(10, 491);
             this.guna2Panel4.TabIndex = 74;
             // 
-            // StockQuantityTexbox
-            // 
-            this.StockQuantityTexbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.StockQuantityTexbox.DefaultText = "";
-            this.StockQuantityTexbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.StockQuantityTexbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.StockQuantityTexbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StockQuantityTexbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.StockQuantityTexbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StockQuantityTexbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.StockQuantityTexbox.ForeColor = System.Drawing.Color.Black;
-            this.StockQuantityTexbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.StockQuantityTexbox.Location = new System.Drawing.Point(162, 354);
-            this.StockQuantityTexbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.StockQuantityTexbox.Name = "StockQuantityTexbox";
-            this.StockQuantityTexbox.PasswordChar = '\0';
-            this.StockQuantityTexbox.PlaceholderText = "";
-            this.StockQuantityTexbox.SelectedText = "";
-            this.StockQuantityTexbox.Size = new System.Drawing.Size(213, 35);
-            this.StockQuantityTexbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.StockQuantityTexbox.TabIndex = 73;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(144, 333);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 16);
-            this.label5.TabIndex = 72;
-            this.label5.Text = "Stock Quantity";
-            // 
             // guna2Button1
             // 
             this.guna2Button1.BorderRadius = 21;
@@ -601,6 +557,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(123, 40);
             this.guna2Button1.TabIndex = 71;
             this.guna2Button1.Text = "Add Product";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // PriceTextbox
             // 
@@ -645,21 +602,18 @@
             this.ItemNameTextbox.Size = new System.Drawing.Size(213, 35);
             this.ItemNameTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.ItemNameTextbox.TabIndex = 69;
+            this.ItemNameTextbox.TextChanged += new System.EventHandler(this.ItemNameTextbox_TextChanged);
             // 
             // CategoryCombobox
             // 
             this.CategoryCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.CategoryCombobox.ForeColor = System.Drawing.Color.Black;
             this.CategoryCombobox.FormattingEnabled = true;
-            this.CategoryCombobox.Items.AddRange(new object[] {
-            "ICED COFFEE",
-            "MILK SERIES",
-            "MATCHA SERIES",
-            "SODA"});
             this.CategoryCombobox.Location = new System.Drawing.Point(162, 133);
             this.CategoryCombobox.Name = "CategoryCombobox";
             this.CategoryCombobox.Size = new System.Drawing.Size(213, 24);
             this.CategoryCombobox.TabIndex = 68;
+            this.CategoryCombobox.SelectedIndexChanged += new System.EventHandler(this.CategoryCombobox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -701,6 +655,17 @@
             this.label8.TabIndex = 64;
             this.label8.Text = "Add New Product";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // AddProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -719,11 +684,11 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -762,8 +727,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2TextBox StockQuantityTexbox;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2TextBox PriceTextbox;
         private Guna.UI2.WinForms.Guna2TextBox ItemNameTextbox;

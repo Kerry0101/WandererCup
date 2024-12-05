@@ -182,5 +182,14 @@ namespace WandererCup
             posForm.Show();
             HighlightActiveButton((Button)sender);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var orderStatus = new OrderStatus();
+            orderStatus.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderStatus.Show();
+            HighlightActiveButton((Button)sender);
+        }
     }
 }

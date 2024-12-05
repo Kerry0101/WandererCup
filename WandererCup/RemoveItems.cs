@@ -28,17 +28,16 @@ namespace WandererCup
             itemsTable.Columns.Add("Category");
             itemsTable.Columns.Add("Product Name");
             itemsTable.Columns.Add("Price");
-            itemsTable.Columns.Add("Stock Quantity");
 
             // Add sample items
-            itemsTable.Rows.Add("Fruit", "Apple", "1.00", "100");
-            itemsTable.Rows.Add("Fruit", "Banana", "0.50", "150");
-            itemsTable.Rows.Add("Fruit", "Cherry", "2.00", "200");
-            itemsTable.Rows.Add("Fruit", "Date", "3.00", "50");
-            itemsTable.Rows.Add("Berry", "Elderberry", "4.00", "75");
-            itemsTable.Rows.Add("Fruit", "Fig", "2.50", "120");
-            itemsTable.Rows.Add("Fruit", "Grape", "2.00", "180");
-            itemsTable.Rows.Add("Berries", "Blue Berry", "5.00", "200");
+            itemsTable.Rows.Add("Fruit", "Apple", "1.00");
+            itemsTable.Rows.Add("Fruit", "Banana", "0.50");
+            itemsTable.Rows.Add("Fruit", "Cherry", "2.00");
+            itemsTable.Rows.Add("Fruit", "Date", "3.00");
+            itemsTable.Rows.Add("Berry", "Elderberry", "4.00");
+            itemsTable.Rows.Add("Fruit", "Fig", "2.50");
+            itemsTable.Rows.Add("Fruit", "Grape", "2.00");
+            itemsTable.Rows.Add("Berries", "Blue Berry", "5.00");
 
             // Bind the DataTable to the DataGridView
             guna2DataGridView1.DataSource = itemsTable;
@@ -71,6 +70,11 @@ namespace WandererCup
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
