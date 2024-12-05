@@ -13,7 +13,6 @@ namespace WandererCup
         public Index_form()
         {
             InitializeComponent();
-            InitializeComboBoxes();
             AddRemoveButtonColumn();
             SetDataGridViewColumnsReadOnly();
             dataGridView1.CellClick += dataGridView1_CellClick;
@@ -171,47 +170,7 @@ namespace WandererCup
 
         }
 
-        private void InitializeComboBoxes()
-        {
-            ICEDCOFFEEdropdown.Items.AddRange(new object[]
-            {
-                new { Name = "Mocha Latte", Price = 150 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Brewed Coffee", Price = 180 },
-                new { Name = "Cappuccino", Price = 165 }
-            });
 
-            MILKdropdown.Items.AddRange(new object[]
-            {
-                new { Name = "Sugar", Price = 8 },
-                new { Name = "Coffee Mate", Price = 10 },
-                new { Name = "Creamer", Price = 8 }
-            });
-
-            ICEDCOFFEEdropdown.DisplayMember = "Name";
-            MILKdropdown.DisplayMember = "Name";
-
-            // Set MaxDropDownItems to a reasonable number
-            ICEDCOFFEEdropdown.MaxDropDownItems = 10;
-            MILKdropdown.MaxDropDownItems = 10;
-
-            // Handle the DropDown event to adjust the size
-            ICEDCOFFEEdropdown.DropDown += ComboBox_DropDown;
-            MILKdropdown.DropDown += ComboBox_DropDown;
-
-            // Apply auto-complete settings to all ComboBoxes
-            ApplyAutoCompleteSettings(this);
-        }
         private void ApplyAutoCompleteSettings(Control parent)
         {
             foreach (Control control in parent.Controls)
@@ -335,11 +294,14 @@ namespace WandererCup
         }
 
 
+
+
+
         private void AddDynamicCategoriesToPanel()
         {
             List<string> categories = FetchCategoriesFromDatabase();
-            int xOffset = 12; // Initial horizontal offset
-            int yOffset = 220; // Initial vertical offset
+            int xOffset = 7; // Initial horizontal offset
+            int yOffset = 5; // Initial vertical offset, set to 0 to remove the empty space
             int columnCount = 0; // To keep track of the current column
 
             foreach (string category in categories)
@@ -384,7 +346,7 @@ namespace WandererCup
                 if (columnCount % 2 == 0)
                 {
                     // Move to the next row
-                    xOffset = 12;
+                    xOffset = 7;
                     yOffset += 108; // Adjust the vertical offset for the next row
                 }
                 else
@@ -398,7 +360,7 @@ namespace WandererCup
             if (columnCount % 2 == 0)
             {
                 // Even number of categories, place button in the next row
-                xOffset = 11;
+                xOffset = 7;
                 yOffset += 0;
             }
             else
@@ -416,30 +378,18 @@ namespace WandererCup
 
 
 
-
-
         private void ResetTextBox(TextBox textBox)
         {
             textBox.Text = "0";
         }
 
-        private void comboBoxCoffeeDrinks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ResetTextBox(ICEDCOFFEEtextbox);
-        }
 
-        private void comboBoxAddOns_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ResetTextBox(MILKtextbox);
-        }
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddItem(ICEDCOFFEEdropdown, ICEDCOFFEEtextbox);
-            AddItem(MILKdropdown, MILKtextbox);
-            UpdateTotal();
-            ResetTextBox(ICEDCOFFEEtextbox);
-            ResetTextBox(MILKtextbox);
+
         }
 
         private void label3_Click(object sender, EventArgs e)
