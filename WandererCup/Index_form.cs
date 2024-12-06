@@ -273,7 +273,7 @@ namespace WandererCup
                 try
                 {
                     connection.Open();
-                    string query = "SELECT CategoryName FROM Category"; // Adjust the query as per your database schema
+                    string query = "SELECT CategoryName FROM category"; // Adjust the query as per your database schema
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -285,6 +285,10 @@ namespace WandererCup
                         }
                     }
                 }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"MySQL Error: {ex.Message}");
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Error: {ex.Message}");
@@ -292,6 +296,7 @@ namespace WandererCup
             }
             return categories;
         }
+
 
 
 
@@ -319,8 +324,16 @@ namespace WandererCup
                 {
                     DropDownStyle = ComboBoxStyle.DropDownList,
                     Location = new Point(16, 28),
-                    Size = new Size(220, 24)
+                    Size = new Size(220, 24),
+                    DisplayMember = "Name"
                 };
+
+                // Fetch products for the current category and populate the ComboBox
+                List<dynamic> products = FetchProductsByCategory(category);
+                foreach (var product in products)
+                {
+                    comboBox.Items.Add(product);
+                }
 
                 TextBox textBox = new TextBox
                 {
@@ -374,6 +387,45 @@ namespace WandererCup
             panelCategories.Controls.Add(AddNewProductButton); // Ensure the button is added to the panel
         }
 
+
+
+        private List<dynamic> FetchProductsByCategory(string categoryName)
+        {
+            List<dynamic> products = new List<dynamic>();
+            string connectionString = GetConnectionString();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    string query = @"
+                SELECT p.ProductName, p.Price 
+                FROM product p
+                JOIN category c ON p.CategoryId = c.CategoryId
+                WHERE c.CategoryName = @CategoryName"; // Adjust the query as per your database schema
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@CategoryName", categoryName);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                products.Add(new { Name = reader.GetString("ProductName"), Price = reader.GetDecimal("Price") });
+                            }
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show($"MySQL Error: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return products;
+        }
 
 
 
