@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Drawing;
 using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 namespace WandererCup
@@ -10,6 +11,7 @@ namespace WandererCup
     public partial class Index_form : Form
     {
         public Point mouseLocation;
+        private Button ComputeButton;
         public Index_form()
         {
             InitializeComponent();
@@ -47,7 +49,14 @@ namespace WandererCup
 
             panelCategories.BackColor = ColorTranslator.FromHtml("#C5A880");
 
-            
+            // Initialize ComputeButton
+            ComputeButton = new Button
+            {
+                Text = "Compute",
+                Location = new Point(10, 10) // Adjust the location as needed
+            };
+            ComputeButton.Click += button1_Click;
+            this.Controls.Add(ComputeButton);
 
         }
 
@@ -441,8 +450,39 @@ namespace WandererCup
 
         private void button1_Click(object sender, EventArgs e)
         {
+            decimal overallTotal = 0;
 
+            foreach (Control control in panelCategories.Controls)
+            {
+                if (control is GroupBox groupBox)
+                {
+                    ComboBox comboBox = groupBox.Controls.OfType<ComboBox>().FirstOrDefault();
+                    TextBox textBox = groupBox.Controls.OfType<TextBox>().FirstOrDefault();
+
+                    if (comboBox != null && textBox != null && comboBox.SelectedItem != null)
+                    {
+                        dynamic selectedItem = comboBox.SelectedItem;
+                        if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
+                        {
+                            decimal price = selectedItem.Price;
+                            decimal subtotal = price * quantity;
+                            overallTotal += subtotal;
+
+                            // Add order details to dataGridView1
+                            dataGridView1.Rows.Add(null, selectedItem.Name, price, quantity, subtotal);
+                            // Reset the Amount textbox and ComboBox
+                            textBox.Text = "0";
+                            comboBox.SelectedIndex = -1;
+                        }
+                    }
+                }
+            }
+            // Update overall total in textBox1
+            CultureInfo philippinesCulture = new CultureInfo("en-PH");
+            textBox1.Text = overallTotal.ToString("C", philippinesCulture);
         }
+
+
 
         private void label3_Click(object sender, EventArgs e)
         {
