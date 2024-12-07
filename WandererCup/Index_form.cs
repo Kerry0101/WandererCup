@@ -12,6 +12,7 @@ namespace WandererCup
     {
         public Point mouseLocation;
         private Button ComputeButton;
+        private Button PlaceOrderbutton;
         public Index_form()
         {
             InitializeComponent();
@@ -57,6 +58,15 @@ namespace WandererCup
             };
             ComputeButton.Click += button1_Click;
             this.Controls.Add(ComputeButton);
+
+            // Initialize PlaceOrder_button
+            PlaceOrderbutton = new Button
+            {
+                Text = "Place Order",
+                Location = new Point(100, 10) // Adjust the location as needed
+            };
+            PlaceOrderbutton.Click += PlaceOrder_button_Click;
+            this.Controls.Add(PlaceOrderbutton);
 
         }
 
@@ -446,8 +456,6 @@ namespace WandererCup
 
 
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             decimal overallTotal = 0;
@@ -470,6 +478,7 @@ namespace WandererCup
 
                             // Add order details to dataGridView1
                             dataGridView1.Rows.Add(null, selectedItem.Name, price, quantity, subtotal);
+
                             // Reset the Amount textbox and ComboBox
                             textBox.Text = "0";
                             comboBox.SelectedIndex = -1;
@@ -813,5 +822,85 @@ namespace WandererCup
         {
 
         }
+
+
+
+        private void PlaceOrder_button_Click(object sender, EventArgs e)
+        {
+            decimal overallTotal = 0;
+            string connectionString = GetConnectionString();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                using (MySqlTransaction transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        // Insert into Order table
+                        string orderQuery = "INSERT INTO `Order` (OrderDate) VALUES (@OrderDate)";
+                        long orderId;
+                        using (MySqlCommand orderCommand = new MySqlCommand(orderQuery, connection, transaction))
+                        {
+                            orderCommand.Parameters.AddWithValue("@OrderDate", DateTime.Now);
+                            orderCommand.ExecuteNonQuery();
+                            // Get the last inserted OrderID
+                            orderId = orderCommand.LastInsertedId;
+                        }
+
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null && row.Cells[4].Value != null)
+                            {
+                                string productName = row.Cells[1].Value.ToString();
+                                decimal price = Convert.ToDecimal(row.Cells[2].Value);
+                                int quantity = Convert.ToInt32(row.Cells[3].Value);
+                                decimal subtotal = Convert.ToDecimal(row.Cells[4].Value);
+
+                                // Fetch ProductID based on ProductName
+                                string productQuery = "SELECT ProductID FROM product WHERE ProductName = @ProductName";
+                                long productId;
+                                using (MySqlCommand productCommand = new MySqlCommand(productQuery, connection, transaction))
+                                {
+                                    productCommand.Parameters.AddWithValue("@ProductName", productName);
+                                    productId = Convert.ToInt64(productCommand.ExecuteScalar());
+                                }
+
+                                // Insert into OrderDetails table
+                                string detailsQuery = "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Subtotal) VALUES (@OrderID, @ProductID, @Quantity, @Subtotal)";
+                                using (MySqlCommand detailsCommand = new MySqlCommand(detailsQuery, connection, transaction))
+                                {
+                                    detailsCommand.Parameters.AddWithValue("@OrderID", orderId);
+                                    detailsCommand.Parameters.AddWithValue("@ProductID", productId);
+                                    detailsCommand.Parameters.AddWithValue("@Quantity", quantity);
+                                    detailsCommand.Parameters.AddWithValue("@Subtotal", subtotal);
+                                    detailsCommand.ExecuteNonQuery();
+                                }
+
+                                overallTotal += subtotal;
+                            }
+                        }
+
+                        // Commit the transaction
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Rollback the transaction if an error occurs
+                        transaction.Rollback();
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
+            }
+
+            // Update overall total in textBox1
+            CultureInfo philippinesCulture = new CultureInfo("en-PH");
+            textBox1.Text = overallTotal.ToString("C", philippinesCulture);
+        }
+
+
+
+
+
     }
 }

@@ -459,6 +459,7 @@ namespace WandererCup
             this.PlaceOrder_button.TabIndex = 194;
             this.PlaceOrder_button.Text = "Place Order";
             this.PlaceOrder_button.UseVisualStyleBackColor = false;
+            this.PlaceOrder_button.Click += new System.EventHandler(this.PlaceOrder_button_Click);
             // 
             // textBox1
             // 
