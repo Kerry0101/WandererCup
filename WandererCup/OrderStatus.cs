@@ -30,6 +30,203 @@ namespace WandererCup
         //    guna2DataGridView1.GridColor = Color.Black;
         //}
 
+        private void AddDynamicOrdersToPanel()
+        {
+            List<int> orderIds = FetchOrderIdsFromDatabase();
+            int xOffset = 10; // Initial horizontal offset
+            int yOffset = 13; // Initial vertical offset
+            int columnCount = 0; // To keep track of the current column
+
+            foreach (int orderId in orderIds)
+            {
+                Panel orderPanel = new Panel
+                {
+                    BackColor = Color.Tan,
+                    BorderStyle = BorderStyle.FixedSingle,
+                    Size = new Size(258, 282),
+                    Location = new Point(xOffset, yOffset)
+                };
+
+                Label label8 = new Label
+                {
+                    AutoSize = true,
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                    Location = new Point(84, 2),
+                    Name = "label8",
+                    Size = new Size(65, 16),
+                    Text = "Order ID"
+                };
+
+                Label label10 = new Label
+                {
+                    AutoSize = true,
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                    Location = new Point(93, 21),
+                    Name = "label10",
+                    Size = new Size(15, 16),
+                    Text = "#"
+                };
+
+                Label label2 = new Label
+                {
+                    AutoSize = true,
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                    Location = new Point(106, 21),
+                    Name = "label2",
+                    Size = new Size(19, 16),
+                    Text = orderId.ToString()
+                };
+
+                DataGridView dataGridView1 = new DataGridView
+                {
+                    AllowUserToAddRows = false,
+                    AllowUserToDeleteRows = false,
+                    BackgroundColor = Color.White,
+                    BorderStyle = BorderStyle.Fixed3D,
+                    ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
+                    Location = new Point(5, 45),
+                    Name = "dataGridView1",
+                    ReadOnly = true,
+                    RowHeadersVisible = false,
+                    Size = new Size(246, 189)
+                };
+
+                Guna.UI2.WinForms.Guna2Button guna2Button2 = new Guna.UI2.WinForms.Guna2Button
+                {
+                    BorderRadius = 10,
+                    FillColor = Color.DarkGoldenrod,
+                    Font = new Font("Georgia", 9F, FontStyle.Bold),
+                    ForeColor = Color.Black,
+                    Location = new Point(54, 241),
+                    Name = "guna2Button2",
+                    Size = new Size(132, 32),
+                    Text = "Mark Complete"
+                };
+
+                PictureBox pictureBox6 = new PictureBox
+                {
+                    BackColor = Color.Tan,
+                    Image = global::WandererCup.Properties.Resources.nail,
+                    Location = new Point(241, 0),
+                    Name = "pictureBox6",
+                    Size = new Size(16, 18),
+                    SizeMode = PictureBoxSizeMode.StretchImage
+                };
+
+                PictureBox pictureBox4 = new PictureBox
+                {
+                    BackColor = Color.Tan,
+                    Image = global::WandererCup.Properties.Resources.nail__reverted_,
+                    Location = new Point(0, 0),
+                    Name = "pictureBox4",
+                    Size = new Size(16, 18),
+                    SizeMode = PictureBoxSizeMode.StretchImage
+                };
+
+                orderPanel.Controls.Add(label8);
+                orderPanel.Controls.Add(label10);
+                orderPanel.Controls.Add(label2);
+                orderPanel.Controls.Add(dataGridView1);
+                orderPanel.Controls.Add(guna2Button2);
+                orderPanel.Controls.Add(pictureBox6);
+                orderPanel.Controls.Add(pictureBox4);
+
+                panel3.Controls.Add(orderPanel);
+
+                FetchAndDisplayOrderDetails(orderId, dataGridView1);
+
+                columnCount++;
+                if (columnCount % 3 == 0)
+                {
+                    // Move to the next row
+                    xOffset = 10;
+                    yOffset += 292; // Adjust the vertical offset for the next row
+                }
+                else
+                {
+                    // Move to the next column
+                    xOffset += 268; // Adjust the horizontal offset for the next column
+                }
+            }
+
+            // Add a dummy panel to create extra space at the bottom
+            Panel dummyPanel = new Panel
+            {
+                Size = new Size(1, 1), // Adjust the height as needed
+                Location = new Point(0, yOffset + 1)
+            };
+            panel3.Controls.Add(dummyPanel);
+
+            // Ensure the layout is updated
+            panel3.PerformLayout();
+        }
+
+
+
+
+        private List<int> FetchOrderIdsFromDatabase()
+        {
+            List<int> orderIds = new List<int>();
+            try
+            {
+                string connectionString = GetConnectionString();
+                string query = "SELECT OrderID FROM `order`"; // Adjust the query as needed
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            orderIds.Add(reader.GetInt32("OrderID"));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return orderIds;
+        }
+
+        private void FetchAndDisplayOrderDetails(int orderId, DataGridView dataGridView)
+        {
+            try
+            {
+                string connectionString = GetConnectionString();
+                string query = @"
+            SELECT p.ProductName AS 'Items', od.Quantity, od.Subtotal
+            FROM orderdetails od
+            JOIN product p ON od.ProductID = p.ProductID
+            WHERE od.OrderID = @OrderID";
+
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand command = new MySqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@OrderID", orderId);
+                    connection.Open();
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    dataGridView.DataSource = dataTable;
+
+                    // Set column widths
+                    dataGridView.Columns["Items"].Width = 121;
+                    dataGridView.Columns["Quantity"].Width = 50;
+                    dataGridView.Columns["Subtotal"].Width = 70;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private new void Panel2_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -65,84 +262,12 @@ namespace WandererCup
         private void OrderStatus_Load(object sender, EventArgs e)
         {
             HighlightActiveButton(button3);
-            FetchAndDisplayOrderId();
-            int orderId = GetOrderId(); // Assuming you have a method to get the current OrderID
-            FetchAndDisplayOrderDetails(orderId);
+            AddDynamicOrdersToPanel();
         }
-        private int GetOrderId()
-        {
-            // Implement logic to get the current OrderID
-            // For example, you can fetch it from a label or a selected item
-            return int.Parse(label2.Text);
-        }
+
         private string GetConnectionString()
         {
             return ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-        }
-
-        private void FetchAndDisplayOrderDetails(int orderId)
-        {
-            try
-            {
-                string connectionString = GetConnectionString();
-                string query = @"
-            SELECT p.ProductName AS 'Items', od.Quantity, od.Subtotal
-            FROM orderdetails od
-            JOIN product p ON od.ProductID = p.ProductID
-            WHERE od.OrderID = @OrderID";
-
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@OrderID", orderId);
-                    connection.Open();
-
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
-                    adapter.Fill(dataTable);
-
-                    dataGridView1.DataSource = dataTable;
-
-                    // Set column widths
-                    dataGridView1.Columns["Items"].Width = 121;
-                    dataGridView1.Columns["Quantity"].Width = 50;
-                    dataGridView1.Columns["Subtotal"].Width = 70;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-        private void FetchAndDisplayOrderId()
-        {
-            try
-            {
-                string connectionString = GetConnectionString();
-                string query = "SELECT OrderID FROM `order` LIMIT 1"; // Adjust the query as needed
-
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    connection.Open();
-                    object result = command.ExecuteScalar();
-                    if (result != null)
-                    {
-                        label2.Text = result.ToString();
-                        label2.Location = new Point(114, 23); // Set the location to 106, 13
-                    }
-                    else
-                    {
-                        label2.Text = "No ID found";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void InventoryMainPanel_Paint(object sender, PaintEventArgs e)
@@ -223,6 +348,11 @@ namespace WandererCup
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
