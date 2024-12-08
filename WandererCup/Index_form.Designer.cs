@@ -94,7 +94,6 @@ namespace WandererCup
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
@@ -508,7 +507,6 @@ namespace WandererCup
             this.panelCategories.AutoScroll = true;
             this.panelCategories.BackColor = System.Drawing.Color.Tan;
             this.panelCategories.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCategories.Controls.Add(this.panel3);
             this.panelCategories.Controls.Add(this.AddNewProductButton);
             this.panelCategories.Location = new System.Drawing.Point(262, 109);
             this.panelCategories.Name = "panelCategories";
@@ -518,7 +516,7 @@ namespace WandererCup
             // AddNewProductButton
             // 
             this.AddNewProductButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddNewProductButton.Location = new System.Drawing.Point(11, 198);
+            this.AddNewProductButton.Location = new System.Drawing.Point(11, 213);
             this.AddNewProductButton.Name = "AddNewProductButton";
             this.AddNewProductButton.Size = new System.Drawing.Size(155, 47);
             this.AddNewProductButton.TabIndex = 0;
@@ -1028,13 +1026,6 @@ namespace WandererCup
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(1, 249);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(643, 14);
-            this.panel3.TabIndex = 1;
-            // 
             // Index_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1247,6 +1238,5 @@ namespace WandererCup
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private Panel panelCategories;
-        private Panel panel3;
     }
 }

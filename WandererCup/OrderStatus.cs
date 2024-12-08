@@ -153,7 +153,7 @@ namespace WandererCup
             Panel dummyPanel = new Panel
             {
                 Size = new Size(1, 1), // Adjust the height as needed
-                Location = new Point(0, yOffset + 1)
+                Location = new Point(0, yOffset + 292)
             };
             panel3.Controls.Add(dummyPanel);
 
