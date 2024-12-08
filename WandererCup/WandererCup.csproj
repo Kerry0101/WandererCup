@@ -288,6 +288,12 @@
   <ItemGroup>
     <None Include="Resources\loupe1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nail %28reverted%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

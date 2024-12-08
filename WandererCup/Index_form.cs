@@ -460,6 +460,16 @@ namespace WandererCup
         {
             decimal overallTotal = 0;
 
+            // Calculate the existing total from the DataGridView
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells[4].Value != null)
+                {
+                    overallTotal += Convert.ToDecimal(row.Cells[4].Value);
+                }
+            }
+
+            // Add new items from the categories
             foreach (Control control in panelCategories.Controls)
             {
                 if (control is GroupBox groupBox)
@@ -486,10 +496,12 @@ namespace WandererCup
                     }
                 }
             }
+
             // Update overall total in textBox1
             CultureInfo philippinesCulture = new CultureInfo("en-PH");
             textBox1.Text = overallTotal.ToString("C", philippinesCulture);
         }
+
 
 
 
@@ -896,10 +908,16 @@ namespace WandererCup
             // Update overall total in textBox1
             CultureInfo philippinesCulture = new CultureInfo("en-PH");
             textBox1.Text = overallTotal.ToString("C", philippinesCulture);
+
+            // Clear the DataGridView
+            dataGridView1.Rows.Clear();
+
+            // Redirect to OrderStatus form
+            var orderStatus = new OrderStatus();
+            orderStatus.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderStatus.Show();
         }
-
-
-
 
 
     }
