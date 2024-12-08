@@ -37,6 +37,7 @@ namespace WandererCup
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+            dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
 
             // Hide row headers
             dataGridView1.RowHeadersVisible = false;

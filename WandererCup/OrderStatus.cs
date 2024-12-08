@@ -88,8 +88,30 @@ namespace WandererCup
                     Name = "dataGridView1",
                     ReadOnly = true,
                     RowHeadersVisible = false,
-                    Size = new Size(246, 189)
+                    Size = new Size(246, 189),
+                    AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells, // Auto-size columns
+                    AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
                 };
+
+                // Apply the design settings
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+                dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+                dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+                dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
+                dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+                dataGridView1.GridColor = Color.Black;
+                dataGridView1.RowTemplate.Height = 30;
+                dataGridView1.AllowUserToResizeColumns = false;
+                dataGridView1.AllowUserToResizeRows = false;
+                dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+
+                // Set the font size of the content in each cell
+                dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
 
                 Guna.UI2.WinForms.Guna2Button guna2Button2 = new Guna.UI2.WinForms.Guna2Button
                 {
@@ -160,6 +182,9 @@ namespace WandererCup
             // Ensure the layout is updated
             panel3.PerformLayout();
         }
+
+
+
 
 
 
