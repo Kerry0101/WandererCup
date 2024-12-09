@@ -145,17 +145,37 @@ namespace WandererCup
                     SizeMode = PictureBoxSizeMode.StretchImage
                 };
 
+                Label totalLabel = new Label
+                {
+                    AutoSize = true,
+                    BackColor = Color.White,
+                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                    Location = new Point(6, 200), // Adjust the location as needed
+                    Name = "TotalLabel",
+                    Size = new Size(47, 16),
+                    Text = "Total:"
+                };
+
                 orderPanel.Controls.Add(label8);
                 orderPanel.Controls.Add(label10);
                 orderPanel.Controls.Add(label2);
+                orderPanel.Controls.Add(totalLabel);
                 orderPanel.Controls.Add(dataGridView1);
                 orderPanel.Controls.Add(guna2Button2);
                 orderPanel.Controls.Add(pictureBox6);
                 orderPanel.Controls.Add(pictureBox4);
 
+
                 panel3.Controls.Add(orderPanel);
 
                 FetchAndDisplayOrderDetails(orderId, dataGridView1);
+
+                // Subscribe to the events
+                dataGridView1.CellValueChanged += (s, e) => CalculateTotal(dataGridView1, totalLabel);
+                dataGridView1.RowsRemoved += (s, e) => CalculateTotal(dataGridView1, totalLabel);
+
+                // Calculate the total for the current DataGridView
+                CalculateTotal(dataGridView1, totalLabel);
 
                 columnCount++;
                 if (columnCount % 3 == 0)
@@ -182,6 +202,24 @@ namespace WandererCup
             // Ensure the layout is updated
             panel3.PerformLayout();
         }
+
+        private void CalculateTotal(DataGridView dataGridView, Label totalLabel)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (row.Cells["Subtotal"].Value != null)
+                {
+                    total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
+                }
+            }
+
+            totalLabel.Text = "Total: " + total.ToString("C");
+        }
+
+
+
 
 
 
