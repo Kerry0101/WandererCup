@@ -119,7 +119,7 @@ namespace WandererCup
                     FillColor = Color.DarkGoldenrod,
                     Font = new Font("Georgia", 9F, FontStyle.Bold),
                     ForeColor = Color.Black,
-                    Location = new Point(54, 241),
+                    Location = new Point(7, 241), // Updated location
                     Name = "guna2Button2",
                     Size = new Size(132, 32),
                     Text = "Mark Complete"
@@ -131,10 +131,10 @@ namespace WandererCup
                     FillColor = Color.DarkGoldenrod,
                     Font = new Font("Georgia", 9F, FontStyle.Bold),
                     ForeColor = Color.Black,
-                    Location = new Point(194, 241),
+                    Location = new Point(147, 241),
                     Name = "newButton",
-                    Size = new Size(132, 32),
-                    Text = "New Button"
+                    Size = new Size(100, 32),
+                    Text = "Cancel"
                 };
 
                 PictureBox pictureBox6 = new PictureBox
