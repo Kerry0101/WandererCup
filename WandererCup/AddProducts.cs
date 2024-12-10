@@ -389,5 +389,14 @@ namespace WandererCup
         {
 
         }
+
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            var orderhistory = new OrderHistory();
+            orderhistory.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderhistory.Show();
+            HighlightActiveButton((Button)sender);
+        }
     }
 }
