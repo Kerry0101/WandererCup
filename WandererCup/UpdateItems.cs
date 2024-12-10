@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,48 +9,101 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 
 namespace WandererCup
 {
     public partial class UpdateItems : Form
     {
         private DataTable itemsTable;
+        private DataTable categoriesTable;
 
         public UpdateItems()
         {
             InitializeComponent();
             LoadItems();
+            LoadCategories();
             CustomizeDataGridView();
             guna2TextBox1.TextChanged += Guna2TextBox1_TextChanged;
+            guna2TextBox2.TextChanged += guna2TextBox2_TextChanged;
+            guna2Button2.Click += Guna2Button2_Click;
         }
 
         private void CustomizeDataGridView()
         {
             guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
             guna2DataGridView1.GridColor = Color.Black;
+            guna2DataGridView1.ReadOnly = false;
+            guna2DataGridView1.AllowUserToAddRows = false;
+            guna2DataGridView1.AllowUserToDeleteRows = false;
+
+            // Make all columns editable except the 'Category' column
+            foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
+            {
+                if (column.HeaderText == "Category")
+                {
+                    column.ReadOnly = true;
+                }
+                else
+                {
+                    column.ReadOnly = false;
+                }
+            }
+
             guna2DataGridView2.BorderStyle = BorderStyle.FixedSingle;
             guna2DataGridView2.GridColor = Color.Black;
+            guna2DataGridView2.ReadOnly = false;
+            guna2DataGridView2.AllowUserToAddRows = false;
+            guna2DataGridView2.AllowUserToDeleteRows = false;
         }
+
         private void LoadItems()
         {
-            // Create a DataTable with the required columns
-            itemsTable = new DataTable();
-            itemsTable.Columns.Add("Category");
-            itemsTable.Columns.Add("Product Name");
-            itemsTable.Columns.Add("Price");
+            string connectionString = GetConnectionString();
+            string query = @"
+                SELECT c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
+                FROM product p
+                JOIN category c ON p.CategoryID = c.CategoryID";
 
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
 
-            // Add sample items
-            itemsTable.Rows.Add("Fruit", "Apple", "1.00");
-            itemsTable.Rows.Add("Fruit", "Banana", "0.50");
-            itemsTable.Rows.Add("Fruit", "Cherry", "2.00");
-            itemsTable.Rows.Add("Fruit", "Date", "3.00");
-            itemsTable.Rows.Add("Berry", "Elderberry", "4.00");
-            itemsTable.Rows.Add("Fruit", "Fig", "2.50");
-            itemsTable.Rows.Add("Fruit", "Grape", "2.00");
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                itemsTable = new DataTable();
+                adapter.Fill(itemsTable);
 
-            // Bind the DataTable to the DataGridView
-            guna2DataGridView1.DataSource = itemsTable;
+                // Bind the DataTable to the DataGridView
+                guna2DataGridView1.DataSource = itemsTable;
+            }
+        }
+
+        private void LoadCategories()
+        {
+            string connectionString = GetConnectionString();
+            string query = "SELECT CategoryID, CategoryName FROM category";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                categoriesTable = new DataTable();
+                adapter.Fill(categoriesTable);
+
+                // Remove the CategoryID column
+                categoriesTable.Columns.Remove("CategoryID");
+
+                // Bind the DataTable to the DataGridView
+                guna2DataGridView2.DataSource = categoriesTable;
+            }
+        }
+
+        private string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         }
 
         private void Guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -60,22 +114,68 @@ namespace WandererCup
             guna2DataGridView1.DataSource = dv.ToTable();
         }
 
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox2.Text.ToLower();
+            DataView dv = categoriesTable.DefaultView;
+            dv.RowFilter = string.Format("[CategoryName] LIKE '%{0}%'", searchText);
+            guna2DataGridView2.DataSource = dv.ToTable();
+        }
+
+        private void Guna2Button2_Click(object sender, EventArgs e)
+        {
+            string connectionString = GetConnectionString();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (DataRow row in itemsTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        string updateQuery = @"
+                            UPDATE product p
+                            JOIN category c ON p.CategoryID = c.CategoryID
+                            SET p.ProductName = @ProductName, p.Price = @Price
+                            WHERE c.CategoryName = @CategoryName AND p.ProductName = @OldProductName";
+
+                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                        command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
+                        command.Parameters.AddWithValue("@Price", row["Price"]);
+                        command.Parameters.AddWithValue("@CategoryName", row["Category"]);
+                        command.Parameters.AddWithValue("@OldProductName", row["Product Name", DataRowVersion.Original]);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                foreach (DataRow row in categoriesTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        string updateQuery = "UPDATE category SET CategoryName = @CategoryName WHERE CategoryName = @OldCategoryName";
+
+                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                        command.Parameters.AddWithValue("@CategoryName", row["CategoryName"]);
+                        command.Parameters.AddWithValue("@OldCategoryName", row["CategoryName", DataRowVersion.Original]);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            // Refresh the data
+            LoadItems();
+            LoadCategories();
+        }
+
         private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
         private void UpdateItems_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
@@ -89,5 +189,59 @@ namespace WandererCup
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            string connectionString = GetConnectionString();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (DataRow row in itemsTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        string updateQuery = @"
+                    UPDATE product p
+                    JOIN category c ON p.CategoryID = c.CategoryID
+                    SET p.ProductName = @ProductName, p.Price = @Price
+                    WHERE c.CategoryName = @CategoryName AND p.ProductName = @OldProductName";
+
+                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                        command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
+                        command.Parameters.AddWithValue("@Price", row["Price"]);
+                        command.Parameters.AddWithValue("@CategoryName", row["Category"]);
+                        command.Parameters.AddWithValue("@OldProductName", row["Product Name", DataRowVersion.Original]);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                foreach (DataRow row in categoriesTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        string updateQuery = "UPDATE category SET CategoryName = @CategoryName WHERE CategoryName = @OldCategoryName";
+
+                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                        command.Parameters.AddWithValue("@CategoryName", row["CategoryName"]);
+                        command.Parameters.AddWithValue("@OldCategoryName", row["CategoryName", DataRowVersion.Original]);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            // Refresh the data
+            LoadItems();
+            LoadCategories();
+        }
+
     }
 }
