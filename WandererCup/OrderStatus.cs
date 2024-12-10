@@ -125,6 +125,18 @@ namespace WandererCup
                     Text = "Mark Complete"
                 };
 
+                Guna.UI2.WinForms.Guna2Button newButton = new Guna.UI2.WinForms.Guna2Button
+                {
+                    BorderRadius = 10,
+                    FillColor = Color.DarkGoldenrod,
+                    Font = new Font("Georgia", 9F, FontStyle.Bold),
+                    ForeColor = Color.Black,
+                    Location = new Point(194, 241),
+                    Name = "newButton",
+                    Size = new Size(132, 32),
+                    Text = "New Button"
+                };
+
                 PictureBox pictureBox6 = new PictureBox
                 {
                     BackColor = Color.Tan,
@@ -162,9 +174,9 @@ namespace WandererCup
                 orderPanel.Controls.Add(totalLabel);
                 orderPanel.Controls.Add(dataGridView1);
                 orderPanel.Controls.Add(guna2Button2);
+                orderPanel.Controls.Add(newButton);
                 orderPanel.Controls.Add(pictureBox6);
                 orderPanel.Controls.Add(pictureBox4);
-
 
                 panel3.Controls.Add(orderPanel);
 
