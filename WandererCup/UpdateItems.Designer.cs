@@ -289,8 +289,10 @@
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.guna2DataGridView1.Location = new System.Drawing.Point(31, 136);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.Size = new System.Drawing.Size(499, 207);
             this.guna2DataGridView1.TabIndex = 94;
+            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick_1);
             // 
             // guna2DataGridView2
             // 
@@ -298,6 +300,7 @@
             this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.guna2DataGridView2.Location = new System.Drawing.Point(577, 136);
             this.guna2DataGridView2.Name = "guna2DataGridView2";
+            this.guna2DataGridView2.RowHeadersVisible = false;
             this.guna2DataGridView2.Size = new System.Drawing.Size(230, 207);
             this.guna2DataGridView2.TabIndex = 95;
             // 
