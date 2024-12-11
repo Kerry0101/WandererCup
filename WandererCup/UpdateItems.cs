@@ -31,11 +31,28 @@ namespace WandererCup
 
         private void CustomizeDataGridView()
         {
-            guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView1.RowHeadersVisible = false;
+            guna2DataGridView1.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView1.GridColor = Color.Black;
             guna2DataGridView1.ReadOnly = false;
             guna2DataGridView1.AllowUserToAddRows = false;
             guna2DataGridView1.AllowUserToDeleteRows = false;
+            guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Stretch cells to fill the DataGridView
+
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(guna2DataGridView1.Font, FontStyle.Bold);
+            guna2DataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+            guna2DataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            guna2DataGridView1.DefaultCellStyle.BackColor = Color.Beige;
+            guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+            guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+            guna2DataGridView1.RowTemplate.Height = 30;
+            guna2DataGridView1.AllowUserToResizeColumns = false;
+            guna2DataGridView1.AllowUserToResizeRows = false;
+            guna2DataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
 
             // Make all columns editable except the 'Category' column
             foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
@@ -50,11 +67,28 @@ namespace WandererCup
                 }
             }
 
-            guna2DataGridView2.BorderStyle = BorderStyle.FixedSingle;
+            guna2DataGridView2.RowHeadersVisible = false;
+            guna2DataGridView2.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView2.GridColor = Color.Black;
             guna2DataGridView2.ReadOnly = false;
             guna2DataGridView2.AllowUserToAddRows = false;
             guna2DataGridView2.AllowUserToDeleteRows = false;
+            guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Stretch cells to fill the DataGridView
+
+            guna2DataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            guna2DataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            guna2DataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font(guna2DataGridView2.Font, FontStyle.Bold);
+            guna2DataGridView2.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+            guna2DataGridView2.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+            guna2DataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            guna2DataGridView2.DefaultCellStyle.BackColor = Color.Beige;
+            guna2DataGridView2.DefaultCellStyle.ForeColor = Color.Black;
+            guna2DataGridView2.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+            guna2DataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+            guna2DataGridView2.RowTemplate.Height = 30;
+            guna2DataGridView2.AllowUserToResizeColumns = false;
+            guna2DataGridView2.AllowUserToResizeRows = false;
+            guna2DataGridView2.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
         }
 
         private void LoadItems()
