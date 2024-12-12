@@ -281,7 +281,7 @@
             this.guna2TextBox2.Size = new System.Drawing.Size(193, 35);
             this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox2.TabIndex = 92;
-            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
             // 
             // guna2DataGridView1
             // 
@@ -292,7 +292,7 @@
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.Size = new System.Drawing.Size(499, 207);
             this.guna2DataGridView1.TabIndex = 94;
-            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick_1);
+            this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
             // guna2DataGridView2
             // 

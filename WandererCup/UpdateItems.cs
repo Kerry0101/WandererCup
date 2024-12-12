@@ -17,6 +17,7 @@ namespace WandererCup
     {
         private DataTable itemsTable;
         private DataTable categoriesTable;
+        private AutoCompleteStringCollection categoryAutoComplete;
 
         public UpdateItems()
         {
@@ -27,18 +28,9 @@ namespace WandererCup
             guna2TextBox1.TextChanged += Guna2TextBox1_TextChanged;
             guna2TextBox2.TextChanged += guna2TextBox2_TextChanged;
             guna2Button2.Click += Guna2Button2_Click;
-
-            // Add auto-suggestion feature for category names
-            AutoCompleteStringCollection categoryNames = new AutoCompleteStringCollection();
-            foreach (DataRow row in categoriesTable.Rows)
-            {
-                categoryNames.Add(row["CategoryName"].ToString());
-            }
-
-            guna2TextBox2.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            guna2TextBox2.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            guna2TextBox2.AutoCompleteCustomSource = categoryNames;
+            guna2DataGridView1.EditingControlShowing += guna2DataGridView1_EditingControlShowing;
         }
+
 
         private void CustomizeDataGridView()
         {
@@ -86,22 +78,14 @@ namespace WandererCup
                 }
             }
 
-            DataTable comboBoxDataTable = categoriesTable.Copy();
-
-            // Add ComboBox column for Category
-            DataGridViewComboBoxColumn categoryColumn = new DataGridViewComboBoxColumn();
+            // Add TextBox column for Category with auto-suggestions
+            DataGridViewTextBoxColumn categoryColumn = new DataGridViewTextBoxColumn();
             categoryColumn.HeaderText = "Category";
-            categoryColumn.DataSource = comboBoxDataTable;
-            categoryColumn.DisplayMember = "CategoryName";
-            categoryColumn.ValueMember = "CategoryName";
             categoryColumn.DataPropertyName = "Category";
-            categoryColumn.FlatStyle = FlatStyle.Flat; // Set flat style for better appearance
             categoryColumn.DefaultCellStyle.BackColor = Color.Beige;
             categoryColumn.DefaultCellStyle.ForeColor = Color.Black;
             categoryColumn.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
             categoryColumn.DefaultCellStyle.SelectionForeColor = Color.White;
-            categoryColumn.DropDownWidth = 227; // Set the width of the dropdown list
-            categoryColumn.MaxDropDownItems = 10; // Set the maximum number of items to be displayed in the dropdown list
             guna2DataGridView1.Columns.Remove("Category");
             guna2DataGridView1.Columns.Insert(0, categoryColumn);
 
@@ -133,7 +117,7 @@ namespace WandererCup
             // Set default width size of each cell to 210
             foreach (DataGridViewColumn column in guna2DataGridView2.Columns)
             {
-                column.Width = 210;
+                column.Width = 227;
             }
         }
 
@@ -141,9 +125,10 @@ namespace WandererCup
         {
             string connectionString = GetConnectionString();
             string query = @"
-                            SELECT c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
-                            FROM product p
-                            JOIN category c ON p.CategoryID = c.CategoryID";
+                                SELECT c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
+                                FROM product p
+                                JOIN category c ON p.CategoryID = c.CategoryID
+                                WHERE p.is_archived = 0";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -162,7 +147,7 @@ namespace WandererCup
         private void LoadCategories()
         {
             string connectionString = GetConnectionString();
-            string query = "SELECT CategoryID, CategoryName FROM category";
+            string query = "SELECT CategoryName FROM category";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -173,13 +158,24 @@ namespace WandererCup
                 categoriesTable = new DataTable();
                 adapter.Fill(categoriesTable);
 
-                // Remove the CategoryID column
-                categoriesTable.Columns.Remove("CategoryID");
+                // Remove the CategoryID column if it exists
+                if (categoriesTable.Columns.Contains("CategoryID"))
+                {
+                    categoriesTable.Columns.Remove("CategoryID");
+                }
 
                 // Bind the DataTable to the DataGridView
                 guna2DataGridView2.DataSource = categoriesTable;
+
+                // Prepare auto-complete collection
+                categoryAutoComplete = new AutoCompleteStringCollection();
+                foreach (DataRow row in categoriesTable.Rows)
+                {
+                    categoryAutoComplete.Add(row["CategoryName"].ToString());
+                }
             }
         }
+
 
         private string GetConnectionString()
         {
@@ -221,9 +217,9 @@ namespace WandererCup
                         int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
 
                         string updateQuery = @"
-                                        UPDATE product
-                                        SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
-                                        WHERE ProductName = @OldProductName";
+                                            UPDATE product
+                                            SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
+                                            WHERE ProductName = @OldProductName";
 
                         MySqlCommand command = new MySqlCommand(updateQuery, connection);
                         command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
@@ -299,9 +295,9 @@ namespace WandererCup
                         int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
 
                         string updateQuery = @"
-                                UPDATE product
-                                SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
-                                WHERE ProductName = @OldProductName";
+                                    UPDATE product
+                                    SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
+                                    WHERE ProductName = @OldProductName";
 
                         MySqlCommand command = new MySqlCommand(updateQuery, connection);
                         command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
@@ -333,7 +329,29 @@ namespace WandererCup
             LoadCategories();
         }
 
-        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (guna2DataGridView1.CurrentCell.ColumnIndex == 0) // Category column index
+            {
+                TextBox autoText = e.Control as TextBox;
+                if (autoText != null)
+                {
+                    autoText.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                    autoText.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                    autoText.AutoCompleteCustomSource = categoryAutoComplete;
+                }
+            }
+            else
+            {
+                TextBox autoText = e.Control as TextBox;
+                if (autoText != null)
+                {
+                    autoText.AutoCompleteMode = AutoCompleteMode.None;
+                }
+            }
+        }
+
+        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }

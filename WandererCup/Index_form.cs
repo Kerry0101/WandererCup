@@ -82,7 +82,7 @@ namespace WandererCup
             addProductsForm.Show();
             HighlightActiveButton((Button)sender);
         }
-
+         
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
@@ -90,7 +90,7 @@ namespace WandererCup
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All & ~DataGridViewPaintParts.ContentForeground);
 
                 // Adjust the cell bounds to create a small space
-                Rectangle adjustedBounds = new Rectangle(e.CellBounds.Left, e.CellBounds.Top, e.CellBounds.Width - 1, e.CellBounds.Height);
+                Rectangle adjustedBounds = new Rectangle(e.CellBounds.Left, e.CellBounds.Top, e.CellBounds.Width - 1, e.CellBounds.Height - 1);
 
                 using (Brush brush = new SolidBrush(ColorTranslator.FromHtml("#E6B325")))
                 {
@@ -159,12 +159,15 @@ namespace WandererCup
         {
             DataGridViewButtonColumn removeButtonColumn = new DataGridViewButtonColumn();
             removeButtonColumn.Name = "Remove";
-            removeButtonColumn.HeaderText = "";
+            removeButtonColumn.HeaderText = "Action";
             removeButtonColumn.Text = "Remove";
             removeButtonColumn.UseColumnTextForButtonValue = true;
-            removeButtonColumn.Width = 50;
+            removeButtonColumn.Width = 60;
             dataGridView1.Columns.Insert(0, removeButtonColumn);
         }
+
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
