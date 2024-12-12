@@ -303,6 +303,7 @@
             this.guna2DataGridView2.RowHeadersVisible = false;
             this.guna2DataGridView2.Size = new System.Drawing.Size(230, 207);
             this.guna2DataGridView2.TabIndex = 95;
+            this.guna2DataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellContentClick_1);
             // 
             // UpdateItems
             // 

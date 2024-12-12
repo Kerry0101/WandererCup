@@ -85,7 +85,7 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "SELECT CategoryName FROM Category";
+                    string query = "SELECT CategoryName FROM Category WHERE is_archived = 0";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -289,7 +289,7 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Product (ProductName, Price, CategoryID) VALUES (@ProductName, @Price, @CategoryID)";
+                    string query = "INSERT INTO Product (ProductName, Price, CategoryID, is_archived) VALUES (@ProductName, @Price, @CategoryID, 0)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductName", productName);
@@ -306,6 +306,7 @@ namespace WandererCup
                 }
             }
         }
+
 
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -354,25 +355,46 @@ namespace WandererCup
                 return;
             }
 
-            if (CategoryExists(categoryName))
-            {
-                MessageBox.Show("Category Name already exists. Please enter a different name.");
-                return;
-            }
-
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Category (CategoryName) VALUES (@CategoryName)";
+                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@CategoryName", categoryName);
-                        cmd.ExecuteNonQuery();
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            if (IsArchivedCategory(categoryName))
+                            {
+                                string updateQuery = "UPDATE Category SET is_archived = 0 WHERE CategoryName = @CategoryName";
+                                using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                                    updateCmd.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Category has been added successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Category Name already exists. Please enter a different name.");
+                            }
+                        }
+                        else
+                        {
+                            string insertQuery = "INSERT INTO Category (CategoryName, is_archived) VALUES (@CategoryName, 0)";
+                            using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn))
+                            {
+                                insertCmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                                insertCmd.ExecuteNonQuery();
+                                MessageBox.Show("Category saved successfully.");
+                            }
+                        }
                     }
-                    MessageBox.Show("Category saved successfully.");
 
                     // Refresh the dynamic categories
                     PopulateDynamicCategories();
@@ -382,6 +404,32 @@ namespace WandererCup
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
+        }
+
+
+
+        private bool IsArchivedCategory(string categoryName)
+        {
+            bool isArchived = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName AND is_archived = 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        isArchived = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return isArchived;
         }
 
 

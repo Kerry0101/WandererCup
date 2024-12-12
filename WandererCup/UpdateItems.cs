@@ -147,7 +147,7 @@ namespace WandererCup
         private void LoadCategories()
         {
             string connectionString = GetConnectionString();
-            string query = "SELECT CategoryName FROM category";
+            string query = "SELECT CategoryName FROM category WHERE is_archived = 0";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -352,6 +352,11 @@ namespace WandererCup
         }
 
         private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

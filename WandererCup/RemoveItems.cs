@@ -102,12 +102,13 @@ namespace WandererCup
             guna2DataGridView2.RowHeadersVisible = false;
             guna2DataGridView2.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView2.GridColor = Color.Black;
-            guna2DataGridView2.ReadOnly = true;
+            guna2DataGridView2.ReadOnly = false; // Ensure ReadOnly is set to false
             guna2DataGridView2.AllowUserToAddRows = false;
             guna2DataGridView2.AllowUserToDeleteRows = false;
             guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Disable auto size columns mode
             guna2DataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Disable auto size rows mode
             guna2DataGridView2.ScrollBars = ScrollBars.Both; // Enable both horizontal and vertical scrollbars
+            guna2DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Set SelectionMode to FullRowSelect
 
             guna2DataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             guna2DataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -130,6 +131,7 @@ namespace WandererCup
                 column.Width = 227;
             }
         }
+
 
         private void LoadItems()
         {
@@ -157,7 +159,7 @@ namespace WandererCup
         private void LoadCategories()
         {
             string connectionString = GetConnectionString();
-            string query = "SELECT CategoryName FROM category";
+            string query = "SELECT CategoryName FROM category WHERE is_archived = 0";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -267,6 +269,74 @@ namespace WandererCup
                 connection.Open();
                 command.ExecuteNonQuery();
             }
+        }
+
+        private void Guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView2.SelectedRows.Count > 0)
+            {
+                string categoryName = guna2DataGridView2.SelectedRows[0].Cells["CategoryName"].Value.ToString();
+
+                if (HasAssociatedProducts(categoryName))
+                {
+                    MessageBox.Show("Cannot remove category. There are products associated with this category.");
+                    return;
+                }
+
+                ArchiveCategory(categoryName);
+                guna2DataGridView2.Rows.RemoveAt(guna2DataGridView2.SelectedRows[0].Index); // Remove the selected row from the DataGridView
+            }
+            else
+            {
+                MessageBox.Show("Please select a category to remove.");
+            }
+        }
+
+        private bool HasAssociatedProducts(string categoryName)
+        {
+            bool hasProducts = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"
+                SELECT COUNT(*)
+                FROM Product p
+                JOIN Category c ON p.CategoryID = c.CategoryID
+                WHERE c.CategoryName = @CategoryName AND p.is_archived = 0";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        hasProducts = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return hasProducts;
+        }
+
+        private void ArchiveCategory(string categoryName)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            string query = "UPDATE category SET is_archived = 1 WHERE CategoryName = @CategoryName";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddWithValue("@CategoryName", categoryName);
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        private void guna2DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

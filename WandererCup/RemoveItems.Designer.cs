@@ -191,6 +191,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(143, 40);
             this.guna2Button2.TabIndex = 81;
             this.guna2Button2.Text = "Remove Category";
+            this.guna2Button2.Click += new System.EventHandler(this.Guna2Button2_Click);
             // 
             // pictureBox1
             // 
@@ -280,6 +281,7 @@
             this.guna2DataGridView2.RowHeadersVisible = false;
             this.guna2DataGridView2.Size = new System.Drawing.Size(230, 207);
             this.guna2DataGridView2.TabIndex = 97;
+            this.guna2DataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellContentClick);
             // 
             // RemoveItems
             // 

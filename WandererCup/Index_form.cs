@@ -296,7 +296,7 @@ namespace WandererCup
                 try
                 {
                     connection.Open();
-                    string query = "SELECT CategoryName FROM category"; // Adjust the query as per your database schema
+                    string query = "SELECT CategoryName FROM category WHERE is_archived = 0"; // Adjust the query as per your database schema
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         using (MySqlDataReader reader = command.ExecuteReader())
@@ -425,7 +425,7 @@ namespace WandererCup
                 SELECT p.ProductName, p.Price 
                 FROM product p
                 JOIN category c ON p.CategoryId = c.CategoryId
-                WHERE c.CategoryName = @CategoryName"; // Adjust the query as per your database schema
+                WHERE c.CategoryName = @CategoryName AND p.is_archived = 0"; // Adjust the query as per your database schema
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@CategoryName", categoryName);
