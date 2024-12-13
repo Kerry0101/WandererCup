@@ -43,6 +43,7 @@ namespace WandererCup
             guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Disable auto size columns mode
             guna2DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Disable auto size rows mode
             guna2DataGridView1.ScrollBars = ScrollBars.Both; // Enable both horizontal and vertical scrollbars
+            guna2DataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;

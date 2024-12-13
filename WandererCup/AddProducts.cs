@@ -314,30 +314,6 @@ namespace WandererCup
 
         }
 
-        private bool CategoryExists(string categoryName)
-        {
-            bool exists = false;
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
-                        exists = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
-            return exists;
-        }
-
         private void PopulateDynamicCategories()
         {
             var categories = GetCategories();
