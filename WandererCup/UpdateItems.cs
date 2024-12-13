@@ -22,13 +22,17 @@ namespace WandererCup
         public UpdateItems()
         {
             InitializeComponent();
+            guna2Panel1.Visible = false;
             LoadItems();
             LoadCategories();
             CustomizeDataGridView();
             guna2TextBox1.TextChanged += Guna2TextBox1_TextChanged;
             guna2TextBox2.TextChanged += guna2TextBox2_TextChanged;
             guna2Button2.Click += Guna2Button2_Click;
+            guna2Button1.Click += guna2Button1_Click;
+            guna2Button4.Click += guna2Button4_Click;
             guna2DataGridView1.EditingControlShowing += guna2DataGridView1_EditingControlShowing;
+
         }
 
 
@@ -37,7 +41,7 @@ namespace WandererCup
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView1.GridColor = Color.Black;
-            guna2DataGridView1.ReadOnly = false;
+            guna2DataGridView1.ReadOnly = true; // Set to readonly
             guna2DataGridView1.AllowUserToAddRows = false;
             guna2DataGridView1.AllowUserToDeleteRows = false;
             guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Disable auto size columns mode
@@ -59,6 +63,7 @@ namespace WandererCup
             guna2DataGridView1.AllowUserToResizeColumns = true; // Allow user to resize columns
             guna2DataGridView1.AllowUserToResizeRows = true; // Allow user to resize rows
             guna2DataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular); // Change font size
+            guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
             // Set default width size of each cell to 227
             foreach (DataGridViewColumn column in guna2DataGridView1.Columns)
@@ -279,55 +284,7 @@ namespace WandererCup
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            string connectionString = GetConnectionString();
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-
-                foreach (DataRow row in itemsTable.Rows)
-                {
-                    if (row.RowState == DataRowState.Modified)
-                    {
-                        // Get the CategoryID for the selected CategoryName
-                        string categoryQuery = "SELECT CategoryID FROM category WHERE CategoryName = @CategoryName";
-                        MySqlCommand categoryCommand = new MySqlCommand(categoryQuery, connection);
-                        categoryCommand.Parameters.AddWithValue("@CategoryName", row["Category"]);
-                        int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
-
-                        string updateQuery = @"
-                                    UPDATE product
-                                    SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
-                                    WHERE ProductName = @OldProductName";
-
-                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
-                        command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
-                        command.Parameters.AddWithValue("@Price", row["Price"]);
-                        command.Parameters.AddWithValue("@CategoryID", categoryId);
-                        command.Parameters.AddWithValue("@OldProductName", row["Product Name", DataRowVersion.Original]);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
-
-                foreach (DataRow row in categoriesTable.Rows)
-                {
-                    if (row.RowState == DataRowState.Modified)
-                    {
-                        string updateQuery = "UPDATE category SET CategoryName = @CategoryName WHERE CategoryName = @OldCategoryName";
-
-                        MySqlCommand command = new MySqlCommand(updateQuery, connection);
-                        command.Parameters.AddWithValue("@CategoryName", row["CategoryName"]);
-                        command.Parameters.AddWithValue("@OldCategoryName", row["CategoryName", DataRowVersion.Original]);
-
-                        command.ExecuteNonQuery();
-                    }
-                }
-            }
-
-            // Refresh the data
-            LoadItems();
-            LoadCategories();
+            guna2Panel1.Visible = true;
         }
 
         private void guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -360,6 +317,46 @@ namespace WandererCup
         private void guna2DataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PriceTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemNameTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            guna2Panel1.Visible = false;
         }
     }
 }
