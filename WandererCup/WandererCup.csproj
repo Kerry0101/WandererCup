@@ -303,6 +303,9 @@
   <ItemGroup>
     <None Include="Resources\nail %28reverted%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

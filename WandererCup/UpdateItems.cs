@@ -19,10 +19,12 @@ namespace WandererCup
         private DataTable categoriesTable;
         private AutoCompleteStringCollection categoryAutoComplete;
 
+
         public UpdateItems()
         {
             InitializeComponent();
             guna2Panel1.Visible = false;
+            guna2Panel16.Visible = false; // Hide guna2Panel16 by default
             LoadItems();
             LoadCategories();
             CustomizeDataGridView();
@@ -33,6 +35,8 @@ namespace WandererCup
             guna2Button4.Click += guna2Button4_Click;
             guna2DataGridView1.EditingControlShowing += guna2DataGridView1_EditingControlShowing;
             guna2DataGridView1.SelectionChanged += guna2DataGridView1_SelectionChanged;
+            CategoryTextBox.Validating += CategoryTextBox_Validating; // Add Validating event handler
+            guna2Button6.Click += guna2Button6_Click;
 
             CategoryTextBox.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold);
             CategoryTextBox.ForeColor = Color.Black; // Set font color to black
@@ -81,6 +85,20 @@ namespace WandererCup
             PriceTextbox.ShadowDecoration.Shadow = new Padding(5);
         }
 
+        private void CategoryTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            string enteredCategory = CategoryTextBox.Text.ToLower();
+            bool categoryExists = categoryAutoComplete.Cast<string>().Any(c => c.ToLower() == enteredCategory);
+            if (!categoryExists)
+            {
+                guna2Panel16.Visible = true; // Show guna2Panel16 if the category is not in the list
+            }
+        }
+
+
+
+
+
 
         private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
@@ -96,6 +114,11 @@ namespace WandererCup
 
                 // Populate the TextBox for Category
                 CategoryTextBox.Text = category;
+
+                // Store the original values in the Tag property
+                CategoryTextBox.Tag = category;
+                ItemNameTextbox.Tag = productName;
+                PriceTextbox.Tag = price;
             }
         }
 
@@ -373,9 +396,9 @@ namespace WandererCup
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             // Get the values from the controls in guna2Panel1
-            string category = CategoryTextBox.Text;
-            string productName = ItemNameTextbox.Text;
-            string price = PriceTextbox.Text;
+            string category = string.IsNullOrWhiteSpace(CategoryTextBox.Text) ? CategoryTextBox.Tag.ToString() : CategoryTextBox.Text;
+            string productName = string.IsNullOrWhiteSpace(ItemNameTextbox.Text) ? ItemNameTextbox.Tag.ToString() : ItemNameTextbox.Text;
+            string price = string.IsNullOrWhiteSpace(PriceTextbox.Text) ? PriceTextbox.Tag.ToString() : PriceTextbox.Text;
 
             // Find the selected row in guna2DataGridView1
             if (guna2DataGridView1.SelectedRows.Count > 0)
@@ -399,13 +422,20 @@ namespace WandererCup
                     row.AcceptChanges(); // Accept the changes to reset the row state
                     row.SetModified(); // Mark the row as modified
                 }
+
+                // Save the index of the selected row
+                int selectedIndex = selectedRow.Index;
+
+                // Hide the panel after updating
+                guna2Panel1.Visible = false;
+
+                // Save changes to the database
+                SaveChangesToDatabase();
+
+                // Re-select the previously selected row
+                guna2DataGridView1.ClearSelection();
+                guna2DataGridView1.Rows[selectedIndex].Selected = true;
             }
-
-            // Hide the panel after updating
-            guna2Panel1.Visible = false;
-
-            // Save changes to the database
-            SaveChangesToDatabase();
         }
 
 
@@ -432,9 +462,9 @@ namespace WandererCup
                             int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
 
                             string updateQuery = @"
-                        UPDATE product
-                        SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
-                        WHERE ProductID = @ProductID";
+                            UPDATE product
+                            SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
+                            WHERE ProductID = @ProductID";
 
                             MySqlCommand command = new MySqlCommand(updateQuery, connection);
                             command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
@@ -446,8 +476,8 @@ namespace WandererCup
                         }
                         catch (Exception ex)
                         {
-                            // Log the exception (you can replace this with your logging mechanism)
-                            MessageBox.Show($"Error updating database: {ex.Message}");
+                            // Show guna2Panel16 if an error occurs
+                            guna2Panel16.Visible = true;
                         }
                     }
                 }
@@ -495,6 +525,21 @@ namespace WandererCup
         private void guna2Button4_Click(object sender, EventArgs e)
         {
             guna2Panel1.Visible = false;
+            guna2Panel16.Visible = false;
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            var addroducts = new AddProducts();
+            addroducts.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            addroducts.Show();
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            guna2Panel16.Visible = false; // Hide guna2Panel16
+            guna2Panel1.Visible = true; // Show guna2Panel1
         }
     }
 }
