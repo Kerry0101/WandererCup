@@ -32,7 +32,71 @@ namespace WandererCup
             guna2Button1.Click += guna2Button1_Click;
             guna2Button4.Click += guna2Button4_Click;
             guna2DataGridView1.EditingControlShowing += guna2DataGridView1_EditingControlShowing;
+            guna2DataGridView1.SelectionChanged += guna2DataGridView1_SelectionChanged;
 
+            CategoryTextBox.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold);
+            CategoryTextBox.ForeColor = Color.Black; // Set font color to black
+
+            // Allow typing in the TextBox
+            CategoryTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            CategoryTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            // Enhance the design of the CategoryTextBox
+            CategoryTextBox.BorderRadius = 10;
+            CategoryTextBox.BorderThickness = 2;
+            CategoryTextBox.BorderColor = Color.Gray;
+            CategoryTextBox.FillColor = Color.White;
+            CategoryTextBox.ForeColor = Color.Black;
+            CategoryTextBox.PlaceholderText = "Enter Category...";
+            CategoryTextBox.PlaceholderForeColor = Color.Gray;
+            CategoryTextBox.ShadowDecoration.Enabled = true;
+            CategoryTextBox.ShadowDecoration.BorderRadius = 10;
+            CategoryTextBox.ShadowDecoration.Color = Color.Gray;
+            CategoryTextBox.ShadowDecoration.Shadow = new Padding(5);
+
+            // Enhance the design of the ProductTextBox
+            ItemNameTextbox.BorderRadius = 10;
+            ItemNameTextbox.BorderThickness = 2;
+            ItemNameTextbox.BorderColor = Color.Gray;
+            ItemNameTextbox.FillColor = Color.White;
+            ItemNameTextbox.ForeColor = Color.Black;
+            ItemNameTextbox.PlaceholderText = "Enter new product name...";
+            ItemNameTextbox.PlaceholderForeColor = Color.Gray;
+            ItemNameTextbox.ShadowDecoration.Enabled = true;
+            ItemNameTextbox.ShadowDecoration.BorderRadius = 10;
+            ItemNameTextbox.ShadowDecoration.Color = Color.Gray;
+            ItemNameTextbox.ShadowDecoration.Shadow = new Padding(5);
+
+            // Enhance the design of the PriceTextBox
+            PriceTextbox.BorderRadius = 10;
+            PriceTextbox.BorderThickness = 2;
+            PriceTextbox.BorderColor = Color.Gray;
+            PriceTextbox.FillColor = Color.White;
+            PriceTextbox.ForeColor = Color.Black;
+            PriceTextbox.PlaceholderText = "Enter new price...";
+            PriceTextbox.PlaceholderForeColor = Color.Gray;
+            PriceTextbox.ShadowDecoration.Enabled = true;
+            PriceTextbox.ShadowDecoration.BorderRadius = 10;
+            PriceTextbox.ShadowDecoration.Color = Color.Gray;
+            PriceTextbox.ShadowDecoration.Shadow = new Padding(5);
+        }
+
+
+        private void guna2DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+                string category = selectedRow.Cells["Category"].Value.ToString();
+                string productName = selectedRow.Cells["Product Name"].Value.ToString();
+                string price = selectedRow.Cells["Price"].Value.ToString();
+
+                ItemNameTextbox.Text = productName;
+                PriceTextbox.Text = price;
+
+                // Populate the TextBox for Category
+                CategoryTextBox.Text = category;
+            }
         }
 
 
@@ -84,16 +148,11 @@ namespace WandererCup
                 }
             }
 
-            // Add TextBox column for Category with auto-suggestions
-            DataGridViewTextBoxColumn categoryColumn = new DataGridViewTextBoxColumn();
-            categoryColumn.HeaderText = "Category";
-            categoryColumn.DataPropertyName = "Category";
-            categoryColumn.DefaultCellStyle.BackColor = Color.Beige;
-            categoryColumn.DefaultCellStyle.ForeColor = Color.Black;
-            categoryColumn.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
-            categoryColumn.DefaultCellStyle.SelectionForeColor = Color.White;
-            guna2DataGridView1.Columns.Remove("Category");
-            guna2DataGridView1.Columns.Insert(0, categoryColumn);
+            // Hide the ProductID column
+            if (guna2DataGridView1.Columns["ProductID"] != null)
+            {
+                guna2DataGridView1.Columns["ProductID"].Visible = false;
+            }
 
             guna2DataGridView2.RowHeadersVisible = false;
             guna2DataGridView2.BorderStyle = BorderStyle.Fixed3D;
@@ -127,14 +186,15 @@ namespace WandererCup
             }
         }
 
+
         private void LoadItems()
         {
             string connectionString = GetConnectionString();
             string query = @"
-                                SELECT c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
-                                FROM product p
-                                JOIN category c ON p.CategoryID = c.CategoryID
-                                WHERE p.is_archived = 0";
+        SELECT p.ProductID, c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
+        FROM product p
+        JOIN category c ON p.CategoryID = c.CategoryID
+        WHERE p.is_archived = 0";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -149,6 +209,8 @@ namespace WandererCup
                 guna2DataGridView1.DataSource = itemsTable;
             }
         }
+
+
 
         private void LoadCategories()
         {
@@ -179,9 +241,11 @@ namespace WandererCup
                 {
                     categoryAutoComplete.Add(row["CategoryName"].ToString());
                 }
+
+                // Populate the TextBox with category names
+                CategoryTextBox.AutoCompleteCustomSource = categoryAutoComplete;
             }
         }
-
 
         private string GetConnectionString()
         {
@@ -223,9 +287,9 @@ namespace WandererCup
                         int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
 
                         string updateQuery = @"
-                                            UPDATE product
-                                            SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
-                                            WHERE ProductName = @OldProductName";
+                                                UPDATE product
+                                                SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
+                                                WHERE ProductName = @OldProductName";
 
                         MySqlCommand command = new MySqlCommand(updateQuery, connection);
                         command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
@@ -289,23 +353,10 @@ namespace WandererCup
 
         private void guna2DataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (guna2DataGridView1.CurrentCell.ColumnIndex == 0) // Category column index
+            TextBox autoText = e.Control as TextBox;
+            if (autoText != null)
             {
-                TextBox autoText = e.Control as TextBox;
-                if (autoText != null)
-                {
-                    autoText.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                    autoText.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                    autoText.AutoCompleteCustomSource = categoryAutoComplete;
-                }
-            }
-            else
-            {
-                TextBox autoText = e.Control as TextBox;
-                if (autoText != null)
-                {
-                    autoText.AutoCompleteMode = AutoCompleteMode.None;
-                }
+                autoText.AutoCompleteMode = AutoCompleteMode.None;
             }
         }
 
@@ -321,8 +372,95 @@ namespace WandererCup
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            // Get the values from the controls in guna2Panel1
+            string category = CategoryTextBox.Text;
+            string productName = ItemNameTextbox.Text;
+            string price = PriceTextbox.Text;
 
+            // Find the selected row in guna2DataGridView1
+            if (guna2DataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+                int productId = Convert.ToInt32(selectedRow.Cells["ProductID"].Value);
+
+                // Update the values in the DataGridView
+                selectedRow.Cells["Category"].Value = category;
+                selectedRow.Cells["Product Name"].Value = productName;
+                selectedRow.Cells["Price"].Value = price;
+
+                // Find the corresponding DataRow in the itemsTable
+                DataRow[] rows = itemsTable.Select($"ProductID = {productId}");
+                if (rows.Length > 0)
+                {
+                    DataRow row = rows[0];
+                    row["Category"] = category;
+                    row["Product Name"] = productName;
+                    row["Price"] = price;
+                    row.AcceptChanges(); // Accept the changes to reset the row state
+                    row.SetModified(); // Mark the row as modified
+                }
+            }
+
+            // Hide the panel after updating
+            guna2Panel1.Visible = false;
+
+            // Save changes to the database
+            SaveChangesToDatabase();
         }
+
+
+
+
+        private void SaveChangesToDatabase()
+        {
+            string connectionString = GetConnectionString();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+
+                foreach (DataRow row in itemsTable.Rows)
+                {
+                    if (row.RowState == DataRowState.Modified)
+                    {
+                        try
+                        {
+                            // Get the CategoryID for the selected CategoryName
+                            string categoryQuery = "SELECT CategoryID FROM category WHERE CategoryName = @CategoryName";
+                            MySqlCommand categoryCommand = new MySqlCommand(categoryQuery, connection);
+                            categoryCommand.Parameters.AddWithValue("@CategoryName", row["Category"]);
+                            int categoryId = Convert.ToInt32(categoryCommand.ExecuteScalar());
+
+                            string updateQuery = @"
+                        UPDATE product
+                        SET ProductName = @ProductName, Price = @Price, CategoryID = @CategoryID
+                        WHERE ProductID = @ProductID";
+
+                            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+                            command.Parameters.AddWithValue("@ProductName", row["Product Name"]);
+                            command.Parameters.AddWithValue("@Price", row["Price"]);
+                            command.Parameters.AddWithValue("@CategoryID", categoryId);
+                            command.Parameters.AddWithValue("@ProductID", row["ProductID"]);
+
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            // Log the exception (you can replace this with your logging mechanism)
+                            MessageBox.Show($"Error updating database: {ex.Message}");
+                        }
+                    }
+                }
+            }
+
+            // Refresh the data
+            LoadItems();
+        }
+
+
+
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {
