@@ -72,6 +72,8 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
@@ -80,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel9
@@ -514,6 +517,7 @@
             // guna2Panel16
             // 
             this.guna2Panel16.BackColor = System.Drawing.SystemColors.Info;
+            this.guna2Panel16.BorderRadius = 10;
             this.guna2Panel16.Controls.Add(this.guna2Panel20);
             this.guna2Panel16.Controls.Add(this.guna2Panel19);
             this.guna2Panel16.Controls.Add(this.guna2Panel18);
@@ -527,6 +531,7 @@
             this.guna2Panel16.Name = "guna2Panel16";
             this.guna2Panel16.Size = new System.Drawing.Size(359, 168);
             this.guna2Panel16.TabIndex = 97;
+            this.guna2Panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel16_Paint);
             // 
             // guna2Panel20
             // 
@@ -651,12 +656,38 @@
             this.pictureBox1.TabIndex = 91;
             this.pictureBox1.TabStop = false;
             // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel3);
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Beige;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(282, 20);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(278, 35);
+            this.guna2CustomGradientPanel1.TabIndex = 98;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(13, 9);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(255, 17);
+            this.guna2HtmlLabel3.TabIndex = 0;
+            this.guna2HtmlLabel3.Text = "Product details has been updated successfully!";
+            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
+            // 
             // UpdateItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(843, 499);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2Panel16);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2DataGridView2);
@@ -691,6 +722,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -741,5 +774,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel20;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }

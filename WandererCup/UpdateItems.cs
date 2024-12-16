@@ -25,6 +25,7 @@ namespace WandererCup
             InitializeComponent();
             guna2Panel1.Visible = false;
             guna2Panel16.Visible = false; // Hide guna2Panel16 by default
+            guna2CustomGradientPanel1.Visible = false; // Hide guna2CustomGradientPanel1 by default
             LoadItems();
             LoadCategories();
             CustomizeDataGridView();
@@ -92,8 +93,11 @@ namespace WandererCup
             if (!categoryExists)
             {
                 guna2Panel16.Visible = true; // Show guna2Panel16 if the category is not in the list
+                guna2CustomGradientPanel1.Visible = false; // Hide guna2CustomGradientPanel1
             }
         }
+
+
 
 
 
@@ -393,7 +397,7 @@ namespace WandererCup
 
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private async void guna2Button3_Click(object sender, EventArgs e)
         {
             // Get the values from the controls in guna2Panel1
             string category = string.IsNullOrWhiteSpace(CategoryTextBox.Text) ? CategoryTextBox.Tag.ToString() : CategoryTextBox.Text;
@@ -435,8 +439,22 @@ namespace WandererCup
                 // Re-select the previously selected row
                 guna2DataGridView1.ClearSelection();
                 guna2DataGridView1.Rows[selectedIndex].Selected = true;
+
+                // Check if guna2Panel16 is visible before showing guna2CustomGradientPanel1
+                if (!guna2Panel16.Visible)
+                {
+                    // Show guna2CustomGradientPanel1 if update is successful
+                    guna2CustomGradientPanel1.Visible = true;
+                    // Wait for 3 seconds
+                    await Task.Delay(3000);
+
+                    // Hide guna2CustomGradientPanel1 after 3 seconds
+                    guna2CustomGradientPanel1.Visible = false;
+                }
             }
         }
+
+
 
 
 
@@ -540,6 +558,16 @@ namespace WandererCup
         {
             guna2Panel16.Visible = false; // Hide guna2Panel16
             guna2Panel1.Visible = true; // Show guna2Panel1
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel16_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
