@@ -272,6 +272,7 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(235, 35);
             this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox1.TabIndex = 92;
+            this.guna2TextBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_1);
             // 
             // pictureBox2
             // 
@@ -306,6 +307,7 @@
             this.guna2TextBox2.Size = new System.Drawing.Size(193, 35);
             this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox2.TabIndex = 94;
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // guna2DataGridView1
             // 

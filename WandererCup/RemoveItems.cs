@@ -450,5 +450,20 @@ namespace WandererCup
             guna2CustomGradientPanel1.Visible = false;
         }
 
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox1.Text.ToLower();
+            DataView dv = itemsTable.DefaultView;
+            dv.RowFilter = string.Format("[Product Name] LIKE '%{0}%'", searchText);
+            guna2DataGridView1.DataSource = dv.ToTable();
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox2.Text.ToLower();
+            DataView dv = categoriesTable.DefaultView;
+            dv.RowFilter = string.Format("[CategoryName] LIKE '%{0}%'", searchText);
+            guna2DataGridView2.DataSource = dv.ToTable();
+        }
     }
 }
