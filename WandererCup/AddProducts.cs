@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 
 namespace WandererCup
@@ -31,7 +32,16 @@ namespace WandererCup
             {
                 guna2Button2.Click += new EventHandler(guna2Button2_Click);
             }
+
+            guna2Panel21.Visible = false;
+            guna2CustomGradientPanel2.Visible = false;
+            guna2Panel12.Visible = false;
+            guna2CustomGradientPanel1.Visible = false;
         }
+
+
+
+
         private bool IsEventHandlerAttached(Control control, EventHandler handler)
         {
             var fieldInfo = typeof(Control).GetField("EventClick", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static);
@@ -254,6 +264,72 @@ namespace WandererCup
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            guna2Panel21.Visible = true;
+        }
+
+
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PopulateDynamicCategories()
+        {
+            var categories = GetCategories();
+            CategoryCombobox.Items.Clear();
+            CategoryCombobox.Items.AddRange(categories.ToArray());
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2Panel12.Visible = true;
+   
+        }
+
+
+
+        private bool IsArchivedCategory(string categoryName)
+        {
+            bool isArchived = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName AND is_archived = 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
+                        isArchived = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return isArchived;
+        }
+
+
+        private void CategoryCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HistoryButton_Click(object sender, EventArgs e)
+        {
+            var orderhistory = new OrderHistory();
+            orderhistory.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            orderhistory.Show();
+            HighlightActiveButton((Button)sender);
+        }
+
+        private async void guna2Button7_Click(object sender, EventArgs e)
+        {
             string productName = ItemNameTextbox.Text;
             decimal price;
             string selectedCategory = CategoryCombobox.SelectedItem?.ToString();
@@ -298,7 +374,10 @@ namespace WandererCup
 
                         cmd.ExecuteNonQuery();
                     }
-                    MessageBox.Show("Product saved successfully.");
+                    guna2Panel21.Visible = false;
+                    guna2CustomGradientPanel2.Visible = true;
+                    await Task.Delay(3000);
+                    guna2CustomGradientPanel2.Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -308,20 +387,27 @@ namespace WandererCup
         }
 
 
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Hide();
+        }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = false;
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void PopulateDynamicCategories()
+        private void label10_Click(object sender, EventArgs e)
         {
-            var categories = GetCategories();
-            CategoryCombobox.Items.Clear();
-            CategoryCombobox.Items.AddRange(categories.ToArray());
+
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
+        private async void guna2Button4_Click(object sender, EventArgs e)
         {
             string categoryName = guna2TextBox1.Text;
 
@@ -367,7 +453,10 @@ namespace WandererCup
                             {
                                 insertCmd.Parameters.AddWithValue("@CategoryName", categoryName);
                                 insertCmd.ExecuteNonQuery();
-                                MessageBox.Show("Category saved successfully.");
+                                guna2Panel12.Visible=false;
+                                guna2CustomGradientPanel1.Visible = true;
+                                await Task.Delay(3000);
+                                guna2CustomGradientPanel1.Hide();
                             }
                         }
                     }
@@ -380,47 +469,22 @@ namespace WandererCup
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
+
         }
 
-
-
-        private bool IsArchivedCategory(string categoryName)
-        {
-            bool isArchived = false;
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT COUNT(*) FROM Category WHERE CategoryName = @CategoryName AND is_archived = 1";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@CategoryName", categoryName);
-                        isArchived = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
-            return isArchived;
-        }
-
-
-        private void CategoryCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void HistoryButton_Click(object sender, EventArgs e)
+        private void label11_Click(object sender, EventArgs e)
         {
-            var orderhistory = new OrderHistory();
-            orderhistory.FormClosed += (s, args) => Application.Exit();
-            this.Hide();
-            orderhistory.Show();
-            HighlightActiveButton((Button)sender);
+            guna2Panel12.Hide();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            guna2Panel12.Visible = false;
         }
     }
 }

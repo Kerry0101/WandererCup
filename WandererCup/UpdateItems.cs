@@ -26,6 +26,8 @@ namespace WandererCup
             guna2Panel1.Visible = false;
             guna2Panel16.Visible = false; // Hide guna2Panel16 by default
             guna2CustomGradientPanel1.Visible = false; // Hide guna2CustomGradientPanel1 by default
+            guna2CustomGradientPanel2.Visible = false;
+            guna2Panel21.Visible = false;
             LoadItems();
             LoadCategories();
             CustomizeDataGridView();
@@ -295,7 +297,7 @@ namespace WandererCup
             guna2DataGridView2.DataSource = dv.ToTable();
         }
 
-        private void Guna2Button2_Click(object sender, EventArgs e)
+        private async void guna2Button7_Click(object sender, EventArgs e)
         {
             string connectionString = GetConnectionString();
 
@@ -346,6 +348,10 @@ namespace WandererCup
             // Refresh the data
             LoadItems();
             LoadCategories();
+            guna2Panel21.Visible = false;
+            guna2CustomGradientPanel2.Visible = true;
+            await Task.Delay(3000);
+            guna2CustomGradientPanel2.Visible = false;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -568,6 +574,26 @@ namespace WandererCup
         private void guna2Panel16_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Guna2Button2_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = true;
+        }
+
+        private void guna2HtmlLabel5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = false;
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = false;
         }
     }
 }
