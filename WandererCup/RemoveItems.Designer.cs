@@ -81,7 +81,6 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -353,7 +352,6 @@
             // 
             this.guna2Panel16.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel16.BorderRadius = 10;
-            this.guna2Panel16.Controls.Add(this.guna2HtmlLabel9);
             this.guna2Panel16.Controls.Add(this.guna2Panel20);
             this.guna2Panel16.Controls.Add(this.guna2Panel19);
             this.guna2Panel16.Controls.Add(this.guna2Panel18);
@@ -423,17 +421,17 @@
             this.guna2Button5.Size = new System.Drawing.Size(63, 36);
             this.guna2Button5.TabIndex = 3;
             this.guna2Button5.Text = "OK";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click_1);
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click_2);
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(35, 80);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(8, 80);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(284, 18);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(342, 18);
             this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "Please remove your products first before";
+            this.guna2HtmlLabel2.Text = "Please remove your products before proceeding.";
             // 
             // guna2HtmlLabel1
             // 
@@ -709,16 +707,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
             // 
-            // guna2HtmlLabel9
-            // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(135, 100);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(86, 18);
-            this.guna2HtmlLabel9.TabIndex = 102;
-            this.guna2HtmlLabel9.Text = "proceeding.";
-            // 
             // RemoveItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -825,6 +813,5 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
     }
 }

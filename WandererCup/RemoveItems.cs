@@ -420,5 +420,10 @@ namespace WandererCup
         {
             guna2Panel16.Hide();
         }
+
+        private void guna2Button5_Click_2(object sender, EventArgs e)
+        {
+            guna2Panel16.Hide();    
+        }
     }
 }
