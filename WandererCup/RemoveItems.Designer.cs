@@ -50,6 +50,7 @@
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
@@ -81,6 +82,8 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,6 +96,7 @@
             this.guna2Panel21.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel9
@@ -352,6 +356,7 @@
             // 
             this.guna2Panel16.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel16.BorderRadius = 10;
+            this.guna2Panel16.Controls.Add(this.guna2HtmlLabel9);
             this.guna2Panel16.Controls.Add(this.guna2Panel20);
             this.guna2Panel16.Controls.Add(this.guna2Panel19);
             this.guna2Panel16.Controls.Add(this.guna2Panel18);
@@ -360,10 +365,20 @@
             this.guna2Panel16.Controls.Add(this.guna2HtmlLabel2);
             this.guna2Panel16.Controls.Add(this.guna2HtmlLabel1);
             this.guna2Panel16.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel16.Location = new System.Drawing.Point(232, 151);
+            this.guna2Panel16.Location = new System.Drawing.Point(233, 211);
             this.guna2Panel16.Name = "guna2Panel16";
             this.guna2Panel16.Size = new System.Drawing.Size(359, 168);
             this.guna2Panel16.TabIndex = 108;
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(135, 93);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(86, 18);
+            this.guna2HtmlLabel9.TabIndex = 102;
+            this.guna2HtmlLabel9.Text = "proceeding.";
             // 
             // guna2Panel20
             // 
@@ -427,17 +442,17 @@
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(8, 80);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(34, 69);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(342, 18);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(289, 18);
             this.guna2HtmlLabel2.TabIndex = 2;
-            this.guna2HtmlLabel2.Text = "Please remove your products before proceeding.";
+            this.guna2HtmlLabel2.Text = "Please remove your product/s first before";
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(11, 58);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(11, 48);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(334, 18);
             this.guna2HtmlLabel1.TabIndex = 1;
@@ -449,7 +464,7 @@
             this.guna2PictureBox1.BorderRadius = 10;
             this.guna2PictureBox1.Image = global::WandererCup.Properties.Resources.warning;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(156, 18);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(156, 8);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(45, 35);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -469,7 +484,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.CloseButton);
-            this.guna2Panel21.Location = new System.Drawing.Point(55, 246);
+            this.guna2Panel21.Location = new System.Drawing.Point(580, 167);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(204, 147);
             this.guna2Panel21.TabIndex = 103;
@@ -586,7 +601,7 @@
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Location = new System.Drawing.Point(286, 324);
+            this.guna2Panel1.Location = new System.Drawing.Point(119, 167);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(324, 156);
             this.guna2Panel1.TabIndex = 109;
@@ -679,6 +694,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(77, 31);
             this.guna2Button1.TabIndex = 3;
             this.guna2Button1.Text = "Cancel";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click_1);
             // 
             // guna2Button3
             // 
@@ -695,6 +711,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(61, 31);
             this.guna2Button3.TabIndex = 2;
             this.guna2Button3.Text = "Yes";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click_1);
             // 
             // label2
             // 
@@ -706,6 +723,31 @@
             this.label2.Size = new System.Drawing.Size(16, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2HtmlLabel10);
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.Color.LightGreen;
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.Color.Beige;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(312, 19);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(278, 35);
+            this.guna2CustomGradientPanel1.TabIndex = 108;
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(15, 9);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(249, 17);
+            this.guna2HtmlLabel10.TabIndex = 0;
+            this.guna2HtmlLabel10.Text = "Your product has been removed successfully!";
             // 
             // RemoveItems
             // 
@@ -713,6 +755,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(843, 499);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2Panel21);
             this.Controls.Add(this.guna2Panel16);
@@ -754,6 +797,8 @@
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -813,5 +858,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
     }
 }

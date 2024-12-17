@@ -17,6 +17,7 @@ namespace WandererCup
     {
         private DataTable itemsTable;
         private DataTable categoriesTable;
+        private string selectedProductName;
         private AutoCompleteStringCollection categoryAutoComplete;
         public RemoveItems()
         {
@@ -31,6 +32,7 @@ namespace WandererCup
             guna2Panel16.Visible = false;
             guna2Panel1.Visible = false;
             guna2CustomGradientPanel2.Visible = false;
+            guna2CustomGradientPanel1.Visible = false;
         }
 
         private string GetConnectionString()
@@ -217,9 +219,8 @@ namespace WandererCup
         {
             if (e.ColumnIndex == 0 && e.RowIndex >= 0)
             {
-                string productName = guna2DataGridView1.Rows[e.RowIndex].Cells["Product Name"].Value.ToString();
-                ArchiveProduct(productName);
-                LoadItems(); // Refresh the DataGridView
+                selectedProductName = guna2DataGridView1.Rows[e.RowIndex].Cells["Product Name"].Value.ToString();
+                guna2Panel1.Visible = true;
             }
         }
 
@@ -408,22 +409,46 @@ namespace WandererCup
 
         private void guna2Button8_Click_1(object sender, EventArgs e)
         {
-            guna2Panel21.Hide();
+            guna2Panel21.Visible = false;
         }
 
         private void CloseButton_Click_1(object sender, EventArgs e)
         {
-            guna2Panel21.Hide();   
+            guna2Panel21.Visible = false;
         }
 
         private void guna2Button5_Click_1(object sender, EventArgs e)
         {
-            guna2Panel16.Hide();
+            guna2Panel16.Visible = false;
         }
 
         private void guna2Button5_Click_2(object sender, EventArgs e)
         {
-            guna2Panel16.Hide();    
+            guna2Panel16.Visible = false;
         }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel1.Visible = false;
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel1.Visible = false;
+        }
+
+        private async void guna2Button3_Click_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(selectedProductName))
+            {
+                ArchiveProduct(selectedProductName);
+                LoadItems(); // Refresh the DataGridView
+                guna2Panel1.Visible = false; // Hide the revalidation message
+            }
+            guna2CustomGradientPanel1.Visible = true;
+            await Task.Delay(3000);
+            guna2CustomGradientPanel1.Visible = false;
+        }
+
     }
 }
