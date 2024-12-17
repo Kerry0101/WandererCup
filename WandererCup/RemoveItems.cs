@@ -27,6 +27,10 @@ namespace WandererCup
             guna2DataGridView1.CellPainting += guna2DataGridView1_CellPainting;
             guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
             CustomizeDataGridView();
+            guna2Panel21.Visible = false;
+            guna2Panel16.Visible = false;
+            guna2Panel1.Visible = false;
+            guna2CustomGradientPanel2.Visible = false;
         }
 
         private string GetConnectionString()
@@ -274,23 +278,7 @@ namespace WandererCup
 
         private void Guna2Button2_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView2.SelectedRows.Count > 0)
-            {
-                string categoryName = guna2DataGridView2.SelectedRows[0].Cells["CategoryName"].Value.ToString();
-
-                if (HasAssociatedProducts(categoryName))
-                {
-                    MessageBox.Show("Cannot remove category. There are products associated with this category.");
-                    return;
-                }
-
-                ArchiveCategory(categoryName);
-                guna2DataGridView2.Rows.RemoveAt(guna2DataGridView2.SelectedRows[0].Index); // Remove the selected row from the DataGridView
-            }
-            else
-            {
-                MessageBox.Show("Please select a category to remove.");
-            }
+            guna2Panel21.Visible = true;    
         }
 
         private bool HasAssociatedProducts(string categoryName)
@@ -338,6 +326,99 @@ namespace WandererCup
         private void guna2DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private async void guna2Button7_Click_1(object sender, EventArgs e)
+        {
+            if (guna2DataGridView2.SelectedRows.Count > 0)
+            {
+                string categoryName = guna2DataGridView2.SelectedRows[0].Cells["CategoryName"].Value.ToString();
+
+                if (HasAssociatedProducts(categoryName))
+                {
+                    guna2Panel21.Visible = false;
+                    guna2CustomGradientPanel2.Visible = false;
+                    guna2Panel16.Visible = true;
+                    return;
+                }
+
+                ArchiveCategory(categoryName);
+                guna2DataGridView2.Rows.RemoveAt(guna2DataGridView2.SelectedRows[0].Index); // Remove the selected row from the DataGridView
+            }
+            else
+            {
+                MessageBox.Show("Please select a category to remove.");
+            }
+            guna2Panel21.Visible = false;
+            guna2CustomGradientPanel2.Visible = true;
+            await Task.Delay(3000);
+            guna2CustomGradientPanel2.Visible = false;
+
+        }
+
+        private void guna2Button8_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel21.Hide();
+        }
+
+        private void CloseButton_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel21.Hide();   
+        }
+
+        private void guna2Button5_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel16.Hide();
         }
     }
 }
