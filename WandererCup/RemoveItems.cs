@@ -390,6 +390,7 @@ namespace WandererCup
                     guna2Panel21.Visible = false;
                     guna2CustomGradientPanel2.Visible = false;
                     guna2Panel16.Visible = true;
+                    guna2Panel16.BringToFront(); // Bring the panel to the front
                     return;
                 }
 
@@ -402,9 +403,9 @@ namespace WandererCup
             }
             guna2Panel21.Visible = false;
             guna2CustomGradientPanel2.Visible = true;
+            guna2CustomGradientPanel2.BringToFront(); // Bring the panel to the front
             await Task.Delay(3000);
             guna2CustomGradientPanel2.Visible = false;
-
         }
 
         private void guna2Button8_Click_1(object sender, EventArgs e)
@@ -446,6 +447,7 @@ namespace WandererCup
                 guna2Panel1.Visible = false; // Hide the revalidation message
             }
             guna2CustomGradientPanel1.Visible = true;
+            guna2CustomGradientPanel1.BringToFront(); // Bring the panel to the front
             await Task.Delay(3000);
             guna2CustomGradientPanel1.Visible = false;
         }
