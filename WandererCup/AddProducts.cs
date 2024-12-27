@@ -140,9 +140,9 @@ namespace WandererCup
 
         private void AddProductsButton_Click(object sender, EventArgs e)
         {
-
+            //asdadapsld
         }
-        //asdakdjladsjasd'
+
         private void Additemsbtn_Click(object sender, EventArgs e)
         {
 
@@ -328,6 +328,7 @@ namespace WandererCup
             HighlightActiveButton((Button)sender);
         }
 
+
         private async void guna2Button7_Click(object sender, EventArgs e)
         {
             string productName = ItemNameTextbox.Text;
@@ -365,6 +366,23 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
+
+                    // Check if the product name already exists
+                    string checkQuery = "SELECT COUNT(*) FROM Product WHERE ProductName = @ProductName";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@ProductName", productName);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+
+                            MessageBox.Show("This product name is already exists in the system. Please enter a different one.");
+                            return;
+                        }
+                    }
+
+                    // Insert the new product
                     string query = "INSERT INTO Product (ProductName, Price, CategoryID, is_archived) VALUES (@ProductName, @Price, @CategoryID, 0)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -374,6 +392,12 @@ namespace WandererCup
 
                         cmd.ExecuteNonQuery();
                     }
+
+                    // Reset text fields and combo box
+                    ItemNameTextbox.Text = string.Empty;
+                    PriceTextbox.Text = string.Empty;
+                    CategoryCombobox.SelectedIndex = -1;
+
                     guna2Panel21.Visible = false;
                     guna2CustomGradientPanel2.Visible = true;
                     await Task.Delay(3000);
@@ -385,6 +409,8 @@ namespace WandererCup
                 }
             }
         }
+
+
 
 
         private void guna2Button8_Click(object sender, EventArgs e)
@@ -453,6 +479,10 @@ namespace WandererCup
                             {
                                 insertCmd.Parameters.AddWithValue("@CategoryName", categoryName);
                                 insertCmd.ExecuteNonQuery();
+
+                                // Reset combo box
+                                guna2TextBox1.Text = string.Empty;
+
                                 guna2Panel12.Visible=false;
                                 guna2CustomGradientPanel1.Visible = true;
                                 await Task.Delay(3000);
