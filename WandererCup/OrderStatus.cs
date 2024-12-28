@@ -19,6 +19,9 @@ namespace WandererCup
         public OrderStatus()
         {
             InitializeComponent();
+
+            guna2Panel21.Visible = false;
+
             panel2.MouseDown += new MouseEventHandler(Panel2_MouseDown);
             panel2.MouseMove += new MouseEventHandler(Panel2_MouseMove);
             //CustomizeDataGridView();
@@ -137,6 +140,11 @@ namespace WandererCup
                     Text = "Cancel"
                 };
 
+
+                // Add this inside the AddDynamicOrdersToPanel method after creating the newButton
+                newButton.Click += (s, e) => ShowCancellationPanel(orderId, orderPanel);
+
+
                 PictureBox pictureBox6 = new PictureBox
                 {
                     BackColor = Color.Tan,
@@ -215,6 +223,27 @@ namespace WandererCup
             panel3.PerformLayout();
         }
 
+
+        // Add this method to show the guna2Panel21 panel
+        private void ShowCancellationPanel(int orderId, Panel orderPanel)
+        {
+            guna2Panel21.Visible = true;
+
+            // Handle the 'Yes' button click event
+            guna2Button7.Click += (s, e) =>
+            {
+                CancelOrder(orderId, orderPanel);
+                guna2Panel21.Visible = false;
+            };
+
+            // Handle the 'Cancel' button click event
+            guna2Button8.Click += (s, e) =>
+            {
+                guna2Panel21.Visible = false;
+            };
+        }
+
+
         private void CalculateTotal(DataGridView dataGridView, Label totalLabel)
         {
             decimal total = 0;
@@ -229,14 +258,6 @@ namespace WandererCup
 
             totalLabel.Text = "Total: " + total.ToString("C");
         }
-
-
-
-
-
-
-
-
 
 
         private List<int> FetchOrderIdsFromDatabase()
@@ -439,6 +460,46 @@ namespace WandererCup
             this.Hide();
             orderhistory.Show();
             HighlightActiveButton((Button)sender);
+        }
+
+
+        private void CancelOrder(int orderId, Panel orderPanel)
+        {
+            try
+            {
+                string connectionString = GetConnectionString();
+
+                // First, delete the related rows in the orderdetails table
+                string deleteOrderDetailsQuery = "DELETE FROM `orderdetails` WHERE OrderID = @OrderID";
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand command = new MySqlCommand(deleteOrderDetailsQuery, connection);
+                    command.Parameters.AddWithValue("@OrderID", orderId);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                } 
+
+                // Then, delete the row in the order table
+                string deleteOrderQuery = "DELETE FROM `order` WHERE OrderID = @OrderID";
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    MySqlCommand command = new MySqlCommand(deleteOrderQuery, connection);
+                    command.Parameters.AddWithValue("@OrderID", orderId);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+                panel3.Controls.Remove(orderPanel);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+            guna2Panel21.Hide();
         }
     }
 }
