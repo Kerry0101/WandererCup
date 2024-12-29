@@ -35,6 +35,8 @@ namespace WandererCup
 
         private void AddDynamicOrdersToPanel()
         {
+            panel3.Controls.Clear(); // Clear existing controls
+
             List<int> orderIds = FetchOrderIdsFromDatabase();
             int xOffset = 10; // Initial horizontal offset
             int yOffset = 13; // Initial vertical offset
@@ -128,6 +130,9 @@ namespace WandererCup
                     Text = "Mark Complete"
                 };
 
+                // Attach the event handler
+                guna2Button2.Click += (s, e) => MarkCompleteButton_Click(s, e, orderId, dataGridView1);
+
                 Guna.UI2.WinForms.Guna2Button newButton = new Guna.UI2.WinForms.Guna2Button
                 {
                     BorderRadius = 10,
@@ -140,8 +145,7 @@ namespace WandererCup
                     Text = "Cancel"
                 };
 
-
-                // Add this inside the AddDynamicOrdersToPanel method after creating the newButton
+                // Attach the event handler for the cancel button
                 newButton.Click += (s, e) => ShowCancellationPanel(orderId, orderPanel);
 
 
@@ -224,7 +228,11 @@ namespace WandererCup
         }
 
 
-        // Add this method to show the guna2Panel21 panel
+
+
+
+
+
         private void ShowCancellationPanel(int orderId, Panel orderPanel)
         {
             guna2Panel21.Visible = true;
@@ -242,6 +250,9 @@ namespace WandererCup
                 guna2Panel21.Visible = false;
             };
         }
+
+
+
 
 
         private void CalculateTotal(DataGridView dataGridView, Label totalLabel)
@@ -266,7 +277,7 @@ namespace WandererCup
             try
             {
                 string connectionString = GetConnectionString();
-                string query = "SELECT OrderID FROM `order`"; // Adjust the query as needed
+                string query = "SELECT OrderID FROM `order` WHERE OrderID IN (SELECT DISTINCT OrderID FROM `orderdetails` WHERE is_archived = 0)"; // Adjust the query as needed
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
@@ -287,6 +298,7 @@ namespace WandererCup
             }
             return orderIds;
         }
+
 
         private void FetchAndDisplayOrderDetails(int orderId, DataGridView dataGridView)
         {
@@ -463,6 +475,55 @@ namespace WandererCup
         }
 
 
+        private void MarkCompleteButton_Click(object sender, EventArgs e, int orderId, DataGridView dataGridView)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (row.Cells["Subtotal"].Value != null)
+                {
+                    total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
+                }
+            }
+
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Update the Total in the order table
+                    string updateOrderQuery = "UPDATE `order` SET Total = @Total WHERE OrderID = @OrderID";
+                    using (MySqlCommand updateOrderCmd = new MySqlCommand(updateOrderQuery, conn))
+                    {
+                        updateOrderCmd.Parameters.AddWithValue("@Total", total);
+                        updateOrderCmd.Parameters.AddWithValue("@OrderID", orderId);
+                        updateOrderCmd.ExecuteNonQuery();
+                    }
+
+                    // Mark the order details as archived
+                    string updateOrderDetailsQuery = "UPDATE `orderdetails` SET is_archived = 1 WHERE OrderID = @OrderID";
+                    using (MySqlCommand updateOrderDetailsCmd = new MySqlCommand(updateOrderDetailsQuery, conn))
+                    {
+                        updateOrderDetailsCmd.Parameters.AddWithValue("@OrderID", orderId);
+                        updateOrderDetailsCmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Order marked as completed.");
+                    // Refresh the panel to remove the completed order
+                    AddDynamicOrdersToPanel();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+
         private void CancelOrder(int orderId, Panel orderPanel)
         {
             try
@@ -477,7 +538,7 @@ namespace WandererCup
                     command.Parameters.AddWithValue("@OrderID", orderId);
                     connection.Open();
                     command.ExecuteNonQuery();
-                } 
+                }
 
                 // Then, delete the row in the order table
                 string deleteOrderQuery = "DELETE FROM `order` WHERE OrderID = @OrderID";
@@ -497,9 +558,26 @@ namespace WandererCup
             }
         }
 
+
+
         private void label2_Click_1(object sender, EventArgs e)
         {
             guna2Panel21.Hide();
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel21_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel24_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

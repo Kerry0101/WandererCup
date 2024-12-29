@@ -467,5 +467,10 @@ namespace WandererCup
             dv.RowFilter = string.Format("[CategoryName] LIKE '%{0}%'", searchText);
             guna2DataGridView2.DataSource = dv.ToTable();
         }
+
+        private void guna2DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
