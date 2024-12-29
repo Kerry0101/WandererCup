@@ -34,7 +34,6 @@ namespace WandererCup
             //guna2DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Disable auto size rows mode
             //guna2DataGridView1.ScrollBars = ScrollBars.Both; // Enable both horizontal and vertical scrollbars
 
-            
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(guna2DataGridView1.Font.FontFamily, 11, FontStyle.Bold); // Change font size
@@ -49,7 +48,9 @@ namespace WandererCup
             //guna2DataGridView1.RowTemplate.Height = 30;
             guna2DataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular); // Change font size
 
+
         }
+
 
         private void LoadOrderHistory()
         {
@@ -91,12 +92,13 @@ namespace WandererCup
         }
 
 
+
+
         private void Guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             DateTime selectedDate = guna2DateTimePicker1.Value;
             FilterDataGridViewByDate(selectedDate);
         }
-
 
         private void FilterDataGridViewByDate(DateTime date)
         {
@@ -152,6 +154,9 @@ namespace WandererCup
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
 
 
