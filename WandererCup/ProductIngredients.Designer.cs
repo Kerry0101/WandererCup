@@ -44,28 +44,39 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.CloseButton = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
-            this.AddRow = new System.Windows.Forms.Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.QuantityTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.CategoryTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.IngredientTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.AttachButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
+            this.PNameLabel = new System.Windows.Forms.Label();
+            this.AddRowButton = new System.Windows.Forms.Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel25 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel24 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel23 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel16.SuspendLayout();
             this.guna2Panel17.SuspendLayout();
+            this.guna2Panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel2
@@ -250,9 +261,9 @@
             this.guna2Panel1.Controls.Add(this.guna2Panel13);
             this.guna2Panel1.Controls.Add(this.guna2Panel12);
             this.guna2Panel1.Controls.Add(this.label3);
-            this.guna2Panel1.Controls.Add(this.guna2Button3);
+            this.guna2Panel1.Controls.Add(this.AttachButton);
             this.guna2Panel1.Controls.Add(this.guna2Panel17);
-            this.guna2Panel1.Location = new System.Drawing.Point(589, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(353, 110);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(419, 395);
@@ -269,17 +280,7 @@
             this.CloseButton.Size = new System.Drawing.Size(21, 20);
             this.CloseButton.TabIndex = 102;
             this.CloseButton.Text = "X";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(241, 6);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 20);
-            this.label6.TabIndex = 101;
-            this.label6.Text = "Mocha";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // label5
             // 
@@ -296,53 +297,38 @@
             // guna2Panel16
             // 
             this.guna2Panel16.BackColor = System.Drawing.Color.BurlyWood;
-            this.guna2Panel16.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel16.BorderRadius = 10;
-            this.guna2Panel16.BorderThickness = 1;
-            this.guna2Panel16.Controls.Add(this.AddRow);
-            this.guna2Panel16.Controls.Add(this.guna2TextBox1);
+            this.guna2Panel16.Controls.Add(this.QuantityTextBox);
             this.guna2Panel16.Controls.Add(this.label4);
-            this.guna2Panel16.Controls.Add(this.CategoryTextBox);
+            this.guna2Panel16.Controls.Add(this.IngredientTextBox);
             this.guna2Panel16.Controls.Add(this.label2);
             this.guna2Panel16.Location = new System.Drawing.Point(9, 112);
             this.guna2Panel16.Name = "guna2Panel16";
             this.guna2Panel16.Size = new System.Drawing.Size(401, 202);
             this.guna2Panel16.TabIndex = 99;
             // 
-            // AddRow
+            // QuantityTextBox
             // 
-            this.AddRow.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddRow.Location = new System.Drawing.Point(328, 43);
-            this.AddRow.Margin = new System.Windows.Forms.Padding(4);
-            this.AddRow.Name = "AddRow";
-            this.AddRow.Size = new System.Drawing.Size(44, 35);
-            this.AddRow.TabIndex = 101;
-            this.AddRow.Text = "+";
-            this.AddRow.UseVisualStyleBackColor = true;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(241, 43);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(80, 35);
-            this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox1.TabIndex = 100;
+            this.QuantityTextBox.BorderRadius = 10;
+            this.QuantityTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.QuantityTextBox.DefaultText = "";
+            this.QuantityTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.QuantityTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.QuantityTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QuantityTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QuantityTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QuantityTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QuantityTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.QuantityTextBox.ForeColor = System.Drawing.Color.Black;
+            this.QuantityTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QuantityTextBox.Location = new System.Drawing.Point(241, 43);
+            this.QuantityTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.QuantityTextBox.Name = "QuantityTextBox";
+            this.QuantityTextBox.PasswordChar = '\0';
+            this.QuantityTextBox.PlaceholderText = "";
+            this.QuantityTextBox.SelectedText = "";
+            this.QuantityTextBox.Size = new System.Drawing.Size(80, 35);
+            this.QuantityTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.QuantityTextBox.TabIndex = 100;
             // 
             // label4
             // 
@@ -355,29 +341,30 @@
             this.label4.TabIndex = 99;
             this.label4.Text = "Quantity:";
             // 
-            // CategoryTextBox
+            // IngredientTextBox
             // 
-            this.CategoryTextBox.BorderRadius = 10;
-            this.CategoryTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CategoryTextBox.DefaultText = "";
-            this.CategoryTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.CategoryTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.CategoryTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CategoryTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CategoryTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CategoryTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.CategoryTextBox.ForeColor = System.Drawing.Color.Black;
-            this.CategoryTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CategoryTextBox.Location = new System.Drawing.Point(16, 43);
-            this.CategoryTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.CategoryTextBox.Name = "CategoryTextBox";
-            this.CategoryTextBox.PasswordChar = '\0';
-            this.CategoryTextBox.PlaceholderText = "";
-            this.CategoryTextBox.SelectedText = "";
-            this.CategoryTextBox.Size = new System.Drawing.Size(216, 35);
-            this.CategoryTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.CategoryTextBox.TabIndex = 98;
+            this.IngredientTextBox.BorderRadius = 10;
+            this.IngredientTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.IngredientTextBox.DefaultText = "";
+            this.IngredientTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.IngredientTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.IngredientTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IngredientTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IngredientTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.IngredientTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IngredientTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IngredientTextBox.ForeColor = System.Drawing.Color.Black;
+            this.IngredientTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IngredientTextBox.Location = new System.Drawing.Point(16, 43);
+            this.IngredientTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.IngredientTextBox.Name = "IngredientTextBox";
+            this.IngredientTextBox.PasswordChar = '\0';
+            this.IngredientTextBox.PlaceholderText = "";
+            this.IngredientTextBox.SelectedText = "";
+            this.IngredientTextBox.Size = new System.Drawing.Size(216, 35);
+            this.IngredientTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.IngredientTextBox.TabIndex = 98;
+            this.IngredientTextBox.TextChanged += new System.EventHandler(this.IngredientTextBox_TextChanged);
             // 
             // label2
             // 
@@ -437,31 +424,55 @@
             this.label3.TabIndex = 84;
             this.label3.Text = "Attach Product Ingredients";
             // 
-            // guna2Button3
+            // AttachButton
             // 
-            this.guna2Button3.BorderRadius = 18;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Green;
-            this.guna2Button3.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(148, 340);
-            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(117, 43);
-            this.guna2Button3.TabIndex = 0;
-            this.guna2Button3.Text = "Attach";
+            this.AttachButton.BorderRadius = 18;
+            this.AttachButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AttachButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AttachButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AttachButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AttachButton.FillColor = System.Drawing.Color.Green;
+            this.AttachButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.AttachButton.ForeColor = System.Drawing.Color.White;
+            this.AttachButton.Location = new System.Drawing.Point(148, 340);
+            this.AttachButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachButton.Name = "AttachButton";
+            this.AttachButton.Size = new System.Drawing.Size(117, 43);
+            this.AttachButton.TabIndex = 0;
+            this.AttachButton.Text = "Attach";
+            this.AttachButton.Click += new System.EventHandler(this.AttachButton_Click);
             // 
             // guna2Panel17
             // 
             this.guna2Panel17.BackColor = System.Drawing.SystemColors.Info;
-            this.guna2Panel17.Controls.Add(this.label6);
+            this.guna2Panel17.Controls.Add(this.PNameLabel);
             this.guna2Panel17.Location = new System.Drawing.Point(-24, 67);
             this.guna2Panel17.Name = "guna2Panel17";
             this.guna2Panel17.Size = new System.Drawing.Size(460, 34);
             this.guna2Panel17.TabIndex = 0;
+            // 
+            // PNameLabel
+            // 
+            this.PNameLabel.AutoSize = true;
+            this.PNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PNameLabel.Location = new System.Drawing.Point(241, 6);
+            this.PNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PNameLabel.Name = "PNameLabel";
+            this.PNameLabel.Size = new System.Drawing.Size(64, 20);
+            this.PNameLabel.TabIndex = 101;
+            this.PNameLabel.Text = "Mocha";
+            // 
+            // AddRowButton
+            // 
+            this.AddRowButton.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddRowButton.Location = new System.Drawing.Point(694, 265);
+            this.AddRowButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AddRowButton.Name = "AddRowButton";
+            this.AddRowButton.Size = new System.Drawing.Size(44, 35);
+            this.AddRowButton.TabIndex = 101;
+            this.AddRowButton.Text = "+";
+            this.AddRowButton.UseVisualStyleBackColor = true;
+            this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
             // guna2Button2
             // 
@@ -479,6 +490,133 @@
             this.guna2Button2.Size = new System.Drawing.Size(191, 49);
             this.guna2Button2.TabIndex = 101;
             this.guna2Button2.Text = "Add Ingredients";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Panel21
+            // 
+            this.guna2Panel21.BackColor = System.Drawing.SystemColors.Info;
+            this.guna2Panel21.Controls.Add(this.guna2Panel26);
+            this.guna2Panel21.Controls.Add(this.guna2Panel25);
+            this.guna2Panel21.Controls.Add(this.guna2Panel24);
+            this.guna2Panel21.Controls.Add(this.guna2Panel23);
+            this.guna2Panel21.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2Panel21.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2Panel21.Controls.Add(this.guna2Button8);
+            this.guna2Panel21.Controls.Add(this.guna2Button7);
+            this.guna2Panel21.Controls.Add(this.label6);
+            this.guna2Panel21.Location = new System.Drawing.Point(233, 104);
+            this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel21.Name = "guna2Panel21";
+            this.guna2Panel21.Size = new System.Drawing.Size(272, 181);
+            this.guna2Panel21.TabIndex = 103;
+            this.guna2Panel21.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel21_Paint);
+            // 
+            // guna2Panel26
+            // 
+            this.guna2Panel26.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel26.Location = new System.Drawing.Point(271, 0);
+            this.guna2Panel26.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel26.Name = "guna2Panel26";
+            this.guna2Panel26.Size = new System.Drawing.Size(13, 187);
+            this.guna2Panel26.TabIndex = 103;
+            // 
+            // guna2Panel25
+            // 
+            this.guna2Panel25.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel25.Location = new System.Drawing.Point(0, -11);
+            this.guna2Panel25.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel25.Name = "guna2Panel25";
+            this.guna2Panel25.Size = new System.Drawing.Size(272, 12);
+            this.guna2Panel25.TabIndex = 102;
+            // 
+            // guna2Panel24
+            // 
+            this.guna2Panel24.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel24.Location = new System.Drawing.Point(0, 180);
+            this.guna2Panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel24.Name = "guna2Panel24";
+            this.guna2Panel24.Size = new System.Drawing.Size(271, 12);
+            this.guna2Panel24.TabIndex = 101;
+            // 
+            // guna2Panel23
+            // 
+            this.guna2Panel23.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel23.Location = new System.Drawing.Point(-12, -28);
+            this.guna2Panel23.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel23.Name = "guna2Panel23";
+            this.guna2Panel23.Size = new System.Drawing.Size(13, 238);
+            this.guna2Panel23.TabIndex = 100;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(87, 75);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(94, 20);
+            this.guna2HtmlLabel5.TabIndex = 5;
+            this.guna2HtmlLabel5.Text = "Close anyway?";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(39, 48);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(194, 20);
+            this.guna2HtmlLabel4.TabIndex = 4;
+            this.guna2HtmlLabel4.Text = "Changes made won\'t be saved.";
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.BorderRadius = 15;
+            this.guna2Button8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button8.FillColor = System.Drawing.Color.Red;
+            this.guna2Button8.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button8.ForeColor = System.Drawing.Color.White;
+            this.guna2Button8.Location = new System.Drawing.Point(140, 138);
+            this.guna2Button8.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.Size = new System.Drawing.Size(103, 38);
+            this.guna2Button8.TabIndex = 3;
+            this.guna2Button8.Text = "Cancel";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
+            // 
+            // guna2Button7
+            // 
+            this.guna2Button7.BorderRadius = 15;
+            this.guna2Button7.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button7.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button7.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button7.FillColor = System.Drawing.Color.Green;
+            this.guna2Button7.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2Button7.ForeColor = System.Drawing.Color.White;
+            this.guna2Button7.Location = new System.Drawing.Point(28, 138);
+            this.guna2Button7.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button7.Name = "guna2Button7";
+            this.guna2Button7.Size = new System.Drawing.Size(81, 38);
+            this.guna2Button7.TabIndex = 2;
+            this.guna2Button7.Text = "Yes";
+            this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(249, 1);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 20);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "X";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // ProductIngredients
             // 
@@ -486,6 +624,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(1124, 614);
+            this.Controls.Add(this.guna2Panel21);
+            this.Controls.Add(this.AddRowButton);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label1);
@@ -513,6 +653,8 @@
             this.guna2Panel16.PerformLayout();
             this.guna2Panel17.ResumeLayout(false);
             this.guna2Panel17.PerformLayout();
+            this.guna2Panel21.ResumeLayout(false);
+            this.guna2Panel21.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,22 +677,32 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2TextBox CategoryTextBox;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Button AttachButton;
+        private System.Windows.Forms.Label PNameLabel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button AddRow;
         private System.Windows.Forms.Label CloseButton;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel21;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel26;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel25;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel24;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel23;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button8;
+        private Guna.UI2.WinForms.Guna2Button guna2Button7;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
+        private System.Windows.Forms.Button AddRowButton;
+        private Guna.UI2.WinForms.Guna2TextBox QuantityTextBox;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2TextBox IngredientTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }

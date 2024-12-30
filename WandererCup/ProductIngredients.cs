@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 
 namespace WandererCup
 {
@@ -20,10 +21,27 @@ namespace WandererCup
             InitializeComponent();
             CustomizeDataGridView();
             guna2Panel1.Visible = false;
+            guna2Panel21.Visible = false;
+            guna2Panel16.AutoScroll = true;
+            AddRowButton.Visible = false;
             this.Load += new EventHandler(ProductIngredients_Load);
             guna2TextBox2.TextChanged += new EventHandler(guna2TextBox2_TextChanged);
+            guna2DataGridView2.SelectionChanged += new EventHandler(guna2DataGridView2_SelectionChanged);
+            AttachButton.Click += new EventHandler(AttachButton_Click);
+            guna2Button2.Click += new EventHandler(guna2Button2_Click);
+            AddRowButton.Click += new EventHandler(AddRowButton_Click);
         }
 
+
+
+        private void guna2DataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (guna2DataGridView2.SelectedRows.Count > 0)
+            {
+                var selectedRow = guna2DataGridView2.SelectedRows[0];
+                PNameLabel.Text = selectedRow.Cells["ProductName"].Value.ToString();
+            }
+        }
 
 
         private void CustomizeDataGridView()
@@ -151,7 +169,182 @@ namespace WandererCup
             return productsTable;
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            AddRowButton.Visible = true;
+            if (guna2DataGridView2.SelectedRows.Count > 0)
+            {
+                var selectedRow = guna2DataGridView2.SelectedRows[0];
+                PNameLabel.Text = selectedRow.Cells["ProductName"].Value.ToString();
+                guna2Panel1.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select a product first.");
+            }
+        }
 
+        private void AttachButton_Click(object sender, EventArgs e)
+        {
+            string productName = PNameLabel.Text;
+
+            if (string.IsNullOrWhiteSpace(productName))
+            {
+                MessageBox.Show("Please select a product first.");
+                return;
+            }
+
+            int productId = GetProductIdByName(productName);
+            if (productId == -1)
+            {
+                MessageBox.Show("Product not found.");
+                return;
+            }
+
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    foreach (var ingredientTextBox in guna2Panel1.Controls.OfType<Guna2TextBox>().Where(tb => tb.PlaceholderText == "Ingredient Name"))
+                    {
+                        var quantityTextBox = guna2Panel1.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Location.Y == ingredientTextBox.Location.Y && tb.PlaceholderText == "Quantity");
+                        if (quantityTextBox != null)
+                        {
+                            string ingredientName = ingredientTextBox.Text;
+                            string quantity = quantityTextBox.Text;
+
+                            if (string.IsNullOrWhiteSpace(ingredientName) || string.IsNullOrWhiteSpace(quantity))
+                            {
+                                MessageBox.Show("Please fill in all fields.");
+                                return;
+                            }
+
+                            string query = "INSERT INTO Ingredients (ProductID, IngredientName, Quantity) VALUES (@ProductID, @IngredientName, @Quantity)";
+                            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@ProductID", productId);
+                                cmd.Parameters.AddWithValue("@IngredientName", ingredientName);
+                                cmd.Parameters.AddWithValue("@Quantity", quantity);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Quantity textbox not found for ingredient: " + ingredientTextBox.Text);
+                        }
+                    }
+                    MessageBox.Show("Ingredients added successfully.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+
+        private int GetProductIdByName(string productName)
+        {
+            int productId = -1;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductID FROM Product WHERE ProductName = @ProductName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                productId = reader.GetInt32("ProductID");
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productId;
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = true;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Hide();
+        }
+
+        private void guna2Button8_Click(object sender, EventArgs e)
+        {
+            guna2Panel21.Visible = false;
+        }
+
+        private void guna2Panel21_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button7_Click(object sender, EventArgs e)
+        {
+            AddRowButton.Visible = false;
+            guna2Panel1.Visible = false;
+            guna2Panel21.Visible = false;
+        }
+
+
+        private void AddRowButton_Click(object sender, EventArgs e)
+        {
+            // Calculate the new position for the new textboxes
+            int existingTextBoxCount = guna2Panel16.Controls.OfType<Guna2TextBox>().Count();
+            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (existingTextBoxCount / 2);
+
+            // Create new IngredientTextBox
+            Guna2TextBox newIngredientTextBox = new Guna2TextBox
+            {
+                Location = new Point(IngredientTextBox.Location.X, newYPosition),
+                Size = IngredientTextBox.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+            // Create new QuantityTextBox
+            Guna2TextBox newQuantityTextBox = new Guna2TextBox
+            {
+                Location = new Point(QuantityTextBox.Location.X, newYPosition),
+                Size = QuantityTextBox.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+            // Add the new textboxes to the panel
+            guna2Panel16.Controls.Add(newIngredientTextBox);
+            guna2Panel16.Controls.Add(newQuantityTextBox);
+        }
+
+
+
+
+        private void IngredientTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void QuantityTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
