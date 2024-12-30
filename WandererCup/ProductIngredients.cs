@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 
 namespace WandererCup
 {
@@ -15,11 +17,15 @@ namespace WandererCup
     {
         public ProductIngredients()
         {
-          
             InitializeComponent();
             CustomizeDataGridView();
             guna2Panel1.Visible = false;
+            this.Load += new EventHandler(ProductIngredients_Load);
+            guna2TextBox2.TextChanged += new EventHandler(guna2TextBox2_TextChanged);
         }
+
+
+
         private void CustomizeDataGridView()
         {
             guna2DataGridView2.RowHeadersVisible = false;
@@ -51,18 +57,101 @@ namespace WandererCup
             // Set default width size of each cell to 227
             foreach (DataGridViewColumn column in guna2DataGridView2.Columns)
             {
-                column.Width = 227;
+                column.Width = 210;
             }
         }
 
+
+        private DataTable GetProducts()
+        {
+            DataTable productsTable = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductName FROM Product WHERE is_archived = 0";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(productsTable);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productsTable;
+        }
+
+
         private void ProductIngredients_Load(object sender, EventArgs e)
         {
+            var productsTable = GetProducts();
+            guna2DataGridView2.DataSource = productsTable;
 
+            // Set the column header text
+            if (guna2DataGridView2.Columns["ProductName"] != null)
+            {
+                guna2DataGridView2.Columns["ProductName"].HeaderText = "Product Names";
+                guna2DataGridView2.Columns["ProductName"].Width = 210; // Set the width of the column
+            }
         }
+
+
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox2.Text.Trim();
+            var filteredProducts = GetFilteredProducts(searchText);
+            guna2DataGridView2.DataSource = filteredProducts;
+
+            // Set the column header text
+            if (guna2DataGridView2.Columns["ProductName"] != null)
+            {
+                guna2DataGridView2.Columns["ProductName"].HeaderText = "Product Names";
+                guna2DataGridView2.Columns["ProductName"].Width = 210; // Set the width of the column
+            }
+        }
+
+
+        private DataTable GetFilteredProducts(string searchText)
+        {
+            DataTable productsTable = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductName FROM Product WHERE is_archived = 0 AND ProductName LIKE @SearchText";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(productsTable);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productsTable;
+        }
+
+
+
     }
 }

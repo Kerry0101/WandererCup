@@ -39,7 +39,6 @@
             this.guna2Panel9 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2DataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Pnames = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -182,8 +181,6 @@
             // 
             this.guna2DataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.guna2DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Pnames});
             this.guna2DataGridView2.Location = new System.Drawing.Point(65, 196);
             this.guna2DataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2DataGridView2.Name = "guna2DataGridView2";
@@ -191,14 +188,6 @@
             this.guna2DataGridView2.RowHeadersWidth = 51;
             this.guna2DataGridView2.Size = new System.Drawing.Size(307, 255);
             this.guna2DataGridView2.TabIndex = 98;
-            // 
-            // Pnames
-            // 
-            this.Pnames.HeaderText = "Product Names";
-            this.Pnames.MinimumWidth = 6;
-            this.Pnames.Name = "Pnames";
-            this.Pnames.ReadOnly = true;
-            this.Pnames.Width = 125;
             // 
             // pictureBox2
             // 
@@ -234,6 +223,7 @@
             this.guna2TextBox2.Size = new System.Drawing.Size(307, 43);
             this.guna2TextBox2.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox2.TabIndex = 96;
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // label1
             // 
@@ -262,7 +252,7 @@
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.guna2Button3);
             this.guna2Panel1.Controls.Add(this.guna2Panel17);
-            this.guna2Panel1.Location = new System.Drawing.Point(735, 100);
+            this.guna2Panel1.Location = new System.Drawing.Point(589, 12);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(419, 395);
@@ -284,7 +274,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(206, 6);
+            this.label6.Location = new System.Drawing.Point(241, 6);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 20);
@@ -306,6 +296,9 @@
             // guna2Panel16
             // 
             this.guna2Panel16.BackColor = System.Drawing.Color.BurlyWood;
+            this.guna2Panel16.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel16.BorderRadius = 10;
+            this.guna2Panel16.BorderThickness = 1;
             this.guna2Panel16.Controls.Add(this.AddRow);
             this.guna2Panel16.Controls.Add(this.guna2TextBox1);
             this.guna2Panel16.Controls.Add(this.label4);
@@ -355,7 +348,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(237, 20);
+            this.label4.Location = new System.Drawing.Point(237, 4);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
@@ -390,7 +383,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 20);
+            this.label2.Location = new System.Drawing.Point(12, 4);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 20);
@@ -465,9 +458,9 @@
             // 
             this.guna2Panel17.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel17.Controls.Add(this.label6);
-            this.guna2Panel17.Location = new System.Drawing.Point(0, 67);
+            this.guna2Panel17.Location = new System.Drawing.Point(-24, 67);
             this.guna2Panel17.Name = "guna2Panel17";
-            this.guna2Panel17.Size = new System.Drawing.Size(419, 34);
+            this.guna2Panel17.Size = new System.Drawing.Size(460, 34);
             this.guna2Panel17.TabIndex = 0;
             // 
             // guna2Button2
@@ -541,7 +534,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pnames;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox CategoryTextBox;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
