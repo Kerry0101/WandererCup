@@ -189,6 +189,12 @@
     <Compile Include="OrderStatus.Designer.cs">
       <DependentUpon>OrderStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductIngredients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductIngredients.Designer.cs">
+      <DependentUpon>ProductIngredients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveItems.cs">
@@ -205,6 +211,7 @@
     </Compile>
     <EmbeddedResource Include="AddProducts.resx">
       <DependentUpon>AddProducts.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Index_form.resx">
       <DependentUpon>Index_form.cs</DependentUpon>
@@ -223,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrderStatus.resx">
       <DependentUpon>OrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductIngredients.resx">
+      <DependentUpon>ProductIngredients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

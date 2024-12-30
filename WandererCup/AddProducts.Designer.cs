@@ -30,6 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ProductIngredients = new System.Windows.Forms.Button();
             this.UserControlPanel = new System.Windows.Forms.Panel();
             this.Removeitemsbtn = new System.Windows.Forms.Button();
             this.Updateitemsbtn = new System.Windows.Forms.Button();
@@ -126,15 +127,30 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.ProductIngredients);
             this.panel4.Controls.Add(this.UserControlPanel);
             this.panel4.Controls.Add(this.Removeitemsbtn);
             this.panel4.Controls.Add(this.Updateitemsbtn);
             this.panel4.Controls.Add(this.Additemsbtn);
-            this.panel4.Location = new System.Drawing.Point(3, 64);
+            this.panel4.Location = new System.Drawing.Point(3, 63);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(437, 37);
+            this.panel4.Size = new System.Drawing.Size(653, 37);
             this.panel4.TabIndex = 1;
+            // 
+            // ProductIngredients
+            // 
+            this.ProductIngredients.BackColor = System.Drawing.Color.Tan;
+            this.ProductIngredients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProductIngredients.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
+            this.ProductIngredients.Location = new System.Drawing.Point(433, 1);
+            this.ProductIngredients.Margin = new System.Windows.Forms.Padding(4);
+            this.ProductIngredients.Name = "ProductIngredients";
+            this.ProductIngredients.Size = new System.Drawing.Size(220, 34);
+            this.ProductIngredients.TabIndex = 267;
+            this.ProductIngredients.Text = "Product Ingredients";
+            this.ProductIngredients.UseVisualStyleBackColor = false;
+            this.ProductIngredients.Click += new System.EventHandler(this.ProductIngredientsButton_Click);
             // 
             // UserControlPanel
             // 
@@ -149,7 +165,7 @@
             this.Removeitemsbtn.BackColor = System.Drawing.Color.Tan;
             this.Removeitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Removeitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
-            this.Removeitemsbtn.Location = new System.Drawing.Point(273, 0);
+            this.Removeitemsbtn.Location = new System.Drawing.Point(273, 1);
             this.Removeitemsbtn.Margin = new System.Windows.Forms.Padding(4);
             this.Removeitemsbtn.Name = "Removeitemsbtn";
             this.Removeitemsbtn.Size = new System.Drawing.Size(160, 34);
@@ -163,7 +179,7 @@
             this.Updateitemsbtn.BackColor = System.Drawing.Color.Tan;
             this.Updateitemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Updateitemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold);
-            this.Updateitemsbtn.Location = new System.Drawing.Point(129, 0);
+            this.Updateitemsbtn.Location = new System.Drawing.Point(129, 1);
             this.Updateitemsbtn.Margin = new System.Windows.Forms.Padding(4);
             this.Updateitemsbtn.Name = "Updateitemsbtn";
             this.Updateitemsbtn.Size = new System.Drawing.Size(144, 34);
@@ -177,7 +193,7 @@
             this.Additemsbtn.BackColor = System.Drawing.Color.Tan;
             this.Additemsbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Additemsbtn.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Additemsbtn.Location = new System.Drawing.Point(0, 0);
+            this.Additemsbtn.Location = new System.Drawing.Point(0, 1);
             this.Additemsbtn.Margin = new System.Windows.Forms.Padding(4);
             this.Additemsbtn.Name = "Additemsbtn";
             this.Additemsbtn.Size = new System.Drawing.Size(129, 34);
@@ -213,7 +229,7 @@
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Label7
-            // this.Label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label7.Location = new System.Drawing.Point(1316, -5);
@@ -240,12 +256,10 @@
             this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CloseButton.AutoSize = true;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             this.CloseButton.Location = new System.Drawing.Point(1356, 6);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(21, 20);
-
             this.CloseButton.TabIndex = 0;
             this.CloseButton.Text = "X";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
@@ -263,12 +277,10 @@
             this.panelSidebar.Controls.Add(this.PosButton);
             this.panelSidebar.Controls.Add(this.InventoryButton);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-
             this.panelSidebar.Location = new System.Drawing.Point(0, 31);
             this.panelSidebar.Margin = new System.Windows.Forms.Padding(4);
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(267, 712);
-
             this.panelSidebar.TabIndex = 13;
             // 
             // guna2Panel1
@@ -766,7 +778,6 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-
             this.guna2TextBox1.Location = new System.Drawing.Point(575, 164);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
@@ -961,7 +972,6 @@
             this.PriceTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.PriceTextbox.ForeColor = System.Drawing.Color.Black;
             this.PriceTextbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-
             this.PriceTextbox.Location = new System.Drawing.Point(216, 337);
             this.PriceTextbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.PriceTextbox.Name = "PriceTextbox";
@@ -991,7 +1001,6 @@
             this.ItemNameTextbox.PlaceholderText = "";
             this.ItemNameTextbox.SelectedText = "";
             this.ItemNameTextbox.Size = new System.Drawing.Size(284, 43);
-
             this.ItemNameTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.ItemNameTextbox.TabIndex = 69;
             this.ItemNameTextbox.TextChanged += new System.EventHandler(this.ItemNameTextbox_TextChanged);
@@ -1158,5 +1167,6 @@
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private System.Windows.Forms.Button ProductIngredients;
     }
 }

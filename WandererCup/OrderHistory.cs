@@ -20,6 +20,9 @@ namespace WandererCup
             ConfigureDataGridView();
             LoadOrderHistory();
             guna2DateTimePicker1.ValueChanged += new EventHandler(Guna2DateTimePicker1_ValueChanged);
+
+            // Set the DateTimePicker to the current date and time
+            guna2DateTimePicker1.Value = DateTime.Now;
         }
 
         private void ConfigureDataGridView()
@@ -235,6 +238,9 @@ namespace WandererCup
         private void OrderHistory_Load(object sender, EventArgs e)
         {
             HighlightActiveButton(HistoryButton);
+
+            // Update the DateTimePicker value to the current date and time on form load
+            guna2DateTimePicker1.Value = DateTime.Now;
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

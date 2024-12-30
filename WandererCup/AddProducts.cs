@@ -33,6 +33,9 @@ namespace WandererCup
                 guna2Button2.Click += new EventHandler(guna2Button2_Click);
             }
 
+            // Attach the new event handler
+            ProductIngredients.Click += new EventHandler(ProductIngredientsButton_Click);
+
             guna2Panel21.Visible = false;
             guna2CustomGradientPanel2.Visible = false;
             guna2Panel12.Visible = false;
@@ -522,5 +525,27 @@ namespace WandererCup
         {
             guna2Panel12.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductIngredientsButton_Click(object sender, EventArgs e)
+        {
+            // Check if ProductIngredients form is already present in panel5
+            if (panel5.Controls.OfType<ProductIngredients>().Any())
+            {
+                return; // Do nothing if ProductIngredients form is already present
+            }
+            var productIngredientsForm = new ProductIngredients();
+            productIngredientsForm.TopLevel = false;
+            productIngredientsForm.Dock = DockStyle.Fill;
+            panel5.Controls.Clear(); // Clear any existing controls in panel5
+            panel5.Controls.Add(productIngredientsForm);
+            productIngredientsForm.Show();
+            HighlightActiveButton((Button)sender);
+        }
+
     }
 }
