@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.panelSidebar = new System.Windows.Forms.Panel();
-            this.SalesReportButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.buttonSidebar3 = new System.Windows.Forms.Button();
-            this.PosButton = new System.Windows.Forms.Button();
-            this.InventoryButton = new System.Windows.Forms.Button();
             this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
@@ -49,6 +40,15 @@
             this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.SalesReportButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.buttonSidebar3 = new System.Windows.Forms.Button();
+            this.PosButton = new System.Windows.Forms.Button();
+            this.InventoryButton = new System.Windows.Forms.Button();
             this.InventoryMainPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -78,8 +78,8 @@
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.guna2Panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.InventoryMainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -123,139 +123,6 @@
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(267, 713);
             this.panelSidebar.TabIndex = 15;
-            // 
-            // SalesReportButton
-            // 
-            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
-            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.SalesReportButton.FlatAppearance.BorderSize = 0;
-            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SalesReportButton.Location = new System.Drawing.Point(-1, 443);
-            this.SalesReportButton.Margin = new System.Windows.Forms.Padding(4);
-            this.SalesReportButton.Name = "SalesReportButton";
-            this.SalesReportButton.Size = new System.Drawing.Size(265, 52);
-            this.SalesReportButton.TabIndex = 14;
-            this.SalesReportButton.Text = "Sales Report";
-            this.SalesReportButton.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.BurlyWood;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(16, 588);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(233, 43);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Log Out";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.guna2Panel1.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(264, -17);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(13, 761);
-            this.guna2Panel1.TabIndex = 12;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 188);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Tan;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(0, 395);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(265, 52);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Order History";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Tan;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(0, 346);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(265, 52);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Order Status";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // buttonSidebar3
-            // 
-            this.buttonSidebar3.BackColor = System.Drawing.Color.Tan;
-            this.buttonSidebar3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.buttonSidebar3.FlatAppearance.BorderSize = 0;
-            this.buttonSidebar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSidebar3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.buttonSidebar3.Location = new System.Drawing.Point(0, 298);
-            this.buttonSidebar3.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonSidebar3.Name = "buttonSidebar3";
-            this.buttonSidebar3.Size = new System.Drawing.Size(265, 52);
-            this.buttonSidebar3.TabIndex = 2;
-            this.buttonSidebar3.Text = "Manage Products";
-            this.buttonSidebar3.UseVisualStyleBackColor = false;
-            this.buttonSidebar3.Click += new System.EventHandler(this.buttonSidebar3_Click);
-            // 
-            // PosButton
-            // 
-            this.PosButton.BackColor = System.Drawing.Color.Tan;
-            this.PosButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.PosButton.FlatAppearance.BorderSize = 0;
-            this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PosButton.Location = new System.Drawing.Point(0, 203);
-            this.PosButton.Margin = new System.Windows.Forms.Padding(4);
-            this.PosButton.Name = "PosButton";
-            this.PosButton.Size = new System.Drawing.Size(265, 52);
-            this.PosButton.TabIndex = 0;
-            this.PosButton.Text = "Point of Sales";
-            this.PosButton.UseVisualStyleBackColor = false;
-            this.PosButton.Click += new System.EventHandler(this.PosButton_Click);
-            // 
-            // InventoryButton
-            // 
-            this.InventoryButton.BackColor = System.Drawing.Color.Tan;
-            this.InventoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.InventoryButton.FlatAppearance.BorderSize = 0;
-            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.InventoryButton.Location = new System.Drawing.Point(0, 250);
-            this.InventoryButton.Margin = new System.Windows.Forms.Padding(4);
-            this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(265, 52);
-            this.InventoryButton.TabIndex = 1;
-            this.InventoryButton.Text = "Manage Inventory";
-            this.InventoryButton.UseVisualStyleBackColor = false;
-            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // guna2Panel21
             // 
@@ -390,6 +257,139 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "X";
             this.label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // SalesReportButton
+            // 
+            this.SalesReportButton.BackColor = System.Drawing.Color.Tan;
+            this.SalesReportButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.SalesReportButton.FlatAppearance.BorderSize = 0;
+            this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 443);
+            this.SalesReportButton.Margin = new System.Windows.Forms.Padding(4);
+            this.SalesReportButton.Name = "SalesReportButton";
+            this.SalesReportButton.Size = new System.Drawing.Size(265, 52);
+            this.SalesReportButton.TabIndex = 14;
+            this.SalesReportButton.Text = "Sales Report";
+            this.SalesReportButton.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.BurlyWood;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(16, 588);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(233, 43);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Log Out";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.guna2Panel1.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel1.Location = new System.Drawing.Point(264, -17);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(13, 761);
+            this.guna2Panel1.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(258, 188);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Tan;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button4.Location = new System.Drawing.Point(0, 395);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(265, 52);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "Order History";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Tan;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button3.Location = new System.Drawing.Point(0, 346);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(265, 52);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Order Status";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // buttonSidebar3
+            // 
+            this.buttonSidebar3.BackColor = System.Drawing.Color.Tan;
+            this.buttonSidebar3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonSidebar3.FlatAppearance.BorderSize = 0;
+            this.buttonSidebar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSidebar3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.buttonSidebar3.Location = new System.Drawing.Point(0, 298);
+            this.buttonSidebar3.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSidebar3.Name = "buttonSidebar3";
+            this.buttonSidebar3.Size = new System.Drawing.Size(265, 52);
+            this.buttonSidebar3.TabIndex = 2;
+            this.buttonSidebar3.Text = "Manage Products";
+            this.buttonSidebar3.UseVisualStyleBackColor = false;
+            this.buttonSidebar3.Click += new System.EventHandler(this.buttonSidebar3_Click);
+            // 
+            // PosButton
+            // 
+            this.PosButton.BackColor = System.Drawing.Color.Tan;
+            this.PosButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.PosButton.FlatAppearance.BorderSize = 0;
+            this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PosButton.Location = new System.Drawing.Point(0, 203);
+            this.PosButton.Margin = new System.Windows.Forms.Padding(4);
+            this.PosButton.Name = "PosButton";
+            this.PosButton.Size = new System.Drawing.Size(265, 52);
+            this.PosButton.TabIndex = 0;
+            this.PosButton.Text = "Point of Sales";
+            this.PosButton.UseVisualStyleBackColor = false;
+            this.PosButton.Click += new System.EventHandler(this.PosButton_Click);
+            // 
+            // InventoryButton
+            // 
+            this.InventoryButton.BackColor = System.Drawing.Color.Tan;
+            this.InventoryButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.InventoryButton.FlatAppearance.BorderSize = 0;
+            this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
+            this.InventoryButton.Location = new System.Drawing.Point(0, 250);
+            this.InventoryButton.Margin = new System.Windows.Forms.Padding(4);
+            this.InventoryButton.Name = "InventoryButton";
+            this.InventoryButton.Size = new System.Drawing.Size(265, 52);
+            this.InventoryButton.TabIndex = 1;
+            this.InventoryButton.Text = "Manage Inventory";
+            this.InventoryButton.UseVisualStyleBackColor = false;
+            this.InventoryButton.Click += new System.EventHandler(this.InventoryButton_Click);
             // 
             // InventoryMainPanel
             // 
@@ -759,9 +759,9 @@
             this.Text = "OrderStatus";
             this.Load += new System.EventHandler(this.OrderStatus_Load);
             this.panelSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.guna2Panel21.ResumeLayout(false);
             this.guna2Panel21.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.InventoryMainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

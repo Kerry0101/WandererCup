@@ -38,13 +38,13 @@
             this.SalesReportButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonSidebar3 = new System.Windows.Forms.Button();
             this.PosButton = new System.Windows.Forms.Button();
             this.InventoryButton = new System.Windows.Forms.Button();
             this.InventoryMainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -85,8 +85,8 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
-            this.InventoryMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.InventoryMainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -134,8 +134,9 @@
             this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1043, 25);
+            this.panel2.Size = new System.Drawing.Size(1391, 31);
             this.panel2.TabIndex = 11;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -143,9 +144,10 @@
             // 
             this.Label7.AutoSize = true;
             this.Label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label7.Location = new System.Drawing.Point(991, -4);
+            this.Label7.Location = new System.Drawing.Point(1321, -5);
+            this.Label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(25, 24);
+            this.Label7.Size = new System.Drawing.Size(32, 29);
             this.Label7.TabIndex = 3;
             this.Label7.Text = "🗕";
             this.Label7.Click += new System.EventHandler(this.Label7_Click);
@@ -154,9 +156,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 5);
+            this.label6.Location = new System.Drawing.Point(7, 6);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 15);
+            this.label6.Size = new System.Drawing.Size(213, 18);
             this.label6.TabIndex = 1;
             this.label6.Text = "Order Management System";
             // 
@@ -164,9 +167,10 @@
             // 
             this.CloseButton.AutoSize = true;
             this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(1017, 5);
+            this.CloseButton.Location = new System.Drawing.Point(1356, 6);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(16, 16);
+            this.CloseButton.Size = new System.Drawing.Size(21, 20);
             this.CloseButton.TabIndex = 0;
             this.CloseButton.Text = "X";
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
@@ -175,18 +179,20 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Tan;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(198, 25);
+            this.panel1.Location = new System.Drawing.Point(264, 31);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(845, 80);
+            this.panel1.Size = new System.Drawing.Size(1127, 98);
             this.panel1.TabIndex = 13;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("NSimSun", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(226, 22);
+            this.label1.Location = new System.Drawing.Point(301, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(389, 33);
+            this.label1.Size = new System.Drawing.Size(479, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Wanderer Cup Inventory";
             // 
@@ -203,9 +209,10 @@
             this.panelSidebar.Controls.Add(this.PosButton);
             this.panelSidebar.Controls.Add(this.InventoryButton);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSidebar.Location = new System.Drawing.Point(0, 25);
+            this.panelSidebar.Location = new System.Drawing.Point(0, 31);
+            this.panelSidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(200, 579);
+            this.panelSidebar.Size = new System.Drawing.Size(267, 712);
             this.panelSidebar.TabIndex = 14;
             // 
             // SalesReportButton
@@ -215,9 +222,10 @@
             this.SalesReportButton.FlatAppearance.BorderSize = 0;
             this.SalesReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesReportButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.SalesReportButton.Location = new System.Drawing.Point(-1, 360);
+            this.SalesReportButton.Location = new System.Drawing.Point(-1, 443);
+            this.SalesReportButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SalesReportButton.Name = "SalesReportButton";
-            this.SalesReportButton.Size = new System.Drawing.Size(199, 42);
+            this.SalesReportButton.Size = new System.Drawing.Size(265, 52);
             this.SalesReportButton.TabIndex = 14;
             this.SalesReportButton.Text = "Sales Report";
             this.SalesReportButton.UseVisualStyleBackColor = false;
@@ -229,9 +237,10 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(12, 478);
+            this.button2.Location = new System.Drawing.Point(16, 588);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(175, 35);
+            this.button2.Size = new System.Drawing.Size(233, 43);
             this.button2.TabIndex = 11;
             this.button2.Text = "Log Out";
             this.button2.UseVisualStyleBackColor = false;
@@ -241,10 +250,23 @@
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(198, -14);
+            this.guna2Panel1.Location = new System.Drawing.Point(264, -17);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(10, 618);
+            this.guna2Panel1.Size = new System.Drawing.Size(13, 760);
             this.guna2Panel1.TabIndex = 12;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(258, 188);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
@@ -253,9 +275,10 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(0, 321);
+            this.button4.Location = new System.Drawing.Point(0, 395);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(199, 42);
+            this.button4.Size = new System.Drawing.Size(265, 52);
             this.button4.TabIndex = 11;
             this.button4.Text = "Order History";
             this.button4.UseVisualStyleBackColor = false;
@@ -268,9 +291,10 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button3.Location = new System.Drawing.Point(0, 281);
+            this.button3.Location = new System.Drawing.Point(0, 346);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(199, 42);
+            this.button3.Size = new System.Drawing.Size(265, 52);
             this.button3.TabIndex = 11;
             this.button3.Text = "Order Status";
             this.button3.UseVisualStyleBackColor = false;
@@ -283,9 +307,10 @@
             this.buttonSidebar3.FlatAppearance.BorderSize = 0;
             this.buttonSidebar3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSidebar3.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.buttonSidebar3.Location = new System.Drawing.Point(0, 242);
+            this.buttonSidebar3.Location = new System.Drawing.Point(0, 298);
+            this.buttonSidebar3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSidebar3.Name = "buttonSidebar3";
-            this.buttonSidebar3.Size = new System.Drawing.Size(199, 42);
+            this.buttonSidebar3.Size = new System.Drawing.Size(265, 52);
             this.buttonSidebar3.TabIndex = 2;
             this.buttonSidebar3.Text = "Manage Products";
             this.buttonSidebar3.UseVisualStyleBackColor = false;
@@ -298,9 +323,10 @@
             this.PosButton.FlatAppearance.BorderSize = 0;
             this.PosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PosButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PosButton.Location = new System.Drawing.Point(0, 165);
+            this.PosButton.Location = new System.Drawing.Point(0, 203);
+            this.PosButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PosButton.Name = "PosButton";
-            this.PosButton.Size = new System.Drawing.Size(199, 42);
+            this.PosButton.Size = new System.Drawing.Size(265, 52);
             this.PosButton.TabIndex = 0;
             this.PosButton.Text = "Point of Sales";
             this.PosButton.UseVisualStyleBackColor = false;
@@ -313,9 +339,10 @@
             this.InventoryButton.FlatAppearance.BorderSize = 0;
             this.InventoryButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InventoryButton.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Bold);
-            this.InventoryButton.Location = new System.Drawing.Point(0, 203);
+            this.InventoryButton.Location = new System.Drawing.Point(0, 250);
+            this.InventoryButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.InventoryButton.Name = "InventoryButton";
-            this.InventoryButton.Size = new System.Drawing.Size(199, 42);
+            this.InventoryButton.Size = new System.Drawing.Size(265, 52);
             this.InventoryButton.TabIndex = 1;
             this.InventoryButton.Text = "Manage Inventory";
             this.InventoryButton.UseVisualStyleBackColor = false;
@@ -361,29 +388,20 @@
             this.InventoryMainPanel.Controls.Add(this.pictureBox46);
             this.InventoryMainPanel.Controls.Add(this.pictureBox13);
             this.InventoryMainPanel.Location = new System.Drawing.Point(0, 0);
+            this.InventoryMainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.InventoryMainPanel.Name = "InventoryMainPanel";
-            this.InventoryMainPanel.Size = new System.Drawing.Size(1043, 604);
+            this.InventoryMainPanel.Size = new System.Drawing.Size(1391, 743);
             this.InventoryMainPanel.TabIndex = 15;
             this.InventoryMainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.InventoryMainPanel_Paint);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(194, 153);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox17.Location = new System.Drawing.Point(272, 301);
+            this.pictureBox17.Location = new System.Drawing.Point(363, 370);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox17.Size = new System.Drawing.Size(88, 103);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox17.TabIndex = 228;
             this.pictureBox17.TabStop = false;
@@ -393,9 +411,10 @@
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox15.Location = new System.Drawing.Point(593, 301);
+            this.pictureBox15.Location = new System.Drawing.Point(791, 370);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox15.Size = new System.Drawing.Size(88, 103);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox15.TabIndex = 227;
             this.pictureBox15.TabStop = false;
@@ -404,9 +423,10 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox8.Location = new System.Drawing.Point(338, 385);
+            this.pictureBox8.Location = new System.Drawing.Point(451, 474);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox8.Size = new System.Drawing.Size(127, 208);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 226;
             this.pictureBox8.TabStop = false;
@@ -415,9 +435,10 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox6.Location = new System.Drawing.Point(754, 301);
+            this.pictureBox6.Location = new System.Drawing.Point(1005, 370);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox6.Size = new System.Drawing.Size(88, 103);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 225;
             this.pictureBox6.TabStop = false;
@@ -426,9 +447,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox2.Location = new System.Drawing.Point(433, 301);
+            this.pictureBox2.Location = new System.Drawing.Point(577, 370);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox2.Size = new System.Drawing.Size(88, 103);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 224;
             this.pictureBox2.TabStop = false;
@@ -437,9 +459,10 @@
             // 
             this.pictureBox50.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox50.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox50.Location = new System.Drawing.Point(1010, 555);
+            this.pictureBox50.Location = new System.Drawing.Point(1347, 683);
+            this.pictureBox50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox50.Name = "pictureBox50";
-            this.pictureBox50.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox50.Size = new System.Drawing.Size(88, 103);
             this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox50.TabIndex = 222;
             this.pictureBox50.TabStop = false;
@@ -448,9 +471,10 @@
             // 
             this.pictureBox48.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox48.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox48.Location = new System.Drawing.Point(1010, 386);
+            this.pictureBox48.Location = new System.Drawing.Point(1347, 475);
+            this.pictureBox48.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox48.Name = "pictureBox48";
-            this.pictureBox48.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox48.Size = new System.Drawing.Size(88, 103);
             this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox48.TabIndex = 221;
             this.pictureBox48.TabStop = false;
@@ -459,9 +483,10 @@
             // 
             this.pictureBox44.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox44.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox44.Location = new System.Drawing.Point(849, 554);
+            this.pictureBox44.Location = new System.Drawing.Point(1132, 682);
+            this.pictureBox44.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox44.Name = "pictureBox44";
-            this.pictureBox44.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox44.Size = new System.Drawing.Size(88, 103);
             this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox44.TabIndex = 220;
             this.pictureBox44.TabStop = false;
@@ -470,9 +495,10 @@
             // 
             this.pictureBox47.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox47.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox47.Location = new System.Drawing.Point(915, 469);
+            this.pictureBox47.Location = new System.Drawing.Point(1220, 577);
+            this.pictureBox47.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox47.Name = "pictureBox47";
-            this.pictureBox47.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox47.Size = new System.Drawing.Size(127, 208);
             this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox47.TabIndex = 219;
             this.pictureBox47.TabStop = false;
@@ -481,9 +507,10 @@
             // 
             this.pictureBox40.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox40.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox40.Location = new System.Drawing.Point(338, 216);
+            this.pictureBox40.Location = new System.Drawing.Point(451, 266);
+            this.pictureBox40.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox40.Name = "pictureBox40";
-            this.pictureBox40.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox40.Size = new System.Drawing.Size(127, 208);
             this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox40.TabIndex = 213;
             this.pictureBox40.TabStop = false;
@@ -493,9 +520,10 @@
             // 
             this.pictureBox31.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox31.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox31.Location = new System.Drawing.Point(499, 216);
+            this.pictureBox31.Location = new System.Drawing.Point(665, 266);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox31.Size = new System.Drawing.Size(127, 208);
             this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox31.TabIndex = 208;
             this.pictureBox31.TabStop = false;
@@ -504,9 +532,10 @@
             // 
             this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox27.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox27.Location = new System.Drawing.Point(272, 470);
+            this.pictureBox27.Location = new System.Drawing.Point(363, 578);
+            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox27.Size = new System.Drawing.Size(88, 103);
             this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox27.TabIndex = 207;
             this.pictureBox27.TabStop = false;
@@ -515,9 +544,10 @@
             // 
             this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox26.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox26.Location = new System.Drawing.Point(338, 554);
+            this.pictureBox26.Location = new System.Drawing.Point(451, 682);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox26.Size = new System.Drawing.Size(127, 208);
             this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox26.TabIndex = 206;
             this.pictureBox26.TabStop = false;
@@ -526,9 +556,10 @@
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox18.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox18.Location = new System.Drawing.Point(433, 470);
+            this.pictureBox18.Location = new System.Drawing.Point(577, 578);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox18.Size = new System.Drawing.Size(88, 103);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox18.TabIndex = 203;
             this.pictureBox18.TabStop = false;
@@ -537,9 +568,10 @@
             // 
             this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox19.Location = new System.Drawing.Point(499, 385);
+            this.pictureBox19.Location = new System.Drawing.Point(665, 474);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox19.Size = new System.Drawing.Size(127, 208);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox19.TabIndex = 202;
             this.pictureBox19.TabStop = false;
@@ -548,9 +580,10 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox12.Location = new System.Drawing.Point(593, 470);
+            this.pictureBox12.Location = new System.Drawing.Point(791, 578);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox12.Size = new System.Drawing.Size(88, 103);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 201;
             this.pictureBox12.TabStop = false;
@@ -559,9 +592,10 @@
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox14.Location = new System.Drawing.Point(659, 385);
+            this.pictureBox14.Location = new System.Drawing.Point(879, 474);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox14.Size = new System.Drawing.Size(127, 208);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox14.TabIndex = 200;
             this.pictureBox14.TabStop = false;
@@ -570,9 +604,10 @@
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox16.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox16.Location = new System.Drawing.Point(820, 216);
+            this.pictureBox16.Location = new System.Drawing.Point(1093, 266);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox16.Size = new System.Drawing.Size(127, 208);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox16.TabIndex = 199;
             this.pictureBox16.TabStop = false;
@@ -581,9 +616,10 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox9.Location = new System.Drawing.Point(659, 554);
+            this.pictureBox9.Location = new System.Drawing.Point(879, 682);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox9.Size = new System.Drawing.Size(127, 208);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 196;
             this.pictureBox9.TabStop = false;
@@ -592,9 +628,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(915, 301);
+            this.pictureBox3.Location = new System.Drawing.Point(1220, 370);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox3.Size = new System.Drawing.Size(88, 103);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 195;
             this.pictureBox3.TabStop = false;
@@ -603,9 +640,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox5.Location = new System.Drawing.Point(981, 216);
+            this.pictureBox5.Location = new System.Drawing.Point(1308, 266);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox5.Size = new System.Drawing.Size(127, 208);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 194;
             this.pictureBox5.TabStop = false;
@@ -614,9 +652,10 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox7.Location = new System.Drawing.Point(754, 470);
+            this.pictureBox7.Location = new System.Drawing.Point(1005, 578);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox7.Size = new System.Drawing.Size(88, 103);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 193;
             this.pictureBox7.TabStop = false;
@@ -625,9 +664,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox4.Location = new System.Drawing.Point(820, 385);
+            this.pictureBox4.Location = new System.Drawing.Point(1093, 474);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox4.Size = new System.Drawing.Size(127, 208);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 192;
             this.pictureBox4.TabStop = false;
@@ -636,9 +676,10 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox10.Location = new System.Drawing.Point(915, 132);
+            this.pictureBox10.Location = new System.Drawing.Point(1220, 162);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox10.Size = new System.Drawing.Size(88, 103);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 198;
             this.pictureBox10.TabStop = false;
@@ -648,9 +689,10 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox11.Location = new System.Drawing.Point(981, 47);
+            this.pictureBox11.Location = new System.Drawing.Point(1308, 58);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox11.Size = new System.Drawing.Size(127, 208);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 197;
             this.pictureBox11.TabStop = false;
@@ -660,9 +702,10 @@
             // 
             this.pictureBox23.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox23.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox23.Location = new System.Drawing.Point(754, 133);
+            this.pictureBox23.Location = new System.Drawing.Point(1005, 164);
+            this.pictureBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox23.Size = new System.Drawing.Size(88, 103);
             this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox23.TabIndex = 205;
             this.pictureBox23.TabStop = false;
@@ -672,9 +715,10 @@
             // 
             this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox24.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox24.Location = new System.Drawing.Point(820, 48);
+            this.pictureBox24.Location = new System.Drawing.Point(1093, 59);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox24.Size = new System.Drawing.Size(127, 208);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox24.TabIndex = 204;
             this.pictureBox24.TabStop = false;
@@ -684,9 +728,10 @@
             // 
             this.pictureBox32.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox32.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox32.Location = new System.Drawing.Point(593, 132);
+            this.pictureBox32.Location = new System.Drawing.Point(791, 162);
+            this.pictureBox32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox32.Name = "pictureBox32";
-            this.pictureBox32.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox32.Size = new System.Drawing.Size(88, 103);
             this.pictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox32.TabIndex = 210;
             this.pictureBox32.TabStop = false;
@@ -696,9 +741,10 @@
             // 
             this.pictureBox33.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox33.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox33.Location = new System.Drawing.Point(659, 47);
+            this.pictureBox33.Location = new System.Drawing.Point(879, 58);
+            this.pictureBox33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox33.Name = "pictureBox33";
-            this.pictureBox33.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox33.Size = new System.Drawing.Size(127, 208);
             this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox33.TabIndex = 209;
             this.pictureBox33.TabStop = false;
@@ -708,9 +754,10 @@
             // 
             this.pictureBox35.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox35.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
-            this.pictureBox35.Location = new System.Drawing.Point(433, 133);
+            this.pictureBox35.Location = new System.Drawing.Point(577, 164);
+            this.pictureBox35.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox35.Name = "pictureBox35";
-            this.pictureBox35.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox35.Size = new System.Drawing.Size(88, 103);
             this.pictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox35.TabIndex = 212;
             this.pictureBox35.TabStop = false;
@@ -720,9 +767,10 @@
             // 
             this.pictureBox37.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox37.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox37.Location = new System.Drawing.Point(499, 48);
+            this.pictureBox37.Location = new System.Drawing.Point(665, 59);
+            this.pictureBox37.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox37.Name = "pictureBox37";
-            this.pictureBox37.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox37.Size = new System.Drawing.Size(127, 208);
             this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox37.TabIndex = 211;
             this.pictureBox37.TabStop = false;
@@ -732,9 +780,10 @@
             // 
             this.pictureBox42.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox42.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox42.Location = new System.Drawing.Point(177, 385);
+            this.pictureBox42.Location = new System.Drawing.Point(236, 474);
+            this.pictureBox42.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox42.Name = "pictureBox42";
-            this.pictureBox42.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox42.Size = new System.Drawing.Size(127, 208);
             this.pictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox42.TabIndex = 214;
             this.pictureBox42.TabStop = false;
@@ -743,9 +792,10 @@
             // 
             this.pictureBox41.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox41.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox41.Location = new System.Drawing.Point(272, 132);
+            this.pictureBox41.Location = new System.Drawing.Point(363, 162);
+            this.pictureBox41.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox41.Name = "pictureBox41";
-            this.pictureBox41.Size = new System.Drawing.Size(66, 84);
+            this.pictureBox41.Size = new System.Drawing.Size(88, 103);
             this.pictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox41.TabIndex = 216;
             this.pictureBox41.TabStop = false;
@@ -755,9 +805,10 @@
             // 
             this.pictureBox43.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox43.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox43.Location = new System.Drawing.Point(338, 48);
+            this.pictureBox43.Location = new System.Drawing.Point(451, 59);
+            this.pictureBox43.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox43.Size = new System.Drawing.Size(127, 208);
             this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox43.TabIndex = 215;
             this.pictureBox43.TabStop = false;
@@ -767,9 +818,10 @@
             // 
             this.pictureBox45.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox45.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox45.Location = new System.Drawing.Point(177, 216);
+            this.pictureBox45.Location = new System.Drawing.Point(236, 266);
+            this.pictureBox45.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox45.Name = "pictureBox45";
-            this.pictureBox45.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox45.Size = new System.Drawing.Size(127, 208);
             this.pictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox45.TabIndex = 217;
             this.pictureBox45.TabStop = false;
@@ -779,9 +831,10 @@
             // 
             this.pictureBox46.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox46.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox46.Location = new System.Drawing.Point(177, 48);
+            this.pictureBox46.Location = new System.Drawing.Point(236, 59);
+            this.pictureBox46.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox46.Name = "pictureBox46";
-            this.pictureBox46.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox46.Size = new System.Drawing.Size(127, 208);
             this.pictureBox46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox46.TabIndex = 218;
             this.pictureBox46.TabStop = false;
@@ -791,24 +844,26 @@
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::WandererCup.Properties.Resources.coffee;
-            this.pictureBox13.Location = new System.Drawing.Point(659, 216);
+            this.pictureBox13.Location = new System.Drawing.Point(879, 266);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(95, 169);
+            this.pictureBox13.Size = new System.Drawing.Size(127, 208);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 223;
             this.pictureBox13.TabStop = false;
             // 
             // Inventory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1043, 604);
+            this.ClientSize = new System.Drawing.Size(1391, 743);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.InventoryMainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Inventory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory";
@@ -818,8 +873,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
-            this.InventoryMainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.InventoryMainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

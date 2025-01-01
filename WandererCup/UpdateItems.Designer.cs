@@ -223,7 +223,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.DarkGoldenrod;
             this.guna2Button1.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(288, 441);
+            this.guna2Button1.Location = new System.Drawing.Point(288, 531);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(128, 49);
@@ -253,7 +253,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.DarkGoldenrod;
             this.guna2Button2.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(836, 441);
+            this.guna2Button2.Location = new System.Drawing.Point(828, 532);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(191, 49);
@@ -329,7 +329,7 @@
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(665, 255);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(665, 355);
             this.guna2DataGridView1.TabIndex = 94;
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
@@ -342,7 +342,7 @@
             this.guna2DataGridView2.Name = "guna2DataGridView2";
             this.guna2DataGridView2.RowHeadersVisible = false;
             this.guna2DataGridView2.RowHeadersWidth = 51;
-            this.guna2DataGridView2.Size = new System.Drawing.Size(307, 255);
+            this.guna2DataGridView2.Size = new System.Drawing.Size(307, 355);
             this.guna2DataGridView2.TabIndex = 95;
             this.guna2DataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellContentClick_1);
             // 

@@ -109,7 +109,7 @@ namespace WandererCup
             guna2DataGridView2.RowHeadersVisible = false;
             guna2DataGridView2.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView2.GridColor = Color.Black;
-            guna2DataGridView2.ReadOnly = false; // Ensure ReadOnly is set to false
+            guna2DataGridView2.ReadOnly = true; // Ensure ReadOnly is set to false
             guna2DataGridView2.AllowUserToAddRows = false;
             guna2DataGridView2.AllowUserToDeleteRows = false;
             guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Disable auto size columns mode

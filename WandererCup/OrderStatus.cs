@@ -24,14 +24,10 @@ namespace WandererCup
 
             panel2.MouseDown += new MouseEventHandler(Panel2_MouseDown);
             panel2.MouseMove += new MouseEventHandler(Panel2_MouseMove);
-            //CustomizeDataGridView();
+
         }
 
-        //private void CustomizeDataGridView()
-        //{
-        //    guna2DataGridView1.BorderStyle = BorderStyle.FixedSingle;
-        //    guna2DataGridView1.GridColor = Color.Black;
-        //}
+
 
         private void AddDynamicOrdersToPanel()
         {
