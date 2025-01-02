@@ -16,24 +16,33 @@ namespace WandererCup
 {
     public partial class ProductIngredients : Form
     {
+        private Guna2Button confirmRemoveButton;
         public ProductIngredients()
         {
             InitializeComponent();
             CustomizeDataGridView();
             AddDynamicProductsToPanel();
+            AddSpaceBelowPanel39();
             guna2Panel1.Visible = false;
             guna2Panel21.Visible = false;
             guna2Panel16.AutoScroll = true;
             AddRowButton.Visible = false;
             guna2Panel18.Visible = false;
             guna2CustomGradientPanel1.Visible = false;
+            guna2CustomGradientPanel2.Visible = false;
+            guna2Panel28.Visible = false;
             guna2DataGridView2.ReadOnly = true;
+            guna2Panel33.Visible = false;
+            guna2Panel40.Visible = false;
+            guna2Panel39.AutoScroll = true;
+            guna2CustomGradientPanel3.Visible = false;
             this.Load += new EventHandler(ProductIngredients_Load);
             guna2TextBox2.TextChanged += new EventHandler(guna2TextBox2_TextChanged);
             guna2DataGridView2.SelectionChanged += new EventHandler(guna2DataGridView2_SelectionChanged);
             AttachButton.Click += new EventHandler(AttachButton_Click);
             guna2Button2.Click += new EventHandler(guna2Button2_Click);
             AddRowButton.Click += new EventHandler(AddRowButton_Click);
+            guna2Button5.Click += new EventHandler(ConfirmRemoveButton_Click);
         }
 
 
@@ -190,6 +199,7 @@ namespace WandererCup
 
         private void AttachButton_Click(object sender, EventArgs e)
         {
+            guna2Panel18.BringToFront();
             guna2Panel18.Visible = true;
         }
 
@@ -198,6 +208,7 @@ namespace WandererCup
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            guna2Panel21.BringToFront();
             guna2Panel21.Visible = true;
         }
 
@@ -317,6 +328,7 @@ namespace WandererCup
                         }
                     }
                 }
+                RefreshDynamicProductsPanel();
                 guna2Panel1.Visible = false;
                 AddRowButton.Visible = false;
                 guna2Panel18.Visible = false;
@@ -414,6 +426,9 @@ namespace WandererCup
         {
             panel3.Controls.Clear(); // Clear existing controls
 
+            Dictionary<int, Panel> productPanels = new Dictionary<int, Panel>();
+            Dictionary<int, DataGridView> productDataGrids = new Dictionary<int, DataGridView>();
+
             List<int> productIds = FetchProductIdsFromDatabase();
             int xOffset = 10; // Initial horizontal offset
             int yOffset = 13; // Initial vertical offset
@@ -421,134 +436,141 @@ namespace WandererCup
 
             foreach (int productId in productIds)
             {
-                Panel productPanel = new Panel
+                if (!productPanels.ContainsKey(productId))
                 {
-                    BackColor = Color.Tan,
-                    BorderStyle = BorderStyle.FixedSingle,
-                    Size = new Size(258, 282),
-                    Location = new Point(xOffset, yOffset)
-                };
+                    Panel productPanel = new Panel
+                    {
+                        BackColor = Color.Tan,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Size = new Size(258, 282),
+                        Location = new Point(xOffset, yOffset)
+                    };
 
-                Label productNameLabel = new Label
-                {
-                    AutoSize = true,
-                    Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
-                    Location = new Point(84, 2),
-                    Name = "productNameLabel",
-                    Size = new Size(65, 16),
-                    Text = GetProductNameById(productId) // Fetch the product name by ID
-                };
+                    Label productNameLabel = new Label
+                    {
+                        AutoSize = true,
+                        Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                        Location = new Point(84, 2),
+                        Name = "productNameLabel",
+                        Size = new Size(65, 16),
+                        Text = GetProductNameById(productId) // Fetch the product name by ID
+                    };
 
-                DataGridView dataGridView1 = new DataGridView
-                {
-                    AllowUserToAddRows = false,
-                    AllowUserToDeleteRows = false,
-                    BackgroundColor = Color.White,
-                    BorderStyle = BorderStyle.Fixed3D,
-                    ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
-                    Location = new Point(5, 45),
-                    Name = "dataGridView1",
-                    ReadOnly = true,
-                    RowHeadersVisible = false,
-                    Size = new Size(246, 189),
-                    AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells, // Auto-size columns
-                    AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
-                    SelectionMode = DataGridViewSelectionMode.FullRowSelect // Set SelectionMode to FullRowSelect
-                };
+                    DataGridView dataGridView1 = new DataGridView
+                    {
+                        AllowUserToAddRows = false,
+                        AllowUserToDeleteRows = false,
+                        BackgroundColor = Color.White,
+                        BorderStyle = BorderStyle.Fixed3D,
+                        ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
+                        Location = new Point(5, 45),
+                        Name = "dataGridView1",
+                        ReadOnly = true,
+                        RowHeadersVisible = false,
+                        Size = new Size(246, 189),
+                        AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells, // Auto-size columns
+                        AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
+                        SelectionMode = DataGridViewSelectionMode.FullRowSelect // Set SelectionMode to FullRowSelect
+                    };
 
-                // Apply the design settings
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
-                dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
-                dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
-                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
-                dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
-                dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
-                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
-                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-                dataGridView1.GridColor = Color.Black;
-                dataGridView1.RowTemplate.Height = 30;
-                dataGridView1.AllowUserToResizeColumns = false;
-                dataGridView1.AllowUserToResizeRows = false;
-                dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+                    // Apply the design settings
+                    dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+                    dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+                    dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                    dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+                    dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
+                    dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+                    dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+                    dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+                    dataGridView1.GridColor = Color.Black;
+                    dataGridView1.RowTemplate.Height = 30;
+                    dataGridView1.AllowUserToResizeColumns = false;
+                    dataGridView1.AllowUserToResizeRows = false;
+                    dataGridView1.BorderStyle = BorderStyle.Fixed3D;
 
-                // Set the font size of the content in each cell
-                dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
+                    // Set the font size of the content in each cell
+                    dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
 
-                Guna.UI2.WinForms.Guna2Button editButton = new Guna.UI2.WinForms.Guna2Button
-                {
-                    BorderRadius = 10,
-                    FillColor = Color.DarkGoldenrod,
-                    Font = new Font("Georgia", 9F, FontStyle.Bold),
-                    ForeColor = Color.Black,
-                    Location = new Point(147, 241), // Updated location
-                    Name = "editButton",
-                    Size = new Size(100, 32),
-                    Text = "Edit"
-                };
+                    Guna.UI2.WinForms.Guna2Button editButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        BorderRadius = 10,
+                        FillColor = Color.DarkGoldenrod,
+                        Font = new Font("Georgia", 9F, FontStyle.Bold),
+                        ForeColor = Color.Black,
+                        Location = new Point(147, 241), // Updated location
+                        Name = "editButton",
+                        Size = new Size(100, 32),
+                        Text = "Edit"
+                    };
 
-                // Attach the event handler
-                editButton.Click += (s, e) => EditButton_Click(s, e, productId, dataGridView1);
+                    // Attach the event handler
+                    editButton.Click += (s, e) => EditButton_Click(s, e, productId, dataGridView1);
 
-                Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
-                {
-                    BorderRadius = 10,
-                    FillColor = Color.DarkGoldenrod,
-                    Font = new Font("Georgia", 9F, FontStyle.Bold),
-                    ForeColor = Color.Black,
-                    Location = new Point(7, 241),
-                    Name = "removeButton",
-                    Size = new Size(132, 32),
-                    Text = "Remove"
-                };
+                    Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        BorderRadius = 10,
+                        FillColor = Color.DarkGoldenrod,
+                        Font = new Font("Georgia", 9F, FontStyle.Bold),
+                        ForeColor = Color.Black,
+                        Location = new Point(7, 241),
+                        Name = "removeButton",
+                        Size = new Size(132, 32),
+                        Text = "Remove"
+                    };
 
-                // Attach the event handler for the remove button
-                removeButton.Click += (s, e) => RemoveButton_Click(productId, productPanel);
+                    // Attach the event handler for the remove button
+                    removeButton.Click += (s, e) => RemoveButton_Click(productId, productPanel);
 
-                PictureBox pictureBox6 = new PictureBox
-                {
-                    BackColor = Color.Tan,
-                    Image = global::WandererCup.Properties.Resources.nail,
-                    Location = new Point(241, 0),
-                    Name = "pictureBox6",
-                    Size = new Size(16, 18),
-                    SizeMode = PictureBoxSizeMode.StretchImage
-                };
+                    PictureBox pictureBox6 = new PictureBox
+                    {
+                        BackColor = Color.Tan,
+                        Image = global::WandererCup.Properties.Resources.nail,
+                        Location = new Point(241, 0),
+                        Name = "pictureBox6",
+                        Size = new Size(16, 18),
+                        SizeMode = PictureBoxSizeMode.StretchImage
+                    };
 
-                PictureBox pictureBox4 = new PictureBox
-                {
-                    BackColor = Color.Tan,
-                    Image = global::WandererCup.Properties.Resources.nail__reverted_,
-                    Location = new Point(0, 0),
-                    Name = "pictureBox4",
-                    Size = new Size(16, 18),
-                    SizeMode = PictureBoxSizeMode.StretchImage
-                };
+                    PictureBox pictureBox4 = new PictureBox
+                    {
+                        BackColor = Color.Tan,
+                        Image = global::WandererCup.Properties.Resources.nail__reverted_,
+                        Location = new Point(0, 0),
+                        Name = "pictureBox4",
+                        Size = new Size(16, 18),
+                        SizeMode = PictureBoxSizeMode.StretchImage
+                    };
 
-                productPanel.Controls.Add(productNameLabel);
-                productPanel.Controls.Add(dataGridView1);
-                productPanel.Controls.Add(editButton);
-                productPanel.Controls.Add(removeButton);
-                productPanel.Controls.Add(pictureBox6);
-                productPanel.Controls.Add(pictureBox4);
+                    productPanel.Controls.Add(productNameLabel);
+                    productPanel.Controls.Add(dataGridView1);
+                    productPanel.Controls.Add(editButton);
+                    productPanel.Controls.Add(removeButton);
+                    productPanel.Controls.Add(pictureBox6);
+                    productPanel.Controls.Add(pictureBox4);
 
-                panel3.Controls.Add(productPanel);
+                    panel3.Controls.Add(productPanel);
 
-                FetchAndDisplayProductDetails(productId, dataGridView1);
+                    productPanels[productId] = productPanel;
+                    productDataGrids[productId] = dataGridView1;
 
-                columnCount++;
-                if (columnCount % 2 == 0)
-                {
-                    // Move to the next row
-                    xOffset = 10;
-                    yOffset += 292; // Adjust the vertical offset for the next row
+                    columnCount++;
+                    if (columnCount % 2 == 0)
+                    {
+                        // Move to the next row
+                        xOffset = 10;
+                        yOffset += 292; // Adjust the vertical offset for the next row
+                    }
+                    else
+                    {
+                        // Move to the next column
+                        xOffset += 268; // Adjust the horizontal offset for the next column
+                    }
                 }
-                else
-                {
-                    // Move to the next column
-                    xOffset += 268; // Adjust the horizontal offset for the next column
-                }
+
+                // Fetch and display product details
+                FetchAndDisplayProductDetails(productId, productDataGrids[productId]);
             }
 
             // Add a dummy panel to create extra space at the bottom
@@ -573,10 +595,10 @@ namespace WandererCup
                 {
                     conn.Open();
                     string query = @"
-                        SELECT p.ProductID 
-                        FROM Product p
-                        LEFT JOIN Ingredients i ON p.ProductID = i.ProductID
-                        WHERE p.is_archived = 0 AND i.ProductID IS NOT NULL";
+                SELECT DISTINCT p.ProductID 
+                FROM Product p
+                LEFT JOIN Ingredients i ON p.ProductID = i.ProductID
+                WHERE p.is_archived = 0 AND i.ProductID IS NOT NULL";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -630,9 +652,9 @@ namespace WandererCup
             {
                 string connectionString = GetConnectionString();
                 string query = @"
-                SELECT IngredientName AS 'Ingredients', Quantity
-                FROM Ingredients
-                WHERE ProductID = @ProductID";
+            SELECT IngredientName AS 'Ingredients', Quantity
+            FROM Ingredients
+            WHERE ProductID = @ProductID";
 
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
@@ -660,47 +682,216 @@ namespace WandererCup
             }
         }
 
+
         private void EditButton_Click(object sender, EventArgs e, int productId, DataGridView dataGridView)
         {
-            // Implement the logic to edit the product
-            MessageBox.Show($"Edit product {productId}.");
+            guna2Panel40.Visible = false;
+            guna2Panel33.Visible = true;
+
+            string productName = GetProductNameById(productId);
+            label10.Text = productName;
+
+            // Clear existing dynamic textboxes
+            var textBoxesToRemove = guna2Panel39.Controls.OfType<Guna2TextBox>()
+                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox"))
+                .ToList();
+
+            foreach (var textBox in textBoxesToRemove)
+            {
+                guna2Panel39.Controls.Remove(textBox);
+            }
+
+            // Fetch ingredients for the selected product
+            var ingredients = GetIngredientsByProductId(productId);
+
+            // Dynamically create textboxes for each ingredient
+            for (int i = 0; i < ingredients.Count; i++)
+            {
+                int newYPosition = 43 + (30 + 10) * i; // Adjust the Y position for each set of textboxes
+
+                // Create new IngredientTextBox
+                Guna2TextBox newIngredientTextBox = new Guna2TextBox
+                {
+                    Name = "IngredientTextBox" + i,
+                    Location = new Point(12, newYPosition),
+                    Size = new Size(162, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item1, // Set ingredient name
+                    Tag = ingredients[i].Item1 // Store the original ingredient name in the Tag property
+                };
+
+                // Create new QuantityTextBox
+                Guna2TextBox newQuantityTextBox = new Guna2TextBox
+                {
+                    Name = "QuantityTextBox" + i,
+                    Location = new Point(197, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item2 // Set quantity
+                };
+
+                // Add the new textboxes to the panel
+                guna2Panel39.Controls.Add(newIngredientTextBox);
+                guna2Panel39.Controls.Add(newQuantityTextBox);
+            }
         }
+
+
+        private async void guna2Button6_Click(object sender, EventArgs e)
+        {
+            string productName = label10.Text;
+            int productId = GetProductIdByName(productName);
+
+            if (productId != -1)
+            {
+                foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+                {
+                    var quantityTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    if (quantityTextBox != null)
+                    {
+                        string newIngredientName = ingredientTextBox.Text.Trim();
+                        string quantity = quantityTextBox.Text.Trim();
+                        string oldIngredientName = ingredientTextBox.Tag.ToString(); // Get the original ingredient name
+
+                        // Validate that both newIngredientName and quantity are not empty
+                        if (!string.IsNullOrEmpty(newIngredientName) && !string.IsNullOrEmpty(quantity))
+                        {
+                            UpdateIngredient(productId, newIngredientName, quantity, oldIngredientName);
+                        }
+                    }
+                }
+                RefreshDynamicProductsPanel();
+                guna2Panel33.Visible = false;
+                guna2CustomGradientPanel3.BringToFront();
+                guna2CustomGradientPanel3.Visible = true;
+                await Task.Delay(3000);
+                guna2CustomGradientPanel3.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Product not found.");
+            }
+        }
+
+
+
+        private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE Ingredients SET IngredientName = @NewIngredientName, Quantity = @Quantity WHERE ProductID = @ProductID AND IngredientName = @OldIngredientName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@NewIngredientName", newIngredientName);
+                        cmd.Parameters.AddWithValue("@Quantity", quantity);
+                        cmd.Parameters.AddWithValue("@OldIngredientName", oldIngredientName);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+
+        private List<Tuple<string, string>> GetIngredientsByProductId(int productId)
+        {
+            List<Tuple<string, string>> ingredients = new List<Tuple<string, string>>();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT IngredientName, Quantity FROM Ingredients WHERE ProductID = @ProductID";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string ingredientName = reader["IngredientName"].ToString();
+                                string quantity = reader["Quantity"].ToString();
+                                ingredients.Add(new Tuple<string, string>(ingredientName, quantity));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return ingredients;
+        }
+
 
         private void RemoveButton_Click(int productId, Panel productPanel)
         {
-            try
-            {
-                string connectionString = GetConnectionString();
+            // Show guna2Panel28 instead of directly removing the ingredients
+            guna2Panel28.BringToFront();
+            guna2Panel28.Visible = true;
 
-                // First, delete the related rows in the Ingredients table
-                string deleteIngredientsQuery = "DELETE FROM Ingredients WHERE ProductID = @ProductID";
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    MySqlCommand command = new MySqlCommand(deleteIngredientsQuery, connection);
-                    command.Parameters.AddWithValue("@ProductID", productId);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-
-                // Then, delete the row in the Product table
-                string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    MySqlCommand command = new MySqlCommand(deleteProductQuery, connection);
-                    command.Parameters.AddWithValue("@ProductID", productId);
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-
-                panel3.Controls.Remove(productPanel);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            // Store the productId and productPanel for later use
+            guna2Panel28.Tag = new Tuple<int, Panel>(productId, productPanel);
         }
 
+        private async void ConfirmRemoveButton_Click(object sender, EventArgs e)
+        {
+            if (guna2Panel28.Tag is Tuple<int, Panel> tag)
+            {
+                int productId = tag.Item1;
+                Panel productPanel = tag.Item2;
 
+                try
+                {
+                    string connectionString = GetConnectionString();
+
+                    // First, delete the related rows in the Ingredients table
+                    string deleteIngredientsQuery = "DELETE FROM Ingredients WHERE ProductID = @ProductID";
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        MySqlCommand command = new MySqlCommand(deleteIngredientsQuery, connection);
+                        command.Parameters.AddWithValue("@ProductID", productId);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Then, delete the row in the Product table
+                    string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        MySqlCommand command = new MySqlCommand(deleteProductQuery, connection);
+                        command.Parameters.AddWithValue("@ProductID", productId);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                    panel3.Controls.Remove(productPanel);
+                }
+                catch (Exception ex)
+                {
+                    RefreshDynamicProductsPanel();
+                    guna2Panel28.Visible = false;
+                    guna2CustomGradientPanel2.Visible = true;
+                    await Task.Delay(3000);
+                    guna2CustomGradientPanel2.Visible = false;
+
+
+                }
+            }
+        }
 
 
         private void PNameLabel_Click(object sender, EventArgs e)
@@ -722,5 +913,281 @@ namespace WandererCup
         {
 
         }
+
+        private void RefreshDynamicProductsPanel()
+        {
+            AddDynamicProductsToPanel();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = guna2TextBox1.Text.Trim();
+            var filteredProductIds = GetFilteredProductIdsWithIngredients(searchText);
+            UpdateDynamicProductsPanel(filteredProductIds);
+        }
+
+        private List<int> GetFilteredProductIdsWithIngredients(string searchText)
+        {
+            List<int> productIds = new List<int>();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = @"
+            SELECT DISTINCT p.ProductID 
+            FROM Product p
+            INNER JOIN Ingredients i ON p.ProductID = i.ProductID
+            WHERE p.is_archived = 0 AND p.ProductName LIKE @SearchText";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@SearchText", "%" + searchText + "%");
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                productIds.Add(reader.GetInt32("ProductID"));
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productIds;
+        }
+
+
+        private void UpdateDynamicProductsPanel(List<int> filteredProductIds)
+        {
+            panel3.Controls.Clear(); // Clear existing controls
+
+            Dictionary<int, Panel> productPanels = new Dictionary<int, Panel>();
+            Dictionary<int, DataGridView> productDataGrids = new Dictionary<int, DataGridView>();
+
+            int xOffset = 10; // Initial horizontal offset
+            int yOffset = 13; // Initial vertical offset
+            int columnCount = 0; // To keep track of the current column
+
+            foreach (int productId in filteredProductIds)
+            {
+                if (!productPanels.ContainsKey(productId))
+                {
+                    Panel productPanel = new Panel
+                    {
+                        BackColor = Color.Tan,
+                        BorderStyle = BorderStyle.FixedSingle,
+                        Size = new Size(258, 282),
+                        Location = new Point(xOffset, yOffset)
+                    };
+
+                    Label productNameLabel = new Label
+                    {
+                        AutoSize = true,
+                        Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold),
+                        Location = new Point(84, 2),
+                        Name = "productNameLabel",
+                        Size = new Size(65, 16),
+                        Text = GetProductNameById(productId) // Fetch the product name by ID
+                    };
+
+                    DataGridView dataGridView1 = new DataGridView
+                    {
+                        AllowUserToAddRows = false,
+                        AllowUserToDeleteRows = false,
+                        BackgroundColor = Color.White,
+                        BorderStyle = BorderStyle.Fixed3D,
+                        ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
+                        Location = new Point(5, 45),
+                        Name = "dataGridView1",
+                        ReadOnly = true,
+                        RowHeadersVisible = false,
+                        Size = new Size(246, 189),
+                        AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells, // Auto-size columns
+                        AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells,
+                        SelectionMode = DataGridViewSelectionMode.FullRowSelect // Set SelectionMode to FullRowSelect
+                    };
+
+                    // Apply the design settings
+                    dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+                    dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
+                    dataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
+                    dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+                    dataGridView1.DefaultCellStyle.BackColor = Color.Beige;
+                    dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+                    dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
+                    dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+                    dataGridView1.GridColor = Color.Black;
+                    dataGridView1.RowTemplate.Height = 30;
+                    dataGridView1.AllowUserToResizeColumns = false;
+                    dataGridView1.AllowUserToResizeRows = false;
+                    dataGridView1.BorderStyle = BorderStyle.Fixed3D;
+
+                    // Set the font size of the content in each cell
+                    dataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular);
+
+                    Guna.UI2.WinForms.Guna2Button editButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        BorderRadius = 10,
+                        FillColor = Color.DarkGoldenrod,
+                        Font = new Font("Georgia", 9F, FontStyle.Bold),
+                        ForeColor = Color.Black,
+                        Location = new Point(147, 241), // Updated location
+                        Name = "editButton",
+                        Size = new Size(100, 32),
+                        Text = "Edit"
+                    };
+
+                    // Attach the event handler
+                    editButton.Click += (s, e) => EditButton_Click(s, e, productId, dataGridView1);
+
+                    Guna.UI2.WinForms.Guna2Button removeButton = new Guna.UI2.WinForms.Guna2Button
+                    {
+                        BorderRadius = 10,
+                        FillColor = Color.DarkGoldenrod,
+                        Font = new Font("Georgia", 9F, FontStyle.Bold),
+                        ForeColor = Color.Black,
+                        Location = new Point(7, 241),
+                        Name = "removeButton",
+                        Size = new Size(132, 32),
+                        Text = "Remove"
+                    };
+
+                    // Attach the event handler for the remove button
+                    removeButton.Click += (s, e) => RemoveButton_Click(productId, productPanel);
+
+                    PictureBox pictureBox6 = new PictureBox
+                    {
+                        BackColor = Color.Tan,
+                        Image = global::WandererCup.Properties.Resources.nail,
+                        Location = new Point(241, 0),
+                        Name = "pictureBox6",
+                        Size = new Size(16, 18),
+                        SizeMode = PictureBoxSizeMode.StretchImage
+                    };
+
+                    PictureBox pictureBox4 = new PictureBox
+                    {
+                        BackColor = Color.Tan,
+                        Image = global::WandererCup.Properties.Resources.nail__reverted_,
+                        Location = new Point(0, 0),
+                        Name = "pictureBox4",
+                        Size = new Size(16, 18),
+                        SizeMode = PictureBoxSizeMode.StretchImage
+                    };
+
+                    productPanel.Controls.Add(productNameLabel);
+                    productPanel.Controls.Add(dataGridView1);
+                    productPanel.Controls.Add(editButton);
+                    productPanel.Controls.Add(removeButton);
+                    productPanel.Controls.Add(pictureBox6);
+                    productPanel.Controls.Add(pictureBox4);
+
+                    panel3.Controls.Add(productPanel);
+
+                    productPanels[productId] = productPanel;
+                    productDataGrids[productId] = dataGridView1;
+
+                    columnCount++;
+                    if (columnCount % 2 == 0)
+                    {
+                        // Move to the next row
+                        xOffset = 10;
+                        yOffset += 292; // Adjust the vertical offset for the next row
+                    }
+                    else
+                    {
+                        // Move to the next column
+                        xOffset += 268; // Adjust the horizontal offset for the next column
+                    }
+                }
+
+                // Fetch and display product details
+                FetchAndDisplayProductDetails(productId, productDataGrids[productId]);
+            }
+
+            // Add a dummy panel to create extra space at the bottom
+            Panel dummyPanel = new Panel
+            {
+                Size = new Size(1, 1), // Adjust the height as needed
+                Location = new Point(0, yOffset + 292)
+            };
+            panel3.Controls.Add(dummyPanel);
+
+            // Ensure the layout is updated
+            panel3.PerformLayout();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            guna2Panel28.Visible = false;
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            guna2Panel28.Hide();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            guna2Panel40.Visible = true;    
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            guna2Panel40.Hide();
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            guna2Panel40.Hide();
+        }
+
+        private void guna2Button10_Click(object sender, EventArgs e)
+        {
+            guna2Panel33.Hide();
+        }
+
+        private void guna2Panel40_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel39_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void AddSpaceBelowPanel39()
+        {
+            Panel spacePanel = new Panel
+            {
+                Size = new Size(guna2Panel39.Width, 10), // Adjust the height as needed
+                Dock = DockStyle.Bottom
+            };
+            guna2Panel39.Controls.Add(spacePanel);
+        }
+
+
+
+
+
+
+
+
     }
 }
