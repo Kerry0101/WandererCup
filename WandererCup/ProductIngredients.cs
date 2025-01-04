@@ -23,6 +23,8 @@ namespace WandererCup
             CustomizeDataGridView();
             AddDynamicProductsToPanel();
             AddSpaceBelowPanel39();
+            AddSpaceRightOfPanel16();
+            AddSpaceBelowPanel16();
             guna2Panel1.Visible = false;
             guna2Panel21.Visible = false;
             guna2Panel16.AutoScroll = true;
@@ -254,13 +256,15 @@ namespace WandererCup
         private void AddRowButton_Click(object sender, EventArgs e)
         {
             // Calculate the new position for the new textboxes
-            int existingTextBoxCount = guna2Panel16.Controls.OfType<Guna2TextBox>().Count();
-            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (existingTextBoxCount / 2);
+            int dynamicTextBoxCount = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                .Count(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox")) - 3; // Subtract the count of static textboxes
+
+            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (dynamicTextBoxCount / 3 + 1);
 
             // Create new IngredientTextBox
             Guna2TextBox newIngredientTextBox = new Guna2TextBox
             {
-                Name = "IngredientTextBox" + existingTextBoxCount,
+                Name = "IngredientTextBox" + dynamicTextBoxCount,
                 Location = new Point(IngredientTextBox.Location.X, newYPosition),
                 Size = IngredientTextBox.Size,
                 FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
@@ -270,9 +274,68 @@ namespace WandererCup
             // Create new QuantityTextBox
             Guna2TextBox newQuantityTextBox = new Guna2TextBox
             {
-                Name = "QuantityTextBox" + existingTextBoxCount,
+                Name = "QuantityTextBox" + dynamicTextBoxCount,
                 Location = new Point(QuantityTextBox.Location.X, newYPosition),
                 Size = QuantityTextBox.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+            // Create new CostPerMlTextBox
+            Guna2TextBox newCostPerMlTextBox = new Guna2TextBox
+            {
+                Name = "CostPerMlTextBox" + dynamicTextBoxCount,
+                Location = new Point(CostPerMl.Location.X, newYPosition),
+                Size = CostPerMl.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+
+            Guna2TextBox newTotalCostPerCup = new Guna2TextBox
+            {
+                Name = "TotalCostPerCup" + dynamicTextBoxCount,
+                Location = new Point(TotalCostPerCup.Location.X, newYPosition),
+                Size = TotalCostPerCup.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+
+            Guna2TextBox newTotalCost = new Guna2TextBox
+            {
+                Name = "TotalCost" + dynamicTextBoxCount,
+                Location = new Point(TotalCost.Location.X, newYPosition),
+                Size = TotalCost.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+
+            Guna2TextBox newPercentage = new Guna2TextBox
+            {
+                Name = "Percentage" + dynamicTextBoxCount,
+                Location = new Point(Percentage.Location.X, newYPosition),
+                Size = Percentage.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+            Guna2TextBox newSellingPrice = new Guna2TextBox
+            {
+                Name = "SellingPrice" + dynamicTextBoxCount,
+                Location = new Point(SellingPrice.Location.X, newYPosition),
+                Size = SellingPrice.Size,
+                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                ForeColor = Color.Black, // Set font color to black
+            };
+
+
+            Guna2TextBox newSales = new Guna2TextBox
+            {
+                Name = "Sales" + dynamicTextBoxCount,
+                Location = new Point(Sales.Location.X, newYPosition),
+                Size = Sales.Size,
                 FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                 ForeColor = Color.Black, // Set font color to black
             };
@@ -280,7 +343,14 @@ namespace WandererCup
             // Add the new textboxes to the panel
             guna2Panel16.Controls.Add(newIngredientTextBox);
             guna2Panel16.Controls.Add(newQuantityTextBox);
+            guna2Panel16.Controls.Add(newCostPerMlTextBox);
+            guna2Panel16.Controls.Add(newTotalCostPerCup);
+            guna2Panel16.Controls.Add(newTotalCost);
+            guna2Panel16.Controls.Add(newPercentage);
+            guna2Panel16.Controls.Add(newSellingPrice);
+            guna2Panel16.Controls.Add(newSales);
         }
+
 
 
 
@@ -1176,18 +1246,55 @@ namespace WandererCup
         {
             Panel spacePanel = new Panel
             {
-                Size = new Size(guna2Panel39.Width, 10), // Adjust the height as needed
+                Size = new Size(guna2Panel39.Width, 30), // Adjust the height as needed
                 Dock = DockStyle.Bottom
             };
             guna2Panel39.Controls.Add(spacePanel);
         }
 
+        private void AddSpaceRightOfPanel16()
+        {
+            Panel spacePanel = new Panel
+            {
+                Size = new Size(45, guna2Panel16.Height), // Adjust the width as needed
+                Dock = DockStyle.Right
+            };
+            guna2Panel16.Controls.Add(spacePanel);
+        }
 
+        private void AddSpaceBelowPanel16()
+        {
+            Panel spacePanel = new Panel
+            {
+                Size = new Size(guna2Panel16.Width, 10), // Adjust the height as needed
+                Dock = DockStyle.Bottom
+            };
+            guna2Panel16.Controls.Add(spacePanel);
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void guna2TextBox4_TextChanged(object sender, EventArgs e)
+        {
 
+        }
 
+        private void label17_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
