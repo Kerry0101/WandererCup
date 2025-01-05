@@ -143,6 +143,9 @@
             this.guna2Panel33 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel46 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel47 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel48 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -336,6 +339,7 @@
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel1.BorderRadius = 196;
+            this.guna2Panel1.Controls.Add(this.guna2Panel46);
             this.guna2Panel1.Controls.Add(this.guna2Panel45);
             this.guna2Panel1.Controls.Add(this.guna2Panel21);
             this.guna2Panel1.Controls.Add(this.guna2Panel18);
@@ -1407,7 +1411,7 @@
             this.guna2Panel34.Controls.Add(this.label10);
             this.guna2Panel34.Location = new System.Drawing.Point(-24, 67);
             this.guna2Panel34.Name = "guna2Panel34";
-            this.guna2Panel34.Size = new System.Drawing.Size(460, 34);
+            this.guna2Panel34.Size = new System.Drawing.Size(743, 34);
             this.guna2Panel34.TabIndex = 1;
             // 
             // label10
@@ -1438,7 +1442,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(390, 7);
+            this.label12.Location = new System.Drawing.Point(671, 7);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(21, 20);
@@ -1449,7 +1453,7 @@
             // guna2Panel35
             // 
             this.guna2Panel35.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel35.Location = new System.Drawing.Point(417, 1);
+            this.guna2Panel35.Location = new System.Drawing.Point(698, 1);
             this.guna2Panel35.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel35.Name = "guna2Panel35";
             this.guna2Panel35.Size = new System.Drawing.Size(13, 394);
@@ -1486,7 +1490,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(101, 13);
+            this.label13.Location = new System.Drawing.Point(242, 13);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(212, 20);
@@ -1503,7 +1507,7 @@
             this.guna2Button6.FillColor = System.Drawing.Color.Green;
             this.guna2Button6.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(148, 340);
+            this.guna2Button6.Location = new System.Drawing.Point(290, 340);
             this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.Size = new System.Drawing.Size(117, 43);
@@ -1513,12 +1517,13 @@
             // 
             // guna2Panel39
             // 
+            this.guna2Panel39.AutoScroll = true;
             this.guna2Panel39.BackColor = System.Drawing.Color.Tan;
             this.guna2Panel39.Controls.Add(this.label14);
             this.guna2Panel39.Controls.Add(this.label15);
             this.guna2Panel39.Location = new System.Drawing.Point(9, 112);
             this.guna2Panel39.Name = "guna2Panel39";
-            this.guna2Panel39.Size = new System.Drawing.Size(401, 202);
+            this.guna2Panel39.Size = new System.Drawing.Size(682, 202);
             this.guna2Panel39.TabIndex = 114;
             this.guna2Panel39.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel39_Paint);
             // 
@@ -1556,7 +1561,7 @@
             this.guna2Panel40.Controls.Add(this.guna2Button9);
             this.guna2Panel40.Controls.Add(this.guna2Button10);
             this.guna2Panel40.Controls.Add(this.label16);
-            this.guna2Panel40.Location = new System.Drawing.Point(82, 115);
+            this.guna2Panel40.Location = new System.Drawing.Point(1178, 125);
             this.guna2Panel40.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel40.Name = "guna2Panel40";
             this.guna2Panel40.Size = new System.Drawing.Size(272, 181);
@@ -1654,7 +1659,8 @@
             this.guna2Panel33.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel33.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel33.BorderRadius = 196;
-            this.guna2Panel33.Controls.Add(this.guna2Panel40);
+            this.guna2Panel33.Controls.Add(this.guna2Panel48);
+            this.guna2Panel33.Controls.Add(this.guna2Panel47);
             this.guna2Panel33.Controls.Add(this.guna2Panel39);
             this.guna2Panel33.Controls.Add(this.guna2Button6);
             this.guna2Panel33.Controls.Add(this.label13);
@@ -1664,10 +1670,10 @@
             this.guna2Panel33.Controls.Add(this.guna2Panel35);
             this.guna2Panel33.Controls.Add(this.label12);
             this.guna2Panel33.Controls.Add(this.guna2Panel34);
-            this.guna2Panel33.Location = new System.Drawing.Point(497, 112);
+            this.guna2Panel33.Location = new System.Drawing.Point(353, 112);
             this.guna2Panel33.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel33.Name = "guna2Panel33";
-            this.guna2Panel33.Size = new System.Drawing.Size(419, 395);
+            this.guna2Panel33.Size = new System.Drawing.Size(700, 395);
             this.guna2Panel33.TabIndex = 237;
             // 
             // guna2HtmlLabel12
@@ -1692,6 +1698,33 @@
             this.guna2HtmlLabel11.TabIndex = 5;
             this.guna2HtmlLabel11.Text = "Close anyway?";
             // 
+            // guna2Panel46
+            // 
+            this.guna2Panel46.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel46.Location = new System.Drawing.Point(413, 393);
+            this.guna2Panel46.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel46.Name = "guna2Panel46";
+            this.guna2Panel46.Size = new System.Drawing.Size(419, 12);
+            this.guna2Panel46.TabIndex = 108;
+            // 
+            // guna2Panel47
+            // 
+            this.guna2Panel47.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel47.Location = new System.Drawing.Point(262, -10);
+            this.guna2Panel47.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel47.Name = "guna2Panel47";
+            this.guna2Panel47.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel47.TabIndex = 106;
+            // 
+            // guna2Panel48
+            // 
+            this.guna2Panel48.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel48.Location = new System.Drawing.Point(335, 393);
+            this.guna2Panel48.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel48.Name = "guna2Panel48";
+            this.guna2Panel48.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel48.TabIndex = 115;
+            // 
             // ProductIngredients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1700,6 +1733,7 @@
             this.ClientSize = new System.Drawing.Size(1556, 614);
             this.Controls.Add(this.AddRowButton);
             this.Controls.Add(this.guna2CustomGradientPanel3);
+            this.Controls.Add(this.guna2Panel40);
             this.Controls.Add(this.guna2Panel33);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.guna2Panel28);
@@ -1878,5 +1912,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button10;
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel33;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel46;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel48;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel47;
     }
 }
