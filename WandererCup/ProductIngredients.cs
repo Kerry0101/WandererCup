@@ -120,6 +120,35 @@ namespace WandererCup
             return productsTable;
         }
 
+        private List<string> GetProductNames()
+        {
+            List<string> productNames = new List<string>();
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductName FROM inventory";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                productNames.Add(reader["ProductName"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productNames;
+        }
+
 
         private void ProductIngredients_Load(object sender, EventArgs e)
         {
@@ -132,9 +161,21 @@ namespace WandererCup
                 guna2DataGridView2.Columns["ProductName"].HeaderText = "Product Names";
                 guna2DataGridView2.Columns["ProductName"].Width = 210; // Set the width of the column
             }
+
+            // Set up auto-complete for IngredientTextBox
+            SetUpAutoCompleteForIngredientTextBox();
         }
 
+        private void SetUpAutoCompleteForIngredientTextBox()
+        {
+            List<string> productNames = GetProductNames();
+            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+            autoCompleteCollection.AddRange(productNames.ToArray());
 
+            IngredientTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            IngredientTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            IngredientTextBox.AutoCompleteCustomSource = autoCompleteCollection;
+        }
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
