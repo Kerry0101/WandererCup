@@ -22,9 +22,8 @@ namespace WandererCup
             InitializeComponent();
             CustomizeDataGridView();
             AddDynamicProductsToPanel();
-            AddSpaceBelowPanel39();
-            AddSpaceRightOfPanel16();
-            AddSpaceBelowPanel16();
+            AddSpacePanel39();
+            AddSpaceToPanel16();
             guna2Panel1.Visible = false;
             guna2Panel21.Visible = false;
             guna2Panel16.AutoScroll = true;
@@ -343,67 +342,7 @@ namespace WandererCup
             guna2Panel16.Controls.Add(newSalesTextBox);
         }
 
-        private async void guna2Button3_Click(object sender, EventArgs e)
-        {
-            string productName = PNameLabel.Text;
-            int productId = GetProductIdByName(productName);
 
-            if (productId != -1)
-            {
-                foreach (var ingredientTextBox in guna2Panel16.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
-                {
-                    var quantityTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var sellingPriceTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SellingPriceTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var salesTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SalesTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-
-                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null && totalCostTextBox != null && sellingPriceTextBox != null && salesTextBox != null)
-                    {
-                        string ingredientName = ingredientTextBox.Text.Trim();
-                        string quantity = quantityTextBox.Text.Trim();
-                        string costPerMl = costPerMlTextBox.Text.Trim();
-                        string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
-                        string totalCost = totalCostTextBox.Text.Trim();
-                        string sellingPrice = sellingPriceTextBox.Text.Trim();
-                        string sales = salesTextBox.Text.Trim();
-
-                        // Validate that all fields are not empty
-                        if (!string.IsNullOrEmpty(ingredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup) && !string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
-                        {
-                            SaveIngredient(productId, ingredientName, quantity, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales);
-                        }
-                    }
-                }
-                guna2Panel1.Visible = false;
-                AddRowButton.Visible = false;
-                guna2Panel18.Visible = false;
-                // Reset the textboxes
-                foreach (var textBox in guna2Panel16.Controls.OfType<Guna2TextBox>())
-                {
-                    textBox.Text = string.Empty;
-                }
-
-                // Remove dynamically added textboxes
-                var textBoxesToRemove = guna2Panel16.Controls.OfType<Guna2TextBox>()
-                    .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
-                    .Where(tb => tb != IngredientTextBox && tb != QuantityTextBox && tb != CostPerMlTextBox && tb != TotalCostPerCupTextBox && tb != TotalCostTextBox && tb != SellingPriceTextBox && tb != SalesTextBox) // Keep the static textboxes
-                    .ToList();
-
-                foreach (var textBox in textBoxesToRemove)
-                {
-                    guna2Panel16.Controls.Remove(textBox);
-                }
-                guna2CustomGradientPanel1.Visible = true;
-                await Task.Delay(3000);
-                guna2CustomGradientPanel1.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Product not found.");
-            }
-        }
 
         private void SaveIngredient(int productId, string ingredientName, string quantity, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
         {
@@ -434,52 +373,7 @@ namespace WandererCup
             }
         }
 
-        private async void guna2Button6_Click(object sender, EventArgs e)
-        {
-            string productName = label10.Text;
-            int productId = GetProductIdByName(productName);
 
-            if (productId != -1)
-            {
-                foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
-                {
-                    var quantityTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var costPerMlTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostPerCupTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var sellingPriceTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SellingPriceTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var salesTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SalesTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-
-                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null && totalCostTextBox != null && sellingPriceTextBox != null && salesTextBox != null)
-                    {
-                        string newIngredientName = ingredientTextBox.Text.Trim();
-                        string quantity = quantityTextBox.Text.Trim();
-                        string costPerMl = costPerMlTextBox.Text.Trim();
-                        string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
-                        string totalCost = totalCostTextBox.Text.Trim();
-                        string sellingPrice = sellingPriceTextBox.Text.Trim();
-                        string sales = salesTextBox.Text.Trim();
-                        string oldIngredientName = ingredientTextBox.Tag.ToString(); // Get the original ingredient name
-
-                        // Validate that all fields are not empty
-                        if (!string.IsNullOrEmpty(newIngredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup) && !string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
-                        {
-                            UpdateIngredient(productId, newIngredientName, quantity, oldIngredientName, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales);
-                        }
-                    }
-                }
-                RefreshDynamicProductsPanel();
-                guna2Panel33.Visible = false;
-                guna2CustomGradientPanel3.BringToFront();
-                guna2CustomGradientPanel3.Visible = true;
-                await Task.Delay(3000);
-                guna2CustomGradientPanel3.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Product not found.");
-            }
-        }
 
         private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
         {
@@ -581,6 +475,121 @@ namespace WandererCup
             return ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         }
 
+
+        private async void guna2Button3_Click(object sender, EventArgs e)
+        {
+            string productName = PNameLabel.Text;
+            int productId = GetProductIdByName(productName);
+
+            if (productId != -1)
+            {
+                foreach (var ingredientTextBox in guna2Panel16.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+                {
+                    var quantityTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var totalCostTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var sellingPriceTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SellingPriceTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var salesTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SalesTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+
+                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null && totalCostTextBox != null && sellingPriceTextBox != null && salesTextBox != null)
+                    {
+                        string ingredientName = ingredientTextBox.Text.Trim();
+                        string quantity = quantityTextBox.Text.Trim();
+                        string costPerMl = costPerMlTextBox.Text.Trim();
+                        string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
+                        string totalCost = totalCostTextBox.Text.Trim();
+                        string sellingPrice = sellingPriceTextBox.Text.Trim();
+                        string sales = salesTextBox.Text.Trim();
+
+                        // Validate that all fields are not empty
+                        if (!string.IsNullOrEmpty(ingredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup) && !string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
+                        {
+                            SaveIngredient(productId, ingredientName, quantity, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales);
+                        }
+                    }
+                }
+                RefreshDynamicProductsPanel();
+                guna2Panel1.Visible = false;
+                AddRowButton.Visible = false;
+                guna2Panel18.Visible = false;
+                // Reset the textboxes
+                foreach (var textBox in guna2Panel16.Controls.OfType<Guna2TextBox>())
+                {
+                    textBox.Text = string.Empty;
+                }
+
+                // Remove dynamically added textboxes
+                var textBoxesToRemove = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                    .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
+                    .Where(tb => tb != IngredientTextBox && tb != QuantityTextBox && tb != CostPerMlTextBox && tb != TotalCostPerCupTextBox && tb != TotalCostTextBox && tb != SellingPriceTextBox && tb != SalesTextBox) // Keep the static textboxes
+                    .ToList();
+
+                foreach (var textBox in textBoxesToRemove)
+                {
+                    guna2Panel16.Controls.Remove(textBox);
+                }
+                guna2CustomGradientPanel1.Visible = true;
+                await Task.Delay(3000);
+                guna2CustomGradientPanel1.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Product not found.");
+            }
+        }
+
+        private async void guna2Button6_Click(object sender, EventArgs e)
+        {
+            string productName = label10.Text;
+            int productId = GetProductIdByName(productName);
+
+            if (productId != -1)
+            {
+                foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+                {
+                    var quantityTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var costPerMlTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var totalCostPerCupTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var totalCostTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var sellingPriceTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SellingPriceTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    var salesTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SalesTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+
+                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null && totalCostTextBox != null && sellingPriceTextBox != null && salesTextBox != null)
+                    {
+                        string newIngredientName = ingredientTextBox.Text.Trim();
+                        string quantity = quantityTextBox.Text.Trim();
+                        string costPerMl = costPerMlTextBox.Text.Trim();
+                        string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
+                        string totalCost = totalCostTextBox.Text.Trim();
+                        string sellingPrice = sellingPriceTextBox.Text.Trim();
+                        string sales = salesTextBox.Text.Trim();
+                        string oldIngredientName = ingredientTextBox.Tag.ToString(); // Get the original ingredient name
+
+                        // Validate that all fields are not empty
+                        if (!string.IsNullOrEmpty(newIngredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup) && !string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
+                        {
+                            UpdateIngredient(productId, newIngredientName, quantity, oldIngredientName, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales);
+                        }
+                    }
+                }
+                RefreshDynamicProductsPanel();
+                guna2Panel33.Visible = false;
+                guna2CustomGradientPanel3.BringToFront();
+                guna2CustomGradientPanel3.Visible = true;
+                await Task.Delay(3000);
+                guna2CustomGradientPanel3.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Product not found.");
+            }
+        }
+
+        private void RefreshDynamicProductsPanel()
+        {
+            AddDynamicProductsToPanel();
+        }
 
         private void AddDynamicProductsToPanel()
         {
@@ -744,6 +753,7 @@ namespace WandererCup
             // Ensure the layout is updated
             panel3.PerformLayout();
         }
+
 
         private List<int> FetchProductIdsFromDatabase()
         {
@@ -1075,10 +1085,7 @@ namespace WandererCup
 
         }
 
-        private void RefreshDynamicProductsPanel()
-        {
-            AddDynamicProductsToPanel();
-        }
+
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
@@ -1333,34 +1340,42 @@ namespace WandererCup
         {
 
         }
-        private void AddSpaceBelowPanel39()
+        private void AddSpacePanel39()
         {
-            Panel spacePanel = new Panel
+            // Add space to the right of panel16
+            Panel spacePanelRight = new Panel
             {
-                Size = new Size(guna2Panel39.Width, 30), // Adjust the height as needed
+                Size = new Size(10, guna2Panel39.Height), // Adjust the width as needed
+                Dock = DockStyle.Right
+            };
+            guna2Panel39.Controls.Add(spacePanelRight);
+
+            // Add space below panel16
+            Panel spacePanelBottom = new Panel
+            {
+                Size = new Size(guna2Panel39.Width, 10), // Adjust the height as needed
                 Dock = DockStyle.Bottom
             };
-            guna2Panel39.Controls.Add(spacePanel);
+            guna2Panel39.Controls.Add(spacePanelBottom);
         }
 
-        private void AddSpaceRightOfPanel16()
+        private void AddSpaceToPanel16()
         {
-            Panel spacePanel = new Panel
+            // Add space to the right of panel16
+            Panel spacePanelRight = new Panel
             {
                 Size = new Size(45, guna2Panel16.Height), // Adjust the width as needed
                 Dock = DockStyle.Right
             };
-            guna2Panel16.Controls.Add(spacePanel);
-        }
+            guna2Panel16.Controls.Add(spacePanelRight);
 
-        private void AddSpaceBelowPanel16()
-        {
-            Panel spacePanel = new Panel
+            // Add space below panel16
+            Panel spacePanelBottom = new Panel
             {
                 Size = new Size(guna2Panel16.Width, 10), // Adjust the height as needed
                 Dock = DockStyle.Bottom
             };
-            guna2Panel16.Controls.Add(spacePanel);
+            guna2Panel16.Controls.Add(spacePanelBottom);
         }
 
         private void button1_Click(object sender, EventArgs e)
