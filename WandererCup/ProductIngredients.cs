@@ -853,7 +853,7 @@ namespace WandererCup
 
             // Clear existing dynamic textboxes
             var textBoxesToRemove = guna2Panel39.Controls.OfType<Guna2TextBox>()
-                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox"))
+                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
                 .ToList();
 
             foreach (var textBox in textBoxesToRemove)
@@ -892,33 +892,82 @@ namespace WandererCup
                     Text = ingredients[i].Item2 // Set quantity
                 };
 
+                // Create new CostPerMlTextBox
+                Guna2TextBox newCostPerMlTextBox = new Guna2TextBox
+                {
+                    Name = "CostPerMlTextBox" + i,
+                    Location = new Point(277, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item3 // Set cost per ml
+                };
+
+                // Create new TotalCostPerCupTextBox
+                Guna2TextBox newTotalCostPerCupTextBox = new Guna2TextBox
+                {
+                    Name = "TotalCostPerCupTextBox" + i,
+                    Location = new Point(357, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item4 // Set total cost per cup
+                };
+
+                // Create new TotalCostTextBox
+                Guna2TextBox newTotalCostTextBox = new Guna2TextBox
+                {
+                    Name = "TotalCostTextBox" + i,
+                    Location = new Point(437, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item5 // Set total cost
+                };
+
+                // Create new SellingPriceTextBox
+                Guna2TextBox newSellingPriceTextBox = new Guna2TextBox
+                {
+                    Name = "SellingPriceTextBox" + i,
+                    Location = new Point(517, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item6 // Set selling price
+                };
+
+                // Create new SalesTextBox
+                Guna2TextBox newSalesTextBox = new Guna2TextBox
+                {
+                    Name = "SalesTextBox" + i,
+                    Location = new Point(597, newYPosition),
+                    Size = new Size(60, 30),
+                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                    ForeColor = Color.Black, // Set font color to black
+                    Text = ingredients[i].Item7 // Set sales
+                };
+
                 // Add the new textboxes to the panel
                 guna2Panel39.Controls.Add(newIngredientTextBox);
                 guna2Panel39.Controls.Add(newQuantityTextBox);
+                guna2Panel39.Controls.Add(newCostPerMlTextBox);
+                guna2Panel39.Controls.Add(newTotalCostPerCupTextBox);
+                guna2Panel39.Controls.Add(newTotalCostTextBox);
+                guna2Panel39.Controls.Add(newSellingPriceTextBox);
+                guna2Panel39.Controls.Add(newSalesTextBox);
             }
         }
 
-
-
-
-
-
-
-
-
-
-
-
-        private List<Tuple<string, string>> GetIngredientsByProductId(int productId)
+        private List<Tuple<string, string, string, string, string, string, string>> GetIngredientsByProductId(int productId)
         {
-            List<Tuple<string, string>> ingredients = new List<Tuple<string, string>>();
+            List<Tuple<string, string, string, string, string, string, string>> ingredients = new List<Tuple<string, string, string, string, string, string, string>>();
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 try
                 {
                     conn.Open();
-                    string query = "SELECT IngredientName, Quantity FROM Ingredients WHERE ProductID = @ProductID";
+                    string query = "SELECT IngredientName, Quantity, CostPerMl, TotalCostPerCup, TotalCost, SellingPrice, Sales FROM Ingredients WHERE ProductID = @ProductID";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductID", productId);
@@ -928,7 +977,12 @@ namespace WandererCup
                             {
                                 string ingredientName = reader["IngredientName"].ToString();
                                 string quantity = reader["Quantity"].ToString();
-                                ingredients.Add(new Tuple<string, string>(ingredientName, quantity));
+                                string costPerMl = reader["CostPerMl"].ToString();
+                                string totalCostPerCup = reader["TotalCostPerCup"].ToString();
+                                string totalCost = reader["TotalCost"].ToString();
+                                string sellingPrice = reader["SellingPrice"].ToString();
+                                string sales = reader["Sales"].ToString();
+                                ingredients.Add(new Tuple<string, string, string, string, string, string, string>(ingredientName, quantity, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales));
                             }
                         }
                     }
@@ -940,6 +994,8 @@ namespace WandererCup
             }
             return ingredients;
         }
+
+
 
 
         private void RemoveButton_Click(int productId, Panel productPanel)
