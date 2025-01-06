@@ -1653,7 +1653,7 @@
             this.guna2Panel40.Controls.Add(this.guna2Button9);
             this.guna2Panel40.Controls.Add(this.guna2Button10);
             this.guna2Panel40.Controls.Add(this.label16);
-            this.guna2Panel40.Location = new System.Drawing.Point(1146, 96);
+            this.guna2Panel40.Location = new System.Drawing.Point(216, 103);
             this.guna2Panel40.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel40.Name = "guna2Panel40";
             this.guna2Panel40.Size = new System.Drawing.Size(272, 181);
@@ -1773,6 +1773,7 @@
             this.guna2Panel33.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel33.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel33.BorderRadius = 196;
+            this.guna2Panel33.Controls.Add(this.guna2Panel40);
             this.guna2Panel33.Controls.Add(this.guna2Panel48);
             this.guna2Panel33.Controls.Add(this.guna2Panel47);
             this.guna2Panel33.Controls.Add(this.guna2Panel39);
@@ -1912,8 +1913,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1526, 614);
-            this.Controls.Add(this.guna2Panel40);
+            this.ClientSize = new System.Drawing.Size(1124, 614);
             this.Controls.Add(this.guna2Panel33);
             this.Controls.Add(this.guna2Panel28);
             this.Controls.Add(this.AddRowButton);
