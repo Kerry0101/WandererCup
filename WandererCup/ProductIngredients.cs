@@ -242,14 +242,16 @@ namespace WandererCup
 
             // Remove dynamically added textboxes
             var textBoxesToRemove = guna2Panel16.Controls.OfType<Guna2TextBox>()
-                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox"))
-                .Where(tb => tb != IngredientTextBox && tb != QuantityTextBox) // Keep the static textboxes
+                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
+                .Where(tb => tb != IngredientTextBox && tb != QuantityTextBox && tb != CostPerMlTextBox && tb != TotalCostPerCupTextBox && tb != TotalCostTextBox && tb != SellingPriceTextBox && tb != SalesTextBox) // Keep the static textboxes
                 .ToList();
 
             foreach (var textBox in textBoxesToRemove)
             {
                 guna2Panel16.Controls.Remove(textBox);
             }
+
+
         }
 
 
@@ -374,7 +376,6 @@ namespace WandererCup
                         }
                     }
                 }
-                RefreshDynamicProductsPanel();
                 guna2Panel1.Visible = false;
                 AddRowButton.Visible = false;
                 guna2Panel18.Visible = false;
