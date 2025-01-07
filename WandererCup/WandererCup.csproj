@@ -165,6 +165,7 @@
     <Compile Include="Inventory.Designer.cs">
       <DependentUpon>Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventoryUtils.cs" />
     <Compile Include="Migrations\202412040123331_UpdateProductPricePrecision.cs" />
     <Compile Include="Migrations\202412040123331_UpdateProductPricePrecision.Designer.cs">
       <DependentUpon>202412040123331_UpdateProductPricePrecision.cs</DependentUpon>

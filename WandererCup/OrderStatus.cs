@@ -477,6 +477,15 @@ namespace WandererCup
                 {
                     total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
                 }
+
+                if (row.Cells["Items"].Value != null)
+                {
+                    string productName = row.Cells["Items"].Value.ToString();
+                    int productId = GetProductIdByName(productName);
+
+                    // Deduct the inventory quantity
+                    InventoryUtils.DeductInventoryQuantity(productId);
+                }
             }
 
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
@@ -513,6 +522,36 @@ namespace WandererCup
                 }
             }
         }
+
+        private int GetProductIdByName(string productName)
+        {
+            int productId = -1;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT ProductID FROM Product WHERE ProductName = @ProductName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            productId = Convert.ToInt32(result);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productId;
+        }
+
+
 
 
 
