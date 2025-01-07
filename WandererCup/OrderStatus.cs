@@ -478,13 +478,14 @@ namespace WandererCup
                     total += Convert.ToDecimal(row.Cells["Subtotal"].Value);
                 }
 
-                if (row.Cells["Items"].Value != null)
+                if (row.Cells["Items"].Value != null && row.Cells["Quantity"].Value != null)
                 {
                     string productName = row.Cells["Items"].Value.ToString();
                     int productId = GetProductIdByName(productName);
+                    int quantityOrdered = Convert.ToInt32(row.Cells["Quantity"].Value);
 
                     // Deduct the inventory quantity
-                    InventoryUtils.DeductInventoryQuantity(productId);
+                    InventoryUtils.DeductInventoryQuantity(productId, quantityOrdered);
                 }
             }
 
@@ -550,6 +551,7 @@ namespace WandererCup
             }
             return productId;
         }
+
 
 
 

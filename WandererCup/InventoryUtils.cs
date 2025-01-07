@@ -7,7 +7,7 @@ namespace WandererCup
 {
     public static class InventoryUtils
     {
-        public static void DeductInventoryQuantity(int productId)
+        public static void DeductInventoryQuantity(int productId, int quantityOrdered)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -18,12 +18,13 @@ namespace WandererCup
                     string query = @"
                         UPDATE inventory i
                         JOIN Ingredients ing ON i.ProductName = ing.IngredientName
-                        SET i.Quantity = i.Quantity - CAST(ing.Quantity AS UNSIGNED)
+                        SET i.Quantity = i.Quantity - (CAST(ing.Quantity AS UNSIGNED) * @QuantityOrdered)
                         WHERE ing.ProductID = @ProductID";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@QuantityOrdered", quantityOrdered);
                         cmd.ExecuteNonQuery();
                     }
                 }
