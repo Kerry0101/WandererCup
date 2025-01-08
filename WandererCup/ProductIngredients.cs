@@ -1075,7 +1075,7 @@ namespace WandererCup
 
             // Clear existing dynamic textboxes
             var textBoxesToRemove = guna2Panel39.Controls.OfType<Guna2TextBox>()
-                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
+                .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox"))
                 .ToList();
 
             foreach (var textBox in textBoxesToRemove)
@@ -1089,14 +1089,14 @@ namespace WandererCup
             // Dynamically create textboxes for each ingredient
             for (int i = 0; i < ingredients.Count; i++)
             {
-                int newYPosition = 43 + (30 + 10) * i; // Adjust the Y position for each set of textboxes
+                int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * i; // Adjust the Y position for each set of textboxes
 
                 // Create new IngredientTextBox
                 Guna2TextBox newIngredientTextBox = new Guna2TextBox
                 {
                     Name = "IngredientTextBox" + i,
-                    Location = new Point(12, newYPosition),
-                    Size = new Size(162, 30),
+                    Location = new Point(IngredientTextBox.Location.X, newYPosition),
+                    Size = IngredientTextBox.Size,
                     FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                     ForeColor = Color.Black, // Set font color to black
                     Text = ingredients[i].Item1, // Set ingredient name
@@ -1107,8 +1107,8 @@ namespace WandererCup
                 Guna2TextBox newQuantityTextBox = new Guna2TextBox
                 {
                     Name = "QuantityTextBox" + i,
-                    Location = new Point(197, newYPosition),
-                    Size = new Size(60, 30),
+                    Location = new Point(QuantityTextBox.Location.X, newYPosition),
+                    Size = QuantityTextBox.Size,
                     FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                     ForeColor = Color.Black, // Set font color to black
                     Text = ingredients[i].Item2 // Set quantity
@@ -1118,67 +1118,47 @@ namespace WandererCup
                 Guna2TextBox newCostPerMlTextBox = new Guna2TextBox
                 {
                     Name = "CostPerMlTextBox" + i,
-                    Location = new Point(277, newYPosition),
-                    Size = new Size(60, 30),
+                    Location = new Point(CostPerMlTextBox.Location.X, newYPosition),
+                    Size = CostPerMlTextBox.Size,
                     FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                     ForeColor = Color.Black, // Set font color to black
-                    Text = ingredients[i].Item3 // Set cost per ml
+                    Text = ingredients[i].Item3, // Set cost per ml
+                    ReadOnly = true // Set ReadOnly to true
                 };
 
                 // Create new TotalCostPerCupTextBox
                 Guna2TextBox newTotalCostPerCupTextBox = new Guna2TextBox
                 {
                     Name = "TotalCostPerCupTextBox" + i,
-                    Location = new Point(357, newYPosition),
-                    Size = new Size(60, 30),
+                    Location = new Point(TotalCostPerCupTextBox.Location.X, newYPosition),
+                    Size = TotalCostPerCupTextBox.Size,
                     FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                     ForeColor = Color.Black, // Set font color to black
-                    Text = ingredients[i].Item4 // Set total cost per cup
+                    Text = ingredients[i].Item4, // Set total cost per cup
+                    ReadOnly = true // Set ReadOnly to true
                 };
 
-                //// Create new TotalCostTextBox
-                //Guna2TextBox newTotalCostTextBox = new Guna2TextBox
-                //{
-                //    Name = "TotalCostTextBox" + i,
-                //    Location = new Point(437, newYPosition),
-                //    Size = new Size(60, 30),
-                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                //    ForeColor = Color.Black, // Set font color to black
-                //    Text = ingredients[i].Item5 // Set total cost
-                //};
-
-                //// Create new SellingPriceTextBox
-                //Guna2TextBox newSellingPriceTextBox = new Guna2TextBox
-                //{
-                //    Name = "SellingPriceTextBox" + i,
-                //    Location = new Point(517, newYPosition),
-                //    Size = new Size(60, 30),
-                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                //    ForeColor = Color.Black, // Set font color to black
-                //    Text = ingredients[i].Item6 // Set selling price
-                //};
-
-                //// Create new SalesTextBox
-                //Guna2TextBox newSalesTextBox = new Guna2TextBox
-                //{
-                //    Name = "SalesTextBox" + i,
-                //    Location = new Point(597, newYPosition),
-                //    Size = new Size(60, 30),
-                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                //    ForeColor = Color.Black, // Set font color to black
-                //    Text = ingredients[i].Item7 // Set sales
-                //};
+                // Attach event handlers
+                newIngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
+                newQuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
 
                 // Add the new textboxes to the panel
                 guna2Panel39.Controls.Add(newIngredientTextBox);
                 guna2Panel39.Controls.Add(newQuantityTextBox);
                 guna2Panel39.Controls.Add(newCostPerMlTextBox);
                 guna2Panel39.Controls.Add(newTotalCostPerCupTextBox);
-                //guna2Panel39.Controls.Add(newTotalCostTextBox);
-                //guna2Panel39.Controls.Add(newSellingPriceTextBox);
-                //guna2Panel39.Controls.Add(newSalesTextBox);
+            }
+
+            // Fetch and display product sales data
+            var productSales = GetProductSalesByProductId(productId);
+            if (productSales != null)
+            {
+                EditTotalCost.Text = productSales.Item1;
+                EditSellingPrice.Text = productSales.Item2;
+                EditSale.Text = productSales.Item3;
             }
         }
+
 
         private List<Tuple<string, string, string, string>> GetIngredientsByProductId(int productId)
         {
@@ -1189,7 +1169,7 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "SELECT IngredientName, Quantity, CostPerMl, TotalCostPerCup, TotalCost, SellingPrice, Sales FROM Ingredients WHERE ProductID = @ProductID";
+                    string query = "SELECT IngredientName, Quantity, CostPerMl, TotalCostPerCup FROM Ingredients WHERE ProductID = @ProductID";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductID", productId);
@@ -1201,9 +1181,6 @@ namespace WandererCup
                                 string quantity = reader["Quantity"].ToString();
                                 string costPerMl = reader["CostPerMl"].ToString();
                                 string totalCostPerCup = reader["TotalCostPerCup"].ToString();
-                                //string totalCost = reader["TotalCost"].ToString();
-                                //string sellingPrice = reader["SellingPrice"].ToString();
-                                //string sales = reader["Sales"].ToString();
                                 ingredients.Add(new Tuple<string, string, string, string>(ingredientName, quantity, costPerMl, totalCostPerCup));
                             }
                         }
@@ -1216,6 +1193,41 @@ namespace WandererCup
             }
             return ingredients;
         }
+
+        private Tuple<string, string, string> GetProductSalesByProductId(int productId)
+        {
+            Tuple<string, string, string> productSales = null;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT TotalCost, SellingPrice, Sales FROM product_sales WHERE ProductID = @ProductID";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string totalCost = reader["TotalCost"].ToString();
+                                string sellingPrice = reader["SellingPrice"].ToString();
+                                string sales = reader["Sales"].ToString();
+                                productSales = new Tuple<string, string, string>(totalCost, sellingPrice, sales);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return productSales;
+        }
+
+
 
 
 

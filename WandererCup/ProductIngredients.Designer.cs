@@ -43,7 +43,40 @@
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.SellingPriceTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel49 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel52 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel51 = new Guna.UI2.WinForms.Guna2Panel();
+            this.AddRowButton = new System.Windows.Forms.Button();
+            this.guna2Panel50 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.guna2Panel46 = new Guna.UI2.WinForms.Guna2Panel();
+            this.TotalCostTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel45 = new Guna.UI2.WinForms.Guna2Panel();
+            this.CloseButton = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.SalesTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TotalCostPerCupTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.CostPerMlTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.QuantityTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.IngredientTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.AttachButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
+            this.PNameLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.guna2Panel21 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -65,36 +98,10 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2Panel45 = new Guna.UI2.WinForms.Guna2Panel();
-            this.CloseButton = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.SellingPriceTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.TotalCostTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.TotalCostPerCupTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.CostPerMlTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.QuantityTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.IngredientTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.AttachButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
-            this.PNameLabel = new System.Windows.Forms.Label();
             this.guna2Panel28 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel29 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel30 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel31 = new Guna.UI2.WinForms.Guna2Panel();
@@ -102,7 +109,6 @@
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.AddRowButton = new System.Windows.Forms.Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -132,50 +138,46 @@
             this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button10 = new Guna.UI2.WinForms.Guna2Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.SalesTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.guna2Panel49 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel50 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel51 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel52 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel57 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel56 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel34 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2Panel35 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel36 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel37 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel38 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel39 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.guna2Panel47 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel48 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel53 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel54 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel55 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditSale = new Guna.UI2.WinForms.Guna2TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.EditTotalCost = new Guna.UI2.WinForms.Guna2TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.Edit = new Guna.UI2.WinForms.Guna2TextBox();
+            this.EditSellingPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2Panel33 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.EditAddRowBtn = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.UpdateChangeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
-            this.guna2Panel21.SuspendLayout();
-            this.guna2Panel18.SuspendLayout();
             this.guna2Panel16.SuspendLayout();
             this.guna2Panel17.SuspendLayout();
+            this.guna2Panel21.SuspendLayout();
+            this.guna2Panel18.SuspendLayout();
             this.guna2Panel28.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -364,9 +366,7 @@
             this.guna2Panel1.Controls.Add(this.label21);
             this.guna2Panel1.Controls.Add(this.SellingPriceTextBox);
             this.guna2Panel1.Controls.Add(this.guna2Panel49);
-            this.guna2Panel1.Controls.Add(this.guna2Panel18);
             this.guna2Panel1.Controls.Add(this.guna2Panel52);
-            this.guna2Panel1.Controls.Add(this.guna2Panel21);
             this.guna2Panel1.Controls.Add(this.guna2Panel51);
             this.guna2Panel1.Controls.Add(this.AddRowButton);
             this.guna2Panel1.Controls.Add(this.guna2Panel50);
@@ -392,6 +392,110 @@
             this.guna2Panel1.TabIndex = 100;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label21.Location = new System.Drawing.Point(262, 374);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(152, 20);
+            this.label21.TabIndex = 110;
+            this.label21.Text = "Set selling price:";
+            // 
+            // SellingPriceTextBox
+            // 
+            this.SellingPriceTextBox.BorderRadius = 10;
+            this.SellingPriceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SellingPriceTextBox.DefaultText = "";
+            this.SellingPriceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SellingPriceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SellingPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SellingPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SellingPriceTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.SellingPriceTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SellingPriceTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SellingPriceTextBox.ForeColor = System.Drawing.Color.Black;
+            this.SellingPriceTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SellingPriceTextBox.Location = new System.Drawing.Point(426, 367);
+            this.SellingPriceTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SellingPriceTextBox.Name = "SellingPriceTextBox";
+            this.SellingPriceTextBox.PasswordChar = '\0';
+            this.SellingPriceTextBox.PlaceholderText = "";
+            this.SellingPriceTextBox.SelectedText = "";
+            this.SellingPriceTextBox.Size = new System.Drawing.Size(89, 35);
+            this.SellingPriceTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.SellingPriceTextBox.TabIndex = 109;
+            // 
+            // guna2Panel49
+            // 
+            this.guna2Panel49.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel49.Location = new System.Drawing.Point(547, 336);
+            this.guna2Panel49.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel49.Name = "guna2Panel49";
+            this.guna2Panel49.Size = new System.Drawing.Size(13, 394);
+            this.guna2Panel49.TabIndex = 90;
+            // 
+            // guna2Panel52
+            // 
+            this.guna2Panel52.BackColor = System.Drawing.SystemColors.Info;
+            this.guna2Panel52.Location = new System.Drawing.Point(211, 396);
+            this.guna2Panel52.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel52.Name = "guna2Panel52";
+            this.guna2Panel52.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel52.TabIndex = 99;
+            // 
+            // guna2Panel51
+            // 
+            this.guna2Panel51.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel51.Location = new System.Drawing.Point(215, 397);
+            this.guna2Panel51.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel51.Name = "guna2Panel51";
+            this.guna2Panel51.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel51.TabIndex = 114;
+            // 
+            // AddRowButton
+            // 
+            this.AddRowButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.AddRowButton.Location = new System.Drawing.Point(10, 321);
+            this.AddRowButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AddRowButton.Name = "AddRowButton";
+            this.AddRowButton.Size = new System.Drawing.Size(135, 35);
+            this.AddRowButton.TabIndex = 101;
+            this.AddRowButton.Text = "Add Row";
+            this.AddRowButton.UseVisualStyleBackColor = true;
+            this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
+            // 
+            // guna2Panel50
+            // 
+            this.guna2Panel50.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel50.Location = new System.Drawing.Point(-11, 363);
+            this.guna2Panel50.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel50.Name = "guna2Panel50";
+            this.guna2Panel50.Size = new System.Drawing.Size(13, 394);
+            this.guna2Panel50.TabIndex = 113;
+            // 
+            // guna2Panel12
+            // 
+            this.guna2Panel12.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel12.Location = new System.Drawing.Point(547, 0);
+            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel12.Name = "guna2Panel12";
+            this.guna2Panel12.Size = new System.Drawing.Size(13, 394);
+            this.guna2Panel12.TabIndex = 89;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.Info;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label19.Location = new System.Drawing.Point(306, 334);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 20);
+            this.label19.TabIndex = 106;
+            this.label19.Text = "Total cost =";
+            // 
             // guna2Panel46
             // 
             this.guna2Panel46.BackColor = System.Drawing.Color.Black;
@@ -400,6 +504,368 @@
             this.guna2Panel46.Name = "guna2Panel46";
             this.guna2Panel46.Size = new System.Drawing.Size(419, 12);
             this.guna2Panel46.TabIndex = 108;
+            // 
+            // TotalCostTextBox
+            // 
+            this.TotalCostTextBox.BorderRadius = 10;
+            this.TotalCostTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TotalCostTextBox.DefaultText = "";
+            this.TotalCostTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TotalCostTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TotalCostTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TotalCostTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TotalCostTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.TotalCostTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TotalCostTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TotalCostTextBox.ForeColor = System.Drawing.Color.Black;
+            this.TotalCostTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TotalCostTextBox.Location = new System.Drawing.Point(426, 324);
+            this.TotalCostTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TotalCostTextBox.Name = "TotalCostTextBox";
+            this.TotalCostTextBox.PasswordChar = '\0';
+            this.TotalCostTextBox.PlaceholderText = "";
+            this.TotalCostTextBox.SelectedText = "";
+            this.TotalCostTextBox.Size = new System.Drawing.Size(89, 35);
+            this.TotalCostTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.TotalCostTextBox.TabIndex = 105;
+            this.TotalCostTextBox.TextChanged += new System.EventHandler(this.TotalCostTextBox_TextChanged);
+            // 
+            // guna2Panel45
+            // 
+            this.guna2Panel45.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel45.Location = new System.Drawing.Point(349, -10);
+            this.guna2Panel45.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel45.Name = "guna2Panel45";
+            this.guna2Panel45.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel45.TabIndex = 98;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CloseButton.AutoSize = true;
+            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.Location = new System.Drawing.Point(520, 8);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(21, 20);
+            this.CloseButton.TabIndex = 102;
+            this.CloseButton.Text = "X";
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label22.Location = new System.Drawing.Point(346, 425);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 20);
+            this.label22.TabIndex = 112;
+            this.label22.Text = "Sale  =";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
+            // 
+            // SalesTextBox
+            // 
+            this.SalesTextBox.BorderRadius = 10;
+            this.SalesTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.SalesTextBox.DefaultText = "";
+            this.SalesTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.SalesTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.SalesTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SalesTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.SalesTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.SalesTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SalesTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SalesTextBox.ForeColor = System.Drawing.Color.Black;
+            this.SalesTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SalesTextBox.Location = new System.Drawing.Point(426, 419);
+            this.SalesTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.SalesTextBox.Name = "SalesTextBox";
+            this.SalesTextBox.PasswordChar = '\0';
+            this.SalesTextBox.PlaceholderText = "";
+            this.SalesTextBox.SelectedText = "";
+            this.SalesTextBox.Size = new System.Drawing.Size(89, 35);
+            this.SalesTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.SalesTextBox.TabIndex = 111;
+            // 
+            // guna2Panel16
+            // 
+            this.guna2Panel16.AutoScroll = true;
+            this.guna2Panel16.BackColor = System.Drawing.Color.Tan;
+            this.guna2Panel16.Controls.Add(this.label25);
+            this.guna2Panel16.Controls.Add(this.label24);
+            this.guna2Panel16.Controls.Add(this.label18);
+            this.guna2Panel16.Controls.Add(this.TotalCostPerCupTextBox);
+            this.guna2Panel16.Controls.Add(this.label17);
+            this.guna2Panel16.Controls.Add(this.CostPerMlTextBox);
+            this.guna2Panel16.Controls.Add(this.QuantityTextBox);
+            this.guna2Panel16.Controls.Add(this.IngredientTextBox);
+            this.guna2Panel16.Controls.Add(this.label4);
+            this.guna2Panel16.Controls.Add(this.label2);
+            this.guna2Panel16.Location = new System.Drawing.Point(9, 112);
+            this.guna2Panel16.Name = "guna2Panel16";
+            this.guna2Panel16.Size = new System.Drawing.Size(530, 202);
+            this.guna2Panel16.TabIndex = 99;
+            this.guna2Panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel16_Paint);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(237, 32);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(35, 20);
+            this.label25.TabIndex = 115;
+            this.label25.Text = "ml:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label24.Location = new System.Drawing.Point(416, 28);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(78, 20);
+            this.label24.TabIndex = 114;
+            this.label24.Text = "per cup:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label18.Location = new System.Drawing.Point(413, 4);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(93, 20);
+            this.label18.TabIndex = 104;
+            this.label18.Text = "Total cost";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // TotalCostPerCupTextBox
+            // 
+            this.TotalCostPerCupTextBox.BorderRadius = 10;
+            this.TotalCostPerCupTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TotalCostPerCupTextBox.DefaultText = "";
+            this.TotalCostPerCupTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TotalCostPerCupTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TotalCostPerCupTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TotalCostPerCupTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TotalCostPerCupTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.TotalCostPerCupTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TotalCostPerCupTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TotalCostPerCupTextBox.ForeColor = System.Drawing.Color.Black;
+            this.TotalCostPerCupTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TotalCostPerCupTextBox.Location = new System.Drawing.Point(417, 67);
+            this.TotalCostPerCupTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.TotalCostPerCupTextBox.Name = "TotalCostPerCupTextBox";
+            this.TotalCostPerCupTextBox.PasswordChar = '\0';
+            this.TotalCostPerCupTextBox.PlaceholderText = "";
+            this.TotalCostPerCupTextBox.SelectedText = "";
+            this.TotalCostPerCupTextBox.Size = new System.Drawing.Size(89, 35);
+            this.TotalCostPerCupTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.TotalCostPerCupTextBox.TabIndex = 103;
+            this.TotalCostPerCupTextBox.TextChanged += new System.EventHandler(this.guna2TextBox4_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label17.Location = new System.Drawing.Point(237, 4);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(81, 20);
+            this.label17.TabIndex = 102;
+            this.label17.Text = "Cost per";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // CostPerMlTextBox
+            // 
+            this.CostPerMlTextBox.BorderRadius = 10;
+            this.CostPerMlTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CostPerMlTextBox.DefaultText = "";
+            this.CostPerMlTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CostPerMlTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CostPerMlTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CostPerMlTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CostPerMlTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.CostPerMlTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CostPerMlTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CostPerMlTextBox.ForeColor = System.Drawing.Color.Black;
+            this.CostPerMlTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CostPerMlTextBox.Location = new System.Drawing.Point(241, 67);
+            this.CostPerMlTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.CostPerMlTextBox.Name = "CostPerMlTextBox";
+            this.CostPerMlTextBox.PasswordChar = '\0';
+            this.CostPerMlTextBox.PlaceholderText = "";
+            this.CostPerMlTextBox.SelectedText = "";
+            this.CostPerMlTextBox.Size = new System.Drawing.Size(77, 35);
+            this.CostPerMlTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.CostPerMlTextBox.TabIndex = 101;
+            // 
+            // QuantityTextBox
+            // 
+            this.QuantityTextBox.BorderRadius = 10;
+            this.QuantityTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.QuantityTextBox.DefaultText = "";
+            this.QuantityTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.QuantityTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.QuantityTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QuantityTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.QuantityTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.QuantityTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QuantityTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.QuantityTextBox.ForeColor = System.Drawing.Color.Black;
+            this.QuantityTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.QuantityTextBox.Location = new System.Drawing.Point(328, 67);
+            this.QuantityTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.QuantityTextBox.Name = "QuantityTextBox";
+            this.QuantityTextBox.PasswordChar = '\0';
+            this.QuantityTextBox.PlaceholderText = "";
+            this.QuantityTextBox.SelectedText = "";
+            this.QuantityTextBox.Size = new System.Drawing.Size(80, 35);
+            this.QuantityTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.QuantityTextBox.TabIndex = 100;
+            // 
+            // IngredientTextBox
+            // 
+            this.IngredientTextBox.BorderRadius = 10;
+            this.IngredientTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.IngredientTextBox.DefaultText = "";
+            this.IngredientTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.IngredientTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.IngredientTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IngredientTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.IngredientTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.IngredientTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IngredientTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IngredientTextBox.ForeColor = System.Drawing.Color.Black;
+            this.IngredientTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.IngredientTextBox.Location = new System.Drawing.Point(16, 67);
+            this.IngredientTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.IngredientTextBox.Name = "IngredientTextBox";
+            this.IngredientTextBox.PasswordChar = '\0';
+            this.IngredientTextBox.PlaceholderText = "";
+            this.IngredientTextBox.SelectedText = "";
+            this.IngredientTextBox.Size = new System.Drawing.Size(216, 35);
+            this.IngredientTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.IngredientTextBox.TabIndex = 98;
+            this.IngredientTextBox.TextChanged += new System.EventHandler(this.IngredientTextBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(324, 4);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "Quantity:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(12, 4);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 20);
+            this.label2.TabIndex = 83;
+            this.label2.Text = "Ingredient name:";
+            // 
+            // guna2Panel15
+            // 
+            this.guna2Panel15.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel15.Location = new System.Drawing.Point(0, -10);
+            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Size = new System.Drawing.Size(436, 12);
+            this.guna2Panel15.TabIndex = 97;
+            // 
+            // guna2Panel14
+            // 
+            this.guna2Panel14.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel14.Location = new System.Drawing.Point(-11, -1);
+            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel14.Name = "guna2Panel14";
+            this.guna2Panel14.Size = new System.Drawing.Size(13, 394);
+            this.guna2Panel14.TabIndex = 91;
+            // 
+            // guna2Panel13
+            // 
+            this.guna2Panel13.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel13.Location = new System.Drawing.Point(0, 536);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(419, 12);
+            this.guna2Panel13.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(156, 11);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(233, 20);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Attach Product Ingredients";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // AttachButton
+            // 
+            this.AttachButton.BorderRadius = 18;
+            this.AttachButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AttachButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AttachButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AttachButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AttachButton.FillColor = System.Drawing.Color.Green;
+            this.AttachButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.AttachButton.ForeColor = System.Drawing.Color.White;
+            this.AttachButton.Location = new System.Drawing.Point(215, 481);
+            this.AttachButton.Margin = new System.Windows.Forms.Padding(4);
+            this.AttachButton.Name = "AttachButton";
+            this.AttachButton.Size = new System.Drawing.Size(117, 43);
+            this.AttachButton.TabIndex = 0;
+            this.AttachButton.Text = "Attach";
+            this.AttachButton.Click += new System.EventHandler(this.AttachButton_Click);
+            // 
+            // guna2Panel17
+            // 
+            this.guna2Panel17.BackColor = System.Drawing.Color.Tan;
+            this.guna2Panel17.BorderColor = System.Drawing.Color.Black;
+            this.guna2Panel17.BorderThickness = 2;
+            this.guna2Panel17.Controls.Add(this.PNameLabel);
+            this.guna2Panel17.Controls.Add(this.label5);
+            this.guna2Panel17.Location = new System.Drawing.Point(-24, 67);
+            this.guna2Panel17.Name = "guna2Panel17";
+            this.guna2Panel17.Size = new System.Drawing.Size(732, 34);
+            this.guna2Panel17.TabIndex = 0;
+            // 
+            // PNameLabel
+            // 
+            this.PNameLabel.AutoSize = true;
+            this.PNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.PNameLabel.Location = new System.Drawing.Point(223, 6);
+            this.PNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PNameLabel.Name = "PNameLabel";
+            this.PNameLabel.Size = new System.Drawing.Size(64, 20);
+            this.PNameLabel.TabIndex = 101;
+            this.PNameLabel.Text = "Mocha";
+            this.PNameLabel.Click += new System.EventHandler(this.PNameLabel_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Tan;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(29, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(186, 20);
+            this.label5.TabIndex = 100;
+            this.label5.Text = "Name of the product:";
             // 
             // guna2Panel21
             // 
@@ -413,7 +879,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.label6);
-            this.guna2Panel21.Location = new System.Drawing.Point(147, 103);
+            this.guna2Panel21.Location = new System.Drawing.Point(67, 109);
             this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(272, 181);
@@ -540,7 +1006,7 @@
             this.guna2Panel18.Controls.Add(this.guna2Button1);
             this.guna2Panel18.Controls.Add(this.guna2Button3);
             this.guna2Panel18.Controls.Add(this.label7);
-            this.guna2Panel18.Location = new System.Drawing.Point(148, 105);
+            this.guna2Panel18.Location = new System.Drawing.Point(68, 282);
             this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel18.Name = "guna2Panel18";
             this.guna2Panel18.Size = new System.Drawing.Size(272, 181);
@@ -665,388 +1131,6 @@
             this.label7.Text = "X";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // guna2Panel45
-            // 
-            this.guna2Panel45.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel45.Location = new System.Drawing.Point(349, -10);
-            this.guna2Panel45.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel45.Name = "guna2Panel45";
-            this.guna2Panel45.Size = new System.Drawing.Size(436, 12);
-            this.guna2Panel45.TabIndex = 98;
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CloseButton.AutoSize = true;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.Location = new System.Drawing.Point(520, 8);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(21, 20);
-            this.CloseButton.TabIndex = 102;
-            this.CloseButton.Text = "X";
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Tan;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(29, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(186, 20);
-            this.label5.TabIndex = 100;
-            this.label5.Text = "Name of the product:";
-            // 
-            // guna2Panel16
-            // 
-            this.guna2Panel16.AutoScroll = true;
-            this.guna2Panel16.BackColor = System.Drawing.Color.Tan;
-            this.guna2Panel16.Controls.Add(this.label25);
-            this.guna2Panel16.Controls.Add(this.label24);
-            this.guna2Panel16.Controls.Add(this.label18);
-            this.guna2Panel16.Controls.Add(this.TotalCostPerCupTextBox);
-            this.guna2Panel16.Controls.Add(this.label17);
-            this.guna2Panel16.Controls.Add(this.CostPerMlTextBox);
-            this.guna2Panel16.Controls.Add(this.QuantityTextBox);
-            this.guna2Panel16.Controls.Add(this.IngredientTextBox);
-            this.guna2Panel16.Controls.Add(this.label4);
-            this.guna2Panel16.Controls.Add(this.label2);
-            this.guna2Panel16.Location = new System.Drawing.Point(9, 112);
-            this.guna2Panel16.Name = "guna2Panel16";
-            this.guna2Panel16.Size = new System.Drawing.Size(530, 202);
-            this.guna2Panel16.TabIndex = 99;
-            this.guna2Panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel16_Paint);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(237, 32);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 20);
-            this.label25.TabIndex = 115;
-            this.label25.Text = "ml:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label24.Location = new System.Drawing.Point(416, 28);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(78, 20);
-            this.label24.TabIndex = 114;
-            this.label24.Text = "per cup:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(262, 374);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(152, 20);
-            this.label21.TabIndex = 110;
-            this.label21.Text = "Set selling price:";
-            // 
-            // SellingPriceTextBox
-            // 
-            this.SellingPriceTextBox.BorderRadius = 10;
-            this.SellingPriceTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SellingPriceTextBox.DefaultText = "";
-            this.SellingPriceTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SellingPriceTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SellingPriceTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SellingPriceTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SellingPriceTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
-            this.SellingPriceTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SellingPriceTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SellingPriceTextBox.ForeColor = System.Drawing.Color.Black;
-            this.SellingPriceTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SellingPriceTextBox.Location = new System.Drawing.Point(426, 367);
-            this.SellingPriceTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SellingPriceTextBox.Name = "SellingPriceTextBox";
-            this.SellingPriceTextBox.PasswordChar = '\0';
-            this.SellingPriceTextBox.PlaceholderText = "";
-            this.SellingPriceTextBox.SelectedText = "";
-            this.SellingPriceTextBox.Size = new System.Drawing.Size(89, 35);
-            this.SellingPriceTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.SellingPriceTextBox.TabIndex = 109;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.Info;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(306, 334);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 20);
-            this.label19.TabIndex = 106;
-            this.label19.Text = "Total cost =";
-            // 
-            // TotalCostTextBox
-            // 
-            this.TotalCostTextBox.BorderRadius = 10;
-            this.TotalCostTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TotalCostTextBox.DefaultText = "";
-            this.TotalCostTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TotalCostTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TotalCostTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TotalCostTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TotalCostTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
-            this.TotalCostTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TotalCostTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TotalCostTextBox.ForeColor = System.Drawing.Color.Black;
-            this.TotalCostTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TotalCostTextBox.Location = new System.Drawing.Point(426, 324);
-            this.TotalCostTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TotalCostTextBox.Name = "TotalCostTextBox";
-            this.TotalCostTextBox.PasswordChar = '\0';
-            this.TotalCostTextBox.PlaceholderText = "";
-            this.TotalCostTextBox.SelectedText = "";
-            this.TotalCostTextBox.Size = new System.Drawing.Size(89, 35);
-            this.TotalCostTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.TotalCostTextBox.TabIndex = 105;
-            this.TotalCostTextBox.TextChanged += new System.EventHandler(this.TotalCostTextBox_TextChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label18.Location = new System.Drawing.Point(413, 4);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 20);
-            this.label18.TabIndex = 104;
-            this.label18.Text = "Total cost";
-            this.label18.Click += new System.EventHandler(this.label18_Click);
-            // 
-            // TotalCostPerCupTextBox
-            // 
-            this.TotalCostPerCupTextBox.BorderRadius = 10;
-            this.TotalCostPerCupTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TotalCostPerCupTextBox.DefaultText = "";
-            this.TotalCostPerCupTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TotalCostPerCupTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TotalCostPerCupTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TotalCostPerCupTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TotalCostPerCupTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.TotalCostPerCupTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TotalCostPerCupTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TotalCostPerCupTextBox.ForeColor = System.Drawing.Color.Black;
-            this.TotalCostPerCupTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TotalCostPerCupTextBox.Location = new System.Drawing.Point(417, 67);
-            this.TotalCostPerCupTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.TotalCostPerCupTextBox.Name = "TotalCostPerCupTextBox";
-            this.TotalCostPerCupTextBox.PasswordChar = '\0';
-            this.TotalCostPerCupTextBox.PlaceholderText = "";
-            this.TotalCostPerCupTextBox.SelectedText = "";
-            this.TotalCostPerCupTextBox.Size = new System.Drawing.Size(89, 35);
-            this.TotalCostPerCupTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.TotalCostPerCupTextBox.TabIndex = 103;
-            this.TotalCostPerCupTextBox.TextChanged += new System.EventHandler(this.guna2TextBox4_TextChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label17.Location = new System.Drawing.Point(237, 4);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(81, 20);
-            this.label17.TabIndex = 102;
-            this.label17.Text = "Cost per";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // CostPerMlTextBox
-            // 
-            this.CostPerMlTextBox.BorderRadius = 10;
-            this.CostPerMlTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.CostPerMlTextBox.DefaultText = "";
-            this.CostPerMlTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.CostPerMlTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.CostPerMlTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CostPerMlTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.CostPerMlTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.CostPerMlTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CostPerMlTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.CostPerMlTextBox.ForeColor = System.Drawing.Color.Black;
-            this.CostPerMlTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CostPerMlTextBox.Location = new System.Drawing.Point(241, 67);
-            this.CostPerMlTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.CostPerMlTextBox.Name = "CostPerMlTextBox";
-            this.CostPerMlTextBox.PasswordChar = '\0';
-            this.CostPerMlTextBox.PlaceholderText = "";
-            this.CostPerMlTextBox.SelectedText = "";
-            this.CostPerMlTextBox.Size = new System.Drawing.Size(77, 35);
-            this.CostPerMlTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.CostPerMlTextBox.TabIndex = 101;
-            // 
-            // QuantityTextBox
-            // 
-            this.QuantityTextBox.BorderRadius = 10;
-            this.QuantityTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.QuantityTextBox.DefaultText = "";
-            this.QuantityTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.QuantityTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.QuantityTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.QuantityTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.QuantityTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.QuantityTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.QuantityTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.QuantityTextBox.ForeColor = System.Drawing.Color.Black;
-            this.QuantityTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.QuantityTextBox.Location = new System.Drawing.Point(328, 67);
-            this.QuantityTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.QuantityTextBox.Name = "QuantityTextBox";
-            this.QuantityTextBox.PasswordChar = '\0';
-            this.QuantityTextBox.PlaceholderText = "";
-            this.QuantityTextBox.SelectedText = "";
-            this.QuantityTextBox.Size = new System.Drawing.Size(80, 35);
-            this.QuantityTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.QuantityTextBox.TabIndex = 100;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(324, 4);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 20);
-            this.label4.TabIndex = 99;
-            this.label4.Text = "Quantity:";
-            // 
-            // IngredientTextBox
-            // 
-            this.IngredientTextBox.BorderRadius = 10;
-            this.IngredientTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.IngredientTextBox.DefaultText = "";
-            this.IngredientTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.IngredientTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.IngredientTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.IngredientTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.IngredientTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.IngredientTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IngredientTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IngredientTextBox.ForeColor = System.Drawing.Color.Black;
-            this.IngredientTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.IngredientTextBox.Location = new System.Drawing.Point(16, 67);
-            this.IngredientTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.IngredientTextBox.Name = "IngredientTextBox";
-            this.IngredientTextBox.PasswordChar = '\0';
-            this.IngredientTextBox.PlaceholderText = "";
-            this.IngredientTextBox.SelectedText = "";
-            this.IngredientTextBox.Size = new System.Drawing.Size(216, 35);
-            this.IngredientTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.IngredientTextBox.TabIndex = 98;
-            this.IngredientTextBox.TextChanged += new System.EventHandler(this.IngredientTextBox_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(12, 4);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 20);
-            this.label2.TabIndex = 83;
-            this.label2.Text = "Ingredient name:";
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel15.Location = new System.Drawing.Point(0, -10);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(436, 12);
-            this.guna2Panel15.TabIndex = 97;
-            // 
-            // guna2Panel14
-            // 
-            this.guna2Panel14.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel14.Location = new System.Drawing.Point(-11, -1);
-            this.guna2Panel14.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(13, 394);
-            this.guna2Panel14.TabIndex = 91;
-            // 
-            // guna2Panel13
-            // 
-            this.guna2Panel13.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel13.Location = new System.Drawing.Point(0, 536);
-            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(419, 12);
-            this.guna2Panel13.TabIndex = 90;
-            // 
-            // guna2Panel12
-            // 
-            this.guna2Panel12.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel12.Location = new System.Drawing.Point(547, 0);
-            this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Size = new System.Drawing.Size(13, 394);
-            this.guna2Panel12.TabIndex = 89;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(156, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(233, 20);
-            this.label3.TabIndex = 84;
-            this.label3.Text = "Attach Product Ingredients";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // AttachButton
-            // 
-            this.AttachButton.BorderRadius = 18;
-            this.AttachButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.AttachButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.AttachButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.AttachButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.AttachButton.FillColor = System.Drawing.Color.Green;
-            this.AttachButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.AttachButton.ForeColor = System.Drawing.Color.White;
-            this.AttachButton.Location = new System.Drawing.Point(215, 481);
-            this.AttachButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AttachButton.Name = "AttachButton";
-            this.AttachButton.Size = new System.Drawing.Size(117, 43);
-            this.AttachButton.TabIndex = 0;
-            this.AttachButton.Text = "Attach";
-            this.AttachButton.Click += new System.EventHandler(this.AttachButton_Click);
-            // 
-            // guna2Panel17
-            // 
-            this.guna2Panel17.BackColor = System.Drawing.Color.Tan;
-            this.guna2Panel17.BorderColor = System.Drawing.Color.Black;
-            this.guna2Panel17.BorderThickness = 2;
-            this.guna2Panel17.Controls.Add(this.PNameLabel);
-            this.guna2Panel17.Controls.Add(this.label5);
-            this.guna2Panel17.Location = new System.Drawing.Point(-24, 67);
-            this.guna2Panel17.Name = "guna2Panel17";
-            this.guna2Panel17.Size = new System.Drawing.Size(732, 34);
-            this.guna2Panel17.TabIndex = 0;
-            // 
-            // PNameLabel
-            // 
-            this.PNameLabel.AutoSize = true;
-            this.PNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PNameLabel.Location = new System.Drawing.Point(223, 6);
-            this.PNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.PNameLabel.Name = "PNameLabel";
-            this.PNameLabel.Size = new System.Drawing.Size(64, 20);
-            this.PNameLabel.TabIndex = 101;
-            this.PNameLabel.Text = "Mocha";
-            this.PNameLabel.Click += new System.EventHandler(this.PNameLabel_Click);
-            // 
             // guna2Panel28
             // 
             this.guna2Panel28.BackColor = System.Drawing.SystemColors.Info;
@@ -1065,6 +1149,17 @@
             this.guna2Panel28.Name = "guna2Panel28";
             this.guna2Panel28.Size = new System.Drawing.Size(272, 181);
             this.guna2Panel28.TabIndex = 104;
+            // 
+            // guna2HtmlLabel17
+            // 
+            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel17.Location = new System.Drawing.Point(15, 39);
+            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
+            this.guna2HtmlLabel17.Size = new System.Drawing.Size(230, 20);
+            this.guna2HtmlLabel17.TabIndex = 106;
+            this.guna2HtmlLabel17.Text = "You are about to remove ingredients";
             // 
             // guna2HtmlLabel18
             // 
@@ -1087,17 +1182,6 @@
             this.guna2HtmlLabel16.Size = new System.Drawing.Size(235, 20);
             this.guna2HtmlLabel16.TabIndex = 107;
             this.guna2HtmlLabel16.Text = "to your product. You cannot undo this";
-            // 
-            // guna2HtmlLabel17
-            // 
-            this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel17.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel17.Location = new System.Drawing.Point(15, 39);
-            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
-            this.guna2HtmlLabel17.Size = new System.Drawing.Size(230, 20);
-            this.guna2HtmlLabel17.TabIndex = 106;
-            this.guna2HtmlLabel17.Text = "You are about to remove ingredients";
             // 
             // guna2Panel29
             // 
@@ -1183,18 +1267,6 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "X";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // AddRowButton
-            // 
-            this.AddRowButton.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.AddRowButton.Location = new System.Drawing.Point(10, 321);
-            this.AddRowButton.Margin = new System.Windows.Forms.Padding(4);
-            this.AddRowButton.Name = "AddRowButton";
-            this.AddRowButton.Size = new System.Drawing.Size(135, 35);
-            this.AddRowButton.TabIndex = 101;
-            this.AddRowButton.Text = "Add Row";
-            this.AddRowButton.UseVisualStyleBackColor = true;
-            this.AddRowButton.Click += new System.EventHandler(this.AddRowButton_Click);
             // 
             // guna2Button2
             // 
@@ -1566,78 +1638,6 @@
             this.label16.Text = "X";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
-            // SalesTextBox
-            // 
-            this.SalesTextBox.BorderRadius = 10;
-            this.SalesTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.SalesTextBox.DefaultText = "";
-            this.SalesTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.SalesTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.SalesTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SalesTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.SalesTextBox.FillColor = System.Drawing.Color.PaleGoldenrod;
-            this.SalesTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SalesTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SalesTextBox.ForeColor = System.Drawing.Color.Black;
-            this.SalesTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SalesTextBox.Location = new System.Drawing.Point(426, 419);
-            this.SalesTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.SalesTextBox.Name = "SalesTextBox";
-            this.SalesTextBox.PasswordChar = '\0';
-            this.SalesTextBox.PlaceholderText = "";
-            this.SalesTextBox.SelectedText = "";
-            this.SalesTextBox.Size = new System.Drawing.Size(89, 35);
-            this.SalesTextBox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.SalesTextBox.TabIndex = 111;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(346, 425);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 20);
-            this.label22.TabIndex = 112;
-            this.label22.Text = "Sale  =";
-            this.label22.Click += new System.EventHandler(this.label22_Click);
-            // 
-            // guna2Panel49
-            // 
-            this.guna2Panel49.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel49.Location = new System.Drawing.Point(547, 336);
-            this.guna2Panel49.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel49.Name = "guna2Panel49";
-            this.guna2Panel49.Size = new System.Drawing.Size(13, 394);
-            this.guna2Panel49.TabIndex = 90;
-            // 
-            // guna2Panel50
-            // 
-            this.guna2Panel50.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel50.Location = new System.Drawing.Point(-11, 363);
-            this.guna2Panel50.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel50.Name = "guna2Panel50";
-            this.guna2Panel50.Size = new System.Drawing.Size(13, 394);
-            this.guna2Panel50.TabIndex = 113;
-            // 
-            // guna2Panel51
-            // 
-            this.guna2Panel51.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel51.Location = new System.Drawing.Point(215, 397);
-            this.guna2Panel51.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel51.Name = "guna2Panel51";
-            this.guna2Panel51.Size = new System.Drawing.Size(436, 12);
-            this.guna2Panel51.TabIndex = 114;
-            // 
-            // guna2Panel52
-            // 
-            this.guna2Panel52.BackColor = System.Drawing.SystemColors.Info;
-            this.guna2Panel52.Location = new System.Drawing.Point(211, 396);
-            this.guna2Panel52.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel52.Name = "guna2Panel52";
-            this.guna2Panel52.Size = new System.Drawing.Size(436, 12);
-            this.guna2Panel52.TabIndex = 99;
-            // 
             // guna2Panel57
             // 
             this.guna2Panel57.BackColor = System.Drawing.Color.Black;
@@ -1668,17 +1668,6 @@
             this.guna2Panel34.Size = new System.Drawing.Size(743, 34);
             this.guna2Panel34.TabIndex = 1;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(241, 6);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 20);
-            this.label10.TabIndex = 101;
-            this.label10.Text = "Mocha";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1690,6 +1679,17 @@
             this.label11.Size = new System.Drawing.Size(186, 20);
             this.label11.TabIndex = 102;
             this.label11.Text = "Name of the product:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(241, 6);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 20);
+            this.label10.TabIndex = 101;
+            this.label10.Text = "Mocha";
             // 
             // label12
             // 
@@ -1756,6 +1756,61 @@
             this.guna2Panel39.TabIndex = 114;
             this.guna2Panel39.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel39_Paint);
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label28.Location = new System.Drawing.Point(416, 28);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 20);
+            this.label28.TabIndex = 116;
+            this.label28.Text = "per cup:";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label29.Location = new System.Drawing.Point(413, 4);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(93, 20);
+            this.label29.TabIndex = 115;
+            this.label29.Text = "Total cost";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label27.Location = new System.Drawing.Point(237, 32);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(35, 20);
+            this.label27.TabIndex = 114;
+            this.label27.Text = "ml:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label20.Location = new System.Drawing.Point(237, 4);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(81, 20);
+            this.label20.TabIndex = 113;
+            this.label20.Text = "Cost per";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label14.Location = new System.Drawing.Point(324, 4);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(85, 20);
+            this.label14.TabIndex = 112;
+            this.label14.Text = "Quantity:";
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -1766,61 +1821,6 @@
             this.label15.Size = new System.Drawing.Size(149, 20);
             this.label15.TabIndex = 110;
             this.label15.Text = "Ingredient name:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(254, 10);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(85, 20);
-            this.label14.TabIndex = 112;
-            this.label14.Text = "Quantity:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(368, 10);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(81, 20);
-            this.label20.TabIndex = 113;
-            this.label20.Text = "Cost per";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label27.Location = new System.Drawing.Point(368, 33);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(35, 20);
-            this.label27.TabIndex = 114;
-            this.label27.Text = "ml:";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label29.Location = new System.Drawing.Point(470, 10);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(93, 20);
-            this.label29.TabIndex = 115;
-            this.label29.Text = "Total cost";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label28.Location = new System.Drawing.Point(470, 33);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 20);
-            this.label28.TabIndex = 116;
-            this.label28.Text = "per cup:";
             // 
             // guna2Panel47
             // 
@@ -1867,29 +1867,29 @@
             this.guna2Panel55.Size = new System.Drawing.Size(13, 394);
             this.guna2Panel55.TabIndex = 118;
             // 
-            // guna2TextBox5
+            // EditSale
             // 
-            this.guna2TextBox5.BorderRadius = 10;
-            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox5.DefaultText = "";
-            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox5.FillColor = System.Drawing.Color.PaleGoldenrod;
-            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox5.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox5.Location = new System.Drawing.Point(426, 438);
-            this.guna2TextBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.guna2TextBox5.Name = "guna2TextBox5";
-            this.guna2TextBox5.PasswordChar = '\0';
-            this.guna2TextBox5.PlaceholderText = "";
-            this.guna2TextBox5.SelectedText = "";
-            this.guna2TextBox5.Size = new System.Drawing.Size(89, 35);
-            this.guna2TextBox5.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.guna2TextBox5.TabIndex = 124;
+            this.EditSale.BorderRadius = 10;
+            this.EditSale.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditSale.DefaultText = "";
+            this.EditSale.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditSale.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditSale.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditSale.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditSale.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.EditSale.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditSale.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditSale.ForeColor = System.Drawing.Color.Black;
+            this.EditSale.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditSale.Location = new System.Drawing.Point(426, 438);
+            this.EditSale.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.EditSale.Name = "EditSale";
+            this.EditSale.PasswordChar = '\0';
+            this.EditSale.PlaceholderText = "";
+            this.EditSale.SelectedText = "";
+            this.EditSale.Size = new System.Drawing.Size(89, 35);
+            this.EditSale.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.EditSale.TabIndex = 124;
             // 
             // label26
             // 
@@ -1938,29 +1938,29 @@
             this.label23.TabIndex = 121;
             this.label23.Text = "Total cost =";
             // 
-            // Edit
+            // EditSellingPrice
             // 
-            this.Edit.BorderRadius = 10;
-            this.Edit.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Edit.DefaultText = "";
-            this.Edit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Edit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Edit.FillColor = System.Drawing.Color.PaleGoldenrod;
-            this.Edit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Edit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Edit.ForeColor = System.Drawing.Color.Black;
-            this.Edit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Edit.Location = new System.Drawing.Point(426, 386);
-            this.Edit.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Edit.Name = "Edit";
-            this.Edit.PasswordChar = '\0';
-            this.Edit.PlaceholderText = "";
-            this.Edit.SelectedText = "";
-            this.Edit.Size = new System.Drawing.Size(89, 35);
-            this.Edit.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.Edit.TabIndex = 122;
+            this.EditSellingPrice.BorderRadius = 10;
+            this.EditSellingPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.EditSellingPrice.DefaultText = "";
+            this.EditSellingPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.EditSellingPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.EditSellingPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditSellingPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.EditSellingPrice.FillColor = System.Drawing.Color.PaleGoldenrod;
+            this.EditSellingPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditSellingPrice.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditSellingPrice.ForeColor = System.Drawing.Color.Black;
+            this.EditSellingPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.EditSellingPrice.Location = new System.Drawing.Point(426, 386);
+            this.EditSellingPrice.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.EditSellingPrice.Name = "EditSellingPrice";
+            this.EditSellingPrice.PasswordChar = '\0';
+            this.EditSellingPrice.PlaceholderText = "";
+            this.EditSellingPrice.SelectedText = "";
+            this.EditSellingPrice.Size = new System.Drawing.Size(89, 35);
+            this.EditSellingPrice.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.EditSellingPrice.TabIndex = 122;
             // 
             // label13
             // 
@@ -1979,13 +1979,15 @@
             this.guna2Panel33.BackColor = System.Drawing.SystemColors.Info;
             this.guna2Panel33.BorderColor = System.Drawing.Color.Black;
             this.guna2Panel33.BorderRadius = 268;
-            this.guna2Panel33.Controls.Add(this.guna2Button6);
+            this.guna2Panel33.Controls.Add(this.EditAddRowBtn);
+            this.guna2Panel33.Controls.Add(this.label30);
+            this.guna2Panel33.Controls.Add(this.UpdateChangeBtn);
             this.guna2Panel33.Controls.Add(this.label13);
-            this.guna2Panel33.Controls.Add(this.Edit);
+            this.guna2Panel33.Controls.Add(this.EditSellingPrice);
             this.guna2Panel33.Controls.Add(this.label23);
             this.guna2Panel33.Controls.Add(this.EditTotalCost);
             this.guna2Panel33.Controls.Add(this.label26);
-            this.guna2Panel33.Controls.Add(this.guna2TextBox5);
+            this.guna2Panel33.Controls.Add(this.EditSale);
             this.guna2Panel33.Controls.Add(this.guna2Panel55);
             this.guna2Panel33.Controls.Add(this.guna2Panel54);
             this.guna2Panel33.Controls.Add(this.guna2Panel53);
@@ -2000,28 +2002,50 @@
             this.guna2Panel33.Controls.Add(this.guna2Panel34);
             this.guna2Panel33.Controls.Add(this.guna2Panel56);
             this.guna2Panel33.Controls.Add(this.guna2Panel57);
-            this.guna2Panel33.Location = new System.Drawing.Point(1031, 71);
+            this.guna2Panel33.Location = new System.Drawing.Point(340, 54);
             this.guna2Panel33.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel33.Name = "guna2Panel33";
             this.guna2Panel33.Size = new System.Drawing.Size(549, 538);
             this.guna2Panel33.TabIndex = 237;
             // 
-            // guna2Button6
+            // EditAddRowBtn
             // 
-            this.guna2Button6.BorderRadius = 18;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.FillColor = System.Drawing.Color.Green;
-            this.guna2Button6.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.Location = new System.Drawing.Point(215, 481);
-            this.guna2Button6.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.Size = new System.Drawing.Size(117, 43);
-            this.guna2Button6.TabIndex = 127;
-            this.guna2Button6.Text = "Update";
+            this.EditAddRowBtn.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.EditAddRowBtn.Location = new System.Drawing.Point(16, 336);
+            this.EditAddRowBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.EditAddRowBtn.Name = "EditAddRowBtn";
+            this.EditAddRowBtn.Size = new System.Drawing.Size(135, 35);
+            this.EditAddRowBtn.TabIndex = 129;
+            this.EditAddRowBtn.Text = "Add Row";
+            this.EditAddRowBtn.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label30.Location = new System.Drawing.Point(174, 11);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(212, 20);
+            this.label30.TabIndex = 128;
+            this.label30.Text = "Edit Product Ingredients";
+            // 
+            // UpdateChangeBtn
+            // 
+            this.UpdateChangeBtn.BorderRadius = 18;
+            this.UpdateChangeBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UpdateChangeBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UpdateChangeBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UpdateChangeBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UpdateChangeBtn.FillColor = System.Drawing.Color.Green;
+            this.UpdateChangeBtn.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.UpdateChangeBtn.ForeColor = System.Drawing.Color.White;
+            this.UpdateChangeBtn.Location = new System.Drawing.Point(215, 481);
+            this.UpdateChangeBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.UpdateChangeBtn.Name = "UpdateChangeBtn";
+            this.UpdateChangeBtn.Size = new System.Drawing.Size(117, 43);
+            this.UpdateChangeBtn.TabIndex = 127;
+            this.UpdateChangeBtn.Text = "Update";
             // 
             // ProductIngredients
             // 
@@ -2032,6 +2056,8 @@
             this.Controls.Add(this.guna2Panel33);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel28);
+            this.Controls.Add(this.guna2Panel18);
+            this.Controls.Add(this.guna2Panel21);
             this.Controls.Add(this.guna2Panel40);
             this.Controls.Add(this.guna2CustomGradientPanel3);
             this.Controls.Add(this.guna2CustomGradientPanel2);
@@ -2062,14 +2088,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            this.guna2Panel21.ResumeLayout(false);
-            this.guna2Panel21.PerformLayout();
-            this.guna2Panel18.ResumeLayout(false);
-            this.guna2Panel18.PerformLayout();
             this.guna2Panel16.ResumeLayout(false);
             this.guna2Panel16.PerformLayout();
             this.guna2Panel17.ResumeLayout(false);
             this.guna2Panel17.PerformLayout();
+            this.guna2Panel21.ResumeLayout(false);
+            this.guna2Panel21.PerformLayout();
+            this.guna2Panel18.ResumeLayout(false);
+            this.guna2Panel18.PerformLayout();
             this.guna2Panel28.ResumeLayout(false);
             this.guna2Panel28.PerformLayout();
             this.guna2CustomGradientPanel1.ResumeLayout(false);
@@ -2226,13 +2252,15 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel53;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel54;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel55;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox EditSale;
         private System.Windows.Forms.Label label26;
         private Guna.UI2.WinForms.Guna2TextBox EditTotalCost;
         private System.Windows.Forms.Label label23;
-        private Guna.UI2.WinForms.Guna2TextBox Edit;
+        private Guna.UI2.WinForms.Guna2TextBox EditSellingPrice;
         private System.Windows.Forms.Label label13;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel33;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button UpdateChangeBtn;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Button EditAddRowBtn;
     }
 }
