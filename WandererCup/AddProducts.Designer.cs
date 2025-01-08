@@ -91,10 +91,8 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.PriceTextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.ItemNameTextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.CategoryCombobox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -448,10 +446,8 @@
             this.panel5.Controls.Add(this.guna2Panel3);
             this.panel5.Controls.Add(this.guna2Panel4);
             this.panel5.Controls.Add(this.guna2Button1);
-            this.panel5.Controls.Add(this.PriceTextbox);
             this.panel5.Controls.Add(this.ItemNameTextbox);
             this.panel5.Controls.Add(this.CategoryCombobox);
-            this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label8);
@@ -501,7 +497,7 @@
             this.guna2Panel12.Controls.Add(this.guna2Button3);
             this.guna2Panel12.Controls.Add(this.guna2Button4);
             this.guna2Panel12.Controls.Add(this.label11);
-            this.guna2Panel12.Location = new System.Drawing.Point(425, 217);
+            this.guna2Panel12.Location = new System.Drawing.Point(542, 125);
             this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Size = new System.Drawing.Size(272, 181);
@@ -653,7 +649,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.label5);
-            this.guna2Panel21.Location = new System.Drawing.Point(425, 217);
+            this.guna2Panel21.Location = new System.Drawing.Point(714, 314);
             this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(272, 181);
@@ -960,28 +956,6 @@
             this.guna2Button1.Text = "Add Product";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // PriceTextbox
-            // 
-            this.PriceTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.PriceTextbox.DefaultText = "";
-            this.PriceTextbox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.PriceTextbox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.PriceTextbox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PriceTextbox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.PriceTextbox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PriceTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.PriceTextbox.ForeColor = System.Drawing.Color.Black;
-            this.PriceTextbox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.PriceTextbox.Location = new System.Drawing.Point(216, 337);
-            this.PriceTextbox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PriceTextbox.Name = "PriceTextbox";
-            this.PriceTextbox.PasswordChar = '\0';
-            this.PriceTextbox.PlaceholderText = "";
-            this.PriceTextbox.SelectedText = "";
-            this.PriceTextbox.Size = new System.Drawing.Size(284, 43);
-            this.PriceTextbox.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
-            this.PriceTextbox.TabIndex = 70;
-            // 
             // ItemNameTextbox
             // 
             this.ItemNameTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -1016,17 +990,6 @@
             this.CategoryCombobox.Size = new System.Drawing.Size(283, 28);
             this.CategoryCombobox.TabIndex = 68;
             this.CategoryCombobox.SelectedIndexChanged += new System.EventHandler(this.CategoryCombobox_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(192, 314);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 20);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Price";
             // 
             // label3
             // 
@@ -1132,10 +1095,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2TextBox PriceTextbox;
         private Guna.UI2.WinForms.Guna2TextBox ItemNameTextbox;
         private System.Windows.Forms.ComboBox CategoryCombobox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;

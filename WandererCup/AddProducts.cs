@@ -346,12 +346,6 @@ namespace WandererCup
                 return;
             }
 
-            if (!decimal.TryParse(PriceTextbox.Text, out price))
-            {
-                MessageBox.Show("Please enter a valid price.");
-                return;
-            }
-
             if (string.IsNullOrWhiteSpace(selectedCategory))
             {
                 MessageBox.Show("Please select a category.");
@@ -388,13 +382,11 @@ namespace WandererCup
                                 using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn))
                                 {
                                     updateCmd.Parameters.AddWithValue("@ProductName", productName);
-                                    updateCmd.Parameters.AddWithValue("@Price", price);
                                     updateCmd.Parameters.AddWithValue("@CategoryID", categoryId);
                                     updateCmd.ExecuteNonQuery();
                                 }
                                 // Reset text fields and combo box
                                 ItemNameTextbox.Text = string.Empty;
-                                PriceTextbox.Text = string.Empty;
                                 CategoryCombobox.SelectedIndex = -1;
 
                                 guna2Panel21.Visible = false;
@@ -411,18 +403,16 @@ namespace WandererCup
                     }
 
                     // Insert the new product
-                    string query = "INSERT INTO Product (ProductName, Price, CategoryID, is_archived) VALUES (@ProductName, @Price, @CategoryID, 0)";
+                    string query = "INSERT INTO Product (ProductName, CategoryID, is_archived) VALUES (@ProductName, @CategoryID, 0)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductName", productName);
-                        cmd.Parameters.AddWithValue("@Price", price);
                         cmd.Parameters.AddWithValue("@CategoryID", categoryId);
                         cmd.ExecuteNonQuery();
                     }
 
                     // Reset text fields and combo box
                     ItemNameTextbox.Text = string.Empty;
-                    PriceTextbox.Text = string.Empty;
                     CategoryCombobox.SelectedIndex = -1;
 
                     guna2Panel21.Visible = false;

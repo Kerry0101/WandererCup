@@ -423,7 +423,7 @@ namespace WandererCup
                     connection.Open();
                     string query = @"
                 SELECT p.ProductName, p.Price 
-                FROM product p
+                FROM product_with_price p
                 JOIN category c ON p.CategoryId = c.CategoryId
                 WHERE c.CategoryName = @CategoryName AND p.is_archived = 0"; // Adjust the query as per your database schema
                     using (MySqlCommand command = new MySqlCommand(query, connection))
