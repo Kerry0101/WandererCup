@@ -17,6 +17,7 @@ namespace WandererCup
     public partial class ProductIngredients : Form
     {
         private Guna2Button confirmRemoveButton;
+
         public ProductIngredients()
         {
             InitializeComponent();
@@ -44,8 +45,18 @@ namespace WandererCup
             guna2Button2.Click += new EventHandler(guna2Button2_Click);
             AddRowButton.Click += new EventHandler(AddRowButton_Click);
             guna2Button5.Click += new EventHandler(ConfirmRemoveButton_Click);
-        }
 
+            // Attach event handlers to static textboxes
+            IngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
+            QuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
+            SellingPriceTextBox.TextChanged += SellingPriceTextBox_TextChanged;
+
+            // Set ReadOnly property for static textboxes
+            CostPerMlTextBox.ReadOnly = true;
+            TotalCostPerCupTextBox.ReadOnly = true;
+            TotalCostTextBox.ReadOnly = true;
+            SalesTextBox.ReadOnly = true;
+        }
 
 
         private void guna2DataGridView2_SelectionChanged(object sender, EventArgs e)
@@ -280,6 +291,11 @@ namespace WandererCup
                 textBox.Text = string.Empty;
             }
 
+            // Reset the TotalCostTextBox, SellingPriceTextBox, and SalesTextBox
+            TotalCostTextBox.Text = string.Empty;
+            SellingPriceTextBox.Text = string.Empty;
+            SalesTextBox.Text = string.Empty;
+
             // Remove dynamically added textboxes
             var textBoxesToRemove = guna2Panel16.Controls.OfType<Guna2TextBox>()
                 .Where(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox"))
@@ -299,9 +315,9 @@ namespace WandererCup
         {
             // Calculate the new position for the new textboxes
             int dynamicTextBoxCount = guna2Panel16.Controls.OfType<Guna2TextBox>()
-                .Count(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox") || tb.Name.StartsWith("TotalCostTextBox") || tb.Name.StartsWith("SellingPriceTextBox") || tb.Name.StartsWith("SalesTextBox")) - 2; // Subtract the count of static textboxes
+                .Count(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox")) - 2; // Subtract the count of static textboxes
 
-            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (dynamicTextBoxCount / + 7);
+            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (dynamicTextBoxCount / +4);
 
             // Create new IngredientTextBox
             Guna2TextBox newIngredientTextBox = new Guna2TextBox
@@ -312,6 +328,15 @@ namespace WandererCup
                 FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                 ForeColor = Color.Black, // Set font color to black
             };
+
+            // Set up auto-complete for the new IngredientTextBox
+            List<string> productNames = GetProductNames();
+            AutoCompleteStringCollection autoCompleteCollection = new AutoCompleteStringCollection();
+            autoCompleteCollection.AddRange(productNames.ToArray());
+
+            newIngredientTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            newIngredientTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            newIngredientTextBox.AutoCompleteCustomSource = autoCompleteCollection;
 
             // Create new QuantityTextBox
             Guna2TextBox newQuantityTextBox = new Guna2TextBox
@@ -331,6 +356,7 @@ namespace WandererCup
                 Size = CostPerMlTextBox.Size,
                 FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                 ForeColor = Color.Black, // Set font color to black
+                ReadOnly = true // Set ReadOnly to true
             };
 
             // Create new TotalCostPerCupTextBox
@@ -341,51 +367,27 @@ namespace WandererCup
                 Size = TotalCostPerCupTextBox.Size,
                 FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
                 ForeColor = Color.Black, // Set font color to black
+                ReadOnly = true // Set ReadOnly to true
             };
 
-            // Create new TotalCostTextBox
-            Guna2TextBox newTotalCostTextBox = new Guna2TextBox
-            {
-                Name = "TotalCostTextBox" + dynamicTextBoxCount,
-                Location = new Point(TotalCostTextBox.Location.X, newYPosition),
-                Size = TotalCostTextBox.Size,
-                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                ForeColor = Color.Black, // Set font color to black
-            };
-
-            // Create new SellingPriceTextBox
-            Guna2TextBox newSellingPriceTextBox = new Guna2TextBox
-            {
-                Name = "SellingPriceTextBox" + dynamicTextBoxCount,
-                Location = new Point(SellingPriceTextBox.Location.X, newYPosition),
-                Size = SellingPriceTextBox.Size,
-                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                ForeColor = Color.Black, // Set font color to black
-            };
-
-            // Create new SalesTextBox
-            Guna2TextBox newSalesTextBox = new Guna2TextBox
-            {
-                Name = "SalesTextBox" + dynamicTextBoxCount,
-                Location = new Point(SalesTextBox.Location.X, newYPosition),
-                Size = SalesTextBox.Size,
-                FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                ForeColor = Color.Black, // Set font color to black
-            };
+            // Attach event handlers
+            newIngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
+            newQuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
 
             // Add the new textboxes to the panel
             guna2Panel16.Controls.Add(newIngredientTextBox);
             guna2Panel16.Controls.Add(newQuantityTextBox);
             guna2Panel16.Controls.Add(newCostPerMlTextBox);
             guna2Panel16.Controls.Add(newTotalCostPerCupTextBox);
-            guna2Panel16.Controls.Add(newTotalCostTextBox);
-            guna2Panel16.Controls.Add(newSellingPriceTextBox);
-            guna2Panel16.Controls.Add(newSalesTextBox);
         }
 
 
 
-        private void SaveIngredient(int productId, string ingredientName, string quantity, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
+
+
+
+
+        private void SaveProductSales(int productId, string totalCost, string sellingPrice, string sales)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -393,14 +395,10 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "INSERT INTO Ingredients (ProductID, IngredientName, Quantity, CostPerMl, TotalCostPerCup, TotalCost, SellingPrice, Sales) VALUES (@ProductID, @IngredientName, @Quantity, @CostPerMl, @TotalCostPerCup, @TotalCost, @SellingPrice, @Sales)";
+                    string query = "INSERT INTO product_sales (ProductID, TotalCost, SellingPrice, Sales) VALUES (@ProductID, @TotalCost, @SellingPrice, @Sales)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductID", productId);
-                        cmd.Parameters.AddWithValue("@IngredientName", ingredientName);
-                        cmd.Parameters.AddWithValue("@Quantity", quantity);
-                        cmd.Parameters.AddWithValue("@CostPerMl", costPerMl);
-                        cmd.Parameters.AddWithValue("@TotalCostPerCup", totalCostPerCup);
                         cmd.Parameters.AddWithValue("@TotalCost", totalCost);
                         cmd.Parameters.AddWithValue("@SellingPrice", sellingPrice);
                         cmd.Parameters.AddWithValue("@Sales", sales);
@@ -413,6 +411,61 @@ namespace WandererCup
                 }
             }
         }
+
+        private void SaveIngredient(int productId, string ingredientName, string quantity, string costPerMl, string totalCostPerCup)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO ingredients (ProductID, IngredientName, Quantity, CostPerMl, TotalCostPerCup) VALUES (@ProductID, @IngredientName, @Quantity, @CostPerMl, @TotalCostPerCup)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@IngredientName", ingredientName);
+                        cmd.Parameters.AddWithValue("@Quantity", quantity);
+                        cmd.Parameters.AddWithValue("@CostPerMl", costPerMl);
+                        cmd.Parameters.AddWithValue("@TotalCostPerCup", totalCostPerCup);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+        private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE Ingredients SET IngredientName = @NewIngredientName, Quantity = @Quantity, CostPerMl = @CostPerMl, TotalCostPerCup = @TotalCostPerCup WHERE ProductID = @ProductID AND IngredientName = @OldIngredientName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@NewIngredientName", newIngredientName);
+                        cmd.Parameters.AddWithValue("@Quantity", quantity);
+                        cmd.Parameters.AddWithValue("@CostPerMl", costPerMl);
+                        cmd.Parameters.AddWithValue("@TotalCostPerCup", totalCostPerCup);
+                        cmd.Parameters.AddWithValue("@OldIngredientName", oldIngredientName);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
 
 
 
@@ -446,21 +499,122 @@ namespace WandererCup
             }
         }
 
+        private void UpdateTotalCost()
+        {
+            decimal totalCost = 0;
+
+            foreach (var totalCostPerCupTextBox in guna2Panel16.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("TotalCostPerCupTextBox")))
+            {
+                if (decimal.TryParse(totalCostPerCupTextBox.Text.Trim(), out decimal cost))
+                {
+                    totalCost += cost;
+                }
+            }
+
+            TotalCostTextBox.Text = totalCost.ToString("F2");
+        }
+
+        private void UpdateSales()
+        {
+            if (decimal.TryParse(TotalCostTextBox.Text.Trim(), out decimal totalCost) &&
+                decimal.TryParse(SellingPriceTextBox.Text.Trim(), out decimal sellingPrice))
+            {
+                decimal sales = sellingPrice - totalCost;
+                SalesTextBox.Text = sales.ToString("F2");
+            }
+            else
+            {
+                SalesTextBox.Text = string.Empty;
+            }
+        }
+
+        private void SellingPriceTextBox_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSales();
+        }
 
 
-
-
+        private string GetCostPerMlByIngredientName(string ingredientName)
+        {
+            string costPerMl = string.Empty;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CostPerMl FROM inventory WHERE ProductName = @IngredientName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@IngredientName", ingredientName);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            costPerMl = result.ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return costPerMl;
+        }
 
 
         private void IngredientTextBox_TextChanged(object sender, EventArgs e)
         {
+            Guna2TextBox ingredientTextBox = sender as Guna2TextBox;
+            if (ingredientTextBox != null)
+            {
+                string ingredientName = ingredientTextBox.Text.Trim();
+                string costPerMl = GetCostPerMlByIngredientName(ingredientName);
 
+                // Find the corresponding CostPerMlTextBox
+                string index = ingredientTextBox.Name.Substring("IngredientTextBox".Length);
+                Guna2TextBox costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                    .FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
+
+                if (costPerMlTextBox != null)
+                {
+                    costPerMlTextBox.Text = costPerMl;
+                }
+            }
         }
+
 
         private void QuantityTextBox_TextChanged(object sender, EventArgs e)
         {
+            Guna2TextBox quantityTextBox = sender as Guna2TextBox;
+            if (quantityTextBox != null)
+            {
+                string index = quantityTextBox.Name.Substring("QuantityTextBox".Length);
+                Guna2TextBox costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                    .FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
+                Guna2TextBox totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                    .FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + index);
 
+                if (costPerMlTextBox != null && totalCostPerCupTextBox != null)
+                {
+                    if (decimal.TryParse(quantityTextBox.Text.Trim(), out decimal quantity) &&
+                        decimal.TryParse(costPerMlTextBox.Text.Trim(), out decimal costPerMl))
+                    {
+                        decimal totalCostPerCup = quantity * costPerMl;
+                        totalCostPerCupTextBox.Text = totalCostPerCup.ToString("F2");
+                    }
+                    else
+                    {
+                        totalCostPerCupTextBox.Text = string.Empty;
+                    }
+
+                    // Update the total cost
+                    UpdateTotalCost();
+                }
+            }
         }
+
+
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -524,36 +678,44 @@ namespace WandererCup
 
             if (productId != -1)
             {
+                // Save product sales data
+                string totalCost = TotalCostTextBox.Text.Trim();
+                string sellingPrice = SellingPriceTextBox.Text.Trim();
+                string sales = SalesTextBox.Text.Trim();
+
+                if (!string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
+                {
+                    SaveProductSales(productId, totalCost, sellingPrice, sales);
+                }
+
+                // Save ingredients data
                 foreach (var ingredientTextBox in guna2Panel16.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
                 {
-                    var quantityTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var totalCostTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var sellingPriceTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SellingPriceTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
-                    var salesTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "SalesTextBox" + ingredientTextBox.Name.Substring("IngredientTextBox".Length));
+                    string index = ingredientTextBox.Name.Substring("IngredientTextBox".Length);
+                    var quantityTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + index);
+                    var costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
+                    var totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + index);
 
-                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null && totalCostTextBox != null && sellingPriceTextBox != null && salesTextBox != null)
+                    if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null)
                     {
                         string ingredientName = ingredientTextBox.Text.Trim();
                         string quantity = quantityTextBox.Text.Trim();
                         string costPerMl = costPerMlTextBox.Text.Trim();
                         string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
-                        string totalCost = totalCostTextBox.Text.Trim();
-                        string sellingPrice = sellingPriceTextBox.Text.Trim();
-                        string sales = salesTextBox.Text.Trim();
 
                         // Validate that all fields are not empty
-                        if (!string.IsNullOrEmpty(ingredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup) && !string.IsNullOrEmpty(totalCost) && !string.IsNullOrEmpty(sellingPrice) && !string.IsNullOrEmpty(sales))
+                        if (!string.IsNullOrEmpty(ingredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup))
                         {
-                            SaveIngredient(productId, ingredientName, quantity, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales);
+                            SaveIngredient(productId, ingredientName, quantity, costPerMl, totalCostPerCup);
                         }
                     }
                 }
+
                 RefreshDynamicProductsPanel();
                 guna2Panel1.Visible = false;
                 AddRowButton.Visible = false;
                 guna2Panel18.Visible = false;
+
                 // Reset the textboxes
                 foreach (var textBox in guna2Panel16.Controls.OfType<Guna2TextBox>())
                 {
@@ -570,6 +732,12 @@ namespace WandererCup
                 {
                     guna2Panel16.Controls.Remove(textBox);
                 }
+
+                // Reset the TotalCostTextBox, SellingPriceTextBox, and SalesTextBox
+                TotalCostTextBox.Text = string.Empty;
+                SellingPriceTextBox.Text = string.Empty;
+                SalesTextBox.Text = string.Empty;
+
                 guna2CustomGradientPanel1.Visible = true;
                 await Task.Delay(3000);
                 guna2CustomGradientPanel1.Visible = false;
@@ -579,6 +747,9 @@ namespace WandererCup
                 MessageBox.Show("Product not found.");
             }
         }
+
+
+
 
         private async void guna2Button6_Click(object sender, EventArgs e)
         {
@@ -965,53 +1136,53 @@ namespace WandererCup
                     Text = ingredients[i].Item4 // Set total cost per cup
                 };
 
-                // Create new TotalCostTextBox
-                Guna2TextBox newTotalCostTextBox = new Guna2TextBox
-                {
-                    Name = "TotalCostTextBox" + i,
-                    Location = new Point(437, newYPosition),
-                    Size = new Size(60, 30),
-                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                    ForeColor = Color.Black, // Set font color to black
-                    Text = ingredients[i].Item5 // Set total cost
-                };
+                //// Create new TotalCostTextBox
+                //Guna2TextBox newTotalCostTextBox = new Guna2TextBox
+                //{
+                //    Name = "TotalCostTextBox" + i,
+                //    Location = new Point(437, newYPosition),
+                //    Size = new Size(60, 30),
+                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                //    ForeColor = Color.Black, // Set font color to black
+                //    Text = ingredients[i].Item5 // Set total cost
+                //};
 
-                // Create new SellingPriceTextBox
-                Guna2TextBox newSellingPriceTextBox = new Guna2TextBox
-                {
-                    Name = "SellingPriceTextBox" + i,
-                    Location = new Point(517, newYPosition),
-                    Size = new Size(60, 30),
-                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                    ForeColor = Color.Black, // Set font color to black
-                    Text = ingredients[i].Item6 // Set selling price
-                };
+                //// Create new SellingPriceTextBox
+                //Guna2TextBox newSellingPriceTextBox = new Guna2TextBox
+                //{
+                //    Name = "SellingPriceTextBox" + i,
+                //    Location = new Point(517, newYPosition),
+                //    Size = new Size(60, 30),
+                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                //    ForeColor = Color.Black, // Set font color to black
+                //    Text = ingredients[i].Item6 // Set selling price
+                //};
 
-                // Create new SalesTextBox
-                Guna2TextBox newSalesTextBox = new Guna2TextBox
-                {
-                    Name = "SalesTextBox" + i,
-                    Location = new Point(597, newYPosition),
-                    Size = new Size(60, 30),
-                    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
-                    ForeColor = Color.Black, // Set font color to black
-                    Text = ingredients[i].Item7 // Set sales
-                };
+                //// Create new SalesTextBox
+                //Guna2TextBox newSalesTextBox = new Guna2TextBox
+                //{
+                //    Name = "SalesTextBox" + i,
+                //    Location = new Point(597, newYPosition),
+                //    Size = new Size(60, 30),
+                //    FillColor = Color.FromArgb(255, 255, 192), // Set FillColor to "255, 255, 192"
+                //    ForeColor = Color.Black, // Set font color to black
+                //    Text = ingredients[i].Item7 // Set sales
+                //};
 
                 // Add the new textboxes to the panel
                 guna2Panel39.Controls.Add(newIngredientTextBox);
                 guna2Panel39.Controls.Add(newQuantityTextBox);
                 guna2Panel39.Controls.Add(newCostPerMlTextBox);
                 guna2Panel39.Controls.Add(newTotalCostPerCupTextBox);
-                guna2Panel39.Controls.Add(newTotalCostTextBox);
-                guna2Panel39.Controls.Add(newSellingPriceTextBox);
-                guna2Panel39.Controls.Add(newSalesTextBox);
+                //guna2Panel39.Controls.Add(newTotalCostTextBox);
+                //guna2Panel39.Controls.Add(newSellingPriceTextBox);
+                //guna2Panel39.Controls.Add(newSalesTextBox);
             }
         }
 
-        private List<Tuple<string, string, string, string, string, string, string>> GetIngredientsByProductId(int productId)
+        private List<Tuple<string, string, string, string>> GetIngredientsByProductId(int productId)
         {
-            List<Tuple<string, string, string, string, string, string, string>> ingredients = new List<Tuple<string, string, string, string, string, string, string>>();
+            List<Tuple<string, string, string, string>> ingredients = new List<Tuple<string, string, string, string>>();
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -1030,10 +1201,10 @@ namespace WandererCup
                                 string quantity = reader["Quantity"].ToString();
                                 string costPerMl = reader["CostPerMl"].ToString();
                                 string totalCostPerCup = reader["TotalCostPerCup"].ToString();
-                                string totalCost = reader["TotalCost"].ToString();
-                                string sellingPrice = reader["SellingPrice"].ToString();
-                                string sales = reader["Sales"].ToString();
-                                ingredients.Add(new Tuple<string, string, string, string, string, string, string>(ingredientName, quantity, costPerMl, totalCostPerCup, totalCost, sellingPrice, sales));
+                                //string totalCost = reader["TotalCost"].ToString();
+                                //string sellingPrice = reader["SellingPrice"].ToString();
+                                //string sales = reader["Sales"].ToString();
+                                ingredients.Add(new Tuple<string, string, string, string>(ingredientName, quantity, costPerMl, totalCostPerCup));
                             }
                         }
                     }
@@ -1333,32 +1504,7 @@ namespace WandererCup
         }
 
 
-        private void DeductInventoryQuantity(int productId)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = @"
-                UPDATE inventory i
-                JOIN Ingredients ing ON i.ProductName = ing.IngredientName
-                SET i.Quantity = i.Quantity - CAST(ing.Quantity AS UNSIGNED)
-                WHERE ing.ProductID = @ProductID";
 
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@ProductID", productId);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
-        }
 
 
 
@@ -1435,7 +1581,7 @@ namespace WandererCup
             // Add space to the right of panel16
             Panel spacePanelRight = new Panel
             {
-                Size = new Size(45, guna2Panel16.Height), // Adjust the width as needed
+                Size = new Size(0, guna2Panel16.Height), // Adjust the width as needed
                 Dock = DockStyle.Right
             };
             guna2Panel16.Controls.Add(spacePanelRight);
@@ -1470,6 +1616,21 @@ namespace WandererCup
         }
 
         private void guna2Panel16_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TotalCostTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
         {
 
         }

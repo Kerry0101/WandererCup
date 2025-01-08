@@ -381,21 +381,42 @@ namespace WandererCup
 
                         if (count > 0)
                         {
+                            if (IsArchivedProduct(productName))
+                            {
+                                // Update the is_archived column to 0
+                                string updateQuery = "UPDATE Product SET is_archived = 0, Price = @Price, CategoryID = @CategoryID WHERE ProductName = @ProductName";
+                                using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@ProductName", productName);
+                                    updateCmd.Parameters.AddWithValue("@Price", price);
+                                    updateCmd.Parameters.AddWithValue("@CategoryID", categoryId);
+                                    updateCmd.ExecuteNonQuery();
+                                }
+                                // Reset text fields and combo box
+                                ItemNameTextbox.Text = string.Empty;
+                                PriceTextbox.Text = string.Empty;
+                                CategoryCombobox.SelectedIndex = -1;
 
-                            MessageBox.Show("This product name is already exists in the system. Please enter a different one.");
+                                guna2Panel21.Visible = false;
+                                guna2CustomGradientPanel2.Visible = true;
+                                await Task.Delay(3000);
+                                guna2CustomGradientPanel2.Visible = false;
+                            }
+                            else
+                            {
+                                MessageBox.Show("This product name already exists in the system. Please enter a different one.");
+                            }
                             return;
                         }
                     }
 
                     // Insert the new product
-
                     string query = "INSERT INTO Product (ProductName, Price, CategoryID, is_archived) VALUES (@ProductName, @Price, @CategoryID, 0)";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductName", productName);
                         cmd.Parameters.AddWithValue("@Price", price);
                         cmd.Parameters.AddWithValue("@CategoryID", categoryId);
-
                         cmd.ExecuteNonQuery();
                     }
 
@@ -403,7 +424,6 @@ namespace WandererCup
                     ItemNameTextbox.Text = string.Empty;
                     PriceTextbox.Text = string.Empty;
                     CategoryCombobox.SelectedIndex = -1;
-
 
                     guna2Panel21.Visible = false;
                     guna2CustomGradientPanel2.Visible = true;
@@ -416,6 +436,7 @@ namespace WandererCup
                 }
             }
         }
+
 
 
 
@@ -473,7 +494,12 @@ namespace WandererCup
                                     updateCmd.Parameters.AddWithValue("@CategoryName", categoryName);
                                     updateCmd.ExecuteNonQuery();
                                 }
-                                MessageBox.Show("Category has been added successfully.");
+                                // Reset combo box
+                                guna2TextBox1.Text = string.Empty;
+                                guna2Panel12.Visible = false;
+                                guna2CustomGradientPanel1.Visible = true;
+                                await Task.Delay(3000);
+                                guna2CustomGradientPanel1.Hide();
                             }
                             else
                             {
@@ -546,6 +572,32 @@ namespace WandererCup
             productIngredientsForm.Show();
             HighlightActiveButton((Button)sender);
         }
+
+
+        private bool IsArchivedProduct(string productName)
+        {
+            bool isArchived = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Product WHERE ProductName = @ProductName AND is_archived = 1";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", productName);
+                        isArchived = Convert.ToInt32(cmd.ExecuteScalar()) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return isArchived;
+        }
+
 
     }
 }
