@@ -911,6 +911,7 @@
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(342, 62);
             this.guna2DateTimePicker1.TabIndex = 267;
             this.guna2DateTimePicker1.Value = new System.DateTime(2024, 12, 29, 11, 6, 34, 642);
+            this.guna2DateTimePicker1.ValueChanged += new System.EventHandler(this.guna2DateTimePicker1_ValueChanged_1);
             // 
             // OrderHistory
             // 

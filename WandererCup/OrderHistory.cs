@@ -258,5 +258,10 @@ namespace WandererCup
             salesReport.Show();
             HighlightActiveButton((Button)sender);
         }
+
+        private void guna2DateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

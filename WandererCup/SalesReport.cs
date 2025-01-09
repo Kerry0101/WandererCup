@@ -19,10 +19,20 @@ namespace WandererCup
             InitializeComponent();
             ConfigureDataGridView();
 
+            // Set guna2DateTimePicker2 to the first day of the current month
+            guna2DateTimePicker2.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+
+            // Set guna2DateTimePicker1 to the current date
+            guna2DateTimePicker1.Value = DateTime.Now;
+
             // Attach event handlers for the date pickers
             guna2DateTimePicker2.ValueChanged += DateTimePicker_ValueChanged;
             guna2DateTimePicker1.ValueChanged += DateTimePicker_ValueChanged;
+
+            // Attach the Load event handler
+            this.Load += SalesReport_Load;
         }
+
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -37,7 +47,7 @@ namespace WandererCup
         private void LoadSalesReport()
         {
             DateTime startDate = guna2DateTimePicker2.Value.Date;
-            DateTime endDate = guna2DateTimePicker1.Value.Date;
+            DateTime endDate = guna2DateTimePicker1.Value.Date.AddDays(1).AddTicks(-1); // Set endDate to the end of the day
 
             string connectionString = GetConnectionString();
 
@@ -128,6 +138,9 @@ namespace WandererCup
 
 
 
+
+
+
         // Example data class, replace with your actual data class
         public class SalesData
         {
@@ -187,7 +200,15 @@ namespace WandererCup
             }
 
             HighlightActiveButton(SalesReportButton);
+
+            // Reset guna2DateTimePicker2 to the first day of the current month
+            guna2DateTimePicker2.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+
+            // Load the sales report data
+            LoadSalesReport();
         }
+
+
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
