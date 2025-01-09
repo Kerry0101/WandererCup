@@ -85,12 +85,12 @@
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.OrderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateOrdered = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panel2.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -864,36 +864,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
-            // OrderId
-            // 
-            this.OrderId.HeaderText = "Order ID";
-            this.OrderId.MinimumWidth = 6;
-            this.OrderId.Name = "OrderId";
-            // 
-            // Items
-            // 
-            this.Items.HeaderText = "Items";
-            this.Items.MinimumWidth = 6;
-            this.Items.Name = "Items";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity Sold";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.MinimumWidth = 6;
-            this.Subtotal.Name = "Subtotal";
-            // 
-            // DateOrdered
-            // 
-            this.DateOrdered.HeaderText = "Date Completed";
-            this.DateOrdered.MinimumWidth = 6;
-            this.DateOrdered.Name = "DateOrdered";
-            // 
             // guna2DateTimePicker1
             // 
             this.guna2DateTimePicker1.BorderRadius = 10;
@@ -909,6 +879,37 @@
             this.guna2DateTimePicker1.Size = new System.Drawing.Size(342, 62);
             this.guna2DateTimePicker1.TabIndex = 267;
             this.guna2DateTimePicker1.Value = new System.DateTime(2024, 12, 29, 11, 6, 34, 642);
+            // 
+            // OrderId
+            // 
+            this.OrderId.HeaderText = "Order ID";
+            this.OrderId.MinimumWidth = 6;
+            this.OrderId.Name = "OrderId";
+            this.OrderId.Visible = false;
+            // 
+            // Items
+            // 
+            this.Items.HeaderText = "Items";
+            this.Items.MinimumWidth = 6;
+            this.Items.Name = "Items";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity Sold";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Total Sales";
+            this.Subtotal.MinimumWidth = 6;
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // DateOrdered
+            // 
+            this.DateOrdered.HeaderText = "Date Completed";
+            this.DateOrdered.MinimumWidth = 6;
+            this.DateOrdered.Name = "DateOrdered";
             // 
             // OrderHistory
             // 

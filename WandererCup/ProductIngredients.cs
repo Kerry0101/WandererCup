@@ -310,14 +310,18 @@ namespace WandererCup
 
         }
 
-
         private void AddRowButton_Click(object sender, EventArgs e)
         {
-            // Calculate the new position for the new textboxes
-            int dynamicTextBoxCount = guna2Panel16.Controls.OfType<Guna2TextBox>()
-                .Count(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox")) - 2; // Subtract the count of static textboxes
+            AddRowButton_Click(sender, e, guna2Panel16);
+        }
 
-            int newYPosition = IngredientTextBox.Location.Y + (IngredientTextBox.Height + 10) * (dynamicTextBoxCount / +4);
+        private void AddRowButton_Click(object sender, EventArgs e, Panel targetPanel)
+        {
+            // Calculate the new position for the new textboxes
+            int dynamicTextBoxCount = targetPanel.Controls.OfType<Guna2TextBox>()
+                .Count(tb => tb.Name.StartsWith("IngredientTextBox") || tb.Name.StartsWith("QuantityTextBox") || tb.Name.StartsWith("CostPerMlTextBox") || tb.Name.StartsWith("TotalCostPerCupTextBox"));
+
+            int newYPosition = dynamicTextBoxCount == 0 ? 0 : targetPanel.Controls.OfType<Guna2TextBox>().Last().Location.Y + IngredientTextBox.Height + 10;
 
             // Create new IngredientTextBox
             Guna2TextBox newIngredientTextBox = new Guna2TextBox
@@ -374,12 +378,14 @@ namespace WandererCup
             newIngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
             newQuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
 
-            // Add the new textboxes to the panel
-            guna2Panel16.Controls.Add(newIngredientTextBox);
-            guna2Panel16.Controls.Add(newQuantityTextBox);
-            guna2Panel16.Controls.Add(newCostPerMlTextBox);
-            guna2Panel16.Controls.Add(newTotalCostPerCupTextBox);
+            // Add the new textboxes to the target panel
+            targetPanel.Controls.Add(newIngredientTextBox);
+            targetPanel.Controls.Add(newQuantityTextBox);
+            targetPanel.Controls.Add(newCostPerMlTextBox);
+            targetPanel.Controls.Add(newTotalCostPerCupTextBox);
         }
+
+
 
 
 
@@ -439,32 +445,6 @@ namespace WandererCup
         }
 
 
-        private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup)
-        {
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "UPDATE Ingredients SET IngredientName = @NewIngredientName, Quantity = @Quantity, CostPerMl = @CostPerMl, TotalCostPerCup = @TotalCostPerCup WHERE ProductID = @ProductID AND IngredientName = @OldIngredientName";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@ProductID", productId);
-                        cmd.Parameters.AddWithValue("@NewIngredientName", newIngredientName);
-                        cmd.Parameters.AddWithValue("@Quantity", quantity);
-                        cmd.Parameters.AddWithValue("@CostPerMl", costPerMl);
-                        cmd.Parameters.AddWithValue("@TotalCostPerCup", totalCostPerCup);
-                        cmd.Parameters.AddWithValue("@OldIngredientName", oldIngredientName);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
-            }
-        }
 
 
 
@@ -571,9 +551,10 @@ namespace WandererCup
                 string ingredientName = ingredientTextBox.Text.Trim();
                 string costPerMl = GetCostPerMlByIngredientName(ingredientName);
 
-                // Find the corresponding CostPerMlTextBox
+                // Find the corresponding CostPerMlTextBox within the parent panel
                 string index = ingredientTextBox.Name.Substring("IngredientTextBox".Length);
-                Guna2TextBox costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                Panel parentPanel = ingredientTextBox.Parent as Panel;
+                Guna2TextBox costPerMlTextBox = parentPanel.Controls.OfType<Guna2TextBox>()
                     .FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
 
                 if (costPerMlTextBox != null)
@@ -584,15 +565,17 @@ namespace WandererCup
         }
 
 
+
         private void QuantityTextBox_TextChanged(object sender, EventArgs e)
         {
             Guna2TextBox quantityTextBox = sender as Guna2TextBox;
             if (quantityTextBox != null)
             {
                 string index = quantityTextBox.Name.Substring("QuantityTextBox".Length);
-                Guna2TextBox costPerMlTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                Panel parentPanel = quantityTextBox.Parent as Panel;
+                Guna2TextBox costPerMlTextBox = parentPanel.Controls.OfType<Guna2TextBox>()
                     .FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
-                Guna2TextBox totalCostPerCupTextBox = guna2Panel16.Controls.OfType<Guna2TextBox>()
+                Guna2TextBox totalCostPerCupTextBox = parentPanel.Controls.OfType<Guna2TextBox>()
                     .FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + index);
 
                 if (costPerMlTextBox != null && totalCostPerCupTextBox != null)
@@ -613,6 +596,7 @@ namespace WandererCup
                 }
             }
         }
+
 
 
 
@@ -1643,6 +1627,16 @@ namespace WandererCup
         }
 
         private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EditAddRowBtn_Click(object sender, EventArgs e)
+        {
+            AddRowButton_Click(sender, e, guna2Panel39);
+        }
+
+        private void CostPerMlTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

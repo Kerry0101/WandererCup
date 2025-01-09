@@ -519,6 +519,7 @@ namespace WandererCup
                 }
                 catch (Exception ex)
                 {
+                   
                     MessageBox.Show($"Error: {ex.Message}");
                 }
             }
@@ -584,6 +585,7 @@ namespace WandererCup
                 }
 
                 panel3.Controls.Remove(orderPanel);
+                AddDynamicOrdersToPanel();
             }
             catch (Exception ex)
             {

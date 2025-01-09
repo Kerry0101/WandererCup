@@ -927,6 +927,9 @@ namespace WandererCup
             orderStatus.Show();
         }
 
+        private void panelCategories_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

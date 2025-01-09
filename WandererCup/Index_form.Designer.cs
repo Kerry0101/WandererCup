@@ -31,7 +31,6 @@ namespace WandererCup
             this.SalesReportButton = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.HistoryButton = new System.Windows.Forms.Button();
             this.StatusButton = new System.Windows.Forms.Button();
             this.AddProductsButton = new System.Windows.Forms.Button();
@@ -40,9 +39,6 @@ namespace WandererCup
             this.label6 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox52 = new System.Windows.Forms.PictureBox();
-            this.pictureBox22 = new System.Windows.Forms.PictureBox();
-            this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.PlaceOrder_button = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +47,7 @@ namespace WandererCup
             this.panelCategories = new System.Windows.Forms.Panel();
             this.AddNewProductButton = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.pictureBox34 = new System.Windows.Forms.PictureBox();
             this.pictureBox36 = new System.Windows.Forms.PictureBox();
@@ -94,17 +91,17 @@ namespace WandererCup
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
             this.pictureBox46 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox52 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.pictureBox43 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             this.panelCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).BeginInit();
@@ -148,6 +145,9 @@ namespace WandererCup
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -314,18 +314,6 @@ namespace WandererCup
             this.guna2Panel1.Size = new System.Drawing.Size(13, 761);
             this.guna2Panel1.TabIndex = 12;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(258, 188);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // HistoryButton
             // 
             this.HistoryButton.BackColor = System.Drawing.Color.Tan;
@@ -442,43 +430,6 @@ namespace WandererCup
             this.mainPanel.Click += new System.EventHandler(this.mainPanel_Click);
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
-            // pictureBox52
-            // 
-            this.pictureBox52.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox52.Image = global::WandererCup.Properties.Resources.coffee_beans;
-            this.pictureBox52.Location = new System.Drawing.Point(1005, 370);
-            this.pictureBox52.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox52.Name = "pictureBox52";
-            this.pictureBox52.Size = new System.Drawing.Size(88, 103);
-            this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox52.TabIndex = 192;
-            this.pictureBox52.TabStop = false;
-            // 
-            // pictureBox22
-            // 
-            this.pictureBox22.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox22.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox22.Location = new System.Drawing.Point(236, 682);
-            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(127, 208);
-            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox22.TabIndex = 192;
-            this.pictureBox22.TabStop = false;
-            // 
-            // pictureBox43
-            // 
-            this.pictureBox43.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox43.Image = global::WandererCup.Properties.Resources.latte_art;
-            this.pictureBox43.Location = new System.Drawing.Point(451, 59);
-            this.pictureBox43.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox43.Name = "pictureBox43";
-            this.pictureBox43.Size = new System.Drawing.Size(127, 208);
-            this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox43.TabIndex = 181;
-            this.pictureBox43.TabStop = false;
-            this.pictureBox43.Click += new System.EventHandler(this.pictureBox43_Click);
-            // 
             // PlaceOrder_button
             // 
             this.PlaceOrder_button.BackColor = System.Drawing.Color.White;
@@ -547,6 +498,7 @@ namespace WandererCup
             this.panelCategories.Name = "panelCategories";
             this.panelCategories.Size = new System.Drawing.Size(862, 326);
             this.panelCategories.TabIndex = 195;
+            this.panelCategories.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCategories_Paint);
             // 
             // AddNewProductButton
             // 
@@ -565,7 +517,7 @@ namespace WandererCup
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox4.Location = new System.Drawing.Point(1093, 474);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(127, 208);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -573,12 +525,24 @@ namespace WandererCup
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::WandererCup.Properties.Resources._10000116491;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(258, 188);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBox30
             // 
             this.pictureBox30.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox30.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox30.Location = new System.Drawing.Point(177, 639);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(88, 103);
             this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -590,7 +554,7 @@ namespace WandererCup
             this.pictureBox34.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox34.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox34.Location = new System.Drawing.Point(176, 432);
-            this.pictureBox34.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox34.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox34.Name = "pictureBox34";
             this.pictureBox34.Size = new System.Drawing.Size(88, 103);
             this.pictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -602,7 +566,7 @@ namespace WandererCup
             this.pictureBox36.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox36.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox36.Location = new System.Drawing.Point(176, 224);
-            this.pictureBox36.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox36.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox36.Name = "pictureBox36";
             this.pictureBox36.Size = new System.Drawing.Size(88, 103);
             this.pictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -614,7 +578,7 @@ namespace WandererCup
             this.pictureBox38.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox38.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox38.Location = new System.Drawing.Point(177, 450);
-            this.pictureBox38.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox38.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox38.Name = "pictureBox38";
             this.pictureBox38.Size = new System.Drawing.Size(88, 103);
             this.pictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -626,7 +590,7 @@ namespace WandererCup
             this.pictureBox50.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox50.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox50.Location = new System.Drawing.Point(1347, 683);
-            this.pictureBox50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox50.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox50.Name = "pictureBox50";
             this.pictureBox50.Size = new System.Drawing.Size(88, 103);
             this.pictureBox50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -639,7 +603,7 @@ namespace WandererCup
             this.pictureBox51.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox51.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox51.Location = new System.Drawing.Point(1435, 578);
-            this.pictureBox51.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox51.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox51.Name = "pictureBox51";
             this.pictureBox51.Size = new System.Drawing.Size(127, 208);
             this.pictureBox51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -651,7 +615,7 @@ namespace WandererCup
             this.pictureBox48.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox48.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox48.Location = new System.Drawing.Point(1347, 475);
-            this.pictureBox48.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox48.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox48.Name = "pictureBox48";
             this.pictureBox48.Size = new System.Drawing.Size(88, 103);
             this.pictureBox48.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -664,7 +628,7 @@ namespace WandererCup
             this.pictureBox49.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox49.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox49.Location = new System.Drawing.Point(1435, 370);
-            this.pictureBox49.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox49.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox49.Name = "pictureBox49";
             this.pictureBox49.Size = new System.Drawing.Size(127, 208);
             this.pictureBox49.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -676,7 +640,7 @@ namespace WandererCup
             this.pictureBox44.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox44.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox44.Location = new System.Drawing.Point(1132, 682);
-            this.pictureBox44.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox44.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox44.Name = "pictureBox44";
             this.pictureBox44.Size = new System.Drawing.Size(88, 103);
             this.pictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -689,7 +653,7 @@ namespace WandererCup
             this.pictureBox47.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox47.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox47.Location = new System.Drawing.Point(1220, 577);
-            this.pictureBox47.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox47.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox47.Name = "pictureBox47";
             this.pictureBox47.Size = new System.Drawing.Size(127, 208);
             this.pictureBox47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -702,7 +666,7 @@ namespace WandererCup
             this.pictureBox39.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox39.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox39.Location = new System.Drawing.Point(363, 370);
-            this.pictureBox39.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox39.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox39.Name = "pictureBox39";
             this.pictureBox39.Size = new System.Drawing.Size(88, 103);
             this.pictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -714,7 +678,7 @@ namespace WandererCup
             this.pictureBox40.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox40.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox40.Location = new System.Drawing.Point(451, 266);
-            this.pictureBox40.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox40.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox40.Name = "pictureBox40";
             this.pictureBox40.Size = new System.Drawing.Size(127, 208);
             this.pictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -727,7 +691,7 @@ namespace WandererCup
             this.pictureBox29.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox29.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox29.Location = new System.Drawing.Point(577, 370);
-            this.pictureBox29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox29.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox29.Name = "pictureBox29";
             this.pictureBox29.Size = new System.Drawing.Size(88, 103);
             this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -739,7 +703,7 @@ namespace WandererCup
             this.pictureBox31.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox31.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox31.Location = new System.Drawing.Point(665, 266);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(127, 208);
             this.pictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -752,7 +716,7 @@ namespace WandererCup
             this.pictureBox27.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox27.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox27.Location = new System.Drawing.Point(363, 578);
-            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(88, 103);
             this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -764,7 +728,7 @@ namespace WandererCup
             this.pictureBox28.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox28.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox28.Location = new System.Drawing.Point(451, 474);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(127, 208);
             this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -776,7 +740,7 @@ namespace WandererCup
             this.pictureBox25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox25.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox25.Location = new System.Drawing.Point(363, 786);
-            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox25.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox25.Name = "pictureBox25";
             this.pictureBox25.Size = new System.Drawing.Size(88, 103);
             this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -788,7 +752,7 @@ namespace WandererCup
             this.pictureBox26.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox26.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox26.Location = new System.Drawing.Point(451, 682);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(127, 208);
             this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -800,7 +764,7 @@ namespace WandererCup
             this.pictureBox21.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox21.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox21.Location = new System.Drawing.Point(791, 370);
-            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(88, 103);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -812,7 +776,7 @@ namespace WandererCup
             this.pictureBox18.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox18.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox18.Location = new System.Drawing.Point(577, 578);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(88, 103);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -824,7 +788,7 @@ namespace WandererCup
             this.pictureBox19.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox19.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox19.Location = new System.Drawing.Point(665, 474);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(127, 208);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -836,7 +800,7 @@ namespace WandererCup
             this.pictureBox15.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox15.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox15.Location = new System.Drawing.Point(577, 786);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(88, 103);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -848,7 +812,7 @@ namespace WandererCup
             this.pictureBox17.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox17.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox17.Location = new System.Drawing.Point(665, 682);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(127, 208);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -860,7 +824,7 @@ namespace WandererCup
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox12.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox12.Location = new System.Drawing.Point(791, 578);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(88, 103);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -872,7 +836,7 @@ namespace WandererCup
             this.pictureBox14.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox14.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox14.Location = new System.Drawing.Point(879, 474);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(127, 208);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -884,7 +848,7 @@ namespace WandererCup
             this.pictureBox16.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox16.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox16.Location = new System.Drawing.Point(1093, 266);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(127, 208);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -897,7 +861,7 @@ namespace WandererCup
             this.pictureBox20.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox20.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox20.Location = new System.Drawing.Point(1005, 788);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(88, 103);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -909,7 +873,7 @@ namespace WandererCup
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox6.Location = new System.Drawing.Point(797, 784);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(88, 103);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -921,7 +885,7 @@ namespace WandererCup
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox9.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox9.Location = new System.Drawing.Point(879, 682);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(127, 208);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -933,7 +897,7 @@ namespace WandererCup
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox3.Location = new System.Drawing.Point(1220, 370);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(88, 103);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -946,7 +910,7 @@ namespace WandererCup
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox5.Location = new System.Drawing.Point(1308, 266);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(127, 208);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -959,7 +923,7 @@ namespace WandererCup
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox7.Location = new System.Drawing.Point(1005, 578);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(88, 103);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -971,7 +935,7 @@ namespace WandererCup
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WandererCup.Properties.Resources.coffee_beans__1_;
             this.pictureBox2.Location = new System.Drawing.Point(1435, 164);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(88, 103);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -983,7 +947,7 @@ namespace WandererCup
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox8.Location = new System.Drawing.Point(1520, 59);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(127, 208);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -995,7 +959,7 @@ namespace WandererCup
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox10.Image = global::WandererCup.Properties.Resources.coffee_beans;
             this.pictureBox10.Location = new System.Drawing.Point(1220, 162);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(88, 103);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1008,7 +972,7 @@ namespace WandererCup
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox11.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox11.Location = new System.Drawing.Point(1308, 58);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(127, 208);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1021,7 +985,7 @@ namespace WandererCup
             this.pictureBox24.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox24.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox24.Location = new System.Drawing.Point(1093, 59);
-            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox24.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox24.Name = "pictureBox24";
             this.pictureBox24.Size = new System.Drawing.Size(127, 208);
             this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1034,7 +998,7 @@ namespace WandererCup
             this.pictureBox33.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox33.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox33.Location = new System.Drawing.Point(879, 58);
-            this.pictureBox33.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox33.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox33.Name = "pictureBox33";
             this.pictureBox33.Size = new System.Drawing.Size(127, 208);
             this.pictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1047,7 +1011,7 @@ namespace WandererCup
             this.pictureBox37.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox37.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox37.Location = new System.Drawing.Point(665, 59);
-            this.pictureBox37.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox37.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox37.Name = "pictureBox37";
             this.pictureBox37.Size = new System.Drawing.Size(127, 208);
             this.pictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1060,7 +1024,7 @@ namespace WandererCup
             this.pictureBox42.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox42.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox42.Location = new System.Drawing.Point(236, 474);
-            this.pictureBox42.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox42.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox42.Name = "pictureBox42";
             this.pictureBox42.Size = new System.Drawing.Size(127, 208);
             this.pictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1072,7 +1036,7 @@ namespace WandererCup
             this.pictureBox45.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox45.Image = global::WandererCup.Properties.Resources.latte_art;
             this.pictureBox45.Location = new System.Drawing.Point(236, 266);
-            this.pictureBox45.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox45.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox45.Name = "pictureBox45";
             this.pictureBox45.Size = new System.Drawing.Size(127, 208);
             this.pictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1085,7 +1049,7 @@ namespace WandererCup
             this.pictureBox46.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox46.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox46.Location = new System.Drawing.Point(236, 59);
-            this.pictureBox46.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox46.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox46.Name = "pictureBox46";
             this.pictureBox46.Size = new System.Drawing.Size(127, 208);
             this.pictureBox46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1098,13 +1062,50 @@ namespace WandererCup
             this.pictureBox13.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox13.Image = global::WandererCup.Properties.Resources.coffee;
             this.pictureBox13.Location = new System.Drawing.Point(879, 266);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(127, 208);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox13.TabIndex = 191;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Click += new System.EventHandler(this.pictureBox13_Click);
+            // 
+            // pictureBox52
+            // 
+            this.pictureBox52.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox52.Image = global::WandererCup.Properties.Resources.coffee_beans;
+            this.pictureBox52.Location = new System.Drawing.Point(1005, 370);
+            this.pictureBox52.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox52.Name = "pictureBox52";
+            this.pictureBox52.Size = new System.Drawing.Size(88, 103);
+            this.pictureBox52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox52.TabIndex = 192;
+            this.pictureBox52.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox22.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox22.Location = new System.Drawing.Point(236, 682);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(127, 208);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox22.TabIndex = 192;
+            this.pictureBox22.TabStop = false;
+            // 
+            // pictureBox43
+            // 
+            this.pictureBox43.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox43.Image = global::WandererCup.Properties.Resources.latte_art;
+            this.pictureBox43.Location = new System.Drawing.Point(451, 59);
+            this.pictureBox43.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox43.Name = "pictureBox43";
+            this.pictureBox43.Size = new System.Drawing.Size(127, 208);
+            this.pictureBox43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox43.TabIndex = 181;
+            this.pictureBox43.TabStop = false;
+            this.pictureBox43.Click += new System.EventHandler(this.pictureBox43_Click);
             // 
             // Index_form
             // 
@@ -1176,15 +1177,12 @@ namespace WandererCup
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.mainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             this.panelCategories.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox36)).EndInit();
@@ -1228,6 +1226,9 @@ namespace WandererCup
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox45)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox46)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox52)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox43)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
