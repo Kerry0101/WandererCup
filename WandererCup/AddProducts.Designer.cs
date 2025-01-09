@@ -498,7 +498,7 @@
             this.guna2Panel12.Controls.Add(this.guna2Button3);
             this.guna2Panel12.Controls.Add(this.guna2Button4);
             this.guna2Panel12.Controls.Add(this.label11);
-            this.guna2Panel12.Location = new System.Drawing.Point(542, 125);
+            this.guna2Panel12.Location = new System.Drawing.Point(360, 168);
             this.guna2Panel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel12.Name = "guna2Panel12";
             this.guna2Panel12.Size = new System.Drawing.Size(272, 181);
@@ -650,7 +650,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.label5);
-            this.guna2Panel21.Location = new System.Drawing.Point(714, 314);
+            this.guna2Panel21.Location = new System.Drawing.Point(361, 169);
             this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(272, 181);

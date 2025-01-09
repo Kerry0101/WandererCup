@@ -30,6 +30,43 @@ namespace WandererCup
             SaveChangesBtn.Click += new EventHandler(SaveChangesBtn_Click);
             RemoveRowBtn.Click -= RemoveRowBtn_Click;
             RemoveRowBtn.Click += new EventHandler(RemoveRowBtn_Click);
+
+            // Add event handlers for QuantityTextBox and PriceTextBox
+            QuantityTextBox.TextChanged += new EventHandler(UpdateCostPerMl);
+            PriceTextBox.TextChanged += new EventHandler(UpdateCostPerMl);
+            CostPerMlTextBox.ReadOnly = true; // Set to readonly
+
+            // Add event handlers for QuantityTx and PriceTx
+            QuantityTx.TextChanged += new EventHandler(UpdateCostPerMlTx);
+            PriceTx.TextChanged += new EventHandler(UpdateCostPerMlTx);
+            CostPerMlTx.ReadOnly = true; // Set to readonly
+        }
+
+        private void UpdateCostPerMlTx(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(QuantityTx.Text, out decimal quantity) && decimal.TryParse(PriceTx.Text, out decimal price) && quantity != 0)
+            {
+                decimal costPerMl = price / quantity;
+                CostPerMlTx.Text = costPerMl.ToString("F2"); // Format to 2 decimal places
+            }
+            else
+            {
+                CostPerMlTx.Text = string.Empty; // Clear the text if input is invalid
+            }
+        }
+
+
+        private void UpdateCostPerMl(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(QuantityTextBox.Text, out decimal quantity) && decimal.TryParse(PriceTextBox.Text, out decimal price) && quantity != 0)
+            {
+                decimal costPerMl = price / quantity;
+                CostPerMlTextBox.Text = costPerMl.ToString("F2"); // Format to 2 decimal places
+            }
+            else
+            {
+                CostPerMlTextBox.Text = string.Empty; // Clear the text if input is invalid
+            }
         }
 
 

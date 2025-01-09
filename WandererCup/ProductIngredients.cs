@@ -42,6 +42,7 @@ namespace WandererCup
             guna2TextBox2.TextChanged += new EventHandler(guna2TextBox2_TextChanged);
             guna2DataGridView2.SelectionChanged += new EventHandler(guna2DataGridView2_SelectionChanged);
             AttachButton.Click += new EventHandler(AttachButton_Click);
+            guna2Button2.Click -= new EventHandler(guna2Button2_Click);
             guna2Button2.Click += new EventHandler(guna2Button2_Click);
             AddRowButton.Click += new EventHandler(AddRowButton_Click);
             guna2Button5.Click += new EventHandler(ConfirmRemoveButton_Click);
@@ -242,18 +243,61 @@ namespace WandererCup
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            AddRowButton.Visible = true;
             if (guna2DataGridView2.SelectedRows.Count > 0)
             {
                 var selectedRow = guna2DataGridView2.SelectedRows[0];
-                PNameLabel.Text = selectedRow.Cells["ProductName"].Value.ToString();
-                guna2Panel1.Visible = true;
+                string productName = selectedRow.Cells["ProductName"].Value.ToString();
+                int productId = GetProductIdByName(productName);
+
+                if (productId != -1)
+                {
+                    // Check if the product already has attached ingredients
+                    if (HasAttachedIngredients(productId))
+                    {
+                        MessageBox.Show("This product already has attached ingredients. Please proceed to the edit ingredients section to add new ingredients.");
+                        return;
+                    }
+
+                    PNameLabel.Text = productName;
+                    AddRowButton.Visible = true;
+                    guna2Panel1.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Product not found.");
+                }
             }
             else
             {
                 MessageBox.Show("Please select a product first.");
             }
         }
+
+        private bool HasAttachedIngredients(int productId)
+        {
+            bool hasIngredients = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Ingredients WHERE ProductID = @ProductID";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        hasIngredients = count > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return hasIngredients;
+        }
+
 
         private void AttachButton_Click(object sender, EventArgs e)
         {
@@ -1311,7 +1355,17 @@ namespace WandererCup
                         command.ExecuteNonQuery();
                     }
 
-                    // Then, delete the row in the Product table
+                    // Then, delete the related rows in the product_sales table
+                    string deleteProductSalesQuery = "DELETE FROM product_sales WHERE ProductID = @ProductID";
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        MySqlCommand command = new MySqlCommand(deleteProductSalesQuery, connection);
+                        command.Parameters.AddWithValue("@ProductID", productId);
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+
+                    // Finally, delete the row in the Product table
                     string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
                     using (MySqlConnection connection = new MySqlConnection(connectionString))
                     {
@@ -1330,11 +1384,10 @@ namespace WandererCup
                     guna2CustomGradientPanel2.Visible = true;
                     await Task.Delay(3000);
                     guna2CustomGradientPanel2.Visible = false;
-
-
                 }
             }
         }
+
 
 
         private void PNameLabel_Click(object sender, EventArgs e)
@@ -1788,13 +1841,50 @@ namespace WandererCup
 
         }
 
-private async void UpdateChangeBtn_Click(object sender, EventArgs e)
-{
-    string productName = label10.Text;
-    int productId = GetProductIdByName(productName);
-
-    if (productId != -1)
+        private bool IngredientExists(int productId, string ingredientName)
+        {
+            bool exists = false;
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Ingredients WHERE ProductID = @ProductID AND IngredientName = @IngredientName";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@IngredientName", ingredientName);
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        exists = count > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+            return exists;
+        }
+
+        private async void UpdateChangeBtn_Click(object sender, EventArgs e)
+        {
+            string productName = label10.Text;
+            int productId = GetProductIdByName(productName);
+
+            if (productId != -1)
+            {
+                // Check for duplicate ingredient names
+                foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+                {
+                    string newIngredientName = ingredientTextBox.Text.Trim();
+                    if (IngredientExists(productId, newIngredientName))
+                    {
+                        MessageBox.Show($"Error: The ingredient '{newIngredientName}' already exists for this product.");
+                        return;
+                    }
+                }
+
                 UpdateDatabaseWithChanges(productId);
                 RefreshDynamicProductsPanel();
                 guna2Panel33.Visible = false;
@@ -1803,12 +1893,16 @@ private async void UpdateChangeBtn_Click(object sender, EventArgs e)
                 guna2CustomGradientPanel3.Visible = false;
             }
             else
-    {
-        MessageBox.Show("Product not found.");
-    }
-}
+            {
+                MessageBox.Show("Product not found.");
+            }
+        }
 
 
 
+        private void guna2DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -461,43 +461,73 @@ namespace WandererCup
         }
 
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             decimal overallTotal = 0;
+            string connectionString = GetConnectionString();
+            bool isLackingIngredients = false;
 
-            // Calculate the existing total from the DataGridView
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                if (row.Cells[4].Value != null)
-                {
-                    overallTotal += Convert.ToDecimal(row.Cells[4].Value);
-                }
-            }
+                connection.Open();
 
-            // Add new items from the categories
-            foreach (Control control in panelCategories.Controls)
-            {
-                if (control is GroupBox groupBox)
+                foreach (Control control in panelCategories.Controls)
                 {
-                    ComboBox comboBox = groupBox.Controls.OfType<ComboBox>().FirstOrDefault();
-                    TextBox textBox = groupBox.Controls.OfType<TextBox>().FirstOrDefault();
-
-                    if (comboBox != null && textBox != null && comboBox.SelectedItem != null)
+                    if (control is GroupBox groupBox)
                     {
-                        dynamic selectedItem = comboBox.SelectedItem;
-                        if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
+                        ComboBox comboBox = groupBox.Controls.OfType<ComboBox>().FirstOrDefault();
+                        TextBox textBox = groupBox.Controls.OfType<TextBox>().FirstOrDefault();
+
+                        if (comboBox != null && textBox != null && comboBox.SelectedItem != null)
                         {
-                            decimal price = selectedItem.Price;
-                            decimal subtotal = price * quantity;
-                            overallTotal += subtotal;
+                            dynamic selectedItem = comboBox.SelectedItem;
+                            if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
+                            {
+                                // Check if there is enough quantity for each ingredient
+                                string checkQuery = @"
+                            SELECT i.ProductName, i.Quantity, (CAST(ing.Quantity AS UNSIGNED) * @QuantityOrdered) AS RequiredQuantity
+                            FROM inventory i
+                            JOIN Ingredients ing ON i.ProductName = ing.IngredientName
+                            WHERE ing.ProductID = (SELECT ProductID FROM product WHERE ProductName = @ProductName)";
 
-                            // Add order details to dataGridView1
-                            dataGridView1.Rows.Add(null, selectedItem.Name, price, quantity, subtotal);
+                                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                                {
+                                    checkCmd.Parameters.AddWithValue("@ProductName", selectedItem.Name);
+                                    checkCmd.Parameters.AddWithValue("@QuantityOrdered", quantity);
 
-                            // Reset the Amount textbox and ComboBox
-                            textBox.Text = "0";
-                            comboBox.SelectedIndex = -1;
+                                    using (MySqlDataReader reader = checkCmd.ExecuteReader())
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            string ingredientName = reader["ProductName"].ToString();
+                                            int availableQuantity = Convert.ToInt32(reader["Quantity"]);
+                                            int requiredQuantity = Convert.ToInt32(reader["RequiredQuantity"]);
+
+                                            if (availableQuantity < requiredQuantity)
+                                            {
+                                                MessageBox.Show($"Not enough quantity for ingredient '{ingredientName}'. Required: {requiredQuantity}, Available: {availableQuantity}", "Insufficient Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                                isLackingIngredients = true;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (isLackingIngredients)
+                                {
+                                    return;
+                                }
+
+                                decimal price = selectedItem.Price;
+                                decimal subtotal = price * quantity;
+                                overallTotal += subtotal;
+
+                                // Add order details to dataGridView1
+                                dataGridView1.Rows.Add(null, selectedItem.Name, price, quantity, subtotal);
+
+                                // Reset the Amount textbox and ComboBox
+                                textBox.Text = "0";
+                                comboBox.SelectedIndex = -1;
+                            }
                         }
                     }
                 }
@@ -507,6 +537,52 @@ namespace WandererCup
             CultureInfo philippinesCulture = new CultureInfo("en-PH");
             textBox1.Text = overallTotal.ToString("C", philippinesCulture);
         }
+
+        /*        private void button1_Click(object sender, EventArgs e)
+                {
+                    decimal overallTotal = 0;
+
+                    // Calculate the existing total from the DataGridView
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.Cells[4].Value != null)
+                        {
+                            overallTotal += Convert.ToDecimal(row.Cells[4].Value);
+                        }
+                    }
+
+                    // Add new items from the categories
+                    foreach (Control control in panelCategories.Controls)
+                    {
+                        if (control is GroupBox groupBox)
+                        {
+                            ComboBox comboBox = groupBox.Controls.OfType<ComboBox>().FirstOrDefault();
+                            TextBox textBox = groupBox.Controls.OfType<TextBox>().FirstOrDefault();
+
+                            if (comboBox != null && textBox != null && comboBox.SelectedItem != null)
+                            {
+                                dynamic selectedItem = comboBox.SelectedItem;
+                                if (int.TryParse(textBox.Text, out int quantity) && quantity > 0)
+                                {
+                                    decimal price = selectedItem.Price;
+                                    decimal subtotal = price * quantity;
+                                    overallTotal += subtotal;
+
+                                    // Add order details to dataGridView1
+                                    dataGridView1.Rows.Add(null, selectedItem.Name, price, quantity, subtotal);
+
+                                    // Reset the Amount textbox and ComboBox
+                                    textBox.Text = "0";
+                                    comboBox.SelectedIndex = -1;
+                                }
+                            }
+                        }
+                    }
+
+                    // Update overall total in textBox1
+                    CultureInfo philippinesCulture = new CultureInfo("en-PH");
+                    textBox1.Text = overallTotal.ToString("C", philippinesCulture);
+                }*/
 
 
 
@@ -851,10 +927,65 @@ namespace WandererCup
         {
             decimal overallTotal = 0;
             string connectionString = GetConnectionString();
+            bool isLackingIngredients = false;
+            Dictionary<string, int> requiredQuantities = new Dictionary<string, int>();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[1].Value != null && row.Cells[2].Value != null && row.Cells[3].Value != null && row.Cells[4].Value != null)
+                    {
+                        string productName = row.Cells[1].Value.ToString();
+                        int quantity = Convert.ToInt32(row.Cells[3].Value);
+
+                        // Check if there is enough quantity for each ingredient
+                        string checkQuery = @"
+                    SELECT i.ProductName, i.Quantity, (CAST(ing.Quantity AS UNSIGNED) * @QuantityOrdered) AS RequiredQuantity
+                    FROM inventory i
+                    JOIN Ingredients ing ON i.ProductName = ing.IngredientName
+                    WHERE ing.ProductID = (SELECT ProductID FROM product WHERE ProductName = @ProductName)";
+
+                        using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                        {
+                            checkCmd.Parameters.AddWithValue("@ProductName", productName);
+                            checkCmd.Parameters.AddWithValue("@QuantityOrdered", quantity);
+
+                            using (MySqlDataReader reader = checkCmd.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    string ingredientName = reader["ProductName"].ToString();
+                                    int availableQuantity = Convert.ToInt32(reader["Quantity"]);
+                                    int requiredQuantity = Convert.ToInt32(reader["RequiredQuantity"]);
+
+                                    if (requiredQuantities.ContainsKey(ingredientName))
+                                    {
+                                        requiredQuantities[ingredientName] += requiredQuantity;
+                                    }
+                                    else
+                                    {
+                                        requiredQuantities[ingredientName] = requiredQuantity;
+                                    }
+
+                                    if (requiredQuantities[ingredientName] > availableQuantity)
+                                    {
+                                        MessageBox.Show($"Not enough quantity for ingredient '{ingredientName}'. Required: {requiredQuantities[ingredientName]}, Available: {availableQuantity}", "Insufficient Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        isLackingIngredients = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (isLackingIngredients)
+                        {
+                            return;
+                        }
+                    }
+                }
+
                 using (MySqlTransaction transaction = connection.BeginTransaction())
                 {
                     try
@@ -931,6 +1062,8 @@ namespace WandererCup
             this.Hide();
             orderStatus.Show();
         }
+
+
 
 
 

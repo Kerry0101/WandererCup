@@ -183,6 +183,8 @@ namespace WandererCup
                 guna2DataGridView1.Columns["ProductID"].Visible = false;
             }
 
+
+
             guna2DataGridView2.RowHeadersVisible = false;
             guna2DataGridView2.BorderStyle = BorderStyle.Fixed3D;
             guna2DataGridView2.GridColor = Color.Black;
@@ -220,10 +222,11 @@ namespace WandererCup
         {
             string connectionString = GetConnectionString();
             string query = @"
-        SELECT p.ProductID, c.CategoryName AS 'Category', p.ProductName AS 'Product Name', p.Price
-        FROM product p
-        JOIN category c ON p.CategoryID = c.CategoryID
-        WHERE p.is_archived = 0";
+    SELECT p.ProductID, c.CategoryName AS 'Category', p.ProductName AS 'Product Name', ps.SellingPrice AS 'Price'
+    FROM product p
+    JOIN category c ON p.CategoryID = c.CategoryID
+    JOIN product_sales ps ON p.ProductID = ps.ProductID
+    WHERE p.is_archived = 0";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -238,6 +241,7 @@ namespace WandererCup
                 guna2DataGridView1.DataSource = itemsTable;
             }
         }
+
 
 
 

@@ -58,6 +58,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.SalesTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.TotalCostPerCupTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -170,8 +172,6 @@
             this.UpdateChangeBtn = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.guna2Panel1.SuspendLayout();
@@ -311,6 +311,7 @@
             this.guna2DataGridView2.RowHeadersWidth = 51;
             this.guna2DataGridView2.Size = new System.Drawing.Size(307, 326);
             this.guna2DataGridView2.TabIndex = 98;
+            this.guna2DataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView2_CellContentClick);
             // 
             // guna2TextBox2
             // 
@@ -598,6 +599,28 @@
             this.guna2Panel16.Size = new System.Drawing.Size(530, 202);
             this.guna2Panel16.TabIndex = 99;
             this.guna2Panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel16_Paint);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label32.Location = new System.Drawing.Point(324, 32);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(51, 20);
+            this.label32.TabIndex = 116;
+            this.label32.Text = "ml/g:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(237, 32);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 20);
+            this.label25.TabIndex = 115;
+            this.label25.Text = "ml/g:";
             // 
             // label24
             // 
@@ -2056,28 +2079,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 97;
             this.pictureBox2.TabStop = false;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(237, 32);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 20);
-            this.label25.TabIndex = 115;
-            this.label25.Text = "ml/g:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label32.Location = new System.Drawing.Point(324, 32);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(51, 20);
-            this.label32.TabIndex = 116;
-            this.label32.Text = "ml/g:";
             // 
             // ProductIngredients
             // 
