@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using MySql.Data.MySqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Configuration;
 
 namespace WandererCup
 {
@@ -16,39 +18,85 @@ namespace WandererCup
         {
             InitializeComponent();
             ConfigureDataGridView();
-            guna2DateTimePicker2.ValueChanged += new EventHandler(DateTimePicker_ValueChanged);
-            guna2DateTimePicker1.ValueChanged += new EventHandler(DateTimePicker_ValueChanged);
+
+            // Attach event handlers for the date pickers
+            guna2DateTimePicker2.ValueChanged += DateTimePicker_ValueChanged;
+            guna2DateTimePicker1.ValueChanged += DateTimePicker_ValueChanged;
         }
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            FilterData();
+            LoadSalesReport();
         }
 
-        private void FilterData()
+        private string GetConnectionString()
         {
-            DateTime startDate = guna2DateTimePicker2.Value;
-            DateTime endDate = guna2DateTimePicker1.Value;
-
-            // Assuming you have a method to get the data
-            var allData = GetData();
-
-            var filteredData = allData.Where(data => data.Date >= startDate && data.Date <= endDate).ToList();
-
-            guna2DataGridView1.DataSource = filteredData;
+            return ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
         }
 
-        // Example method to get data, replace with your actual data retrieval method
-        private List<SalesData> GetData()
+        private void LoadSalesReport()
         {
-            // Replace with your actual data retrieval logic
-            return new List<SalesData>
-    {
-        new SalesData { Date = new DateTime(2023, 1, 1), Sales = 100 },
-        new SalesData { Date = new DateTime(2023, 2, 1), Sales = 200 },
-        // Add more data as needed
-    };
+            DateTime startDate = guna2DateTimePicker2.Value.Date;
+            DateTime endDate = guna2DateTimePicker1.Value.Date;
+
+
+            string connectionString = GetConnectionString();
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = @"
+                        SELECT 
+                            od.OrderDetailsID,
+                            od.ProductName_History AS Product,
+                            od.Quantity AS QuantitySold,
+                            od.Subtotal AS Sales,
+                            o.OrderDate AS DateCompleted
+                        FROM 
+                            orderdetails od
+                        INNER JOIN 
+                            `order` o 
+                        ON 
+                            od.OrderID = o.OrderID
+                        WHERE 
+                            od.is_archived = 1
+                            AND o.OrderDate BETWEEN @StartDate AND @EndDate
+                        ORDER BY 
+                            o.OrderDate ASC";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StartDate", startDate);
+                        command.Parameters.AddWithValue("@EndDate", endDate);
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            DataTable salesTable = new DataTable();
+                            adapter.Fill(salesTable);
+
+                            guna2DataGridView1.DataSource = salesTable;
+
+                            // Calculate the total sales
+                            decimal totalSales = 0;
+                            foreach (DataRow row in salesTable.Rows)
+                            {
+                                totalSales += Convert.ToDecimal(row["Sales"]);
+                            }
+
+                            textBox2.Text = totalSales.ToString("C"); // Format as currency
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while fetching the sales report: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
 
         // Example data class, replace with your actual data class
         public class SalesData
@@ -58,33 +106,31 @@ namespace WandererCup
         }
 
 
+
         private void ConfigureDataGridView()
         {
             guna2DataGridView1.RowHeadersVisible = false;
             guna2DataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            guna2DataGridView1.GridColor = Color.Black;
-            guna2DataGridView1.ReadOnly = true; // Set to readonly
+            guna2DataGridView1.ReadOnly = true;
             guna2DataGridView1.AllowUserToAddRows = false;
             guna2DataGridView1.AllowUserToDeleteRows = false;
-            //guna2DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Disable auto size columns mode
-            //guna2DataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Disable auto size rows mode
-            //guna2DataGridView1.ScrollBars = ScrollBars.Both; // Enable both horizontal and vertical scrollbars
 
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
             guna2DataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(guna2DataGridView1.Font.FontFamily, 11, FontStyle.Bold); // Change font size
-            guna2DataGridView1.ColumnHeadersHeight = 30; // Adjust height
-            guna2DataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.Navy;
-            guna2DataGridView1.RowHeadersDefaultCellStyle.ForeColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(guna2DataGridView1.Font.FontFamily, 11, FontStyle.Bold);
+
+            guna2DataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10F);
             guna2DataGridView1.DefaultCellStyle.BackColor = Color.Beige;
             guna2DataGridView1.DefaultCellStyle.ForeColor = Color.Black;
+
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
-            //guna2DataGridView1.RowTemplate.Height = 30;
-            guna2DataGridView1.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular); // Change font size
 
-
+            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "OrderDetailsID", HeaderText = "OrderDetailsID", Visible = false });
+            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Product", HeaderText = "Product" });
+            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "QuantitySold", HeaderText = "Quantity Sold" });
+            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Sales", HeaderText = "Sales" });
+            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "DateCompleted", HeaderText = "Date Completed" });
         }
 
         private void HighlightActiveButton(Button activeButton)
@@ -180,6 +226,21 @@ namespace WandererCup
         private void Label7_Click(object sender, EventArgs e)
         {
             Index_form.ActiveForm.WindowState = FormWindowState.Minimized;      
+        }
+
+        private void guna2DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
