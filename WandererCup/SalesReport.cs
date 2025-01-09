@@ -39,7 +39,6 @@ namespace WandererCup
             DateTime startDate = guna2DateTimePicker2.Value.Date;
             DateTime endDate = guna2DateTimePicker1.Value.Date;
 
-
             string connectionString = GetConnectionString();
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -49,41 +48,69 @@ namespace WandererCup
                     connection.Open();
 
                     string query = @"
-                        SELECT 
-                            od.OrderDetailsID,
-                            od.ProductName_History AS Product,
-                            od.Quantity AS QuantitySold,
-                            od.Subtotal AS Sales,
-                            o.OrderDate AS DateCompleted
-                        FROM 
-                            orderdetails od
-                        INNER JOIN 
-                            `order` o 
-                        ON 
-                            od.OrderID = o.OrderID
-                        WHERE 
-                            od.is_archived = 1
-                            AND o.OrderDate BETWEEN @StartDate AND @EndDate
-                        ORDER BY 
-                            o.OrderDate ASC";
+            SELECT 
+                od.OrderDetailsID,
+                od.ProductName_History AS Product,
+                od.Quantity AS QuantitySold,
+                od.Subtotal AS TotalSales,
+                o.OrderDate AS DateCompleted
+            FROM 
+                orderdetails od
+            INNER JOIN 
+                `order` o 
+            ON 
+                od.OrderID = o.OrderID
+            WHERE 
+                od.is_archived = 1
+                AND o.OrderDate BETWEEN @StartDate AND @EndDate
+            ORDER BY 
+                o.OrderDate ASC";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@StartDate", startDate);
                         command.Parameters.AddWithValue("@EndDate", endDate);
 
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            DataTable salesTable = new DataTable();
-                            adapter.Fill(salesTable);
+                            guna2DataGridView1.Rows.Clear(); // Clear existing rows
 
-                            guna2DataGridView1.DataSource = salesTable;
-
-                            // Calculate the total sales
                             decimal totalSales = 0;
-                            foreach (DataRow row in salesTable.Rows)
+                            var productData = new Dictionary<(string Product, DateTime DateCompleted), (int QuantitySold, decimal TotalSales)>();
+
+                            while (reader.Read())
                             {
-                                totalSales += Convert.ToDecimal(row["Sales"]);
+                                string product = reader["Product"].ToString();
+                                int quantitySold = Convert.ToInt32(reader["QuantitySold"]);
+                                decimal totalSalesForProduct = Convert.ToDecimal(reader["TotalSales"]);
+                                DateTime dateCompleted = Convert.ToDateTime(reader["DateCompleted"]).Date;
+
+                                var key = (Product: product, DateCompleted: dateCompleted);
+
+                                if (productData.ContainsKey(key))
+                                {
+                                    var existingData = productData[key];
+                                    productData[key] = (
+                                        existingData.QuantitySold + quantitySold,
+                                        existingData.TotalSales + totalSalesForProduct
+                                    );
+                                }
+                                else
+                                {
+                                    productData[key] = (quantitySold, totalSalesForProduct);
+                                }
+
+                                totalSales += totalSalesForProduct;
+                            }
+
+                            foreach (var item in productData)
+                            {
+                                guna2DataGridView1.Rows.Add(
+                                    item.Key.Product,
+                                    item.Value.QuantitySold,
+                                    item.Value.TotalSales,
+                                    item.Key.DateCompleted.ToString("yyyy-MM-dd") // Format date
+                                );
                             }
 
                             textBox2.Text = totalSales.ToString("C"); // Format as currency
@@ -98,12 +125,16 @@ namespace WandererCup
         }
 
 
+
+
+
         // Example data class, replace with your actual data class
         public class SalesData
         {
             public DateTime Date { get; set; }
             public int Sales { get; set; }
         }
+
 
 
 
@@ -126,11 +157,6 @@ namespace WandererCup
             guna2DataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateBlue;
             guna2DataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "OrderDetailsID", HeaderText = "OrderDetailsID", Visible = false });
-            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Product", HeaderText = "Product" });
-            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "QuantitySold", HeaderText = "Quantity Sold" });
-            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "Sales", HeaderText = "Sales" });
-            guna2DataGridView1.Columns.Add(new DataGridViewTextBoxColumn { Name = "DateCompleted", HeaderText = "Date Completed" });
         }
 
         private void HighlightActiveButton(Button activeButton)
@@ -239,6 +265,11 @@ namespace WandererCup
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelCategories_Paint(object sender, PaintEventArgs e)
         {
 
         }
