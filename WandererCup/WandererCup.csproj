@@ -204,6 +204,12 @@
     <Compile Include="RemoveItems.Designer.cs">
       <DependentUpon>RemoveItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesReport.Designer.cs">
+      <DependentUpon>SalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateItems.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </Compile>
     <EmbeddedResource Include="RemoveItems.resx">
       <DependentUpon>RemoveItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesReport.resx">
+      <DependentUpon>SalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateItems.resx">
       <DependentUpon>UpdateItems.cs</DependentUpon>

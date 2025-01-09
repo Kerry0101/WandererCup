@@ -860,7 +860,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.label6);
-            this.guna2Panel21.Location = new System.Drawing.Point(67, 109);
+            this.guna2Panel21.Location = new System.Drawing.Point(490, 165);
             this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(272, 181);
@@ -987,7 +987,7 @@
             this.guna2Panel18.Controls.Add(this.guna2Button1);
             this.guna2Panel18.Controls.Add(this.guna2Button3);
             this.guna2Panel18.Controls.Add(this.label7);
-            this.guna2Panel18.Location = new System.Drawing.Point(68, 282);
+            this.guna2Panel18.Location = new System.Drawing.Point(491, 268);
             this.guna2Panel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel18.Name = "guna2Panel18";
             this.guna2Panel18.Size = new System.Drawing.Size(272, 181);
@@ -1493,7 +1493,7 @@
             this.guna2Panel40.Controls.Add(this.guna2Button9);
             this.guna2Panel40.Controls.Add(this.guna2Button10);
             this.guna2Panel40.Controls.Add(this.label16);
-            this.guna2Panel40.Location = new System.Drawing.Point(1155, 27);
+            this.guna2Panel40.Location = new System.Drawing.Point(147, 105);
             this.guna2Panel40.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel40.Name = "guna2Panel40";
             this.guna2Panel40.Size = new System.Drawing.Size(272, 181);
@@ -1867,6 +1867,7 @@
             this.EditSale.Name = "EditSale";
             this.EditSale.PasswordChar = '\0';
             this.EditSale.PlaceholderText = "";
+            this.EditSale.ReadOnly = true;
             this.EditSale.SelectedText = "";
             this.EditSale.Size = new System.Drawing.Size(89, 35);
             this.EditSale.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1902,6 +1903,7 @@
             this.EditTotalCost.Name = "EditTotalCost";
             this.EditTotalCost.PasswordChar = '\0';
             this.EditTotalCost.PlaceholderText = "";
+            this.EditTotalCost.ReadOnly = true;
             this.EditTotalCost.SelectedText = "";
             this.EditTotalCost.Size = new System.Drawing.Size(89, 35);
             this.EditTotalCost.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
@@ -1912,7 +1914,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.SystemColors.Info;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(238, 351);
+            this.label23.Location = new System.Drawing.Point(232, 351);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(179, 20);
@@ -1947,7 +1949,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(253, 393);
+            this.label13.Location = new System.Drawing.Point(247, 393);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(163, 20);
@@ -1965,6 +1967,7 @@
             this.guna2Panel33.Controls.Add(this.UpdateChangeBtn);
             this.guna2Panel33.Controls.Add(this.label13);
             this.guna2Panel33.Controls.Add(this.EditSellingPrice);
+            this.guna2Panel33.Controls.Add(this.guna2Panel40);
             this.guna2Panel33.Controls.Add(this.label23);
             this.guna2Panel33.Controls.Add(this.EditTotalCost);
             this.guna2Panel33.Controls.Add(this.label26);
@@ -2028,6 +2031,7 @@
             this.UpdateChangeBtn.Size = new System.Drawing.Size(117, 43);
             this.UpdateChangeBtn.TabIndex = 127;
             this.UpdateChangeBtn.Text = "Update";
+            this.UpdateChangeBtn.Click += new System.EventHandler(this.UpdateChangeBtn_Click);
             // 
             // pictureBox1
             // 
@@ -2080,13 +2084,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
-            this.ClientSize = new System.Drawing.Size(1859, 614);
+            this.ClientSize = new System.Drawing.Size(1124, 614);
+            this.Controls.Add(this.guna2Panel21);
             this.Controls.Add(this.guna2Panel33);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel28);
             this.Controls.Add(this.guna2Panel18);
-            this.Controls.Add(this.guna2Panel21);
-            this.Controls.Add(this.guna2Panel40);
             this.Controls.Add(this.guna2CustomGradientPanel3);
             this.Controls.Add(this.guna2CustomGradientPanel2);
             this.Controls.Add(this.label8);

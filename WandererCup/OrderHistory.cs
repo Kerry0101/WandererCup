@@ -63,12 +63,13 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "SELECT o.OrderID, o.OrderDate, p.ProductName, od.Quantity, od.Subtotal " +
-                                   "FROM orderdetails od " +
-                                   "JOIN `order` o ON od.OrderID = o.OrderID " +
-                                   "JOIN Product p ON od.ProductID = p.ProductID " +
-                                   "WHERE od.is_archived = 1 " +
-                                   "ORDER BY o.OrderDate DESC"; // Order by OrderDate in descending order
+                    string query = @"
+                SELECT o.OrderID, o.OrderDate, od.ProductName_History, od.Quantity, od.Subtotal
+                FROM orderdetails od
+                JOIN `order` o ON od.OrderID = o.OrderID
+                WHERE od.is_archived = 1
+                ORDER BY o.OrderDate DESC"; // Order by OrderDate in descending order
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -78,7 +79,7 @@ namespace WandererCup
                             {
                                 guna2DataGridView1.Rows.Add(
                                     reader["OrderID"],
-                                    reader["ProductName"],
+                                    reader["ProductName_History"],
                                     reader["Quantity"],
                                     reader["Subtotal"],
                                     reader["OrderDate"]
@@ -97,6 +98,7 @@ namespace WandererCup
 
 
 
+
         private void Guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             DateTime selectedDate = guna2DateTimePicker1.Value;
@@ -109,7 +111,7 @@ namespace WandererCup
             {
                 string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
                 string query = @"
-        SELECT o.OrderID, o.OrderDate, p.ProductName, od.Quantity, od.Subtotal
+        SELECT o.OrderID, o.OrderDate, od.ProductName_History, od.Quantity, od.Subtotal
         FROM orderdetails od
         JOIN `order` o ON od.OrderID = o.OrderID
         JOIN Product p ON od.ProductID = p.ProductID
@@ -133,7 +135,7 @@ namespace WandererCup
                     if (guna2DataGridView1.Columns.Count == 0)
                     {
                         guna2DataGridView1.Columns.Add("OrderID", "Order ID");
-                        guna2DataGridView1.Columns.Add("ProductName", "Items");
+                        guna2DataGridView1.Columns.Add("ProductName_History", "Items");
                         guna2DataGridView1.Columns.Add("Quantity", "Quantity");
                         guna2DataGridView1.Columns.Add("Subtotal", "Subtotal");
                         guna2DataGridView1.Columns.Add("OrderDate", "Date Ordered");
@@ -144,7 +146,7 @@ namespace WandererCup
                     {
                         guna2DataGridView1.Rows.Add(
                             row["OrderID"],
-                            row["ProductName"],
+                            row["ProductName_History"],
                             row["Quantity"],
                             row["Subtotal"],
                             row["OrderDate"]
@@ -246,6 +248,15 @@ namespace WandererCup
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void SalesReportButton_Click(object sender, EventArgs e)
+        {
+            var salesReport = new SalesReport();
+            salesReport.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            salesReport.Show();
+            HighlightActiveButton((Button)sender);
         }
     }
 }

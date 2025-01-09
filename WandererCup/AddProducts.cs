@@ -588,6 +588,13 @@ namespace WandererCup
             return isArchived;
         }
 
-
+        private void SalesReportButton_Click(object sender, EventArgs e)
+        {
+            var salesReport = new SalesReport();
+            salesReport.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            salesReport.Show();
+            HighlightActiveButton((Button)sender);
+        }
     }
 }

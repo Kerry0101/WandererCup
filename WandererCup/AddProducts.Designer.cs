@@ -306,6 +306,7 @@
             this.SalesReportButton.TabIndex = 13;
             this.SalesReportButton.Text = "Sales Report";
             this.SalesReportButton.UseVisualStyleBackColor = false;
+            this.SalesReportButton.Click += new System.EventHandler(this.SalesReportButton_Click);
             // 
             // LogoutButton
             // 

@@ -50,6 +50,11 @@ namespace WandererCup
             IngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
             QuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
             SellingPriceTextBox.TextChanged += SellingPriceTextBox_TextChanged;
+            EditSellingPrice.TextChanged += (s, ev) => UpdateEditSale();
+
+            // Attach event handler to UpdateChangeBtn
+            UpdateChangeBtn.Click -= new EventHandler(UpdateChangeBtn_Click);
+            UpdateChangeBtn.Click += new EventHandler(UpdateChangeBtn_Click);
 
             // Set ReadOnly property for static textboxes
             CostPerMlTextBox.ReadOnly = true;
@@ -377,6 +382,7 @@ namespace WandererCup
             // Attach event handlers
             newIngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
             newQuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
+            newTotalCostPerCupTextBox.TextChanged += (s, ev) => UpdateTotalCost();
 
             // Add the new textboxes to the target panel
             targetPanel.Controls.Add(newIngredientTextBox);
@@ -384,11 +390,6 @@ namespace WandererCup
             targetPanel.Controls.Add(newCostPerMlTextBox);
             targetPanel.Controls.Add(newTotalCostPerCupTextBox);
         }
-
-
-
-
-
 
 
 
@@ -446,10 +447,7 @@ namespace WandererCup
 
 
 
-
-
-
-        private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
+        /*private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -457,7 +455,7 @@ namespace WandererCup
                 try
                 {
                     conn.Open();
-                    string query = "UPDATE Ingredients SET IngredientName = @NewIngredientName, Quantity = @Quantity, CostPerMl = @CostPerMl, TotalCostPerCup = @TotalCostPerCup, TotalCost = @TotalCost, SellingPrice = @SellingPrice, Sales = @Sales WHERE ProductID = @ProductID AND IngredientName = @OldIngredientName";
+                    string query = "UPDATE ingredients SET IngredientName = @NewIngredientName, Quantity = @Quantity, CostPerMl = @CostPerMl, TotalCostPerCup = @TotalCostPerCup, WHERE ProductID = @ProductID AND IngredientName = @OldIngredientName";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@ProductID", productId);
@@ -465,9 +463,8 @@ namespace WandererCup
                         cmd.Parameters.AddWithValue("@Quantity", quantity);
                         cmd.Parameters.AddWithValue("@CostPerMl", costPerMl);
                         cmd.Parameters.AddWithValue("@TotalCostPerCup", totalCostPerCup);
-                        cmd.Parameters.AddWithValue("@TotalCost", totalCost);
-                        cmd.Parameters.AddWithValue("@SellingPrice", sellingPrice);
-                        cmd.Parameters.AddWithValue("@Sales", sales);
+                        
+                        
                         cmd.Parameters.AddWithValue("@OldIngredientName", oldIngredientName);
                         cmd.ExecuteNonQuery();
                     }
@@ -478,7 +475,40 @@ namespace WandererCup
                 }
             }
         }
+*/
+        private void UpdateIngredient(int productId, string newIngredientName, string quantity, string oldIngredientName, string costPerMl, string totalCostPerCup, string totalCost, string sellingPrice, string sales)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE ingredients SET IngredientName = @newIngredientName, CostPerMl = @costPerMl, Quantity = @quantity, TotalCostPerCup = @totalCostPerCup WHERE IngredientName = @oldIngredientName AND ProductId = @productId";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@newIngredientName", newIngredientName);
+                        cmd.Parameters.AddWithValue("@costPerMl", costPerMl);
+                        cmd.Parameters.AddWithValue("@quantity", quantity);
+                        cmd.Parameters.AddWithValue("@totalCostPerCup", totalCostPerCup);
+                        cmd.Parameters.AddWithValue("@oldIngredientName", oldIngredientName);
+                        cmd.Parameters.AddWithValue("@productId", productId);
 
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
+
+
+
+
+
+        // Update total cost for Attach Product Ingredients
         private void UpdateTotalCost()
         {
             decimal totalCost = 0;
@@ -505,6 +535,36 @@ namespace WandererCup
             else
             {
                 SalesTextBox.Text = string.Empty;
+            }
+        }
+
+
+        private void UpdateEditTotalCost()
+        {
+            decimal totalCost = 0;
+
+            foreach (var totalCostPerCupTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("TotalCostPerCupTextBox")))
+            {
+                if (decimal.TryParse(totalCostPerCupTextBox.Text.Trim(), out decimal cost))
+                {
+                    totalCost += cost;
+                }
+            }
+
+            EditTotalCost.Text = totalCost.ToString("F2");
+        }
+
+        private void UpdateEditSale()
+        {
+            if (decimal.TryParse(EditTotalCost.Text.Trim(), out decimal totalCost) &&
+                decimal.TryParse(EditSellingPrice.Text.Trim(), out decimal sellingPrice))
+            {
+                decimal sales = sellingPrice - totalCost;
+                EditSale.Text = sales.ToString("F2");
+            }
+            else
+            {
+                EditSale.Text = string.Empty;
             }
         }
 
@@ -565,7 +625,6 @@ namespace WandererCup
         }
 
 
-
         private void QuantityTextBox_TextChanged(object sender, EventArgs e)
         {
             Guna2TextBox quantityTextBox = sender as Guna2TextBox;
@@ -591,11 +650,20 @@ namespace WandererCup
                         totalCostPerCupTextBox.Text = string.Empty;
                     }
 
-                    // Update the total cost
-                    UpdateTotalCost();
+                    // Update the total cost based on the parent panel
+                    if (parentPanel == guna2Panel16)
+                    {
+                        UpdateTotalCost();
+                    }
+                    else if (parentPanel == guna2Panel39)
+                    {
+                        UpdateEditTotalCost();
+                    }
                 }
             }
         }
+
+
 
 
 
@@ -1125,6 +1193,7 @@ namespace WandererCup
                 // Attach event handlers
                 newIngredientTextBox.TextChanged += IngredientTextBox_TextChanged;
                 newQuantityTextBox.TextChanged += QuantityTextBox_TextChanged;
+                newTotalCostPerCupTextBox.TextChanged += (s, ev) => UpdateEditTotalCost();
 
                 // Add the new textboxes to the panel
                 guna2Panel39.Controls.Add(newIngredientTextBox);
@@ -1147,36 +1216,31 @@ namespace WandererCup
         private List<Tuple<string, string, string, string>> GetIngredientsByProductId(int productId)
         {
             List<Tuple<string, string, string, string>> ingredients = new List<Tuple<string, string, string, string>>();
-            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            string query = "SELECT IngredientName, Quantity, CostPerMl, TotalCostPerCup FROM Ingredients WHERE ProductId = @ProductId";
+
+            using (MySqlConnection conn = new MySqlConnection(GetConnectionString()))
             {
-                try
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@ProductId", productId);
                     conn.Open();
-                    string query = "SELECT IngredientName, Quantity, CostPerMl, TotalCostPerCup FROM Ingredients WHERE ProductID = @ProductID";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@ProductID", productId);
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                string ingredientName = reader["IngredientName"].ToString();
-                                string quantity = reader["Quantity"].ToString();
-                                string costPerMl = reader["CostPerMl"].ToString();
-                                string totalCostPerCup = reader["TotalCostPerCup"].ToString();
-                                ingredients.Add(new Tuple<string, string, string, string>(ingredientName, quantity, costPerMl, totalCostPerCup));
-                            }
+                            ingredients.Add(new Tuple<string, string, string, string>(
+                                reader.GetString("IngredientName"),
+                                reader.GetString("Quantity"),
+                                reader.GetString("CostPerMl"),
+                                reader.GetString("TotalCostPerCup")));
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Error: {ex.Message}");
-                }
             }
+
             return ingredients;
         }
+
 
         private Tuple<string, string, string> GetProductSalesByProductId(int productId)
         {
@@ -1500,7 +1564,90 @@ namespace WandererCup
         }
 
 
+        private void UpdateDatabaseWithChanges(int productId)
+        {
+            foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+            {
+                string index = ingredientTextBox.Name.Substring("IngredientTextBox".Length);
+                var quantityTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "QuantityTextBox" + index);
+                var costPerMlTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "CostPerMlTextBox" + index);
+                var totalCostPerCupTextBox = guna2Panel39.Controls.OfType<Guna2TextBox>().FirstOrDefault(tb => tb.Name == "TotalCostPerCupTextBox" + index);
 
+                if (quantityTextBox != null && costPerMlTextBox != null && totalCostPerCupTextBox != null)
+                {
+                    string newIngredientName = ingredientTextBox.Text.Trim();
+                    string quantity = quantityTextBox.Text.Trim();
+                    string costPerMl = costPerMlTextBox.Text.Trim();
+                    string totalCostPerCup = totalCostPerCupTextBox.Text.Trim();
+                    string oldIngredientName = ingredientTextBox.Tag?.ToString() ?? string.Empty;
+
+                    // Validate that all fields are not empty
+                    if (!string.IsNullOrEmpty(newIngredientName) && !string.IsNullOrEmpty(quantity) && !string.IsNullOrEmpty(costPerMl) && !string.IsNullOrEmpty(totalCostPerCup))
+                    {
+                        if (string.IsNullOrEmpty(oldIngredientName))
+                        {
+                            // New ingredient, save it
+                            SaveIngredient(productId, newIngredientName, quantity, costPerMl, totalCostPerCup);
+                        }
+                        else
+                        {
+                            // Existing ingredient, update it
+                            UpdateIngredient(productId, newIngredientName, quantity, oldIngredientName, costPerMl, totalCostPerCup, totalCostPerCup, EditSellingPrice.Text.Trim(), EditSale.Text.Trim());
+                        }
+                    }
+                }
+
+            }
+
+            // Update product sales data
+            string totalCostOverall = EditTotalCost.Text.Trim();
+            string sellingPriceOverall = EditSellingPrice.Text.Trim();
+            string salesOverall = EditSale.Text.Trim();
+
+            if (!string.IsNullOrEmpty(totalCostOverall) && !string.IsNullOrEmpty(sellingPriceOverall) && !string.IsNullOrEmpty(salesOverall))
+            {
+                UpdateProductSales(productId, totalCostOverall, sellingPriceOverall, salesOverall);
+            }
+
+            // Refresh the ingredients table
+            RefreshIngredientsTable(productId);
+        }
+
+        private void RefreshIngredientsTable(int productId)
+        {
+            var ingredients = GetIngredientsByProductId(productId);
+            // Assuming you have a DataGridView or similar control to display ingredients
+            DataGridView ingredientsDataGridView = new DataGridView(); // Add this line to create the DataGridView
+            ingredientsDataGridView.DataSource = ingredients;
+        }
+
+
+
+
+        private void UpdateProductSales(int productId, string totalCost, string sellingPrice, string sales)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "UPDATE product_sales SET TotalCost = @TotalCost, SellingPrice = @SellingPrice, Sales = @Sales WHERE ProductID = @ProductID";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", productId);
+                        cmd.Parameters.AddWithValue("@TotalCost", totalCost);
+                        cmd.Parameters.AddWithValue("@SellingPrice", sellingPrice);
+                        cmd.Parameters.AddWithValue("@Sales", sales);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+            }
+        }
 
 
 
@@ -1640,5 +1787,28 @@ namespace WandererCup
         {
 
         }
+
+private async void UpdateChangeBtn_Click(object sender, EventArgs e)
+{
+    string productName = label10.Text;
+    int productId = GetProductIdByName(productName);
+
+    if (productId != -1)
+            {
+                UpdateDatabaseWithChanges(productId);
+                RefreshDynamicProductsPanel();
+                guna2Panel33.Visible = false;
+                guna2CustomGradientPanel3.Visible = true;
+                await Task.Delay(3000);
+                guna2CustomGradientPanel3.Visible = false;
+            }
+            else
+    {
+        MessageBox.Show("Product not found.");
+    }
+}
+
+
+
     }
 }

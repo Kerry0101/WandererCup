@@ -18,7 +18,7 @@ namespace WandererCup
                     string query = @"
                         UPDATE inventory i
                         JOIN Ingredients ing ON i.ProductName = ing.IngredientName
-                        SET i.Quantity = i.Quantity - (CAST(ing.Quantity AS UNSIGNED) * @QuantityOrdered)
+                        SET i.Quantity = i.Quantity - (ing.Quantity * @QuantityOrdered)
                         WHERE ing.ProductID = @ProductID";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))

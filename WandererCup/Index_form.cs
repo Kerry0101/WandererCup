@@ -422,9 +422,10 @@ namespace WandererCup
                 {
                     connection.Open();
                     string query = @"
-                SELECT p.ProductName, p.Price 
-                FROM product_with_price p
+                SELECT p.ProductName, ps.SellingPrice 
+                FROM product p
                 JOIN category c ON p.CategoryId = c.CategoryId
+                JOIN product_sales ps ON p.ProductID = ps.ProductID
                 WHERE c.CategoryName = @CategoryName AND p.is_archived = 0"; // Adjust the query as per your database schema
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -433,7 +434,7 @@ namespace WandererCup
                         {
                             while (reader.Read())
                             {
-                                products.Add(new { Name = reader.GetString("ProductName"), Price = reader.GetDecimal("Price") });
+                                products.Add(new { Name = reader.GetString("ProductName"), Price = reader.GetDecimal("SellingPrice") });
                             }
                         }
                     }
@@ -449,6 +450,7 @@ namespace WandererCup
             }
             return products;
         }
+
 
 
 
@@ -887,11 +889,14 @@ namespace WandererCup
                                 }
 
                                 // Insert into OrderDetails table
-                                string detailsQuery = "INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Subtotal) VALUES (@OrderID, @ProductID, @Quantity, @Subtotal)";
+                                string detailsQuery = @"
+                            INSERT INTO orderdetails (OrderID, ProductID, ProductName_History, Quantity, Subtotal, is_archived)
+                            VALUES (@OrderID, @ProductID, @ProductName, @Quantity, @Subtotal, 0)";
                                 using (MySqlCommand detailsCommand = new MySqlCommand(detailsQuery, connection, transaction))
                                 {
                                     detailsCommand.Parameters.AddWithValue("@OrderID", orderId);
                                     detailsCommand.Parameters.AddWithValue("@ProductID", productId);
+                                    detailsCommand.Parameters.AddWithValue("@ProductName", productName);
                                     detailsCommand.Parameters.AddWithValue("@Quantity", quantity);
                                     detailsCommand.Parameters.AddWithValue("@Subtotal", subtotal);
                                     detailsCommand.ExecuteNonQuery();
@@ -927,9 +932,20 @@ namespace WandererCup
             orderStatus.Show();
         }
 
+
+
         private void panelCategories_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void SalesReportButton_Click(object sender, EventArgs e)
+        {
+            var salesReport = new SalesReport();
+            salesReport.FormClosed += (s, args) => Application.Exit();
+            this.Hide();
+            salesReport.Show();
+            HighlightActiveButton((Button)sender);
         }
     }
 }
