@@ -378,7 +378,7 @@ namespace WandererCup
                             if (IsArchivedProduct(productName))
                             {
                                 // Update the is_archived column to 0
-                                string updateQuery = "UPDATE Product SET is_archived = 0, Price = @Price, CategoryID = @CategoryID WHERE ProductName = @ProductName";
+                                string updateQuery = "UPDATE Product SET is_archived = 0, CategoryID = @CategoryID WHERE ProductName = @ProductName";
                                 using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, conn))
                                 {
                                     updateCmd.Parameters.AddWithValue("@ProductName", productName);

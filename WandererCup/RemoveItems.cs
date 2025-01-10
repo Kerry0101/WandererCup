@@ -268,16 +268,44 @@ namespace WandererCup
         private void ArchiveProduct(string productName)
         {
             string connectionString = GetConnectionString();
-            string query = "UPDATE product SET is_archived = 1 WHERE ProductName = @ProductName";
+            string queryArchiveProduct = "UPDATE product SET is_archived = 1 WHERE ProductName = @ProductName";
+            string queryDeleteIngredients = @"
+        DELETE FROM ingredients 
+        WHERE ProductID = (SELECT ProductID FROM product WHERE ProductName = @ProductName)";
+            string queryDeleteProductSales = @"
+        DELETE FROM product_sales 
+        WHERE ProductID = (SELECT ProductID FROM product WHERE ProductName = @ProductName)";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                MySqlCommand command = new MySqlCommand(query, connection);
-                command.Parameters.AddWithValue("@ProductName", productName);
                 connection.Open();
-                command.ExecuteNonQuery();
+                using (MySqlTransaction transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        MySqlCommand commandArchiveProduct = new MySqlCommand(queryArchiveProduct, connection, transaction);
+                        commandArchiveProduct.Parameters.AddWithValue("@ProductName", productName);
+                        commandArchiveProduct.ExecuteNonQuery();
+
+                        MySqlCommand commandDeleteIngredients = new MySqlCommand(queryDeleteIngredients, connection, transaction);
+                        commandDeleteIngredients.Parameters.AddWithValue("@ProductName", productName);
+                        commandDeleteIngredients.ExecuteNonQuery();
+
+                        MySqlCommand commandDeleteProductSales = new MySqlCommand(queryDeleteProductSales, connection, transaction);
+                        commandDeleteProductSales.Parameters.AddWithValue("@ProductName", productName);
+                        commandDeleteProductSales.ExecuteNonQuery();
+
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
             }
         }
+
 
         private void Guna2Button2_Click(object sender, EventArgs e)
         {

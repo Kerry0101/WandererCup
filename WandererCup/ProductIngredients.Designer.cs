@@ -387,12 +387,12 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label21.Location = new System.Drawing.Point(262, 374);
+            this.label21.Location = new System.Drawing.Point(246, 372);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(152, 20);
+            this.label21.Size = new System.Drawing.Size(163, 20);
             this.label21.TabIndex = 110;
-            this.label21.Text = "Set selling price:";
+            this.label21.Text = "Set selling price =";
             // 
             // SellingPriceTextBox
             // 
@@ -480,12 +480,13 @@
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.SystemColors.Info;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(306, 334);
+            this.label19.Location = new System.Drawing.Point(231, 336);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 20);
+            this.label19.Size = new System.Drawing.Size(179, 20);
             this.label19.TabIndex = 106;
-            this.label19.Text = "Total cost =";
+            this.label19.Text = "Total cost per cup =";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // guna2Panel46
             // 
@@ -547,12 +548,12 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(346, 425);
+            this.label22.Location = new System.Drawing.Point(327, 428);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 20);
+            this.label22.Size = new System.Drawing.Size(78, 20);
             this.label22.TabIndex = 112;
-            this.label22.Text = "Sale  =";
+            this.label22.Text = " Profit =";
             this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // SalesTextBox
@@ -583,6 +584,7 @@
             // 
             this.guna2Panel16.AutoScroll = true;
             this.guna2Panel16.BackColor = System.Drawing.Color.Tan;
+            this.guna2Panel16.Controls.Add(this.guna2Panel21);
             this.guna2Panel16.Controls.Add(this.label32);
             this.guna2Panel16.Controls.Add(this.label25);
             this.guna2Panel16.Controls.Add(this.label24);
@@ -763,9 +765,9 @@
             this.label4.Location = new System.Drawing.Point(324, 4);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 20);
+            this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 99;
-            this.label4.Text = "Quantity:";
+            this.label4.Text = "Quantity";
             // 
             // label2
             // 
@@ -883,7 +885,7 @@
             this.guna2Panel21.Controls.Add(this.guna2Button8);
             this.guna2Panel21.Controls.Add(this.guna2Button7);
             this.guna2Panel21.Controls.Add(this.label6);
-            this.guna2Panel21.Location = new System.Drawing.Point(490, 165);
+            this.guna2Panel21.Location = new System.Drawing.Point(131, 1);
             this.guna2Panel21.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel21.Name = "guna2Panel21";
             this.guna2Panel21.Size = new System.Drawing.Size(272, 181);
@@ -2009,7 +2011,7 @@
             this.guna2Panel33.Controls.Add(this.guna2Panel34);
             this.guna2Panel33.Controls.Add(this.guna2Panel56);
             this.guna2Panel33.Controls.Add(this.guna2Panel57);
-            this.guna2Panel33.Location = new System.Drawing.Point(342, 61);
+            this.guna2Panel33.Location = new System.Drawing.Point(342, 66);
             this.guna2Panel33.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel33.Name = "guna2Panel33";
             this.guna2Panel33.Size = new System.Drawing.Size(549, 538);
@@ -2086,7 +2088,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(1124, 614);
-            this.Controls.Add(this.guna2Panel21);
             this.Controls.Add(this.guna2Panel33);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.guna2Panel28);

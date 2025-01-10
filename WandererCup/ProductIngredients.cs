@@ -1366,14 +1366,14 @@ namespace WandererCup
                     }
 
                     // Finally, delete the row in the Product table
-                    string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
-                    {
-                        MySqlCommand command = new MySqlCommand(deleteProductQuery, connection);
-                        command.Parameters.AddWithValue("@ProductID", productId);
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                    }
+                    //string deleteProductQuery = "DELETE FROM Product WHERE ProductID = @ProductID";
+                    //using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    //{
+                    //    MySqlCommand command = new MySqlCommand(deleteProductQuery, connection);
+                    //    command.Parameters.AddWithValue("@ProductID", productId);
+                    //    connection.Open();
+                    //    command.ExecuteNonQuery();
+                    //}
 
                     panel3.Controls.Remove(productPanel);
                 }
@@ -1866,7 +1866,6 @@ namespace WandererCup
             }
             return exists;
         }
-
         private async void UpdateChangeBtn_Click(object sender, EventArgs e)
         {
             string productName = label10.Text;
@@ -1874,14 +1873,28 @@ namespace WandererCup
 
             if (productId != -1)
             {
-                // Check for duplicate ingredient names
+                // Check for duplicate ingredient names only among newly added ingredients
+                var newIngredientNames = new HashSet<string>();
                 foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
                 {
                     string newIngredientName = ingredientTextBox.Text.Trim();
-                    if (IngredientExists(productId, newIngredientName))
+                    string oldIngredientName = ingredientTextBox.Tag?.ToString();
+
+                    // If the ingredient is newly added (i.e., it doesn't have an old name)
+                    if (string.IsNullOrEmpty(oldIngredientName))
                     {
-                        MessageBox.Show($"Error: The ingredient '{newIngredientName}' already exists for this product.");
-                        return;
+                        if (newIngredientNames.Contains(newIngredientName))
+                        {
+                            MessageBox.Show($"Error: The ingredient '{newIngredientName}' is duplicated among the newly added ingredients.");
+                            return;
+                        }
+                        newIngredientNames.Add(newIngredientName);
+
+                        if (IngredientExists(productId, newIngredientName))
+                        {
+                            MessageBox.Show($"Error: The ingredient '{newIngredientName}' already exists for this product.");
+                            return;
+                        }
                     }
                 }
 
@@ -1898,9 +1911,45 @@ namespace WandererCup
             }
         }
 
+              //private async void UpdateChangeBtn_Click(object sender, EventArgs e)
+              //  {
+              //      string productName = label10.Text;
+              //      int productId = GetProductIdByName(productName);
+
+              //      if (productId != -1)
+              //      {
+              //          // Check for duplicate ingredient names
+              //          foreach (var ingredientTextBox in guna2Panel39.Controls.OfType<Guna2TextBox>().Where(tb => tb.Name.StartsWith("IngredientTextBox")))
+              //          {
+              //              string newIngredientName = ingredientTextBox.Text.Trim();
+              //              if (IngredientExists(productId, newIngredientName))
+              //              {
+              //                  MessageBox.Show($"Error: The ingredient '{newIngredientName}' already exists for this product.");
+              //                  return;
+              //              }
+              //          }
+
+              //          UpdateDatabaseWithChanges(productId);
+              //          RefreshDynamicProductsPanel();
+              //          guna2Panel33.Visible = false;
+              //          guna2CustomGradientPanel3.Visible = true;
+              //          await Task.Delay(3000);
+              //          guna2CustomGradientPanel3.Visible = false;
+              //      }
+              //      else
+              //      {
+              //          MessageBox.Show("Product not found.");
+              //      }
+              //  }
+
 
 
         private void guna2DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
         {
 
         }

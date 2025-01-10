@@ -485,8 +485,50 @@ namespace WandererCup
 
         private void RemoveRowBtn_Click(object sender, EventArgs e)
         {
+            if (guna2DataGridView1.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+                string productName = selectedRow.Cells["ProductName"].Value.ToString();
 
+                // Show confirmation dialog
+                DialogResult result = MessageBox.Show($"Are you sure you want to remove the product '{productName}'?", "Confirm Removal", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    string connectionString = GetConnectionString();
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+                            // Delete the product from the database
+                            string query = "DELETE FROM inventory WHERE ProductName = @ProductName";
+                            using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                            {
+                                cmd.Parameters.AddWithValue("@ProductName", productName);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // Refresh the grid
+                            BindDataToGrid();
+
+                            MessageBox.Show("Product removed successfully.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error: {ex.Message}");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a single row to remove.");
+            }
         }
+
+
 
         private void SalesReportButton_Click(object sender, EventArgs e)
         {
